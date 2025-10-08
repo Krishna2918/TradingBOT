@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "report_type": "weekly",
+    "week": "2025-W39",
+    "start_date": "2025-09-27",
+    "end_date": "2025-10-04",
+    "generated_at": "2025-10-04T19:23:06.556331"
+  },
+  "executive_summary": {
+    "week_overview": {},
+    "key_achievements": [],
+    "major_challenges": [],
+    "overall_trend": {}
+  },
+  "performance_analysis": {
+    "total_pnl": 0,
+    "total_trades": 0,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "sharpe_ratio": 0.0,
+    "max_drawdown": 0.0,
+    "daily_breakdown": {},
+    "week_over_week_change": {}
+  },
+  "ai_learning_evolution": {
+    "models_improved": [],
+    "accuracy_progression": {},
+    "confidence_trends": {},
+    "learning_milestones": [],
+    "training_efficiency": {}
+  },
+  "pattern_analysis": {
+    "successful_patterns": [],
+    "failed_patterns": [],
+    "emerging_patterns": [],
+    "pattern_reliability": {},
+    "seasonal_patterns": []
+  },
+  "strategy_performance": {
+    "by_strategy": {},
+    "best_performers": [],
+    "underperformers": [],
+    "strategy_evolution": {},
+    "optimization_results": {}
+  },
+  "improvements_and_learnings": {
+    "total_improvements": 0,
+    "mistake_reduction": {},
+    "learning_velocity": {},
+    "applied_learnings": [],
+    "pending_implementations": []
+  },
+  "next_week_outlook": {
+    "recommended_focus": [],
+    "strategy_recommendations": [],
+    "risk_management_updates": [],
+    "training_priorities": [],
+    "expected_challenges": []
+  }
+}

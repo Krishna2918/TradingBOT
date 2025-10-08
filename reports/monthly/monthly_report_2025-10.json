@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "report_type": "monthly",
+    "month": "2025-10",
+    "start_date": "2025-10-01",
+    "end_date": "2025-10-31",
+    "generated_at": "2025-10-04T19:23:06.521324",
+    "trading_days": 30
+  },
+  "executive_summary": {
+    "month_overview": {},
+    "key_metrics": {},
+    "major_achievements": [],
+    "significant_challenges": [],
+    "ai_maturity_level": {},
+    "overall_grade": "A"
+  },
+  "performance_deep_dive": {
+    "financial_performance": {},
+    "trading_statistics": {},
+    "risk_metrics": {},
+    "consistency_analysis": {},
+    "benchmark_comparison": {}
+  },
+  "ai_evolution": {
+    "model_performance_evolution": {},
+    "prediction_accuracy_trends": {},
+    "learning_milestones_achieved": [],
+    "algorithm_improvements": [],
+    "ensemble_maturity": {},
+    "training_efficiency_gains": {}
+  },
+  "strategic_analysis": {
+    "strategy_performance_matrix": {},
+    "major_strategic_shifts": [],
+    "optimization_results": {},
+    "new_strategies_introduced": [],
+    "deprecated_strategies": [],
+    "strategy_portfolio_health": {}
+  },
+  "mistakes_and_learnings": {
+    "comprehensive_mistake_analysis": {},
+    "cost_of_mistakes": 0.0,
+    "mistake_categories": {},
+    "recurring_issues": [],
+    "corrections_effectiveness": {},
+    "key_lessons_learned": [],
+    "mistake_reduction_progress": {}
+  },
+  "discoveries_and_innovations": {
+    "breakthrough_findings": [],
+    "new_patterns_discovered": [],
+    "market_insights_gained": [],
+    "technical_innovations": [],
+    "optimization_discoveries": [],
+    "research_contributions": []
+  },
+  "next_month_strategy": {
+    "strategic_priorities": [],
+    "focus_strategies": [],
+    "risk_management_plan": {},
+    "ai_training_roadmap": {},
+    "expected_improvements": {},
+    "contingency_plans": {}
+  }
+}

@@ -1,0 +1,2104 @@
+2025-10-07T13:01:51.482736 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:01:56.220501 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:02:02.241833 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:02:33.317659 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:02:37.715226 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:02:43.615933 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:02:47.464897 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:02:51.798330 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:02:58.231733 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:03:04.153462 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:09.152729 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:13.786401 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:19.950749 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:03:23.329641 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:27.988339 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:03:32.943615 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:38.758380 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:42.945052 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:03:48.878911 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:03:53.069254 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:03:59.058809 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:02.920983 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:08.455563 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:13.176486 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:18.946653 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:22.947287 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:27.730988 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:33.004436 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:40.050477 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:42.868835 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:48.115990 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:04:53.834985 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:04:58.524079 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:02.687491 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:08.481311 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:13.938449 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:17.840385 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:23.124230 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:28.161246 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:37.971784 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:42.217701 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:43.243793 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:05:48.455080 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:53.736132 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:05:58.124392 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:02.716362 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:06:08.853377 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:06:14.333589 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:18.192422 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:23.570344 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:29.076964 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:06:34.741917 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:39.638982 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:06:43.197293 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:48.575320 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:06:52.802007 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:06:58.357660 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:07:03.227495 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:08.815726 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:13.741302 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:07:18.605486 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:07:23.253417 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:28.607539 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:33.546305 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:07:37.749766 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:43.571065 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:07:49.000056 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:07:53.147716 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:14.611343 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:19.198198 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:23.932732 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:08:29.480898 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:34.203748 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:08:38.061286 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:08:44.199326 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:50.193065 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:08:54.389823 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:00.310691 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:04.380472 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:08.970931 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:14.238438 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:19.538628 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:24.532445 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:29.688613 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:34.194056 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:38.816468 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:45.055820 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:09:49.268569 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:54.586810 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:09:59.051281 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:10:05.298347 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:10:09.350772 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:10:14.402612 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:10:20.109156 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:10:40.557151 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:10:45.553296 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:10:50.282684 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:10:54.745004 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:01.107230 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:06.249052 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:11:10.262704 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:15.008000 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:11:20.801653 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:25.121360 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:29.475924 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:11:35.245648 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:40.546074 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:11:45.206566 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:11:50.001532 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:11:57.554713 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:00.385950 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:07.910272 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:10.763664 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:15.666644 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.66, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:21.712896 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:28.223343 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:30.790268 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:37.178510 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:41.827505 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:47.210425 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:12:50.918772 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:12:56.850473 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:13:01.985594 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:13:07.507210 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:13:11.160543 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:13:29.097829 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:14:04.312329 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:14:21.708527 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:14:57.784291 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.65, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:15:15.328121 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:15:50.189105 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:15:53.015301 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:16:05.466113 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:16:40.647573 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:16:42.630167 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:17:17.569198 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:17:52.502072 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:18:10.036412 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:18:44.404566 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:19:01.100084 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:19:19.331241 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:19:53.195916 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:20:10.095260 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:20:44.494359 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:21:02.929747 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:21:20.635177 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:21:56.422821 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:22:04.576552 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:22:40.296405 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:22:42.211129 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:23:16.331975 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:23:50.997575 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:24:07.923276 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:24:43.902705 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:25:18.716153 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:25:54.043555 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:26:12.499230 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:26:47.687010 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:27:21.008778 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:27:55.212707 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:27:56.823659 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:28:01.389267 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:28:23.302974 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:28:27.477930 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:28:33.282644 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:28:37.055275 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:28:42.629364 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.67, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:28:48.501167 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:28:52.927578 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:28:58.331091 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:02.861817 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:08.469061 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:29:11.920736 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:18.084357 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:29:22.614215 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:28.896832 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:32.094775 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:29:38.239951 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:29:42.631656 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.49, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:30:16.980875 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:30:52.206294 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:30:52.378563 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:31:09.749287 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:31:44.349731 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:32:17.878529 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:32:53.068551 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:33:04.988599 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:33:40.483593 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:33:42.472931 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:34:15.699421 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:34:50.540007 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:34:52.560882 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:35:12.499683 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:35:46.484278 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:35:47.504144 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:36:21.762639 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:36:58.272781 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:37:14.938705 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:37:49.924048 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:37:52.644517 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:38:09.282192 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:38:44.135990 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.76, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:39:16.564320 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:39:51.185573 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:39:53.603738 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:40:04.297231 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:40:39.253278 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:41:12.638036 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:41:48.354198 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:42:05.459268 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:42:39.950804 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:42:41.679927 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:43:14.883100 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:43:48.900279 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:44:04.440389 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:44:38.595508 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:45:11.030406 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:45:46.359372 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:45:47.632433 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.67, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:46:21.950952 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:46:55.895984 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:46:57.639068 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:47:14.063996 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:47:47.928533 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:48:20.982715 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:48:55.392308 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.51, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:48:57.108726 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:49:14.010481 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:49:48.663332 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:50:05.996439 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:50:40.004001 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.62, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:50:42.534524 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:51:18.770763 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:51:52.719953 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:52:04.511912 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:52:39.922071 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:52:41.572100 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:53:15.140542 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:53:48.492286 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:54:04.938852 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:54:41.438328 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:54:42.461809 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:55:15.980182 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.62, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:55:50.016126 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:55:51.584473 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:56:08.371076 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:56:41.821041 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:56:42.829906 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:57:16.079129 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:57:50.644254 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:57:51.555125 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.52, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:58:08.890082 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:58:45.089964 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T13:59:18.489263 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T13:59:52.920866 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.62, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:00:04.529859 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:00:39.071388 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:01:11.398994 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:01:45.782177 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:01:48.022413 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:02:20.608224 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:02:54.391750 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.52, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:03:04.931361 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:03:04.946359 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:03:40.869350 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:03:41.955481 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:04:15.008389 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:04:49.585204 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:05:04.664372 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:05:38.529718 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:06:11.693096 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:06:45.446234 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:06:47.614614 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:07:20.454595 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.52, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:07:54.993017 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:08:04.742942 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:08:05.076908 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:08:41.589355 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:08:42.736502 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:09:16.434769 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:09:49.956557 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:09:51.771389 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:10:08.367183 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:10:43.192972 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:11:14.889585 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:11:48.360149 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.52, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:12:05.044088 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:12:40.227580 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:12:42.002386 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:13:15.149558 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:13:48.527155 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:14:05.053962 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:14:39.225291 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:15:12.382637 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:15:46.753062 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:15:46.868953 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:16:19.247711 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:16:53.306851 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:17:05.358171 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:17:39.669144 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:17:41.942390 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:18:14.717788 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:18:48.869107 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:19:04.741042 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:19:38.845710 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:20:11.314324 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:20:46.016035 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:20:47.746560 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:21:20.626241 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.52, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:21:56.843856 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:21:57.914955 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:22:15.557719 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:22:50.106347 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:22:51.219878 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:23:08.132696 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:23:42.754608 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:24:15.741994 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:24:49.325291 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:24:52.169475 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:25:08.936364 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:25:42.534838 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:26:14.795506 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:26:50.990178 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:26:52.320544 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:27:10.415223 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:27:44.609462 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:28:00.964167 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:28:19.026649 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:28:52.316598 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:29:05.392374 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:29:40.357264 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:29:42.914703 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:30:16.064076 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:30:50.655864 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:30:52.898561 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:31:04.450695 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:31:38.873888 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:32:13.073590 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:32:46.781747 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:32:47.550214 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:33:19.844344 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:33:54.731149 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:34:04.555088 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:34:04.799515 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:34:37.927901 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:35:10.849513 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:35:44.899263 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:36:01.693484 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:36:18.446169 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:36:56.601699 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:37:13.344246 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:37:49.069951 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:38:04.788544 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:38:40.036230 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:38:41.505053 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:39:14.779435 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:39:48.536087 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:40:04.607176 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:40:39.378441 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:41:12.680349 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:41:47.285840 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:41:47.466489 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:42:20.477046 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:42:56.140721 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:42:56.587682 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:43:13.271938 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:43:47.523454 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:44:20.120082 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:44:53.735457 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:45:10.143516 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:45:43.797881 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:46:16.737321 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:46:52.158334 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:46:52.163683 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:47:08.564317 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:47:42.444023 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:48:15.408256 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:48:50.274827 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:48:51.975372 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:49:08.786821 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:49:42.796011 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:50:15.438485 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:50:50.409331 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:50:52.083204 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:51:08.952279 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:51:43.113092 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:52:16.017244 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:52:49.882069 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:52:51.801164 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:53:10.156422 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:53:44.041417 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:54:15.941236 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:54:50.323216 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:54:52.304605 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:55:05.070559 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:55:42.681506 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:55:43.276450 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:56:18.197496 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:56:54.870278 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:57:12.389080 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:57:47.268896 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:57:47.335156 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:58:20.501148 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:58:54.701933 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:59:05.400431 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T14:59:05.846476 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:59:41.518344 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T14:59:44.131073 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:00:18.349650 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.63, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:00:52.967656 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:01:05.298628 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:01:42.218040 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:01:42.342621 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:02:16.641016 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:02:52.175032 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:02:52.822228 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:03:09.084588 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:03:45.198815 | DECISION MADE | TRADING_DECISION | BNE.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $3.55, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:04:02.364388 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:04:19.930130 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:04:55.401482 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:05:05.574226 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:05:05.767163 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:05:41.622426 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:05:43.843096 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:06:19.431488 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:06:54.946491 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:07:05.531751 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:07:05.974866 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:07:41.130784 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:07:44.344359 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:08:18.414084 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:08:55.149319 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:09:12.469892 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:09:48.206797 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:10:05.193310 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:10:41.668101 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:10:43.945420 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:11:18.768798 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:11:54.033573 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:12:11.610953 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:12:47.197520 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:12:47.470351 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:13:21.918368 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:13:58.761019 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:14:15.895878 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:14:52.307339 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.57, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:14:52.998619 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:15:10.057452 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:15:46.689301 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:15:48.892791 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:16:06.091786 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:16:42.092404 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:16:42.759902 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:17:17.439052 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:17:53.155270 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:18:05.436766 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:18:42.177689 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:18:43.278846 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:19:18.246339 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:19:53.030873 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:20:06.119349 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:20:40.831372 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:20:44.467883 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:21:18.961633 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:21:55.294800 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:22:04.662606 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:22:05.451221 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:22:40.751879 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:22:42.152935 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:23:15.841242 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:23:51.465812 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:23:53.183874 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:24:05.519344 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:24:42.315201 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:24:43.373912 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:25:17.019020 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:25:52.159245 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:25:52.416065 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:26:08.456480 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:26:43.904717 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:27:18.847871 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:27:54.066380 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:28:12.247281 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:28:47.688672 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:28:47.773752 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:29:21.511009 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:29:57.253181 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.80, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:29:57.268757 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:30:05.575243 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.15, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:30:40.524489 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:30:42.649158 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:31:16.400890 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:31:51.914789 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:31:52.303292 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:32:09.049027 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:32:44.312527 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:33:18.092032 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:33:55.300749 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:34:12.383004 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:34:47.151534 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:34:47.825435 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.15, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:35:21.596372 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:35:56.286343 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:35:58.005704 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:36:15.638499 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:36:49.600173 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:36:51.907621 | DECISION MADE | TRADING_DECISION | DYA.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.14, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:37:09.951297 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:37:46.038618 | DECISION MADE | TRADING_DECISION | HMMJ.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $9.60, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:37:48.973977 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:38:06.531915 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:38:43.033992 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:38:44.073538 | DECISION MADE | TRADING_DECISION | PWM.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.81, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:39:16.728851 | DECISION MADE | TRADING_DECISION | STC.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $7.15, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:39:51.725521 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:39:51.805333 | DECISION MADE | TRADING_DECISION | XCS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $28.77, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:40:10.132749 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:40:44.967523 | DECISION MADE | TRADING_DECISION | CFX.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.39, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:41:02.290967 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:41:20.039329 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:41:55.183795 | DECISION MADE | TRADING_DECISION | FL.V | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.64, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:42:12.134649 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:42:46.008996 | DECISION MADE | TRADING_DECISION | LABS.TO | BUY (confidence: 55.2%)
+  Reasoning: DEMO: Neutral exploratory BUY; Price: $0.08, Sentiment: 0.00; Learning from neutral zone!; DEMO BOOST: Taking calculated risk!
+  Risk Factors: {'action': 'BUY', 'confidence': 0.5519999999999999}
+
+2025-10-07T15:42:49.047367 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+
+2025-10-07T15:43:05.409088 | DECISION MADE | TRADING_DECISION | None | HOLD (confidence: 0.0%)
+  Reasoning: No strong technical signals found; Waiting for better setup
+  Risk Factors: {'action': 'HOLD', 'confidence': 0.0}
+

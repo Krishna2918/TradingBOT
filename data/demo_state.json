@@ -1,0 +1,4505 @@
+{
+  "initialized": true,
+  "starting_capital": 10.0,
+  "current_capital": 0.019999999999999796,
+  "mode": "demo",
+  "trades": [
+    {
+      "time": "13:07:23",
+      "symbol": "DYA.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.14,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.14, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.13500000536441803,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:06:09",
+      "symbol": "LABS.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.07,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.08, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.07500000298023224,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:05:48",
+      "symbol": "DYA.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.14,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.14, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.13500000536441803,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:04:33",
+      "symbol": "LABS.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.07,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.08, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.07500000298023224,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:04:13",
+      "symbol": "DYA.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.14,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.14, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.13500000536441803,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:03:59",
+      "symbol": "CFX.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.39,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.39, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.38999998569488525,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:03:28",
+      "symbol": "STC.TO",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 7.08,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $7.08, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 7.079999923706055,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": -0.018030528953274283
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:03:20",
+      "symbol": "PWM.V",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.81,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.81, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.8100000023841858,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": -0.024096363046584468
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:02:58",
+      "symbol": "LABS.TO",
+      "side": "BUY",
+      "qty": 3.0,
+      "price": 0.07,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.08, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.07500000298023224,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:02:43",
+      "symbol": "FL.V",
+      "side": "BUY",
+      "qty": 1.0,
+      "price": 0.65,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.65, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.6499999761581421,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:02:37",
+      "symbol": "DYA.TO",
+      "side": "BUY",
+      "qty": 2.0,
+      "price": 0.14,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.14, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.13500000536441803,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    },
+    {
+      "time": "13:01:47",
+      "symbol": "LABS.TO",
+      "side": "BUY",
+      "qty": 71.0,
+      "price": 0.07,
+      "status": "FILLED",
+      "pnl": null,
+      "confidence": 0.5519999999999999,
+      "reasoning": [
+        "DEMO: Neutral exploratory BUY",
+        "Price: $0.08, Sentiment: 0.00",
+        "Learning from neutral zone!",
+        "DEMO BOOST: Taking calculated risk!"
+      ],
+      "features_entry": {
+        "price": 0.07500000298023224,
+        "rsi14": null,
+        "sma20_ratio": null,
+        "sma50_ratio": null,
+        "volatility_20": null,
+        "momentum_10": null
+      },
+      "regime": "LOW_VOL"
+    }
+  ],
+  "holdings": [
+    {
+      "symbol": "LABS.TO",
+      "qty": 1264,
+      "avg_price": 0.075,
+      "current_price": 0.08,
+      "pnl": 6.320000000000006,
+      "pnl_pct": 6.666666666666673
+    },
+    {
+      "symbol": "DYA.TO",
+      "qty": 5,
+      "avg_price": 0.135,
+      "current_price": 0.135,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    },
+    {
+      "symbol": "FL.V",
+      "qty": 1,
+      "avg_price": 0.65,
+      "current_price": 0.64,
+      "pnl": -0.010000000000000009,
+      "pnl_pct": -1.5384615384615397
+    },
+    {
+      "symbol": "PWM.V",
+      "qty": 1,
+      "avg_price": 0.81,
+      "current_price": 0.81,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    },
+    {
+      "symbol": "STC.TO",
+      "qty": 1,
+      "avg_price": 7.08,
+      "current_price": 7.15,
+      "pnl": 0.07000000000000028,
+      "pnl_pct": 0.9887005649717555
+    },
+    {
+      "symbol": "CFX.TO",
+      "qty": 1,
+      "avg_price": 0.39,
+      "current_price": 0.39,
+      "pnl": 0.0,
+      "pnl_pct": 0.0
+    }
+  ],
+  "start_time": "2025-10-07 13:01:51.845853",
+  "learning_log": [
+    {
+      "timestamp": "2025-10-07T13:01:47.330626",
+      "decision": {
+        "action": "BUY",
+        "symbol": "LABS.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.08, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.07500000298023224,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:01:51.481228",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:01:56.212502",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:02.240833",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:33.316658",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:38.077806",
+      "decision": {
+        "action": "BUY",
+        "symbol": "DYA.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.14, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.13500000536441803,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:43.911340",
+      "decision": {
+        "action": "BUY",
+        "symbol": "FL.V",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.65, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.6499999761581421,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:47.463897",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:02:58.531002",
+      "decision": {
+        "action": "BUY",
+        "symbol": "LABS.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.08, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.07500000298023224,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:04.152327",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:09.152729",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:13.786401",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:20.355500",
+      "decision": {
+        "action": "BUY",
+        "symbol": "PWM.V",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.81, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.8100000023841858,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:23.328637",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:28.307995",
+      "decision": {
+        "action": "BUY",
+        "symbol": "STC.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $7.08, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 7.079999923706055,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:32.942617",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:38.757379",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:48.876913",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:03:59.339983",
+      "decision": {
+        "action": "BUY",
+        "symbol": "CFX.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.39, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.38999998569488525,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:02.919984",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:08.454568",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:13.493153",
+      "decision": {
+        "action": "BUY",
+        "symbol": "DYA.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.14, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.13500000536441803,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:22.947287",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:33.337842",
+      "decision": {
+        "action": "BUY",
+        "symbol": "LABS.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.08, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.07500000298023224,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:40.049479",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:42.867836",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:48.114984",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:04:58.523094",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:08.479308",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:13.937232",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:23.123226",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:42.216701",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:43.242794",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:48.751972",
+      "decision": {
+        "action": "BUY",
+        "symbol": "DYA.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.14, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.13500000536441803,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:05:58.123093",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:09.063521",
+      "decision": {
+        "action": "BUY",
+        "symbol": "LABS.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.08, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.07500000298023224,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:14.332589",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:18.192422",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:23.570344",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:34.740923",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:43.197293",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:48.574318",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:06:58.357660",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:13.740302",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:18.604488",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:23.556058",
+      "decision": {
+        "action": "BUY",
+        "symbol": "DYA.TO",
+        "confidence": 0.5519999999999999,
+        "reasoning": [
+          "DEMO: Neutral exploratory BUY",
+          "Price: $0.14, Sentiment: 0.00",
+          "Learning from neutral zone!",
+          "DEMO BOOST: Taking calculated risk!"
+        ],
+        "price": 0.13500000536441803,
+        "position_size": 0.03
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:33.545212",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:48.999060",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:07:53.147716",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:08:14.610342",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:08:19.197201",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:08:29.479901",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:08:44.198320",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:08:50.193065",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:04.379451",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:19.537629",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:24.532445",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:29.687611",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:38.815465",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:49.268569",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:09:54.585813",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:10:05.296349",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:10:20.109156",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:10:50.282684",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:10:54.744001",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:01.106228",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:10.261655",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:20.800654",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:25.121360",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:35.244644",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:50.000530",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:11:57.553717",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:10.762665",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:28.222339",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:30.789270",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:37.177510",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:47.209426",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:12:56.849470",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:13:01.984594",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:13:11.159543",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:14:04.310851",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:14:21.708527",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:15:15.326768",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:15:53.014301",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:16:05.464108",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:16:42.630167",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:17:17.568197",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:18:10.036412",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:19:01.099084",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:19:19.330242",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:20:10.095260",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:21:02.929747",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:21:20.634177",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:22:04.575549",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:22:40.296405",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:22:42.210128",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:23:16.330950",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:24:07.922271",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:25:18.715155",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:26:12.499230",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:26:47.687010",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:27:21.008778",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:27:55.211707",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:27:56.822659",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:28:01.388248",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:28:23.301953",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:28:37.054274",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:28:52.926580",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:28:58.331091",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:29:02.860457",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:29:11.919736",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:29:22.613219",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:29:28.895834",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:29:38.238952",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:30:16.979875",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:31:09.748282",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:32:17.877531",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:33:04.987601",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:33:40.482595",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:33:42.471935",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:34:15.698419",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:34:52.559882",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:35:12.498682",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:35:47.502146",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:36:58.271780",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:37:14.938705",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:37:49.923044",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:38:09.281197",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:39:51.184575",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:39:53.601501",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:40:39.253278",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:41:48.353199",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:42:05.458270",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:42:39.950301",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:43:14.882103",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:43:48.899129",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:44:38.594506",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:45:46.358171",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:46:21.949952",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:46:55.894986",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:47:14.062998",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:47:47.927536",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:49:14.009487",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:51:18.769765",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:52:04.510921",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:52:39.921072",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:52:41.571092",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:53:15.139536",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:54:04.937846",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:55:50.015121",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:55:51.584473",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:56:08.370076",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:56:41.821041",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:57:16.078132",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:57:50.644254",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T13:58:45.089964",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:00:39.071388",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:01:48.021415",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:03:04.944362",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:04:49.584204",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:05:04.663364",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:06:45.445238",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:07:54.991843",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:08:04.742942",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:08:41.588355",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:09:16.433771",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:09:49.955558",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:10:08.366185",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:10:43.191977",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:12:40.226580",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:13:15.147561",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:14:05.053962",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:14:39.225291",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:15:12.381638",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:15:46.752065",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:15:46.867957",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:16:19.246712",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:17:05.357173",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:18:48.869107",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:19:04.739745",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:20:46.015029",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:21:56.842856",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:21:57.913942",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:22:50.105347",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:23:42.753610",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:24:52.168475",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:25:08.935364",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:25:42.533842",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:26:50.990178",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:28:19.026649",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:28:52.315132",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:29:42.914703",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:31:04.450695",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:32:13.072590",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:32:47.549216",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:33:19.844344",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:33:54.730155",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:34:04.798515",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:35:44.898263",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:36:01.692486",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:36:56.600698",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:37:49.068951",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:38:04.787549",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:38:41.504055",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:39:14.778435",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:40:04.605176",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:41:12.679350",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:41:47.465488",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:42:56.140721",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:42:56.586683",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:44:20.119084",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:44:53.734461",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:45:43.796891",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:46:52.155328",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:47:42.442766",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:48:51.974373",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:49:08.785822",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:49:42.794882",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:50:50.408325",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:52:16.016234",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:52:49.881069",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:53:10.155423",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:53:44.041417",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:55:05.069558",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:56:54.869278",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:57:12.388081",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:57:47.334157",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:58:20.500153",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:59:05.845474",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:59:41.517349",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T14:59:44.130087",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:01:42.217040",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:01:42.341620",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:02:16.640018",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:02:52.174033",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:02:52.820227",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:04:19.928131",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:05:05.573227",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:05:43.842101",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:06:19.430486",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:06:54.945492",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:07:05.973865",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:07:44.343361",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:08:55.148319",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:09:48.204799",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:10:41.667102",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:10:43.944411",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:12:11.609955",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:12:47.470351",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:13:58.760025",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:14:52.997618",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:15:46.688302",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:15:48.891791",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:16:42.759902",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:17:53.154269",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:18:42.176356",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:19:18.245338",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:20:06.118349",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:20:40.831372",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:21:55.293802",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:22:05.450219",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:22:42.152935",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:23:51.464816",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:24:42.315201",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:24:43.372907",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:25:17.019020",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:25:52.159245",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:25:52.415065",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:26:43.903718",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:27:18.847871",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:29:21.509899",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:29:57.268757",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:30:40.523490",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:31:16.400890",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:31:51.913790",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:31:52.302293",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:32:44.312527",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:33:55.300749",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:34:12.381830",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:34:47.151534",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:35:21.595365",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:35:56.285343",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:35:58.004704",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:36:49.598173",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:38:06.531915",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:38:43.033992",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:39:51.724522",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:40:10.132749",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:41:02.290967",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:41:20.039329",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:42:12.133648",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:42:49.047367",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    },
+    {
+      "timestamp": "2025-10-07T15:43:05.408086",
+      "decision": {
+        "action": "HOLD",
+        "symbol": null,
+        "confidence": 0.0,
+        "reasoning": [
+          "No strong technical signals found",
+          "Waiting for better setup"
+        ],
+        "position_size": 0
+      },
+      "executed": true
+    }
+  ],
+  "learning_state": {
+    "win_streak": 0,
+    "loss_streak": 0,
+    "risk_multiplier": 1.0
+  },
+  "demo_capital": 0.019999999999999796
+}

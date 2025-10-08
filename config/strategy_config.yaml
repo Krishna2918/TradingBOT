@@ -1,0 +1,122 @@
+# Strategy Configuration - Canadian Markets
+strategies:
+  momentum_scalping:
+    enabled: true
+    allocation: 0.25
+    max_leverage: 2.0
+    instruments:
+      - "RY.TO"    # Royal Bank
+      - "TD.TO"    # TD Bank
+      - "SHOP.TO"  # Shopify
+      - "CNR.TO"   # CN Railway
+      - "CP.TO"    # CP Railway
+    signals:
+      vwap_deviation: 0.5  # %
+      volume_spike: 2.0    # x average
+      rsi_threshold: 70    # overbought/oversold
+    risk:
+      stop_loss: 0.3       # %
+      take_profit: 0.6     # %
+      max_holding_time: 15 # minutes
+  
+  news_volatility:
+    enabled: true
+    allocation: 0.20
+    max_leverage: 1.5
+    instruments:
+      - "SU.TO"    # Suncor Energy
+      - "ENB.TO"   # Enbridge
+      - "TRP.TO"   # TC Energy
+      - "ABX.TO"   # Barrick Gold
+      - "WCN.TO"   # Waste Connections
+    signals:
+      news_sentiment_threshold: 0.7
+      volatility_spike: 1.5  # x average
+      volume_surge: 3.0      # x average
+    risk:
+      stop_loss: 0.5       # %
+      take_profit: 1.0     # %
+      max_holding_time: 45 # minutes
+  
+  gamma_oi_squeeze:
+    enabled: true
+    allocation: 0.15
+    max_leverage: 3.0
+    instruments:
+      - "TSX"      # TSX Index
+      - "TSX60"    # TSX 60 Index
+      - "RY.TO"    # Royal Bank options
+      - "TD.TO"    # TD Bank options
+    signals:
+      oi_increase: 30      # % in 15 minutes
+      gamma_exposure: 0.8
+      put_call_ratio: 0.7
+    risk:
+      stop_loss: 0.8       # %
+      take_profit: 1.5     # %
+      max_holding_time: 90 # minutes
+  
+  arbitrage:
+    enabled: true
+    allocation: 0.20
+    max_leverage: 1.0
+    instruments:
+      - "TSX"      # TSX Index
+      - "TSX60"    # TSX 60 Index
+      - "SPY"      # S&P 500 ETF
+      - "QQQ"      # NASDAQ ETF
+    signals:
+      tsx_spy_spread: 0.1  # %
+      futures_cash_basis: 0.05  # %
+      cross_currency_arb: 0.02  # %
+    risk:
+      stop_loss: 0.1       # %
+      take_profit: 0.2     # %
+      max_holding_time: 10 # minutes
+  
+  ai_ml_patterns:
+    enabled: true
+    allocation: 0.20
+    max_leverage: 1.8
+    instruments:
+      - "RY.TO"    # Royal Bank
+      - "TD.TO"    # TD Bank
+      - "SHOP.TO"  # Shopify
+      - "CNR.TO"   # CN Railway
+      - "CP.TO"    # CP Railway
+      - "ENB.TO"   # Enbridge
+      - "TRP.TO"   # TC Energy
+    signals:
+      ml_confidence: 0.8
+      pattern_score: 0.75
+      sentiment_alignment: 0.7
+    risk:
+      stop_loss: 0.4       # %
+      take_profit: 0.8     # %
+      max_holding_time: 120 # minutes
+
+# Canadian Market Specific Parameters
+market_parameters:
+  timezone: "America/Toronto"
+  currency: "CAD"
+  trading_hours:
+    pre_market: "07:00"
+    open: "09:30"
+    close: "16:00"
+    post_market: "16:30"
+  
+  sector_weights:
+    financials: 0.35      # Banks, Insurance
+    energy: 0.20          # Oil & Gas
+    materials: 0.15       # Mining, Forestry
+    industrials: 0.10     # Railways, Airlines
+    technology: 0.08      # Shopify, etc.
+    utilities: 0.07       # Power, Gas
+    consumer: 0.05        # Retail, Food
+  
+  volatility_factors:
+    oil_prices: 0.3       # WTI Crude impact
+    gold_prices: 0.2      # Gold impact
+    usd_cad: 0.25         # Currency impact
+    us_markets: 0.15      # S&P 500 correlation
+    bank_of_canada: 0.1   # Interest rate impact

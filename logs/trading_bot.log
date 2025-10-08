@@ -1,0 +1,196 @@
+2025-09-12 10:31:44,781 - strategies.ai_ml_patterns - INFO - Initialized ML models for 7 instruments
+2025-09-12 10:31:44,781 - strategies.strategy_manager - INFO - Initialized 5 trading strategies
+2025-09-12 10:31:44,838 - risk_management.leverage_governance - INFO - Leverage adjusted from 2.0 to 1.6 (VIX: 22.0)
+2025-09-12 10:31:44,843 - risk_management.kill_switches - CRITICAL - KILL SWITCH ACTIVATED: test_activation (Source: main)
+2025-09-12 10:31:45,213 - risk_management.kill_switches - INFO - Kill switch deactivated: test_complete
+2025-09-12 10:31:45,213 - risk_management.kill_switches - INFO - Executing recovery action: verify_system_health
+2025-09-12 10:31:45,213 - risk_management.kill_switches - INFO - Executing recovery action: check_risk_metrics
+2025-09-12 10:31:45,213 - risk_management.kill_switches - INFO - Executing recovery action: resume_trading_gradually
+2025-09-12 10:31:45,213 - risk_management.kill_switches - INFO - Executing recovery action: monitor_performance
+2025-09-12 10:31:45,213 - risk_management.capital_allocation - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-09-12 10:31:45,213 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VTI
+2025-09-12 10:31:45,213 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VEA
+2025-09-12 10:31:45,224 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VWO
+2025-09-12 10:31:45,224 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of BND
+2025-09-12 10:31:45,224 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VXUS
+2025-09-12 10:31:45,224 - data_pipeline.collectors.canadian_market_collector - INFO - Starting Canadian market data collection...
+2025-09-12 10:31:46,351 - yfinance - ERROR - HTTP Error 404: 
+2025-09-12 10:31:46,729 - yfinance - ERROR - $^TX60: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+2025-09-12 10:31:47,676 - data_pipeline.collectors.canadian_market_collector - INFO - Collected TSX data for 4 symbols
+2025-09-12 10:31:48,066 - data_pipeline.collectors.canadian_market_collector - INFO - Collected 1 news items
+2025-09-12 10:31:48,758 - data_pipeline.collectors.canadian_market_collector - INFO - Collected BOC data: ['exchange_rates']
+2025-09-12 10:31:49,520 - data_pipeline.collectors.canadian_market_collector - INFO - Collected commodity prices: ['oil_wti', 'gold']
+2025-09-12 10:31:49,738 - data_pipeline.collectors.canadian_market_collector - INFO - Collected weather data
+2025-09-12 10:31:49,790 - data_pipeline.collectors.canadian_market_collector - INFO - Canadian market data collection completed
+2025-09-12 10:31:50,709 - strategies.momentum_scalping - INFO - Generated 0 momentum signals
+2025-09-12 10:31:50,821 - strategies.news_volatility - INFO - Generated 0 news-volatility signals
+2025-09-12 10:31:50,825 - strategies.gamma_oi_squeeze - INFO - Generated 0 gamma/OI squeeze signals
+2025-09-12 10:31:50,923 - strategies.arbitrage - INFO - Generated 0 arbitrage signals
+2025-09-12 10:31:51,151 - strategies.ai_ml_patterns - INFO - Generated 0 ML pattern signals
+2025-09-12 10:31:51,359 - strategies.strategy_manager - INFO - Generated 0 total signals across all strategies
+2025-09-12 10:31:52,886 - execution.etf_allocator - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-09-12 10:31:52,893 - execution.etf_allocator - INFO - Created ETF allocation: 0.8000 shares of VTI at $250.00
+2025-09-12 10:31:52,931 - execution.etf_allocator - INFO - Created ETF allocation: 4.3956 shares of VEA at $45.50
+2025-09-12 10:31:52,943 - execution.etf_allocator - INFO - Created ETF allocation: 4.6784 shares of VWO at $42.75
+2025-09-12 10:31:52,952 - execution.etf_allocator - INFO - Created ETF allocation: 2.6578 shares of BND at $75.25
+2025-09-12 10:31:52,959 - execution.etf_allocator - INFO - Created ETF allocation: 3.5842 shares of VXUS at $55.80
+2025-09-12 10:31:53,055 - execution.etf_allocator - INFO - Created 5 ETF allocations
+2025-09-12 10:31:53,149 - __main__ - INFO -    • Momentum Scalping 2.0
+2025-09-12 10:31:53,149 - __main__ - INFO -    • News-Volatility
+2025-09-12 10:31:53,149 - __main__ - INFO -    • Gamma/OI Squeeze
+2025-09-12 10:31:53,149 - __main__ - INFO -    • Arbitrage/Latency
+2025-09-12 10:31:53,149 - __main__ - INFO -    • AI/ML Pattern Discovery
+2025-10-07 12:41:03,328 - __main__ - INFO -  Starting Trading Bot...
+2025-10-07 12:41:03,328 - __main__ - INFO -  Initializing Risk Management...
+2025-10-07 12:41:03,337 - strategies.ai_ml_patterns - INFO - Initialized ML models for 7 instruments
+2025-10-07 12:41:03,337 - strategies.strategy_manager - INFO - Initialized 5 trading strategies
+2025-10-07 12:41:03,346 - __main__ - INFO -  All components initialized successfully
+2025-10-07 12:41:03,346 - __main__ - INFO -  Capital State: $0 CAD total, $0 CAD active
+2025-10-07 12:41:03,347 - __main__ - INFO -  Leverage State: 2.0x current, 4.0x max
+2025-10-07 12:41:03,347 - __main__ - INFO -  VIX Level: 15.0
+2025-10-07 12:41:03,347 - __main__ - INFO -  Testing basic functionality...
+2025-10-07 12:41:03,347 - __main__ - INFO -  Test Position Size: $10,000 CAD
+2025-10-07 12:41:03,347 - risk_management.leverage_governance - INFO - Leverage adjusted from 2.0 to 1.6 (VIX: 22.0)
+2025-10-07 12:41:03,347 - __main__ - INFO -  VIX 22.0 -> Leverage: 1.6x
+2025-10-07 12:41:03,347 - risk_management.kill_switches - CRITICAL - KILL SWITCH ACTIVATED: test_activation (Source: main)
+2025-10-07 12:41:03,347 - __main__ - INFO -  Kill Switch Active: True
+2025-10-07 12:41:03,347 - risk_management.kill_switches - INFO - Kill switch deactivated: test_complete
+2025-10-07 12:41:03,348 - risk_management.kill_switches - INFO - Executing recovery action: verify_system_health
+2025-10-07 12:41:03,348 - risk_management.kill_switches - INFO - Executing recovery action: check_risk_metrics
+2025-10-07 12:41:03,348 - risk_management.kill_switches - INFO - Executing recovery action: resume_trading_gradually
+2025-10-07 12:41:03,348 - risk_management.kill_switches - INFO - Executing recovery action: monitor_performance
+2025-10-07 12:41:03,348 - __main__ - INFO -  Kill Switch Deactivated: False
+2025-10-07 12:41:03,348 - __main__ - INFO -  Testing ETF allocation...
+2025-10-07 12:41:03,348 - risk_management.capital_allocation - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-10-07 12:41:03,348 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VTI
+2025-10-07 12:41:03,349 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VEA
+2025-10-07 12:41:03,349 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VWO
+2025-10-07 12:41:03,349 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of BND
+2025-10-07 12:41:03,349 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VXUS
+2025-10-07 12:41:03,349 - __main__ - INFO -  ETF Allocation Summary: {'total_profits': 5000.0, 'etf_invested': 1000.0, 'etf_percentage': 0.2, 'etf_targets': ['VTI', 'VEA', 'VWO', 'BND', 'VXUS'], 'rebalance_frequency': 'weekly'}
+2025-10-07 12:41:03,349 - __main__ - INFO -  Testing data collection...
+2025-10-07 12:41:03,349 - data_pipeline.collectors.canadian_market_collector - INFO - Starting Canadian market data collection...
+2025-10-07 12:41:03,655 - yfinance - ERROR - Failed to get ticker '^GSPTSE' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:03,910 - yfinance - ERROR - ^GSPTSE: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:04,322 - yfinance - ERROR - Failed to get ticker '^TX60' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:04,662 - yfinance - ERROR - ^TX60: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:04,935 - yfinance - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:05,200 - yfinance - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:05,591 - yfinance - ERROR - Failed to get ticker 'TD.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:05,825 - yfinance - ERROR - TD.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:06,224 - yfinance - ERROR - Failed to get ticker 'SHOP.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:06,548 - yfinance - ERROR - SHOP.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:06,549 - data_pipeline.collectors.canadian_market_collector - INFO - Collected TSX data for 0 symbols
+2025-10-07 12:41:08,345 - data_pipeline.collectors.canadian_market_collector - INFO - Collected 1 news items
+2025-10-07 12:41:09,281 - data_pipeline.collectors.canadian_market_collector - INFO - Collected BOC data: ['exchange_rates']
+2025-10-07 12:41:09,533 - yfinance - ERROR - Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:09,781 - yfinance - ERROR - CL=F: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:10,035 - yfinance - ERROR - Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:10,287 - yfinance - ERROR - GC=F: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:10,288 - data_pipeline.collectors.canadian_market_collector - INFO - Collected commodity prices: []
+2025-10-07 12:41:10,546 - data_pipeline.collectors.canadian_market_collector - INFO - Collected weather data
+2025-10-07 12:41:10,546 - data_pipeline.collectors.canadian_market_collector - INFO - Canadian market data collection completed
+2025-10-07 12:41:10,546 - __main__ - INFO -  Collected data for 0 symbols
+2025-10-07 12:41:10,546 - __main__ - INFO -  Testing strategy analysis...
+2025-10-07 12:41:10,547 - strategies.momentum_scalping - INFO - Generated 0 momentum signals
+2025-10-07 12:41:10,547 - strategies.news_volatility - INFO - Generated 0 news-volatility signals
+2025-10-07 12:41:10,547 - strategies.gamma_oi_squeeze - INFO - Generated 0 gamma/OI squeeze signals
+2025-10-07 12:41:10,547 - strategies.arbitrage - INFO - Generated 0 arbitrage signals
+2025-10-07 12:41:10,547 - strategies.ai_ml_patterns - INFO - Generated 0 ML pattern signals
+2025-10-07 12:41:10,547 - strategies.strategy_manager - INFO - Generated 0 total signals across all strategies
+2025-10-07 12:41:10,547 - __main__ - INFO -  Generated 0 trading signals
+2025-10-07 12:41:10,547 - __main__ - INFO -  Testing ETF allocation with profits...
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created ETF allocation: 0.8000 shares of VTI at $250.00
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created ETF allocation: 4.3956 shares of VEA at $45.50
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created ETF allocation: 4.6784 shares of VWO at $42.75
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created ETF allocation: 2.6578 shares of BND at $75.25
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created ETF allocation: 3.5842 shares of VXUS at $55.80
+2025-10-07 12:41:10,547 - execution.etf_allocator - INFO - Created 5 ETF allocations
+2025-10-07 12:41:10,547 - __main__ - INFO -  Created 5 ETF allocations
+2025-10-07 12:41:10,548 - __main__ - INFO -  Strategy Summary: 5 strategies, 0 positions
+2025-10-07 12:41:10,548 - __main__ - INFO -  Trading Bot initialization completed successfully!
+2025-10-07 12:41:10,548 - __main__ - INFO -  Ready for trading operations
+2025-10-07 12:41:10,548 - __main__ - INFO -  All 5 strategies operational:
+2025-10-07 12:41:10,548 - __main__ - INFO -    • Momentum Scalping 2.0
+2025-10-07 12:41:10,548 - __main__ - INFO -    • News-Volatility
+2025-10-07 12:41:10,548 - __main__ - INFO -    • Gamma/OI Squeeze
+2025-10-07 12:41:10,548 - __main__ - INFO -    • Arbitrage/Latency
+2025-10-07 12:41:10,548 - __main__ - INFO -    • AI/ML Pattern Discovery
+2025-10-07 12:41:20,852 - __main__ - INFO -  Starting Trading Bot...
+2025-10-07 12:41:20,852 - __main__ - INFO -  Initializing Risk Management...
+2025-10-07 12:41:20,863 - strategies.ai_ml_patterns - INFO - Initialized ML models for 7 instruments
+2025-10-07 12:41:20,863 - strategies.strategy_manager - INFO - Initialized 5 trading strategies
+2025-10-07 12:41:20,871 - __main__ - INFO -  All components initialized successfully
+2025-10-07 12:41:20,871 - __main__ - INFO -  Capital State: $0 CAD total, $0 CAD active
+2025-10-07 12:41:20,871 - __main__ - INFO -  Leverage State: 2.0x current, 4.0x max
+2025-10-07 12:41:20,871 - __main__ - INFO -  VIX Level: 15.0
+2025-10-07 12:41:20,871 - __main__ - INFO -  Testing basic functionality...
+2025-10-07 12:41:20,871 - __main__ - INFO -  Test Position Size: $10,000 CAD
+2025-10-07 12:41:20,871 - risk_management.leverage_governance - INFO - Leverage adjusted from 2.0 to 1.6 (VIX: 22.0)
+2025-10-07 12:41:20,871 - __main__ - INFO -  VIX 22.0 -> Leverage: 1.6x
+2025-10-07 12:41:20,871 - risk_management.kill_switches - CRITICAL - KILL SWITCH ACTIVATED: test_activation (Source: main)
+2025-10-07 12:41:20,871 - __main__ - INFO -  Kill Switch Active: True
+2025-10-07 12:41:20,871 - risk_management.kill_switches - INFO - Kill switch deactivated: test_complete
+2025-10-07 12:41:20,871 - risk_management.kill_switches - INFO - Executing recovery action: verify_system_health
+2025-10-07 12:41:20,871 - risk_management.kill_switches - INFO - Executing recovery action: check_risk_metrics
+2025-10-07 12:41:20,871 - risk_management.kill_switches - INFO - Executing recovery action: resume_trading_gradually
+2025-10-07 12:41:20,871 - risk_management.kill_switches - INFO - Executing recovery action: monitor_performance
+2025-10-07 12:41:20,871 - __main__ - INFO -  Kill Switch Deactivated: False
+2025-10-07 12:41:20,872 - __main__ - INFO -  Testing ETF allocation...
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VTI
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VEA
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VWO
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of BND
+2025-10-07 12:41:20,872 - risk_management.capital_allocation - INFO - Triggering purchase of $200.00 CAD of VXUS
+2025-10-07 12:41:20,872 - __main__ - INFO -  ETF Allocation Summary: {'total_profits': 5000.0, 'etf_invested': 1000.0, 'etf_percentage': 0.2, 'etf_targets': ['VTI', 'VEA', 'VWO', 'BND', 'VXUS'], 'rebalance_frequency': 'weekly'}
+2025-10-07 12:41:20,872 - __main__ - INFO -  Testing data collection...
+2025-10-07 12:41:20,872 - data_pipeline.collectors.canadian_market_collector - INFO - Starting Canadian market data collection...
+2025-10-07 12:41:21,178 - yfinance - ERROR - Failed to get ticker '^GSPTSE' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:21,503 - yfinance - ERROR - ^GSPTSE: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:21,783 - yfinance - ERROR - Failed to get ticker '^TX60' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:22,060 - yfinance - ERROR - ^TX60: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:22,347 - yfinance - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:22,611 - yfinance - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:22,919 - yfinance - ERROR - Failed to get ticker 'TD.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:23,201 - yfinance - ERROR - TD.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:23,444 - yfinance - ERROR - Failed to get ticker 'SHOP.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:23,761 - yfinance - ERROR - SHOP.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:23,762 - data_pipeline.collectors.canadian_market_collector - INFO - Collected TSX data for 0 symbols
+2025-10-07 12:41:24,450 - data_pipeline.collectors.canadian_market_collector - INFO - Collected 1 news items
+2025-10-07 12:41:24,803 - data_pipeline.collectors.canadian_market_collector - INFO - Collected BOC data: ['exchange_rates']
+2025-10-07 12:41:25,055 - yfinance - ERROR - Failed to get ticker 'CL=F' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:25,305 - yfinance - ERROR - CL=F: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:25,569 - yfinance - ERROR - Failed to get ticker 'GC=F' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-07 12:41:25,819 - yfinance - ERROR - GC=F: No price data found, symbol may be delisted (period=1d)
+2025-10-07 12:41:25,820 - data_pipeline.collectors.canadian_market_collector - INFO - Collected commodity prices: []
+2025-10-07 12:41:26,091 - data_pipeline.collectors.canadian_market_collector - INFO - Collected weather data
+2025-10-07 12:41:26,091 - data_pipeline.collectors.canadian_market_collector - INFO - Canadian market data collection completed
+2025-10-07 12:41:26,091 - __main__ - INFO -  Collected data for 0 symbols
+2025-10-07 12:41:26,091 - __main__ - INFO -  Testing strategy analysis...
+2025-10-07 12:41:26,091 - strategies.momentum_scalping - INFO - Generated 0 momentum signals
+2025-10-07 12:41:26,091 - strategies.news_volatility - INFO - Generated 0 news-volatility signals
+2025-10-07 12:41:26,091 - strategies.gamma_oi_squeeze - INFO - Generated 0 gamma/OI squeeze signals
+2025-10-07 12:41:26,091 - strategies.arbitrage - INFO - Generated 0 arbitrage signals
+2025-10-07 12:41:26,091 - strategies.ai_ml_patterns - INFO - Generated 0 ML pattern signals
+2025-10-07 12:41:26,091 - strategies.strategy_manager - INFO - Generated 0 total signals across all strategies
+2025-10-07 12:41:26,091 - __main__ - INFO -  Generated 0 trading signals
+2025-10-07 12:41:26,092 - __main__ - INFO -  Testing ETF allocation with profits...
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Allocating $1,000.00 CAD (20.0%) to ETFs from $5,000.00 CAD profit
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created ETF allocation: 0.8000 shares of VTI at $250.00
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created ETF allocation: 4.3956 shares of VEA at $45.50
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created ETF allocation: 4.6784 shares of VWO at $42.75
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created ETF allocation: 2.6578 shares of BND at $75.25
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created ETF allocation: 3.5842 shares of VXUS at $55.80
+2025-10-07 12:41:26,092 - execution.etf_allocator - INFO - Created 5 ETF allocations
+2025-10-07 12:41:26,092 - __main__ - INFO -  Created 5 ETF allocations
+2025-10-07 12:41:26,092 - __main__ - INFO -  Strategy Summary: 5 strategies, 0 positions
+2025-10-07 12:41:26,092 - __main__ - INFO -  Trading Bot initialization completed successfully!
+2025-10-07 12:41:26,092 - __main__ - INFO -  Ready for trading operations
+2025-10-07 12:41:26,092 - __main__ - INFO -  All 5 strategies operational:
+2025-10-07 12:41:26,092 - __main__ - INFO -    • Momentum Scalping 2.0
+2025-10-07 12:41:26,092 - __main__ - INFO -    • News-Volatility
+2025-10-07 12:41:26,092 - __main__ - INFO -    • Gamma/OI Squeeze
+2025-10-07 12:41:26,092 - __main__ - INFO -    • Arbitrage/Latency
+2025-10-07 12:41:26,092 - __main__ - INFO -    • AI/ML Pattern Discovery

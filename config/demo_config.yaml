@@ -1,0 +1,198 @@
+# Demo/Practice Mode Configuration
+# Real Canadian market data + Simulated AI trading
+
+demo_mode:
+  enabled: true
+  duration_days: 7  # 1 week trial run
+  start_date: null  # Will be set when demo starts
+  
+  # Starting Capital for Demo Account
+  starting_capital:
+    total: 50000  # $50K CAD starting capital for demo
+    cash: 50000
+    currency: "CAD"
+    
+  # Real Market Data Sources (Canadian Markets)
+  market_data:
+    use_real_prices: true  # Use actual TSX/Canadian market prices
+    data_sources:
+      - "yahoo_finance"  # Free real-time data
+      - "questrade_quotes"  # If available
+      - "alpha_vantage"  # Backup source
+    
+    # Canadian market symbols to track
+    symbols:
+      large_caps:
+        - "RY.TO"      # Royal Bank of Canada
+        - "TD.TO"      # TD Bank
+        - "BMO.TO"     # Bank of Montreal
+        - "SHOP.TO"    # Shopify
+        - "CNR.TO"     # Canadian National Railway
+        - "ENB.TO"     # Enbridge
+        - "SU.TO"      # Suncor Energy
+        - "CP.TO"      # Canadian Pacific Railway
+        - "TRP.TO"     # TC Energy
+        - "ABX.TO"     # Barrick Gold
+      
+      mid_caps:
+        - "WCN.TO"     # Waste Connections
+        - "AEM.TO"     # Agnico Eagle Mines
+        - "QSR.TO"     # Restaurant Brands
+        - "ATD.TO"     # Alimentation Couche-Tard
+        - "NTR.TO"     # Nutrien
+    
+    indices:
+      - "^GSPTSE"    # S&P/TSX Composite Index
+      - "^TX60"      # S&P/TSX 60 Index
+    
+    refresh_rate_seconds: 5  # Update prices every 5 seconds
+  
+  # AI Trading Control
+  ai_trading:
+    enabled: true
+    auto_execute: true  # AI executes trades automatically in demo
+    
+    # All 5 Strategies Active
+    strategies:
+      momentum_scalping:
+        enabled: true
+        capital_allocation: 0.20  # 20% of capital
+        max_positions: 5
+        holding_period_minutes: 15-60
+        
+      news_volatility:
+        enabled: true
+        capital_allocation: 0.20  # 20% of capital
+        max_positions: 3
+        holding_period_minutes: 30-120
+        
+      gamma_oi_squeeze:
+        enabled: true
+        capital_allocation: 0.15  # 15% of capital
+        max_positions: 2
+        holding_period_minutes: 60-240
+        
+      arbitrage:
+        enabled: true
+        capital_allocation: 0.15  # 15% of capital
+        max_positions: 4
+        holding_period_minutes: 5-30
+        
+      ai_ml_patterns:
+        enabled: true
+        capital_allocation: 0.30  # 30% of capital
+        max_positions: 6
+        holding_period_minutes: 30-180
+    
+    # Trading hours (EST - Canadian market hours)
+    trading_hours:
+      timezone: "America/Toronto"
+      market_open: "09:30"
+      market_close: "16:00"
+      
+      # Pre-market and after-hours (optional)
+      pre_market_start: "08:00"
+      after_hours_end: "17:00"
+      
+      trading_days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  
+  # Risk Management (Demo-specific)
+  risk_management:
+    max_position_size: 0.10  # Max 10% per position
+    max_daily_loss: 0.05  # Stop trading if -5% in a day
+    max_total_loss: 0.15  # Stop demo if -15% total
+    
+    # Anti-Martingale (increase position size on wins)
+    anti_martingale:
+      enabled: true
+      win_multiplier: 1.2
+      max_multiplier: 2.0
+    
+    # Stop loss and take profit
+    stop_loss_percent: 0.03  # 3% stop loss per trade
+    take_profit_percent: 0.05  # 5% take profit per trade
+  
+  # Performance Tracking
+  tracking:
+    log_all_trades: true
+    log_all_signals: true
+    log_all_decisions: true
+    
+    # Daily reports
+    daily_report:
+      enabled: true
+      send_time: "16:30"  # After market close
+      email: null  # Set your email
+      telegram: null  # Set your Telegram
+    
+    # Metrics to track
+    metrics:
+      - "total_pnl"
+      - "win_rate"
+      - "avg_win"
+      - "avg_loss"
+      - "sharpe_ratio"
+      - "max_drawdown"
+      - "total_trades"
+      - "best_strategy"
+      - "worst_strategy"
+      - "daily_returns"
+  
+  # ETF Allocation (20% of profits)
+  etf_allocation:
+    enabled: true
+    profit_percentage: 0.20
+    
+    # Canadian ETFs to allocate to
+    etfs:
+      - symbol: "VCN.TO"   # Vanguard FTSE Canada All Cap Index
+        allocation: 0.40
+      - symbol: "XAW.TO"   # iShares Core MSCI All Country World ex Canada
+        allocation: 0.30
+      - symbol: "ZAG.TO"   # BMO Aggregate Bond Index
+        allocation: 0.20
+      - symbol: "VDY.TO"   # Vanguard FTSE Canadian High Dividend Yield
+        allocation: 0.10
+    
+    rebalance_frequency: "weekly"
+    min_profit_threshold: 100  # Min $100 profit before allocation
+
+  # Simulation Settings
+  simulation:
+    slippage: 0.001  # 0.1% slippage per trade
+    commission: 0  # $0 commission (most Canadian brokers now)
+    market_impact: 0.0005  # 0.05% market impact for large orders
+    
+    # Order execution simulation
+    order_execution:
+      fill_probability: 0.95  # 95% chance orders fill
+      partial_fill_probability: 0.05  # 5% chance of partial fill
+      execution_delay_seconds: 1-3  # 1-3 second delay
+  
+  # End-of-Demo Actions
+  end_of_demo:
+    generate_report: true
+    save_results: true
+    recommend_live_trading: true  # Based on performance
+    
+    # Criteria to recommend going live
+    live_trading_criteria:
+      min_total_return: 0.02  # At least 2% return
+      max_drawdown: 0.10  # Max 10% drawdown
+      min_win_rate: 0.55  # At least 55% win rate
+      min_sharpe_ratio: 1.0  # At least 1.0 Sharpe ratio
+
+# Market Data API Keys (Free tiers)
+api_keys:
+  alpha_vantage: "demo"  # Get free key from alphavantage.co
+  yahoo_finance: null  # No key needed
+  newsapi: "demo"  # Get free key from newsapi.org
+  
+# Logging
+logging:
+  level: "INFO"
+  save_to_file: true
+  file_path: "logs/demo_trading.log"
+  max_file_size_mb: 100
+  backup_count: 7  # Keep 7 days of logs
+

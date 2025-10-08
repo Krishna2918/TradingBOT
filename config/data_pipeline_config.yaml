@@ -1,0 +1,396 @@
+# Data Pipeline Configuration - Canadian Market Research Plan
+
+data_pipeline:
+  # Database configuration
+  database:
+    type: "duckdb"
+    path: "data/market_data.duckdb"
+    backup_frequency: "daily"
+    retention_days: 365
+  
+  # Cache configuration
+  cache:
+    type: "redis"
+    host: "localhost"
+    port: 6379
+    db: 0
+    ttl_seconds: 300  # 5 minutes default TTL
+  
+  # Data sources
+  sources:
+    tsx_tsxv:
+      primary: "yahoo_finance"
+      backup: "alpha_vantage"
+      symbols:
+        # Penny stocks (2% bucket)
+        penny_stocks:
+          - "AI.TO"    # Artificial Intelligence stocks
+          - "HUT.TO"   # Hut 8 Mining
+          - "BITF.TO"  # Bitfarms
+          - "GLXY.TO"  # Galaxy Digital
+          - "QBTC.TO"  # Bitcoin ETF
+        
+        # Futures/Options (5% bucket)
+        futures_options:
+          - "XIU.TO"   # iShares S&P/TSX 60 Index ETF
+          - "XSP.TO"   # iShares Core S&P 500 Index ETF
+          - "XEG.TO"   # iShares S&P/TSX Capped Energy Index ETF
+          - "XFN.TO"   # iShares S&P/TSX Capped Financials Index ETF
+          - "XIT.TO"   # iShares S&P/TSX Capped Information Technology Index ETF
+        
+        # Core holdings (90% bucket)
+        core_holdings:
+          - "RY.TO"    # Royal Bank of Canada
+          - "TD.TO"    # TD Bank
+          - "BMO.TO"   # Bank of Montreal
+          - "SHOP.TO"  # Shopify
+          - "CNR.TO"   # Canadian National Railway
+          - "ENB.TO"   # Enbridge
+          - "SU.TO"    # Suncor Energy
+          - "CP.TO"    # Canadian Pacific Railway
+          - "TRP.TO"   # TC Energy
+          - "ABX.TO"   # Barrick Gold
+          - "WCN.TO"   # Waste Connections
+          - "AEM.TO"   # Agnico Eagle Mines
+          - "QSR.TO"   # Restaurant Brands
+          - "ATD.TO"   # Alimentation Couche-Tard
+          - "NTR.TO"   # Nutrien
+        
+        # SIP target
+        sip_target:
+          - "VFV.TO"   # Vanguard S&P 500 Index ETF
+    
+    # Market indices
+    indices:
+      - "^GSPTSE"    # S&P/TSX Composite Index
+      - "^TX60"      # S&P/TSX 60 Index
+      - "^VIX"       # VIX (volatility)
+      - "CL=F"       # WTI Crude Oil
+      - "CADUSD=X"   # USD/CAD exchange rate
+  
+  # Data collection settings
+  collection:
+    # Timeframes
+    timeframes:
+      - "1m"   # 1-minute bars
+      - "5m"   # 5-minute bars
+      - "1d"   # Daily bars
+    
+    # Collection frequency
+    frequency:
+      bars_1m: 60     # Every 60 seconds
+      bars_5m: 300    # Every 5 minutes
+      bars_daily: 86400  # Daily at market close
+      options: 300    # Every 5 minutes
+      macro: 3600     # Every hour
+      sentiment: 1800 # Every 30 minutes
+    
+    # Data quality requirements
+    quality:
+      max_missing_rate: 0.001  # 0.1% maximum missing data
+      max_staleness_minutes: 5  # 5 minutes maximum staleness
+      min_volume_threshold: 1000  # Minimum volume for penny stocks
+      max_spread_percent: 0.02   # 2% maximum spread for penny stocks
+  
+  # Technical indicators
+  technical_indicators:
+    # Momentum indicators
+    momentum:
+      rsi:
+        period: 14
+        overbought: 70
+        oversold: 30
+      
+      macd:
+        fast_period: 12
+        slow_period: 26
+        signal_period: 9
+      
+      stochastic:
+        k_period: 14
+        d_period: 3
+    
+    # Trend indicators
+    trend:
+      sma:
+        periods: [20, 50, 200]
+      
+      ema:
+        periods: [12, 26, 50]
+      
+      bollinger_bands:
+        period: 20
+        std_dev: 2
+    
+    # Volume indicators
+    volume:
+      vwap:
+        period: 20
+      
+      volume_sma:
+        period: 20
+      
+      on_balance_volume: true
+    
+    # Volatility indicators
+    volatility:
+      atr:
+        period: 14
+      
+      bollinger_percent:
+        period: 20
+        std_dev: 2
+      
+      keltner_channels:
+        period: 20
+        multiplier: 2
+  
+  # Options data
+  options:
+    enabled: true
+    data_sources:
+      - "yahoo_finance"  # Limited options data
+      - "alpha_vantage"  # More comprehensive (paid)
+    
+    # Options metrics to track
+    metrics:
+      - "open_interest"
+      - "implied_volatility"
+      - "gamma"
+      - "delta"
+      - "theta"
+      - "vega"
+      - "put_call_ratio"
+      - "gamma_density"
+    
+    # Options analysis
+    analysis:
+      gamma_squeeze_detection: true
+      unusual_options_activity: true
+      max_pain_calculation: true
+      volatility_smile_analysis: true
+  
+  # Macro economic data
+  macro_data:
+    # Bank of Canada
+    bank_of_canada:
+      interest_rate: true
+      monetary_policy: true
+      economic_indicators: true
+    
+    # Commodities
+    commodities:
+      wti_crude_oil: "CL=F"
+      gold: "GC=F"
+      natural_gas: "NG=F"
+      copper: "HG=F"
+    
+    # Currency
+    currency:
+      usd_cad: "CADUSD=X"
+      eur_cad: "EURCAD=X"
+      gbp_cad: "GBPCAD=X"
+    
+    # Economic indicators
+    economic_indicators:
+      canadian_cpi: true
+      unemployment_rate: true
+      gdp_growth: true
+      trade_balance: true
+  
+  # News and sentiment
+  news_sentiment:
+    sources:
+      # Canadian news sources
+      canadian:
+        - "BNN Bloomberg"
+        - "Financial Post"
+        - "Globe and Mail"
+        - "CBC Business"
+        - "CTV News Business"
+      
+      # International sources
+      international:
+        - "Reuters"
+        - "Bloomberg"
+        - "MarketWatch"
+        - "Yahoo Finance"
+        - "Seeking Alpha"
+      
+      # Social media
+      social:
+        - "Reddit r/CanadianInvestor"
+        - "Twitter/X"
+        - "StockTwits"
+    
+    # Sentiment analysis
+    sentiment_analysis:
+      method: "vader"  # VADER sentiment analysis
+      confidence_threshold: 0.6
+      update_frequency: 1800  # 30 minutes
+    
+    # News filtering
+    news_filtering:
+      relevance_keywords:
+        - "earnings"
+        - "merger"
+        - "acquisition"
+        - "dividend"
+        - "split"
+        - "guidance"
+        - "outlook"
+        - "regulatory"
+        - "approval"
+        - "partnership"
+      
+      exclude_keywords:
+        - "rumor"
+        - "speculation"
+        - "unconfirmed"
+        - "alleged"
+  
+  # Data processing
+  processing:
+    # Feature engineering
+    feature_engineering:
+      price_features:
+        - "returns"
+        - "log_returns"
+        - "volatility"
+        - "skewness"
+        - "kurtosis"
+      
+      volume_features:
+        - "volume_ratio"
+        - "volume_ma_ratio"
+        - "volume_price_trend"
+      
+      technical_features:
+        - "rsi"
+        - "macd"
+        - "bollinger_percent"
+        - "atr"
+        - "vwap_deviation"
+      
+      macro_features:
+        - "oil_correlation"
+        - "currency_impact"
+        - "interest_rate_sensitivity"
+        - "sector_rotation"
+    
+    # Data cleaning
+    data_cleaning:
+      handle_missing_data: "forward_fill"
+      outlier_detection: "isolation_forest"
+      outlier_threshold: 0.1
+      data_validation: true
+    
+    # Feature scaling
+    feature_scaling:
+      method: "robust_scaler"  # Robust to outliers
+      fit_period: 252  # 1 year of trading days
+  
+  # Storage and backup
+  storage:
+    # Local storage
+    local:
+      data_directory: "data/"
+      backup_directory: "backups/"
+      log_directory: "logs/"
+    
+    # Cloud backup (optional)
+    cloud:
+      enabled: false
+      provider: "aws_s3"  # or "gcp_storage", "azure_blob"
+      bucket: "trading-bot-data"
+      encryption: true
+    
+    # Data retention
+    retention:
+      bars_1m: 30    # 30 days
+      bars_5m: 90    # 90 days
+      bars_daily: 365  # 1 year
+      options: 30    # 30 days
+      sentiment: 7   # 7 days
+      logs: 30       # 30 days
+  
+  # Monitoring and alerts
+  monitoring:
+    # Data quality monitoring
+    data_quality:
+      check_frequency: 300  # Every 5 minutes
+      alert_thresholds:
+        missing_data_rate: 0.01  # 1%
+        stale_data_minutes: 10   # 10 minutes
+        api_error_rate: 0.05     # 5%
+    
+    # Performance monitoring
+    performance:
+      track_latency: true
+      track_throughput: true
+      track_memory_usage: true
+      track_cpu_usage: true
+    
+    # Alerting
+    alerts:
+      email:
+        enabled: false
+        recipients: []
+      
+      telegram:
+        enabled: false
+        bot_token: ""
+        chat_id: ""
+      
+      slack:
+        enabled: false
+        webhook_url: ""
+  
+  # API configuration
+  api_keys:
+    # Yahoo Finance (free)
+    yahoo_finance: null
+    
+    # ChatGPT API (OpenAI)
+    openai_api_key: "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"
+    
+    # Alpha Vantage (free tier available)
+    alpha_vantage: "MO0XC2VTFZ60NLYS"  # Replace with actual key
+    
+    # News API (free tier available)
+    newsapi: "aa175a7eef1340cab792ab1570fe72e5"  # Replace with actual key
+    
+    # Reddit API (free)
+    reddit:
+      client_id: "demo"
+      client_secret: "demo"
+      user_agent: "TradingBot/1.0"
+  
+  # Rate limiting
+  rate_limits:
+    yahoo_finance:
+      requests_per_minute: 60
+      requests_per_hour: 2000
+    
+    openai_api:
+      requests_per_minute: 50
+      requests_per_hour: 3000
+    
+    alpha_vantage:
+      requests_per_minute: 5
+      requests_per_hour: 500
+    
+    newsapi:
+      requests_per_minute: 30
+      requests_per_hour: 1000
+    
+        
+    finnhub:
+      requests_per_minute: 60
+      requests_per_hour: 900
+    
+reddit:
+      requests_per_minute: 60
+      requests_per_hour: 3600
+
+

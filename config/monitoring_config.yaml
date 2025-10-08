@@ -1,0 +1,175 @@
+# Monitoring Configuration - Canadian Markets
+monitoring:
+  dashboards:
+    risk_dashboard:
+      title: "Canadian Market Risk Dashboard"
+      refresh_rate: 5  # seconds
+      metrics:
+        - capital_allocation
+        - leverage_utilization
+        - drawdown_metrics
+        - vix_levels
+        - sector_exposure
+    
+    performance_dashboard:
+      title: "Trading Performance Dashboard"
+      refresh_rate: 10  # seconds
+      metrics:
+        - daily_pnl
+        - hit_rate
+        - slippage_analysis
+        - strategy_performance
+        - missed_opportunities
+    
+    market_dashboard:
+      title: "Canadian Market Overview"
+      refresh_rate: 30  # seconds
+      metrics:
+        - tsx_levels
+        - sector_rotation
+        - economic_indicators
+        - news_sentiment
+        - weather_impact
+  
+  alerts:
+    email:
+      enabled: true
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      username: "MOCK_EMAIL@gmail.com"
+      password: "MOCK_PASSWORD"
+      recipients:
+        - "trader@example.com"
+        - "risk@example.com"
+    
+    telegram:
+      enabled: true
+      bot_token: "MOCK_TELEGRAM_BOT_TOKEN"
+      chat_id: "MOCK_CHAT_ID"
+    
+    sms:
+      enabled: false
+      provider: "twilio"
+      account_sid: "MOCK_ACCOUNT_SID"
+      auth_token: "MOCK_AUTH_TOKEN"
+      from_number: "+1234567890"
+      to_numbers:
+        - "+1234567890"
+  
+  alert_rules:
+    risk_alerts:
+      - name: "Daily Loss Limit"
+        condition: "daily_pnl < -8000"  # $8K CAD
+        severity: "critical"
+        channels: ["email", "telegram", "sms"]
+      
+      - name: "High Drawdown"
+        condition: "max_drawdown > 0.12"  # 12%
+        severity: "high"
+        channels: ["email", "telegram"]
+      
+      - name: "Margin Utilization"
+        condition: "margin_utilization > 0.80"  # 80%
+        severity: "high"
+        channels: ["email", "telegram"]
+      
+      - name: "Consecutive Losses"
+        condition: "consecutive_losses >= 3"
+        severity: "medium"
+        channels: ["email"]
+    
+    performance_alerts:
+      - name: "Low Hit Rate"
+        condition: "hit_rate < 0.50"  # 50%
+        severity: "medium"
+        channels: ["email"]
+      
+      - name: "High Slippage"
+        condition: "avg_slippage > 0.15"  # 0.15%
+        severity: "medium"
+        channels: ["email"]
+      
+      - name: "Strategy Underperformance"
+        condition: "strategy_pnl < -5000"  # $5K CAD
+        severity: "high"
+        channels: ["email", "telegram"]
+    
+    market_alerts:
+      - name: "TSX Volatility Spike"
+        condition: "tsx_volatility > 0.03"  # 3%
+        severity: "medium"
+        channels: ["email"]
+      
+      - name: "Bank of Canada News"
+        condition: "boc_news_detected == true"
+        severity: "high"
+        channels: ["email", "telegram"]
+      
+      - name: "Oil Price Movement"
+        condition: "oil_price_change > 0.05"  # 5%
+        severity: "medium"
+        channels: ["email"]
+  
+  recovery_actions:
+    automatic_recovery:
+      - name: "Position Size Reduction"
+        trigger: "consecutive_losses >= 2"
+        action: "reduce_position_size"
+        parameter: 0.5  # 50% reduction
+      
+      - name: "Leverage Reduction"
+        trigger: "margin_utilization > 0.75"
+        action: "reduce_leverage"
+        parameter: 0.8  # 20% reduction
+      
+      - name: "Strategy Pause"
+        trigger: "strategy_pnl < -3000"
+        action: "pause_strategy"
+        parameter: 3600  # 1 hour pause
+    
+    manual_recovery:
+      - name: "Emergency Stop"
+        trigger: "daily_pnl < -10000"
+        action: "emergency_stop"
+        parameter: "all_positions"
+      
+      - name: "Market Close"
+        trigger: "max_drawdown > 0.15"
+        action: "close_all_positions"
+        parameter: "immediate"
+  
+  reporting:
+    daily_report:
+      enabled: true
+      time: "17:00"  # 5 PM EST
+      format: "html"
+      include:
+        - pnl_summary
+        - strategy_performance
+        - risk_metrics
+        - market_analysis
+        - next_day_outlook
+    
+    weekly_report:
+      enabled: true
+      day: "friday"
+      time: "17:00"
+      format: "pdf"
+      include:
+        - weekly_performance
+        - risk_analysis
+        - strategy_optimization
+        - market_outlook
+        - recommendations
+    
+    monthly_report:
+      enabled: true
+      day: "last"
+      time: "17:00"
+      format: "pdf"
+      include:
+        - monthly_performance
+        - risk_assessment
+        - strategy_review
+        - market_analysis
+        - future_planning

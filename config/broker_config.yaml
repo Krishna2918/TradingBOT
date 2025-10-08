@@ -1,0 +1,34 @@
+# Broker Configuration - Canadian Markets
+brokers:
+  primary:
+    name: "questrade"
+    api_key: "MOCK_QUESTRADE_KEY"
+    api_secret: "MOCK_QUESTRADE_SECRET"
+    access_token: "MOCK_ACCESS_TOKEN"
+    base_url: "https://api01.iq.questrade.com"
+    timeout: 10
+  
+  backup:
+    name: "td_direct"
+    api_key: "MOCK_TD_KEY"
+    api_secret: "MOCK_TD_SECRET"
+    base_url: "https://api.td.com"
+    timeout: 10
+  
+  data_feeds:
+    tsx:
+      url: "https://www.tsx.com/api"
+      refresh_rate: 1  # seconds
+    
+    yahoo_finance:
+      url: "https://query1.finance.yahoo.com"
+      refresh_rate: 1  # seconds
+    
+    news:
+      sources: ["globeandmail", "financialpost", "cbc", "reuters_canada"]
+      refresh_rate: 300  # 5 minutes
+    
+    economic_data:
+      sources: ["statcan", "bankofcanada", "tmx"]
+      refresh_rate: 3600  # 1 hour
+

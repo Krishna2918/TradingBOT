@@ -1,0 +1,60 @@
+# Trading Configuration - Canadian Markets
+trading:
+  market_hours:
+    pre_market: "07:00"  # EST/EDT
+    open: "09:30"
+    close: "16:00"
+    post_market: "16:30"
+    timezone: "America/Toronto"
+  
+  instruments:
+    tsx_index:
+      symbol: "TSX"
+      lot_size: 1
+      tick_size: 0.01
+      max_leverage: 2.0
+    
+    tsx_60:
+      symbol: "TSX60"
+      lot_size: 1
+      tick_size: 0.01
+      max_leverage: 2.0
+    
+    large_caps:
+      - "RY.TO"    # Royal Bank of Canada
+      - "TD.TO"    # Toronto-Dominion Bank
+      - "SHOP.TO"  # Shopify
+      - "CNR.TO"   # Canadian National Railway
+      - "CP.TO"    # Canadian Pacific Railway
+      - "ENB.TO"   # Enbridge
+      - "TRP.TO"   # TC Energy
+      - "SU.TO"    # Suncor Energy
+      - "ABX.TO"   # Barrick Gold
+      - "WCN.TO"   # Waste Connections
+  
+  strategies:
+    momentum_scalping:
+      enabled: true
+      allocation: 0.25
+      max_leverage: 2.0
+    
+    news_volatility:
+      enabled: true
+      allocation: 0.20
+      max_leverage: 1.5
+    
+    gamma_oi_squeeze:
+      enabled: true
+      allocation: 0.15
+      max_leverage: 3.0
+    
+    arbitrage:
+      enabled: true
+      allocation: 0.20
+      max_leverage: 1.0
+    
+    ai_ml_patterns:
+      enabled: true
+      allocation: 0.20
+      max_leverage: 1.8
+

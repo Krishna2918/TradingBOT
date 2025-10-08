@@ -1,0 +1,200 @@
+[
+  {
+    "event_id": "holiday_2025-01-01",
+    "title": "New Year's Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-01-01T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: New Year's Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-02-17",
+    "title": "Family Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-02-17T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Family Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-04-18",
+    "title": "Good Friday",
+    "event_type": "holiday",
+    "scheduled_time": "2025-04-18T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Good Friday",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-05-19",
+    "title": "Victoria Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-05-19T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Victoria Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-07-01",
+    "title": "Canada Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-07-01T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Canada Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-08-04",
+    "title": "Civic Holiday",
+    "event_type": "holiday",
+    "scheduled_time": "2025-08-04T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Civic Holiday",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-09-01",
+    "title": "Labour Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-09-01T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Labour Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-10-13",
+    "title": "Thanksgiving",
+    "event_type": "holiday",
+    "scheduled_time": "2025-10-13T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Thanksgiving",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-12-25",
+    "title": "Christmas Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-12-25T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Christmas Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "holiday_2025-12-26",
+    "title": "Boxing Day",
+    "event_type": "holiday",
+    "scheduled_time": "2025-12-26T00:00:00",
+    "importance": 3,
+    "description": "Canadian market holiday: Boxing Day",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-01-29",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-01-29T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-03-12",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-03-12T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-04-16",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-04-16T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-06-04",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-06-04T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-07-16",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-07-16T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-09-03",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-09-03T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-10-29",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-10-29T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  },
+  {
+    "event_id": "boc_2025-12-10",
+    "title": "Bank of Canada Interest Rate Decision",
+    "event_type": "central_bank",
+    "scheduled_time": "2025-12-10T10:00:00",
+    "importance": 4,
+    "description": "Bank of Canada interest rate announcement - high market impact expected",
+    "symbols_affected": [],
+    "metadata": {},
+    "is_active": true
+  }
+]
