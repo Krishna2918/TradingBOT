@@ -1,3 +1,14 @@
+"""
+Configuration Management for Trading Bot
+========================================
+
+Centralized configuration loading and validation using Pydantic.
+Eliminates ALL hardcoded values from the codebase.
+
+Usage:
+    from config.settings import settings
+    
+    # Access any configuration value
     max_position = settings.capital.max_position_pct_demo
     rsi_threshold = settings.signals.rsi_oversold
 """
