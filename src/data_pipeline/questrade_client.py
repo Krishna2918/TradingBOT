@@ -41,6 +41,7 @@ class QuestradeClient:
         # Trading controls - can be overridden by environment variables
         self.allow_trading = os.getenv("QUESTRADE_ALLOW_TRADING", str(allow_trading)).lower() in ("true", "1", "yes")
         self.practice_mode = os.getenv("QUESTRADE_PRACTICE_MODE", str(practice_mode)).lower() in ("true", "1", "yes")
+        self.demo_mode = os.getenv("QUESTRADE_DEMO_MODE", "true").lower() in ("true", "1", "yes")
 
         self.access_token: Optional[str] = None
         self.api_server: Optional[str] = None
@@ -57,11 +58,11 @@ class QuestradeClient:
         
         # Log trading mode
         if not self.allow_trading:
-            logger.warning("TRADING DISABLED - Orders will be rejected")
+            logger.info("📊 Quotes-only mode (demo) - Real market data, no broker orders")
         elif self.practice_mode:
-            logger.warning("PRACTICE MODE ENABLED - Using paper/practice account")
+            logger.info("📝 Practice mode - Paper trading enabled with practice account")
         else:
-            logger.warning("LIVE TRADING ENABLED - Using real money account")
+            logger.warning("💰 LIVE TRADING - Using real money account!")
         
         logger.info("Questrade client ready; will authenticate on demand")
 
@@ -165,7 +166,10 @@ class QuestradeClient:
             if self._perform_auth(token):
                 return True
 
-        logger.error("All refresh token attempts failed")
+        if self.demo_mode:
+            logger.debug("All refresh token attempts failed (demo mode - expected)")
+        else:
+            logger.error("All refresh token attempts failed")
         return False
 
     def _perform_auth(self, refresh_token: str) -> bool:
@@ -185,11 +189,18 @@ class QuestradeClient:
             return False
 
         if response.status_code != 200:
-            logger.error(
-                "Authentication rejected (%s): %s",
-                response.status_code,
-                response.text,
-            )
+            if self.demo_mode:
+                logger.debug(
+                    "Authentication rejected (%s): %s (demo mode - expected)",
+                    response.status_code,
+                    response.text,
+                )
+            else:
+                logger.error(
+                    "Authentication rejected (%s): %s",
+                    response.status_code,
+                    response.text,
+                )
             if response.status_code in (400, 401) and refresh_token == self._cached_refresh_token:
                 self._clear_token_cache()
                 self._cached_refresh_token = None

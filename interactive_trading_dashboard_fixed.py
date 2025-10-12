@@ -713,6 +713,9 @@ def refresh_dashboard_sections(_chart_tick, _trade_tick):
 def refresh_ai_activity_monitor(_chart_tick, _trade_tick):
     """Keep AI Activity Monitor timestamps in sync with latest log activity."""
     return (get_last_log_time('logs/ai_activity.log'), get_last_log_time('logs/ai_trades.log'), get_last_log_time('logs/ai_signals.log'), get_last_log_time('logs/ai_decisions.log'))
+def refresh_ai_activity_monitor(_chart_tick, _trade_tick):
+    """Keep AI Activity Monitor timestamps in sync with latest log activity."""
+    return (get_last_log_time('logs/ai_activity.log'), get_last_log_time('logs/ai_trades.log'), get_last_log_time('logs/ai_signals.log'), get_last_log_time('logs/ai_decisions.log'))
 
 @app.callback(
     [Output('status-pill', 'children', allow_duplicate=True),
@@ -747,6 +750,39 @@ def toggle_mode(switch_value, startup_switch_value):
             trading_state['live_capital'] = trading_state['live_capital'] or trading_state['starting_capital']
             trading_state['current_capital'] = trading_state['live_capital']
             try:
+                _ensure_live_broker()
+            except Exception:
+                pass
+        print(f"✅ MODE SWITCHED: {old_mode.upper()} → {new_mode.upper()} | Capital: ${trading_state['current_capital']:,.2f}")
+    return (create_status_pill(), True, render_broker_panel_content())
+def toggle_mode(switch_value, startup_switch_value):
+    """Toggle between Demo and Live mode with immediate UI updates"""
+    if switch_value is not None:
+        new_mode = 'live' if switch_value else 'demo'
+    elif startup_switch_value is not None:
+        new_mode = 'live' if startup_switch_value else 'demo'
+    else:
+        return (dash.no_update, dash.no_update, dash.no_update)
+    old_mode = trading_state['mode']
+    if new_mode != old_mode:
+        if old_mode == 'demo':
+            trading_state['demo_capital'] = trading_state['current_capital']
+        else:
+            trading_state['live_capital'] = trading_state['current_capital']
+        trading_state['mode'] = new_mode
+        if new_mode == 'demo':
+            if load_trading_state():
+                pass
+            else:
+                trading_state['current_capital'] = trading_state['demo_capital'] or trading_state['starting_capital']
+            save_trading_state()
+        else:
+            trading_state['live_capital'] = trading_state['live_capital'] or trading_state['starting_capital']
+            trading_state['current_capital'] = trading_state['live_capital']
+            try:
+                _ensure_live_broker()
+            except Exception:
+                pass
         print(f"✅ MODE SWITCHED: {old_mode.upper()} → {new_mode.upper()} | Capital: ${trading_state['current_capital']:,.2f}")
     return (create_status_pill(), True, render_broker_panel_content())
 
@@ -755,7 +791,6 @@ def toggle_mode(switch_value, startup_switch_value):
     Input('performance-tabs', 'active_tab'),
     prevent_initial_call=True
 )
-{{ ... }}
 
 # ============================================================================
 # AI ACTIVITY MONITOR CALLBACKS

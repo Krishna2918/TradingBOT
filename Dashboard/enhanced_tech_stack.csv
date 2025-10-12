@@ -1,0 +1,21 @@
+Component,Technology,Purpose,GPU Utilization,Memory Usage
+Programming Language,Python 3.9+,Main development language,N/A,N/A
+Deep Learning Framework,PyTorch + TensorFlow,Neural networks and ML models,High,High (8-16GB)
+GPU Acceleration,CUDA 12.x,GPU acceleration for training,Required,N/A
+GPU Library,cuDNN 8.x,Optimized deep learning operations,Required,N/A
+Database - Structured,PostgreSQL 15+,Structured trading data,Low,Medium (2-4GB)
+Database - Semi-Structured,PostgreSQL JSONB,Configuration and metadata,Low,Medium (1-2GB)
+Database - Time Series,InfluxDB,Market data time series,Low,Medium (2-4GB)
+Database - Cache,Redis,Real-time data caching,Low,High (4-8GB)
+Dashboard Frontend,Streamlit,Interactive dashboard UI,Low,Low (0.5GB)
+Dashboard Backend,FastAPI,REST API and WebSocket server,Low,Low (1GB)
+Web Framework,Uvicorn,ASGI web server,Low,Low (0.2GB)
+Real-time Updates,WebSocket,Live data streaming,Low,Medium (1GB)
+AI Orchestration,Local Ollama,Multi-agent LLM coordination,High,High (4-8GB)
+Model Management,MLflow,Model versioning and monitoring,Medium,Medium (1GB)
+Data Processing,Pandas + NumPy,Data manipulation and analysis,Medium,High (4-8GB)
+Technical Analysis,TA-Lib + Vectorbt,Technical indicators and backtesting,Medium,Medium (2GB)
+Market Data APIs,Alpha Vantage + Questrade,Market data feeds,N/A,N/A
+News APIs,NewsAPI + Finnhub,Financial news and events,N/A,N/A
+Sentiment Analysis,TextBlob + VADER,Text analysis and sentiment,Medium,Medium (1-2GB)
+Risk Management,QuantLib,Risk calculations and limits,Low,Low (0.5GB)

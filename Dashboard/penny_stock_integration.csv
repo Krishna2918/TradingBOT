@@ -1,0 +1,13 @@
+Feature,Implementation,AI Model,Risk Level,Data Source
+Price Filtering,Stock price < $5 CAD filter,Rule-based Filter,Low,Market Data APIs
+Volume Filtering,"Minimum daily volume > 10,000 shares",Statistical Analysis,Medium,Market Data APIs
+Market Cap Filtering,Market cap < $300M CAD,Financial Calculation,Medium,Financial APIs
+Exchange Filtering,"TSX-V, CSE, OTC markets",Market Classification,Low,Exchange APIs
+Liquidity Analysis,Bid-ask spread analysis,LSTM Prediction,High,Order Book Data
+Volatility Analysis,Daily volatility > 5% threshold,GARCH Model,High,Price History
+Manipulation Detection,Pump-and-dump pattern detection,Anomaly Detection (Isolation Forest),Critical,Trading Pattern Analysis
+Risk Adjustment,Higher risk weightings (3x normal),Risk Management Algorithm,Critical,Portfolio Analytics
+Position Sizing,Maximum 0.5% of capital per penny stock,Position Sizing Algorithm,Critical,Risk Management System
+Exit Strategy,Trailing stop-loss at 15%,Technical Analysis,High,Technical Indicators
+News Impact,News sentiment correlation analysis,NLP Sentiment Analysis,Medium,News APIs
+Regulatory Compliance,CSA and OSC compliance monitoring,Regulatory Rule Engine,Medium,Regulatory Databases

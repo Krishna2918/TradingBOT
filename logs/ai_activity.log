@@ -3552,3 +3552,258 @@
 2025-10-07 15:43:28 | INFO |   total_universe: 190
 2025-10-07 15:43:28 | INFO |   symbols_count: 10
 2025-10-07 15:43:28 | INFO |   symbols: ['ABX.TO', 'ACB.TO', 'AEM.TO', 'AGI.TO', 'AGRA.TO']
+2025-10-08 10:37:33 | INFO | AI Activity Logger: Background logging started
+2025-10-08 10:37:33 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 10:37:33 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 10:37:33 | INFO |   background_logging: True
+2025-10-08 10:38:32 | INFO | AI Activity Logger: Background logging started
+2025-10-08 10:38:32 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 10:38:32 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 10:38:32 | INFO |   background_logging: True
+2025-10-08 11:04:24 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:04:24 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:04:24 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:04:24 | INFO |   background_logging: True
+2025-10-08 11:05:41 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:05:41 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:05:41 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:05:41 | INFO |   background_logging: True
+2025-10-08 11:09:05 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:09:05 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:09:05 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:09:05 | INFO |   background_logging: True
+2025-10-08 11:13:46 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:13:46 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:13:46 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:13:46 | INFO |   background_logging: True
+2025-10-08 11:15:34 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:15:34 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:15:34 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:15:34 | INFO |   background_logging: True
+2025-10-08 11:15:53 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:15:53 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:15:53 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:15:53 | INFO |   background_logging: True
+2025-10-08 11:16:31 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:16:31 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:16:31 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:16:31 | INFO |   background_logging: True
+2025-10-08 11:17:35 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:17:35 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:17:35 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:17:35 | INFO |   background_logging: True
+2025-10-08 11:20:05 | INFO | AI Activity Logger: Background logging started
+2025-10-08 11:20:05 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 11:20:05 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 11:20:05 | INFO |   background_logging: True
+2025-10-08 12:32:09 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:32:09 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:32:09 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:32:09 | INFO |   background_logging: True
+2025-10-08 12:32:17 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:32:17 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:32:17 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:32:17 | INFO |   background_logging: True
+2025-10-08 12:32:53 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:32:53 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:32:53 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:32:53 | INFO |   background_logging: True
+2025-10-08 12:33:59 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:33:59 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:33:59 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:33:59 | INFO |   background_logging: True
+2025-10-08 12:35:04 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:35:04 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:35:04 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:35:04 | INFO |   background_logging: True
+2025-10-08 12:35:13 | INFO | AI Activity Logger: Background logging started
+2025-10-08 12:35:13 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 12:35:13 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 12:35:13 | INFO |   background_logging: True
+2025-10-08 13:32:18 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:32:18 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:32:18 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:32:18 | INFO |   background_logging: True
+2025-10-08 13:33:09 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:33:09 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:33:09 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:33:09 | INFO |   background_logging: True
+2025-10-08 13:33:39 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:33:39 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:33:39 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:33:39 | INFO |   background_logging: True
+2025-10-08 13:33:45 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:33:45 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:33:45 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:33:45 | INFO |   background_logging: True
+2025-10-08 13:34:12 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:34:12 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:34:12 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:34:12 | INFO |   background_logging: True
+2025-10-08 13:35:07 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:35:07 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:35:07 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:35:07 | INFO |   background_logging: True
+2025-10-08 13:35:16 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:35:16 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:35:16 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:35:16 | INFO |   background_logging: True
+2025-10-08 13:35:44 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:35:44 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:35:44 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:35:44 | INFO |   background_logging: True
+2025-10-08 13:36:29 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:36:29 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:36:29 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:36:29 | INFO |   background_logging: True
+2025-10-08 13:36:54 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:36:54 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:36:54 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:36:54 | INFO |   background_logging: True
+2025-10-08 13:37:03 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:37:03 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:37:03 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:37:03 | INFO |   background_logging: True
+2025-10-08 13:38:53 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:38:53 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:38:53 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:38:53 | INFO |   background_logging: True
+2025-10-08 13:39:01 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:39:01 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:39:01 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:39:01 | INFO |   background_logging: True
+2025-10-08 13:40:45 | INFO | AI Activity Logger: Background logging started
+2025-10-08 13:40:45 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-08 13:40:45 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-08 13:40:45 | INFO |   background_logging: True
+2025-10-10 12:36:55 | INFO | AI Activity Logger: Background logging started
+2025-10-10 12:36:55 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-10 12:36:55 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-10 12:36:55 | INFO |   background_logging: True
+2025-10-10 13:44:22 | INFO | AI Activity Logger: Background logging started
+2025-10-10 13:44:22 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-10 13:44:22 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-10 13:44:22 | INFO |   background_logging: True
+2025-10-10 13:44:58 | INFO | AI Activity Logger: Background logging started
+2025-10-10 13:44:58 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-10 13:44:58 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-10 13:44:58 | INFO |   background_logging: True
+2025-10-11 19:09:39 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:09:39 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:09:39 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:09:39 | INFO |   background_logging: True
+2025-10-11 19:10:03 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:10:03 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:10:03 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:10:03 | INFO |   background_logging: True
+2025-10-11 19:11:04 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:11:04 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:11:04 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:11:04 | INFO |   background_logging: True
+2025-10-11 19:11:05 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:11:05 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:11:05 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:11:05 | INFO |   background_logging: True
+2025-10-11 19:11:13 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:11:13 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:11:13 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:11:13 | INFO |   background_logging: True
+2025-10-11 19:11:17 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:11:17 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:11:17 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:11:17 | INFO |   background_logging: True
+2025-10-11 19:12:41 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:12:41 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:12:41 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:12:41 | INFO |   background_logging: True
+2025-10-11 19:12:50 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:12:50 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:12:50 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:12:50 | INFO |   background_logging: True
+2025-10-11 19:14:38 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:14:38 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:14:38 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:14:38 | INFO |   background_logging: True
+2025-10-11 19:14:38 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:14:38 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:14:38 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:14:38 | INFO |   background_logging: True
+2025-10-11 19:15:42 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:15:42 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:15:42 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:15:42 | INFO |   background_logging: True
+2025-10-11 19:15:42 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:15:42 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:15:42 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:15:42 | INFO |   background_logging: True
+2025-10-11 19:16:39 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:16:39 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:16:39 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:16:39 | INFO |   background_logging: True
+2025-10-11 19:16:39 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:16:39 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:16:39 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:16:39 | INFO |   background_logging: True
+2025-10-11 19:17:04 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:17:04 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:17:04 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:17:04 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:17:04 | INFO |   background_logging: True
+2025-10-11 19:17:04 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:17:04 | INFO |   background_logging: True
+2025-10-11 19:17:22 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:17:22 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:17:22 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:17:22 | INFO |   background_logging: True
+2025-10-11 19:17:22 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:17:22 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:17:22 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:17:22 | INFO |   background_logging: True
+2025-10-11 19:39:32 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:39:32 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:39:32 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:39:32 | INFO |   background_logging: True
+2025-10-11 19:39:40 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:39:40 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:39:40 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:39:40 | INFO |   background_logging: True
+2025-10-11 19:41:20 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:41:20 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:41:20 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:41:20 | INFO |   background_logging: True
+2025-10-11 19:41:22 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:41:22 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:41:22 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:41:22 | INFO |   background_logging: True
+2025-10-11 19:48:41 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:48:41 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:48:41 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:48:41 | INFO |   background_logging: True
+2025-10-11 19:48:58 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:48:58 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:48:58 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:48:58 | INFO |   background_logging: True
+2025-10-11 19:49:06 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:49:06 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:49:06 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:49:06 | INFO |   background_logging: True
+2025-10-11 19:54:47 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:54:47 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:54:47 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:54:47 | INFO |   background_logging: True
+2025-10-11 19:55:08 | INFO | AI Activity Logger: Background logging started
+2025-10-11 19:55:08 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 19:55:08 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 19:55:08 | INFO |   background_logging: True
+2025-10-11 20:03:42 | INFO | AI Activity Logger: Background logging started
+2025-10-11 20:03:42 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 20:03:42 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 20:03:42 | INFO |   background_logging: True
+2025-10-11 20:05:48 | INFO | AI Activity Logger: Background logging started
+2025-10-11 20:05:48 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 20:05:48 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 20:05:48 | INFO |   background_logging: True
+2025-10-11 20:08:23 | INFO | AI Activity Logger: Background logging started
+2025-10-11 20:08:23 | INFO | AI ACTIVITY | STARTUP | AI Trading System Started
+2025-10-11 20:08:23 | INFO |   log_files: {'ai_activity': 'logs\\ai_activity.log', 'ai_trades': 'logs\\ai_trades.log', 'ai_signals': 'logs\\ai_signals.log', 'ai_decisions': 'logs\\ai_decisions.log', 'ai_json': 'logs\\ai_activity.json'}
+2025-10-11 20:08:23 | INFO |   background_logging: True

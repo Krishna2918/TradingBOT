@@ -209,6 +209,47 @@ class AutonomousTradingAI:
             logger.warning(f"Report generator init failed: {e}")
             self.report_generator = None
         
+        # Initialize Smart Scanner (Multi-Tier Priority System)
+        logger.info("Initializing Smart Scanner...")
+        try:
+            from src.ai.smart_scanner import create_smart_scanner
+            self.smart_scanner = create_smart_scanner(self.symbols)
+            logger.info("✅ Smart Scanner ready: 4-tier priority scanning")
+        except Exception as e:
+            logger.warning(f"❌ Smart scanner init failed: {e}")
+            self.smart_scanner = None
+        
+        # Initialize Intelligence Sources
+        logger.info("Initializing Intelligence Sources...")
+        try:
+            from src.data_services.insider_trades import create_insider_tracker
+            from src.data_services.social_sentiment import create_social_tracker
+            from src.data_services.weather_commodities import create_weather_commodity_tracker
+            from src.data_services.whale_tracker import create_whale_tracker
+            
+            self.insider_tracker = create_insider_tracker(demo_mode=True)
+            self.social_tracker = create_social_tracker(demo_mode=True)
+            self.weather_tracker = create_weather_commodity_tracker(demo_mode=True)
+            self.whale_tracker = create_whale_tracker(demo_mode=True)
+            
+            logger.info("✅ Intelligence sources ready: insider, social, weather, whale")
+        except Exception as e:
+            logger.warning(f"❌ Intelligence sources init failed: {e}")
+            self.insider_tracker = None
+            self.social_tracker = None
+            self.weather_tracker = None
+            self.whale_tracker = None
+        
+        # Initialize Signal Aggregator
+        logger.info("Initializing Signal Aggregator...")
+        try:
+            from src.ai.signal_aggregator import create_signal_aggregator
+            self.signal_aggregator = create_signal_aggregator()
+            logger.info("✅ Signal Aggregator ready: multi-source fusion")
+        except Exception as e:
+            logger.warning(f"❌ Signal aggregator init failed: {e}")
+            self.signal_aggregator = None
+        
         # Initialize Regime Detection
         logger.info("Initializing Regime Detection...")
         try:
@@ -363,27 +404,40 @@ class AutonomousTradingAI:
         """
         logger.info("Analyzing Market...")
         
-        # SMART MARKET SCAN: Rotate through ALL stocks in batches
-        # Ultra-reduced batch size for maximum stability!
-        batch_size = 10  # Analyze 10 stocks per cycle (ULTRA SAFE)
-        
-        # Initialize rotation index if not exists
-        if not hasattr(self, '_scan_index'):
-            self._scan_index = 0
-        
-        # Get current batch (rotating window)
-        start_idx = self._scan_index
-        end_idx = start_idx + batch_size
-        
-        if end_idx >= len(self.symbols):
-            # Wrap around + get remainder from start
-            analysis_subset = self.symbols[start_idx:] + self.symbols[:batch_size - (len(self.symbols) - start_idx)]
-            self._scan_index = batch_size - (len(self.symbols) - start_idx)  # Reset with overflow
+        # SMART MARKET SCAN: Use multi-tier smart scanner if available
+        if self.smart_scanner:
+            # Get stocks to scan based on tier priorities
+            stocks_to_scan = self.smart_scanner.get_stocks_to_scan()
+            
+            # Prioritize higher tiers (Tier 1 > Tier 2 > Tier 3 > Tier 4)
+            analysis_subset = []
+            for tier in [1, 2, 3, 4]:
+                if tier in stocks_to_scan:
+                    analysis_subset.extend(stocks_to_scan[tier][:20])  # Max 20 per tier
+                    if len(analysis_subset) >= 20:  # Cap total at 20
+                        break
+            
+            analysis_subset = analysis_subset[:20]  # Hard cap
+            
+            if analysis_subset:
+                logger.info(f"📊 Smart Scanner: Analyzing {len(analysis_subset)} stocks across tiers {list(stocks_to_scan.keys())}")
+            else:
+                logger.info("⏸️  Smart Scanner: No stocks to scan this cycle")
+                analysis_subset = []
         else:
-            analysis_subset = self.symbols[start_idx:end_idx]
-            self._scan_index = end_idx
-        
-        logger.info(f"Scanning stocks {start_idx+1}-{start_idx+len(analysis_subset)} of {len(self.symbols)} (Full market rotation!)")
+            # Fallback: Simple batch rotation
+            batch_size = 10
+            if not hasattr(self, '_scan_index'):
+                self._scan_index = 0
+            start_idx = self._scan_index
+            end_idx = start_idx + batch_size
+            if end_idx >= len(self.symbols):
+                analysis_subset = self.symbols[start_idx:] + self.symbols[:batch_size - (len(self.symbols) - start_idx)]
+                self._scan_index = batch_size - (len(self.symbols) - start_idx)
+            else:
+                analysis_subset = self.symbols[start_idx:end_idx]
+                self._scan_index = end_idx
+            logger.info(f"📊 Fallback scan: {start_idx+1}-{start_idx+len(analysis_subset)} of {len(self.symbols)}")
         
         log_ai_activity('market_analysis', 'Starting comprehensive market analysis', {
             'total_universe': len(self.symbols),
@@ -506,12 +560,137 @@ class AutonomousTradingAI:
         else:
             return 'low_volatility'
     
+    def _intelligence_based_decision(self, analysis: Dict) -> Dict:
+        """
+        Make trading decision using multi-source intelligence aggregation
+        
+        Combines: insider trades, social sentiment, news, weather, whale activity
+        """
+        market_data = analysis.get('market_data', {})
+        
+        best_signal = None
+        best_confidence = 0.0
+        
+        # Analyze stocks with available market data
+        for symbol in list(market_data.keys())[:10]:  # Limit to 10 to avoid API overload
+            df = market_data.get(symbol)
+            if df is None:
+                continue
+            
+            # Get current price
+            try:
+                import pandas as pd
+                if isinstance(df, pd.DataFrame):
+                    close_col = 'Close' if 'Close' in df.columns else 'close'
+                    price = float(df[close_col].iloc[-1])
+                else:
+                    continue
+            except Exception:
+                continue
+            
+            if price <= 0:
+                continue
+            
+            # Gather intelligence from all sources
+            sources = {}
+            
+            # Insider trades
+            if self.insider_tracker:
+                try:
+                    insider_data = self.insider_tracker.get_insider_sentiment([symbol])
+                    sources['insider_trades'] = insider_data.get(symbol, {})
+                except Exception as e:
+                    logger.debug(f"Insider data unavailable for {symbol}: {e}")
+            
+            # Social sentiment
+            if self.social_tracker:
+                try:
+                    social_data = self.social_tracker.get_social_sentiment([symbol])
+                    sources['social_sentiment'] = social_data.get(symbol, {})
+                except Exception as e:
+                    logger.debug(f"Social data unavailable for {symbol}: {e}")
+            
+            # News sentiment (from existing analysis)
+            news_sent = analysis.get('sentiment', {}).get(symbol, {})
+            if news_sent:
+                sources['news_sentiment'] = news_sent if isinstance(news_sent, dict) else {'score': float(news_sent)}
+            
+            # Weather/commodity impact
+            if self.weather_tracker:
+                try:
+                    weather_data = self.weather_tracker.get_impact_score([symbol])
+                    sources['weather_commodity'] = weather_data.get(symbol, {})
+                except Exception as e:
+                    logger.debug(f"Weather data unavailable for {symbol}: {e}")
+            
+            # Whale activity
+            if self.whale_tracker:
+                try:
+                    whale_data = self.whale_tracker.get_whale_activity([symbol])
+                    sources['whale_activity'] = whale_data.get(symbol, {})
+                except Exception as e:
+                    logger.debug(f"Whale data unavailable for {symbol}: {e}")
+            
+            # Macro alignment (placeholder - from existing regime detection)
+            sources['macro_alignment'] = {'alignment': 0.0}  # Neutral default
+            
+            # Aggregate signals
+            if self.signal_aggregator:
+                try:
+                    signal = self.signal_aggregator.aggregate_signals(symbol, price, sources)
+                    
+                    # Update smart scanner metrics if available
+                    if self.smart_scanner:
+                        self.smart_scanner.update_stock_metrics(symbol, {
+                            'volume_current': 100000,  # Placeholder
+                            'volume_avg_20d': 80000,
+                            'price_change_1h': 0.0,
+                            'price_change_1d': 0.0,
+                            'news_sentiment': sources.get('news_sentiment', {}).get('score', 0.0),
+                        })
+                    
+                    # Check if this is the best signal so far
+                    if signal.confidence > best_confidence and signal.confidence >= self.signal_aggregator.MIN_CONFIDENCE_TO_TRADE:
+                        best_confidence = signal.confidence
+                        best_signal = {
+                            'action': signal.action,
+                            'symbol': signal.symbol,
+                            'confidence': signal.confidence,
+                            'position_size': signal.position_size_pct,
+                            'reasoning': signal.reasoning,
+                            'target_price': signal.target_price,
+                            'stop_loss': signal.stop_loss,
+                            'source_scores': signal.source_scores,
+                        }
+                except Exception as e:
+                    logger.warning(f"Signal aggregation failed for {symbol}: {e}")
+        
+        # Evaluate promotions/demotions for smart scanner
+        if self.smart_scanner:
+            try:
+                self.smart_scanner.evaluate_promotions_demotions()
+            except Exception as e:
+                logger.debug(f"Smart scanner promotion evaluation failed: {e}")
+        
+        return best_signal
+    
     def _signal_based_decision(self, analysis: Dict) -> Dict:
         """
-        Fallback decision method using technical signals when models aren't trained
-        Uses RSI, SMA, momentum, and volatility
+        Enhanced decision method using:
+        1. Multi-source intelligence (insider, social, news, weather, whale)
+        2. Signal aggregation with confidence scoring
+        3. Fallback to technical signals if intelligence sources unavailable
         """
         import pandas as pd
+        
+        # TRY ENHANCED INTELLIGENCE-BASED DECISION FIRST
+        if self.signal_aggregator and any([self.insider_tracker, self.social_tracker, 
+                                            self.weather_tracker, self.whale_tracker]):
+            enhanced_decision = self._intelligence_based_decision(analysis)
+            if enhanced_decision and enhanced_decision.get('action') != 'HOLD':
+                return enhanced_decision
+        
+        # FALLBACK: Traditional technical signal-based decision
         
         market_data = analysis.get('market_data', {})
         sentiment = analysis.get('sentiment', {})

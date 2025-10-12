@@ -1,0 +1,21 @@
+Agent Name,Sub-Agent,Primary Model,Input Sources,Communication Method,Update Frequency
+Data Collector Agent,Market Data Collector,Data Processing,"APIs (Alpha Vantage, Questrade)",Message Queue,Real-time
+Data Collector Agent,News Aggregator,NLP + Classification,"NewsAPI, Finnhub",Message Queue,Every 15 minutes
+Data Collector Agent,Social Sentiment Collector,Sentiment Analysis,"Twitter, Reddit APIs",Message Queue,Every 5 minutes
+Data Collector Agent,Celebrity Tracker,Web Scraping + NLP,"SEC Filings, News",Message Queue,Daily
+Analysis Agent,Technical Analyst,LSTM + Technical Indicators,"Price Data, Volume",Structured Reports,Real-time
+Analysis Agent,Fundamental Analyst,GPT-based Analysis,Financial Statements,Structured Reports,Daily
+Analysis Agent,Sentiment Analyst,VADER + TextBlob,"News, Social Media",Structured Reports,Every 15 minutes
+Analysis Agent,Anomaly Detector,Isolation Forest + LSTM,Market Data Patterns,Alert System,Real-time
+Reasoning Agent,Bull Researcher,GPT-based Reasoning,Analysis Results,Natural Language + JSON,Per Analysis Cycle
+Reasoning Agent,Bear Researcher,GPT-based Reasoning,Analysis Results,Natural Language + JSON,Per Analysis Cycle
+Reasoning Agent,Risk Assessor,Monte Carlo + VaR,Portfolio + Market Data,Risk Reports,Real-time
+Decision Agent,Strategy Generator,Reinforcement Learning,All Analysis Results,Trading Signals,Per Decision Cycle
+Decision Agent,Position Sizer,Risk-based Algorithms,Strategy + Risk Limits,Position Instructions,Per Trade
+Decision Agent,Order Manager,Order Management Logic,Trading Decisions,Order Confirmations,Per Order
+Execution Agent,Trade Executor,API Integration,Order Instructions,Execution Reports,Per Order
+Execution Agent,Portfolio Manager,Portfolio Optimization,Current Positions,Portfolio Updates,Real-time
+Execution Agent,SIP Investment Manager,Automated Investment,Profit Calculations,Investment Confirmations,After Profit Target
+Monitoring Agent,Performance Monitor,Performance Analytics,Trade Results,Performance Reports,Real-time
+Monitoring Agent,Error Logger,Error Classification,System Logs,Error Alerts,Real-time
+Monitoring Agent,Learning Coordinator,Meta-learning,All Agent Outputs,Learning Reports,Daily

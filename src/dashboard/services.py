@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import random
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -9,7 +10,12 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
-from .state_manager import trading_state, STATE_STORE
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
+
+from .state_manager import trading_state, STATE_STORE, save_trading_state
 from src.data_pipeline.questrade_client import QuestradeClient
 from src.infrastructure.state_store import SQLiteStateStore
 
@@ -48,7 +54,7 @@ def real_ai_trade():
     if trading_state.get('kill_switch_active'):
         return
     
-    # Use REAL AI if available
+    # Use REAL AI if available, otherwise fallback to simulate_ai_trade
     ai = trading_state.get('ai_instance')
     
     if ai is not None:
@@ -302,12 +308,12 @@ def real_ai_trade():
             # Fall back to basic mode
             simulate_ai_trade()
     else:
-        # Demo mode without heavy AI: generate signals and execute top affordable idea
+        # AI instance is None - use fallback trading
         try:
-            df_signals = generate_ai_signals()
-            if df_signals is None or df_signals.empty:
-                return
-            # Budget-aware filter: ensure at least 0.1 shares under cap
+            simulate_ai_trade()
+        except Exception as e:
+            print(f"Fallback trading failed: {e}")
+            return
             cap = trading_state.get('max_position_pct', 0.05) * trading_state.get('current_capital', 0)
             affordable = df_signals[df_signals['price'] * 0.1 <= cap]
             row = (affordable if not affordable.empty else df_signals).iloc[0]
@@ -393,8 +399,13 @@ def real_ai_trade():
                 except Exception:
                     pass
         except Exception as e:
-            # safe fallback: do nothing off-hours
-            return
+            # safe fallback: try simulate_ai_trade
+            print(f"Signal generation failed: {e}, trying simulate_ai_trade")
+            try:
+                simulate_ai_trade()
+            except Exception as e2:
+                print(f"Fallback trading failed: {e2}")
+                return
 
 def _rsi(series: pd.Series, window: int = 14) -> pd.Series:
     delta = series.diff()
@@ -492,6 +503,33 @@ def _update_learning_from_trade(realized_pnl: float) -> None:
     except Exception as e:
         print(f"Learning update failed: {e}")
 
+def get_live_price(symbol: str) -> float | None:
+    """Get live price from broker or data source"""
+    try:
+        # Try broker quote if a client is available via trading_state['broker']
+        br = trading_state.get('broker')
+        if br and hasattr(br, 'get_quotes'):
+            qs = br.get_quotes([symbol]) or []
+            if qs:
+                q = qs[0]
+                for k in ('lastTradePriceTrHrs','lastTradePrice','bidPrice','askPrice'):
+                    v = q.get(k)
+                    if v and v > 0:
+                        return float(v)
+        
+        # Fallback to Yahoo Finance
+        import yfinance as yf
+        ticker = yf.Ticker(symbol)
+        info = ticker.info
+        price = info.get('regularMarketPrice') or info.get('currentPrice')
+        if price and price > 0:
+            return float(price)
+        
+        return None
+    except Exception as e:
+        print(f"Error getting live price for {symbol}: {e}")
+        return None
+
 def get_demo_price(symbol: str) -> float | None:
     """Prefer broker quotes if available (even in demo), else fallback to Yahoo."""
     # Try broker quote if a client is available via trading_state['broker']
@@ -518,7 +556,7 @@ def is_market_open():
     try:
         if trading_state.get('mode') == 'demo' and trading_state.get('force_market_open'):
             return True
-    except Exception:
+    except Exception as e:
         pass
     try:
         if ZoneInfo is None:
@@ -737,10 +775,10 @@ def retrain_on_trades(regime: str | None = None) -> dict:
     via feature importances above; full on-policy training can be done off-session).
     """
     try:
-        # Pick a symbol relevant to recent trades if available
+        # Pick a symbol relevant to recent trades if available; fall back to a safe TSX ticker
         recent_trades = trading_state.get('trades', [])
         symbols = [t.get('symbol') for t in recent_trades[-50:] if t.get('symbol')]
-        sym = (symbols[-1] if symbols else CANADIAN_STOCKS[0])
+        sym = symbols[-1] if symbols else 'RY.TO'
         import yfinance as yf
         hist = yf.Ticker(sym).history(period='6mo', interval='1d')
         if hist is None or hist.empty:
@@ -777,13 +815,30 @@ def retrain_on_trades(regime: str | None = None) -> dict:
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
+def get_random_tsx_stock() -> str:
+    """Get a random TSX stock symbol"""
+    # Simple list of major TSX stocks
+    tsx_stocks = [
+        'RY.TO', 'TD.TO', 'BNS.TO', 'BMO.TO', 'CM.TO',  # Banks
+        'SHOP.TO', 'BB.TO', 'OTEX.TO', 'DOO.TO',        # Tech
+        'CNQ.TO', 'SU.TO', 'IMO.TO', 'CVE.TO',          # Energy
+        'ENB.TO', 'TRP.TO', 'FTS.TO', 'AQN.TO',         # Infrastructure
+        'CP.TO', 'CNR.TO',                              # Railroads
+        'T.TO', 'BCE.TO', 'RCI-B.TO',                   # Telecoms
+        'ABX.TO', 'K.TO', 'WPM.TO', 'FNV.TO',           # Mining
+        'L.TO', 'ATD.TO', 'QSR.TO',                     # Retail
+        'MFC.TO', 'SLF.TO', 'IFC.TO',                   # Insurance
+    ]
+    return random.choice(tsx_stocks)
+
 def simulate_ai_trade():
     """AI making a trade based on REAL LIVE market data - ONLY when market is open"""
     if not trading_state['initialized']:
         return
     
     # CRITICAL: Only trade when TSX is actually open
-    if not is_market_open():
+    market_open = is_market_open()
+    if not market_open:
         return  # No trades outside market hours
     if trading_state.get('paused') or trading_state.get('kill_switch_active'):
         return
@@ -795,17 +850,17 @@ def simulate_ai_trade():
     price = get_live_price(symbol)
     
     if price is None:
-        print(f"❌ Could not fetch price for {symbol}, skipping trade")
-        return
+        # Use simulated price for demo mode when real price fetching fails
+        price = round(random.uniform(10.0, 200.0), 2)
     
     # Decide: BUY only if we have cash, SELL only if we have holdings
     existing = next((h for h in trading_state['holdings'] if h['symbol'] == symbol), None)
     
-    # Calculate position size (1-5% of capital for buys) with adaptive risk
-    base_pct = np.random.uniform(0.01, 0.05)
+    # Calculate position size (10-20% of capital for demo mode) with adaptive risk
+    base_pct = np.random.uniform(0.10, 0.20)  # Increased from 1-5% to 10-20% for demo
     risk_mult = trading_state['learning_state'].get('risk_multiplier', 1.0)
-    max_position = trading_state['current_capital'] * base_pct * max(0.2, min(risk_mult, 2.0))
-    cap = trading_state.get('max_position_pct', 0.05) * trading_state['current_capital']
+    max_position = trading_state['current_capital'] * base_pct * max(0.5, min(risk_mult, 2.0))  # Increased min from 0.2 to 0.5
+    cap = trading_state.get('max_position_pct', 0.20) * trading_state['current_capital']  # Increased from 0.05 to 0.20
     max_position = min(max_position, cap)
     
     # FIX: Avoid ZeroDivisionError if price is 0 (rate limited/no data)
@@ -815,7 +870,10 @@ def simulate_ai_trade():
     
     qty = int(max_position / price)
     
-    if qty < 1:
+    # CRITICAL FIX: Ensure minimum 1 share if we can afford it
+    if qty < 1 and price <= trading_state['current_capital']:
+        qty = 1  # Force at least 1 share if affordable
+    elif qty < 1:
         return
     
     # Decide side based on logic with risk bias
@@ -854,6 +912,22 @@ def simulate_ai_trade():
                 'pnl': 0,
                 'pnl_pct': 0
             })
+        # Record trade
+        trade = {
+            'time': datetime.now().strftime('%H:%M:%S'),
+            'symbol': symbol,
+            'side': side,
+            'qty': qty,
+            'price': round(price, 2),
+            'status': 'FILLED',
+            'pnl': None,
+            'features_entry': compute_trade_features(symbol),
+            'regime': trading_state.get('regime')
+        }
+        trading_state['trades'].append(trade)
+        _log_trade_file(symbol, 'BUY', qty, price)
+        save_trading_state()
+        
         try:
             STATE_STORE.upsert_holding(symbol, (existing['qty'] if existing else qty), (existing['avg_price'] if existing else price), price)
         except Exception:
@@ -881,6 +955,7 @@ def simulate_ai_trade():
             'regime': trading_state.get('regime')
         }
         trading_state['trades'].append(trade)
+        _log_trade_file(symbol, 'SELL', qty, price, pnl=realized_pnl)
         _update_learning_from_trade(realized_pnl)
         save_trading_state()
         try:
