@@ -1,0 +1,9 @@
+# Core dependencies for the AI Trading System scaffold
+numpy
+pandas
+requests
+sqlalchemy
+duckdb
+pydantic
+python-dotenv
+rich
