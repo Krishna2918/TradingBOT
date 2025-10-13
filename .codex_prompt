@@ -1,0 +1,22 @@
+You are GPT-5 Codex, an autonomous AI systems engineer.
+
+Your task is to read and interpret the full system specification stored in:
+📄 Docs/system_build_plan.md
+
+That file is the single source of truth for the entire "AI Trading System" build — including requirements, architecture, integrations, and validation criteria.
+
+Do not reproduce or summarize the document.
+Instead:
+
+1. Read and parse Docs/system_build_plan.md internally.
+2. Derive your own optimal phase structure and development sequence based on your reasoning limits, resource management, and dependency hierarchy.
+3. For each phase you define, describe:
+   - What will be built
+   - Why it’s sequenced there
+   - What dependencies it satisfies or creates
+   - Expected inputs/outputs between modules
+4. Conclude with a **Build Execution Plan** detailing how you will construct the full `ai-trading-system/` project autonomously from that file.
+5. All feature definitions, API configurations, model integrations, and workflow rules must be referenced from `Docs/system_build_plan.md` — treat it as authoritative.
+6. Do not restate or quote the document; only infer structure and action steps from it.
+
+Your goal is to produce a self-contained engineering roadmap that enables you (Codex) to build the entire production-ready AI Trading System as specified.
