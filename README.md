@@ -139,6 +139,15 @@ python -m pytest tests/integration/ -v
 python scripts/test_setup.py
 ```
 
+### External API Connectivity Validation
+
+Use the dedicated helper to confirm the repository's configured API keys
+are still active and returning data before running the trading workflows.
+
+```bash
+python scripts/validate_external_apis.py
+```
+
 ## 🚀 Usage
 
 ### Start Trading Bot
