@@ -1,0 +1,36 @@
+2025-10-13 01:41:26,429 [INFO] main - AI trading pipeline starting (demo=True)
+2025-10-13 01:41:26,463 [INFO] pipeline - Universe ingestion + feature engineering
+2025-10-13 02:49:45,957 [INFO] main - AI trading pipeline starting (demo=True)
+2025-10-13 02:49:45,995 [INFO] pipeline - Universe ingestion + feature engineering
+{"ts": "2025-10-13T14:58:09.330307", "phase": "test_phase", "symbol": "started", "duration_ms": null, "status": "DEMO", "detail": "Phase test_phase DEMO", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T14:58:09.330307", "phase": "test_phase", "symbol": "completed", "duration_ms": null, "status": "DEMO", "detail": "Phase test_phase DEMO", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T14:59:01.001546", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T14:59:01.001546", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T14:59:54.182770", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T14:59:54.182770", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:00:43.666755", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:00:43.667404", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:02:03.266035", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:02:03.267039", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:04:12.993967", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:04:12.993967", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:04:54.766570", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:04:54.766570", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:05:22.320651", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:05:22.320651", "phase": "test_phase", "symbol": "DEMO", "duration_ms": 100, "status": "completed", "detail": "Phase test_phase completed", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:18:39.175252", "phase": "buy_phase", "symbol": "quality_gate_failed", "duration_ms": null, "status": "DEMO", "detail": "Phase buy_phase DEMO", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:18:58.662466", "phase": "buy_phase", "symbol": "quality_gate_failed", "duration_ms": null, "status": "DEMO", "detail": "Phase buy_phase DEMO", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:21:30.242160", "phase": "test_phase", "symbol": null, "duration_ms": null, "status": "STARTED", "detail": "Phase test_phase STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:21:31.364304", "phase": "integration_test", "symbol": null, "duration_ms": null, "status": "STARTED", "detail": "Phase integration_test STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:28.937497", "phase": "test_phase", "symbol": "TEST", "duration_ms": null, "status": "STARTED", "detail": "Phase test_phase STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:29.038263", "phase": "test_phase", "symbol": "TEST", "duration_ms": 100, "status": "COMPLETED", "detail": "Phase test_phase COMPLETED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:30.047735", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": null, "status": "STARTED", "detail": "Phase integration_test STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:30.053543", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": 100, "status": "quality_validated", "detail": "Phase integration_test quality_validated", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:30.058539", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": 10, "status": "COMPLETED", "detail": "Phase integration_test COMPLETED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:59.289499", "phase": "test_phase", "symbol": "TEST", "duration_ms": null, "status": "STARTED", "detail": "Phase test_phase STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:59.390842", "phase": "test_phase", "symbol": "TEST", "duration_ms": 101, "status": "COMPLETED", "detail": "Phase test_phase COMPLETED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:22:59.390842", "phase": "test_phase", "symbol": "DEMO", "duration_ms": null, "status": "started", "detail": "Phase test_phase started", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:23:00.521097", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": null, "status": "STARTED", "detail": "Phase integration_test STARTED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:23:00.525103", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": 100, "status": "quality_validated", "detail": "Phase integration_test quality_validated", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T15:23:00.530097", "phase": "integration_test", "symbol": "INTEGRATION_TEST", "duration_ms": 8, "status": "COMPLETED", "detail": "Phase integration_test COMPLETED", "level": "INFO", "logger": "system_monitor"}
+{"ts": "2025-10-13T17:37:24.372684", "phase": "test_phase", "symbol": null, "duration_ms": null, "status": "STARTED", "detail": "Phase test_phase STARTED", "level": "INFO", "logger": "system_monitor"}

@@ -1,0 +1,142 @@
+{
+  "flags": {
+    "adaptive_weights": {
+      "name": "adaptive_weights",
+      "status": "rolling_out",
+      "description": "Enable adaptive ensemble weights based on model performance",
+      "rollout_percentage": 50.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "accuracy_threshold": 0.6,
+        "brier_threshold": 0.3
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T17:17:08.965401"
+    },
+    "confidence_calibration": {
+      "name": "confidence_calibration",
+      "status": "disabled",
+      "description": "Enable Bayesian confidence calibration for risk management",
+      "rollout_percentage": 0.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "calibration_error_threshold": 0.1,
+        "min_trades_threshold": 50
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "drawdown_aware_kelly": {
+      "name": "drawdown_aware_kelly",
+      "status": "disabled",
+      "description": "Enable drawdown-aware Kelly position sizing",
+      "rollout_percentage": 0.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "max_drawdown_threshold": 0.05,
+        "kelly_scale_threshold": 0.3
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "atr_brackets": {
+      "name": "atr_brackets",
+      "status": "disabled",
+      "description": "Enable ATR-based stop loss and take profit brackets",
+      "rollout_percentage": 0.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "atr_accuracy_threshold": 0.7,
+        "bracket_success_rate": 0.6
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "regime_awareness": {
+      "name": "regime_awareness",
+      "status": "disabled",
+      "description": "Enable market regime detection and adaptation",
+      "rollout_percentage": 0.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "regime_accuracy_threshold": 0.8,
+        "transition_detection_delay": 5.0
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "data_quality_gates": {
+      "name": "data_quality_gates",
+      "status": "enabled",
+      "description": "Enable data quality validation before trading decisions",
+      "rollout_percentage": 100.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "quality_threshold": 0.8,
+        "max_missing_data": 0.1
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "api_budget_management": {
+      "name": "api_budget_management",
+      "status": "enabled",
+      "description": "Enable API budget management and rate limiting",
+      "rollout_percentage": 100.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "rate_limit_hit_threshold": 0.05,
+        "response_time_threshold": 5.0
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    },
+    "enhanced_monitoring": {
+      "name": "enhanced_monitoring",
+      "status": "enabled",
+      "description": "Enable enhanced system monitoring and metrics",
+      "rollout_percentage": 100.0,
+      "enabled_for_users": [],
+      "disabled_for_users": [],
+      "start_time": null,
+      "end_time": null,
+      "dependencies": [],
+      "metrics_threshold": {
+        "uptime_threshold": 0.99,
+        "latency_threshold": 2.0
+      },
+      "created_at": "2025-10-13T16:49:21.854262",
+      "updated_at": "2025-10-13T16:49:21.854262"
+    }
+  },
+  "metrics": {},
+  "last_updated": "2025-10-13T17:37:28.433390"
+}

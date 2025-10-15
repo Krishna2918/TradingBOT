@@ -23,6 +23,7 @@ def _default_trading_state() -> Dict[str, Any]:
     """Factory for a fresh trading state dictionary."""
     return {
         "initialized": False,
+        "session_id": None,
         "starting_capital": 0.0,
         "current_capital": 0.0,
         "trades": [],
@@ -48,6 +49,10 @@ def _default_trading_state() -> Dict[str, Any]:
         "regime": "SIDEWAYS",
         "force_market_open": False,
         "questrade_client": None,
+        "ai_trading_active": False,
+        "ai_decisions_today": 0,
+        "total_pnl": 0.0,
+        "portfolio_history": [],
     }
 
 

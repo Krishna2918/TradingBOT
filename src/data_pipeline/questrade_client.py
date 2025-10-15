@@ -16,6 +16,9 @@ from typing import Any, Dict, List, Optional
 import requests
 import yaml
 
+# Phase 2: Import API Budget Manager
+from .api_budget_manager import get_api_budget_manager
+
 
 logger = logging.getLogger(__name__)
 
@@ -55,6 +58,9 @@ class QuestradeClient:
         self.last_request_time = 0.0
 
         self._load_token_cache()
+        
+        # Phase 2: Initialize API Budget Manager
+        self.budget_manager = get_api_budget_manager()
         
         # Log trading mode
         if not self.allow_trading:
@@ -263,6 +269,11 @@ class QuestradeClient:
         if not self._ensure_authenticated():
             return None
 
+        # Phase 2: Check API budget before making request
+        if not self.budget_manager.can_make_request("questrade"):
+            logger.warning("Questrade API budget exhausted or rate limited")
+            return None
+
         self._rate_limit()
         url = f"{self.api_server}{endpoint}"
         headers = {"Authorization": f"Bearer {self.access_token}"}
@@ -270,6 +281,7 @@ class QuestradeClient:
             headers["Content-Type"] = "application/json"
 
         timeout = self.config.get("api", {}).get("timeout", 30)
+        start_time = time.time()
 
         try:
             response = requests.request(
@@ -280,8 +292,15 @@ class QuestradeClient:
                 headers=headers,
                 timeout=timeout,
             )
+            
+            # Phase 2: Record successful request
+            response_time = time.time() - start_time
+            self.budget_manager.record_request("questrade", True, response_time)
+            
         except requests.RequestException as exc:
             logger.error("Request to %s failed: %s", endpoint, exc)
+            # Phase 2: Record failed request
+            self.budget_manager.record_request("questrade", False)
             return None
 
         if response.status_code == 401 and retry:
@@ -296,12 +315,17 @@ class QuestradeClient:
             )
 
         if response.status_code >= 400:
-            logger.error(
-                "Questrade API error %s on %s: %s",
-                response.status_code,
-                endpoint,
-                response.text,
-            )
+            # Phase 2: Handle rate limiting
+            if response.status_code == 429:
+                logger.warning("Questrade API rate limited on %s", endpoint)
+                self.budget_manager.record_rate_limit("questrade")
+            else:
+                logger.error(
+                    "Questrade API error %s on %s: %s",
+                    response.status_code,
+                    endpoint,
+                    response.text,
+                )
             return None
 
         if not response.content:
@@ -312,6 +336,10 @@ class QuestradeClient:
         except ValueError:
             logger.error("Non-JSON response from %s", endpoint)
             return None
+    
+    def get_api_usage_stats(self) -> Dict[str, Any]:
+        """Get Questrade API usage statistics."""
+        return self.budget_manager.get_usage_stats("questrade")
 
     def _get(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
         return self._request("GET", endpoint, params=params)

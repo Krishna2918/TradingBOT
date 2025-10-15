@@ -1,0 +1,12 @@
+risk:
+  total_capital: 250000  # USD deployable capital
+  max_position_risk_pct: 0.02  # Cap each position at 2% risk of capital
+  stop_loss_pct: 0.02  # Stop 2% below entry
+  take_profit_multiple: 2.0  # Take-profit at 2R
+  kelly_sensitivity: 0.6  # Damp Kelly sizing to avoid over-allocation
+  min_confidence: 0.55  # Minimum probability required to allocate capital
+  clamp_confidence: [0.5, 0.75]  # Scores are converted into probability within this band
+  sqlite_path: data/trading_state.db
+  duckdb_path: data/market_data.duckdb
+  log_path: logs/system.log
+  daily_drawdown_limit: 0.03  # 3% daily drawdown circuit breaker

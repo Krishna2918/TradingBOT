@@ -1,0 +1,44 @@
+2025-10-13 11:38:48,410 - validation.security_validator - INFO - Security Validator initialized
+2025-10-13 11:38:48,410 - validation.hallucination_detector - INFO - Hallucination Detector initialized
+2025-10-13 11:38:48,411 - validation.change_tracker - INFO - Change Tracker initialized with database: data/change_log.db
+2025-10-13 11:38:48,411 - validation.debug_scheduler - INFO - Default debug schedules configured
+2025-10-13 11:38:48,412 - validation.debug_scheduler - INFO - Debug Scheduler initialized
+2025-10-13 11:38:48,417 - validation.change_tracker - INFO - Change tracked: CONFIGURATION_CHANGE - src/main.py
+2025-10-13 11:38:48,417 - __main__ - INFO - Unified Trading System initialized for DEMO mode
+2025-10-13 11:39:04,981 - validation.security_validator - INFO - Security Validator initialized
+2025-10-13 11:39:04,981 - validation.hallucination_detector - INFO - Hallucination Detector initialized
+2025-10-13 11:39:04,985 - validation.change_tracker - INFO - Change Tracker initialized with database: data/change_log.db
+2025-10-13 11:39:04,985 - validation.debug_scheduler - INFO - Default debug schedules configured
+2025-10-13 11:39:04,985 - validation.debug_scheduler - INFO - Debug Scheduler initialized
+2025-10-13 11:39:04,988 - validation.change_tracker - INFO - Change tracked: CONFIGURATION_CHANGE - src/main.py
+2025-10-13 11:39:04,988 - __main__ - INFO - Unified Trading System initialized for DEMO mode
+2025-10-13 11:39:04,989 - __main__ - INFO - Running security validation...
+2025-10-13 11:39:05,621 - __main__ - INFO - Security validation completed: WARNING
+2025-10-13 11:39:05,621 - __main__ - INFO - Total issues: 11
+2025-10-13 11:39:05,621 - __main__ - INFO - Critical issues: 0
+2025-10-13 11:39:05,621 - __main__ - INFO - High issues: 11
+2025-10-13 11:39:05,627 - validation.change_tracker - INFO - Change tracked: SECURITY_CHANGE - src/main.py
+2025-10-13 11:41:48,386 - validation.security_validator - INFO - Security Validator initialized
+2025-10-13 11:41:48,387 - validation.hallucination_detector - INFO - Hallucination Detector initialized
+2025-10-13 11:41:48,389 - validation.change_tracker - INFO - Change Tracker initialized with database: data/change_log.db
+2025-10-13 11:41:48,389 - validation.debug_scheduler - INFO - Default debug schedules configured
+2025-10-13 11:41:48,389 - validation.debug_scheduler - INFO - Debug Scheduler initialized
+2025-10-13 11:41:48,393 - validation.change_tracker - INFO - Change tracked: CONFIGURATION_CHANGE - src/main.py
+2025-10-13 11:41:48,393 - __main__ - INFO - Unified Trading System initialized for DEMO mode
+2025-10-13 11:41:48,393 - __main__ - INFO - Running comprehensive system validation...
+2025-10-13 11:41:48,393 - __main__ - INFO - Running security validation...
+2025-10-13 11:41:49,013 - __main__ - INFO - Security validation completed: WARNING
+2025-10-13 11:41:49,013 - __main__ - INFO - Total issues: 11
+2025-10-13 11:41:49,013 - __main__ - INFO - Critical issues: 0
+2025-10-13 11:41:49,013 - __main__ - INFO - High issues: 11
+2025-10-13 11:41:49,020 - validation.change_tracker - INFO - Change tracked: SECURITY_CHANGE - src/main.py
+2025-10-13 11:41:49,020 - __main__ - INFO - Running hallucination detection test...
+2025-10-13 11:41:49,020 - __main__ - INFO - Hallucination test completed: WARNING
+2025-10-13 11:41:49,020 - __main__ - INFO - Total issues: 1
+2025-10-13 11:41:49,020 - __main__ - INFO - AI response valid: True
+2025-10-13 11:41:49,024 - validation.change_tracker - INFO - Change tracked: SECURITY_CHANGE - src/main.py
+2025-10-13 11:41:49,024 - __main__ - INFO - Comprehensive validation completed:
+2025-10-13 11:41:49,024 - __main__ - INFO -   Security: PASS
+2025-10-13 11:41:49,024 - __main__ - INFO -   Hallucination: PASS
+2025-10-13 11:41:49,025 - __main__ - INFO -   Debug: PASS
+2025-10-13 11:41:49,028 - validation.change_tracker - INFO - Change tracked: SECURITY_CHANGE - src/main.py

@@ -1,0 +1,406 @@
+2025-10-13 03:55:39,985 - config.mode_manager - INFO - Mode configurations saved successfully
+2025-10-13 03:55:39,986 - config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-13 03:55:39,986 - config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-13 03:55:39,986 - config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-13 03:55:39,986 - trading.positions - INFO - Position Manager initialized
+2025-10-13 03:55:39,986 - trading.exit_strategy - INFO - Exit Strategy Engine initialized
+2025-10-13 03:55:39,987 - trading.risk - INFO - Risk Manager initialized
+2025-10-13 03:55:39,987 - trading.execution - INFO - Execution Engine initialized
+2025-10-13 03:55:40,031 - config.database - INFO - Database schema created for LIVE mode
+2025-10-13 03:55:40,033 - config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-13 03:55:40,075 - config.database - INFO - Database schema created for DEMO mode
+2025-10-13 03:55:40,076 - config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db
+2025-10-13 03:55:40,076 - __main__ - INFO - Phase 1 Demo initialized
+2025-10-13 03:55:40,076 - __main__ - INFO - ============================================================
+2025-10-13 03:55:40,076 - __main__ - INFO - PHASE 1 DEMO - CORE TRADING INFRASTRUCTURE
+2025-10-13 03:55:40,076 - __main__ - INFO - ============================================================
+2025-10-13 03:55:40,076 - __main__ - INFO - 
+1. TESTING MODE MANAGEMENT
+2025-10-13 03:55:40,076 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,076 - __main__ - INFO - Current mode: DEMO
+2025-10-13 03:55:40,076 - __main__ - INFO - Mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:55:40,076 - __main__ - INFO - Testing mode switching...
+2025-10-13 03:55:40,076 - config.mode_manager - INFO - Mode changed from DEMO to LIVE
+2025-10-13 03:55:40,076 - config.mode_manager - INFO - Mode validation successful for LIVE
+2025-10-13 03:55:40,076 - __main__ - INFO - Successfully switched to LIVE mode
+2025-10-13 03:55:40,077 - __main__ - INFO - LIVE mode info: {'current_mode': 'LIVE', 'database_path': 'data/trading_live.db', 'order_execution': 'REAL', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.75, 'max_positions': 10}, 'description': 'Live trading with real money and real orders', 'is_live': True, 'is_demo': False, 'is_real_trading': True, 'is_paper_trading': False}
+2025-10-13 03:55:40,077 - config.mode_manager - INFO - Mode changed from LIVE to DEMO
+2025-10-13 03:55:40,077 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:55:40,077 - __main__ - INFO - Successfully switched back to DEMO mode
+2025-10-13 03:55:40,077 - __main__ - INFO - DEMO mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:55:40,077 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:55:40,077 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:55:40,077 - __main__ - INFO - Mode management test completed
+2025-10-13 03:55:40,077 - __main__ - INFO - 
+2. TESTING DATABASE SETUP
+2025-10-13 03:55:40,077 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,079 - config.database - INFO - Database integrity check passed for LIVE mode
+2025-10-13 03:55:40,079 - __main__ - INFO - Database integrity for LIVE mode: PASS
+2025-10-13 03:55:40,081 - config.database - INFO - Database integrity check passed for DEMO mode
+2025-10-13 03:55:40,081 - __main__ - INFO - Database integrity for DEMO mode: PASS
+2025-10-13 03:55:40,086 - __main__ - INFO - Database stats for LIVE mode: {'mode': 'LIVE', 'database_path': 'data/trading_live.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:55:40,088 - __main__ - INFO - Database stats for DEMO mode: {'mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:55:40,088 - __main__ - INFO - Database setup test completed
+2025-10-13 03:55:40,089 - __main__ - INFO - 
+3. TESTING POSITION MANAGEMENT
+2025-10-13 03:55:40,089 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,089 - __main__ - INFO - Creating test positions...
+2025-10-13 03:55:40,089 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:55:40,089 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:55:40,093 - trading.positions - INFO - Position tracked: AAPL 10 shares @ $150.00 in DEMO mode
+2025-10-13 03:55:40,093 - __main__ - INFO - Created position: AAPL 10 shares @ $150.0
+2025-10-13 03:55:40,099 - trading.positions - INFO - Position tracked: MSFT 5 shares @ $300.00 in DEMO mode
+2025-10-13 03:55:40,099 - __main__ - INFO - Created position: MSFT 5 shares @ $300.0
+2025-10-13 03:55:40,101 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,101 - __main__ - INFO - Open positions: 2
+2025-10-13 03:55:40,101 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:55:40,101 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:55:40,102 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,103 - __main__ - INFO - Portfolio summary: {'mode': 'DEMO', 'total_open_positions': 2, 'total_positions': 2, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'total_unrealized_pnl_percent': 0.0, 'total_realized_pnl': 0, 'total_pnl': 0.0, 'positions': [{'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}]}
+2025-10-13 03:55:40,103 - __main__ - INFO - Position management test completed
+2025-10-13 03:55:40,103 - __main__ - INFO - 
+4. TESTING RISK MANAGEMENT
+2025-10-13 03:55:40,103 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,103 - __main__ - INFO - Testing position sizing...
+2025-10-13 03:55:40,103 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,103 - trading.risk - INFO - Position size calculated: 6 shares, risk: $60.00 (0.60%)
+2025-10-13 03:55:40,104 - __main__ - INFO - Position sizing result: RiskMetrics(position_size=6, risk_amount=60.0, risk_percent=0.6, stop_loss=140.0, take_profit=165.0, risk_reward_ratio=1.5, max_position_value=1000.0, portfolio_risk=0.02)
+2025-10-13 03:55:40,104 - __main__ - INFO - Testing portfolio limits...
+2025-10-13 03:55:40,104 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,104 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,104 - __main__ - INFO - Portfolio limits: {'mode': 'DEMO', 'total_positions': 2, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.02, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}
+2025-10-13 03:55:40,105 - __main__ - INFO - Testing risk summary...
+2025-10-13 03:55:40,105 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,106 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,107 - __main__ - INFO - Risk summary: {'mode': 'DEMO', 'timestamp': datetime.datetime(2025, 10, 13, 3, 55, 40, 107898), 'portfolio_limits': {'mode': 'DEMO', 'total_positions': 2, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.02, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}, 'daily_drawdown': {'mode': 'DEMO', 'date': datetime.date(2025, 10, 13), 'daily_pnl': 0, 'daily_drawdown_percent': 0.0, 'max_daily_drawdown': 0.05, 'within_drawdown_limit': True, 'trade_count': 0, 'can_trade': True}, 'mode_limits': {'mode': 'DEMO', 'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10, 'risk_per_trade': 0.02}, 'recent_risk_events': [], 'risk_status': {'can_trade': True, 'portfolio_healthy': True, 'daily_limits_ok': True, 'overall_status': 'HEALTHY'}}
+2025-10-13 03:55:40,107 - __main__ - INFO - Risk management test completed
+2025-10-13 03:55:40,107 - __main__ - INFO - 
+5. TESTING EXIT STRATEGY
+2025-10-13 03:55:40,107 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,107 - __main__ - INFO - Testing exit strategy summary...
+2025-10-13 03:55:40,108 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,108 - __main__ - INFO - Exit strategy summary: {'mode': 'DEMO', 'total_open_positions': 2, 'positions_with_stop_loss': 2, 'positions_with_take_profit': 2, 'positions_at_time_risk': 0, 'max_holding_days': 30, 'stop_loss_multiplier': 2.0, 'take_profit_multiplier': 3.0, 'min_confidence_threshold': 0.7, 'exit_strategies': {'stop_loss': {'enabled': True, 'positions': 2, 'description': 'Price-based stop loss protection'}, 'take_profit': {'enabled': True, 'positions': 2, 'description': 'Price-based profit taking'}, 'time_based': {'enabled': True, 'positions_at_risk': 0, 'description': 'Maximum holding period: 30 days'}, 'ai_reversal': {'enabled': True, 'min_confidence': 0.7, 'description': 'AI-driven reversal signals'}}}
+2025-10-13 03:55:40,108 - __main__ - INFO - Testing sell signal generation...
+2025-10-13 03:55:40,108 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:55:40,108 - trading.exit_strategy - INFO - Generated 0 sell signals for DEMO mode
+2025-10-13 03:55:40,108 - __main__ - INFO - Generated 0 sell signals
+2025-10-13 03:55:40,108 - __main__ - INFO - Exit strategy test completed
+2025-10-13 03:55:40,108 - __main__ - INFO - 
+6. TESTING ORDER EXECUTION
+2025-10-13 03:55:40,108 - __main__ - INFO - ------------------------------
+2025-10-13 03:55:40,108 - __main__ - INFO - Testing execution summary...
+2025-10-13 03:55:40,109 - __main__ - ERROR - Phase 1 demo failed: no such column: side
+2025-10-13 03:55:40,109 - __main__ - ERROR - Phase 1 demo failed: no such column: side
+2025-10-13 03:56:52,100 - config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-13 03:56:52,101 - config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-13 03:56:52,101 - config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-13 03:56:52,101 - trading.positions - INFO - Position Manager initialized
+2025-10-13 03:56:52,101 - trading.exit_strategy - INFO - Exit Strategy Engine initialized
+2025-10-13 03:56:52,101 - trading.risk - INFO - Risk Manager initialized
+2025-10-13 03:56:52,102 - trading.execution - INFO - Execution Engine initialized
+2025-10-13 03:56:52,145 - config.database - INFO - Database schema created for LIVE mode
+2025-10-13 03:56:52,146 - config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-13 03:56:52,193 - config.database - INFO - Database schema created for DEMO mode
+2025-10-13 03:56:52,193 - config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db
+2025-10-13 03:56:52,193 - __main__ - INFO - Phase 1 Demo initialized
+2025-10-13 03:56:52,193 - __main__ - INFO - ============================================================
+2025-10-13 03:56:52,193 - __main__ - INFO - PHASE 1 DEMO - CORE TRADING INFRASTRUCTURE
+2025-10-13 03:56:52,194 - __main__ - INFO - ============================================================
+2025-10-13 03:56:52,194 - __main__ - INFO - 
+1. TESTING MODE MANAGEMENT
+2025-10-13 03:56:52,194 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,194 - __main__ - INFO - Current mode: DEMO
+2025-10-13 03:56:52,194 - __main__ - INFO - Mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:56:52,194 - __main__ - INFO - Testing mode switching...
+2025-10-13 03:56:52,194 - config.mode_manager - INFO - Mode changed from DEMO to LIVE
+2025-10-13 03:56:52,194 - config.mode_manager - INFO - Mode validation successful for LIVE
+2025-10-13 03:56:52,194 - __main__ - INFO - Successfully switched to LIVE mode
+2025-10-13 03:56:52,194 - __main__ - INFO - LIVE mode info: {'current_mode': 'LIVE', 'database_path': 'data/trading_live.db', 'order_execution': 'REAL', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.75, 'max_positions': 10}, 'description': 'Live trading with real money and real orders', 'is_live': True, 'is_demo': False, 'is_real_trading': True, 'is_paper_trading': False}
+2025-10-13 03:56:52,194 - config.mode_manager - INFO - Mode changed from LIVE to DEMO
+2025-10-13 03:56:52,195 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:56:52,195 - __main__ - INFO - Successfully switched back to DEMO mode
+2025-10-13 03:56:52,195 - __main__ - INFO - DEMO mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:56:52,195 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:56:52,195 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:56:52,195 - __main__ - INFO - Mode management test completed
+2025-10-13 03:56:52,195 - __main__ - INFO - 
+2. TESTING DATABASE SETUP
+2025-10-13 03:56:52,195 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,197 - config.database - INFO - Database integrity check passed for LIVE mode
+2025-10-13 03:56:52,198 - __main__ - INFO - Database integrity for LIVE mode: PASS
+2025-10-13 03:56:52,200 - config.database - INFO - Database integrity check passed for DEMO mode
+2025-10-13 03:56:52,200 - __main__ - INFO - Database integrity for DEMO mode: PASS
+2025-10-13 03:56:52,204 - __main__ - INFO - Database stats for LIVE mode: {'mode': 'LIVE', 'database_path': 'data/trading_live.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:56:52,208 - __main__ - INFO - Database stats for DEMO mode: {'mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:56:52,208 - __main__ - INFO - Database setup test completed
+2025-10-13 03:56:52,209 - __main__ - INFO - 
+3. TESTING POSITION MANAGEMENT
+2025-10-13 03:56:52,209 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,209 - __main__ - INFO - Creating test positions...
+2025-10-13 03:56:52,209 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:56:52,209 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:56:52,214 - trading.positions - INFO - Position tracked: AAPL 10 shares @ $150.00 in DEMO mode
+2025-10-13 03:56:52,215 - __main__ - INFO - Created position: AAPL 10 shares @ $150.0
+2025-10-13 03:56:52,220 - trading.positions - INFO - Position tracked: MSFT 5 shares @ $300.00 in DEMO mode
+2025-10-13 03:56:52,221 - __main__ - INFO - Created position: MSFT 5 shares @ $300.0
+2025-10-13 03:56:52,223 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,223 - __main__ - INFO - Open positions: 2
+2025-10-13 03:56:52,223 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:56:52,223 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:56:52,224 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,224 - __main__ - INFO - Portfolio summary: {'mode': 'DEMO', 'total_open_positions': 2, 'total_positions': 2, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'total_unrealized_pnl_percent': 0.0, 'total_realized_pnl': 0, 'total_pnl': 0.0, 'positions': [{'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}]}
+2025-10-13 03:56:52,225 - __main__ - INFO - Position management test completed
+2025-10-13 03:56:52,225 - __main__ - INFO - 
+4. TESTING RISK MANAGEMENT
+2025-10-13 03:56:52,225 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,225 - __main__ - INFO - Testing position sizing...
+2025-10-13 03:56:52,226 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,226 - trading.risk - INFO - Position size calculated: 6 shares, risk: $60.00 (0.60%)
+2025-10-13 03:56:52,226 - __main__ - INFO - Position sizing result: RiskMetrics(position_size=6, risk_amount=60.0, risk_percent=0.6, stop_loss=140.0, take_profit=165.0, risk_reward_ratio=1.5, max_position_value=1000.0, portfolio_risk=0.02)
+2025-10-13 03:56:52,226 - __main__ - INFO - Testing portfolio limits...
+2025-10-13 03:56:52,227 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,228 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,228 - __main__ - INFO - Portfolio limits: {'mode': 'DEMO', 'total_positions': 2, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.02, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}
+2025-10-13 03:56:52,228 - __main__ - INFO - Testing risk summary...
+2025-10-13 03:56:52,229 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,230 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,231 - __main__ - INFO - Risk summary: {'mode': 'DEMO', 'timestamp': datetime.datetime(2025, 10, 13, 3, 56, 52, 231557), 'portfolio_limits': {'mode': 'DEMO', 'total_positions': 2, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 3000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.02, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}, 'daily_drawdown': {'mode': 'DEMO', 'date': datetime.date(2025, 10, 13), 'daily_pnl': 0, 'daily_drawdown_percent': 0.0, 'max_daily_drawdown': 0.05, 'within_drawdown_limit': True, 'trade_count': 0, 'can_trade': True}, 'mode_limits': {'mode': 'DEMO', 'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10, 'risk_per_trade': 0.02}, 'recent_risk_events': [], 'risk_status': {'can_trade': True, 'portfolio_healthy': True, 'daily_limits_ok': True, 'overall_status': 'HEALTHY'}}
+2025-10-13 03:56:52,232 - __main__ - INFO - Risk management test completed
+2025-10-13 03:56:52,232 - __main__ - INFO - 
+5. TESTING EXIT STRATEGY
+2025-10-13 03:56:52,232 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,232 - __main__ - INFO - Testing exit strategy summary...
+2025-10-13 03:56:52,233 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,233 - __main__ - INFO - Exit strategy summary: {'mode': 'DEMO', 'total_open_positions': 2, 'positions_with_stop_loss': 2, 'positions_with_take_profit': 2, 'positions_at_time_risk': 0, 'max_holding_days': 30, 'stop_loss_multiplier': 2.0, 'take_profit_multiplier': 3.0, 'min_confidence_threshold': 0.7, 'exit_strategies': {'stop_loss': {'enabled': True, 'positions': 2, 'description': 'Price-based stop loss protection'}, 'take_profit': {'enabled': True, 'positions': 2, 'description': 'Price-based profit taking'}, 'time_based': {'enabled': True, 'positions_at_risk': 0, 'description': 'Maximum holding period: 30 days'}, 'ai_reversal': {'enabled': True, 'min_confidence': 0.7, 'description': 'AI-driven reversal signals'}}}
+2025-10-13 03:56:52,233 - __main__ - INFO - Testing sell signal generation...
+2025-10-13 03:56:52,234 - trading.positions - INFO - Retrieved 2 open positions for DEMO mode
+2025-10-13 03:56:52,234 - trading.exit_strategy - INFO - Generated 0 sell signals for DEMO mode
+2025-10-13 03:56:52,234 - __main__ - INFO - Generated 0 sell signals
+2025-10-13 03:56:52,234 - __main__ - INFO - Exit strategy test completed
+2025-10-13 03:56:52,234 - __main__ - INFO - 
+6. TESTING ORDER EXECUTION
+2025-10-13 03:56:52,234 - __main__ - INFO - ------------------------------
+2025-10-13 03:56:52,234 - __main__ - INFO - Testing execution summary...
+2025-10-13 03:56:52,235 - __main__ - ERROR - Phase 1 demo failed: 'sqlite3.Row' object has no attribute 'get'
+2025-10-13 03:56:52,235 - __main__ - ERROR - Phase 1 demo failed: 'sqlite3.Row' object has no attribute 'get'
+2025-10-13 03:57:18,075 - config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-13 03:57:18,075 - config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-13 03:57:18,075 - config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-13 03:57:18,075 - trading.positions - INFO - Position Manager initialized
+2025-10-13 03:57:18,075 - trading.exit_strategy - INFO - Exit Strategy Engine initialized
+2025-10-13 03:57:18,075 - trading.risk - INFO - Risk Manager initialized
+2025-10-13 03:57:18,075 - trading.execution - INFO - Execution Engine initialized
+2025-10-13 03:57:18,077 - config.database - INFO - Database schema created for LIVE mode
+2025-10-13 03:57:18,077 - config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-13 03:57:18,079 - config.database - INFO - Database schema created for DEMO mode
+2025-10-13 03:57:18,079 - config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db
+2025-10-13 03:57:18,079 - __main__ - INFO - Phase 1 Demo initialized
+2025-10-13 03:57:18,079 - __main__ - INFO - ============================================================
+2025-10-13 03:57:18,079 - __main__ - INFO - PHASE 1 DEMO - CORE TRADING INFRASTRUCTURE
+2025-10-13 03:57:18,079 - __main__ - INFO - ============================================================
+2025-10-13 03:57:18,079 - __main__ - INFO - 
+1. TESTING MODE MANAGEMENT
+2025-10-13 03:57:18,079 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,079 - __main__ - INFO - Current mode: DEMO
+2025-10-13 03:57:18,079 - __main__ - INFO - Mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:57:18,079 - __main__ - INFO - Testing mode switching...
+2025-10-13 03:57:18,079 - config.mode_manager - INFO - Mode changed from DEMO to LIVE
+2025-10-13 03:57:18,079 - config.mode_manager - INFO - Mode validation successful for LIVE
+2025-10-13 03:57:18,080 - __main__ - INFO - Successfully switched to LIVE mode
+2025-10-13 03:57:18,080 - __main__ - INFO - LIVE mode info: {'current_mode': 'LIVE', 'database_path': 'data/trading_live.db', 'order_execution': 'REAL', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.75, 'max_positions': 10}, 'description': 'Live trading with real money and real orders', 'is_live': True, 'is_demo': False, 'is_real_trading': True, 'is_paper_trading': False}
+2025-10-13 03:57:18,080 - config.mode_manager - INFO - Mode changed from LIVE to DEMO
+2025-10-13 03:57:18,080 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:18,080 - __main__ - INFO - Successfully switched back to DEMO mode
+2025-10-13 03:57:18,080 - __main__ - INFO - DEMO mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:57:18,080 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:57:18,080 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:18,080 - __main__ - INFO - Mode management test completed
+2025-10-13 03:57:18,080 - __main__ - INFO - 
+2. TESTING DATABASE SETUP
+2025-10-13 03:57:18,080 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,081 - config.database - INFO - Database integrity check passed for LIVE mode
+2025-10-13 03:57:18,081 - __main__ - INFO - Database integrity for LIVE mode: PASS
+2025-10-13 03:57:18,081 - config.database - INFO - Database integrity check passed for DEMO mode
+2025-10-13 03:57:18,081 - __main__ - INFO - Database integrity for DEMO mode: PASS
+2025-10-13 03:57:18,084 - __main__ - INFO - Database stats for LIVE mode: {'mode': 'LIVE', 'database_path': 'data/trading_live.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:57:18,086 - __main__ - INFO - Database stats for DEMO mode: {'mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'tables': {'positions': 2, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:57:18,086 - __main__ - INFO - Database setup test completed
+2025-10-13 03:57:18,086 - __main__ - INFO - 
+3. TESTING POSITION MANAGEMENT
+2025-10-13 03:57:18,086 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,086 - __main__ - INFO - Creating test positions...
+2025-10-13 03:57:18,086 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:57:18,086 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:18,091 - trading.positions - INFO - Position tracked: AAPL 10 shares @ $150.00 in DEMO mode
+2025-10-13 03:57:18,091 - __main__ - INFO - Created position: AAPL 10 shares @ $150.0
+2025-10-13 03:57:18,097 - trading.positions - INFO - Position tracked: MSFT 5 shares @ $300.00 in DEMO mode
+2025-10-13 03:57:18,097 - __main__ - INFO - Created position: MSFT 5 shares @ $300.0
+2025-10-13 03:57:18,100 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,100 - __main__ - INFO - Open positions: 4
+2025-10-13 03:57:18,100 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:57:18,100 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:57:18,100 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:57:18,100 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:57:18,101 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,102 - __main__ - INFO - Portfolio summary: {'mode': 'DEMO', 'total_open_positions': 4, 'total_positions': 4, 'total_invested': 6000.0, 'total_unrealized_pnl': 0.0, 'total_unrealized_pnl_percent': 0.0, 'total_realized_pnl': 0, 'total_pnl': 0.0, 'positions': [{'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}]}
+2025-10-13 03:57:18,102 - __main__ - INFO - Position management test completed
+2025-10-13 03:57:18,102 - __main__ - INFO - 
+4. TESTING RISK MANAGEMENT
+2025-10-13 03:57:18,102 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,102 - __main__ - INFO - Testing position sizing...
+2025-10-13 03:57:18,102 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,102 - trading.risk - INFO - Position size calculated: 6 shares, risk: $60.00 (0.60%)
+2025-10-13 03:57:18,103 - __main__ - INFO - Position sizing result: RiskMetrics(position_size=6, risk_amount=60.0, risk_percent=0.6, stop_loss=140.0, take_profit=165.0, risk_reward_ratio=1.5, max_position_value=1000.0, portfolio_risk=0.04)
+2025-10-13 03:57:18,103 - __main__ - INFO - Testing portfolio limits...
+2025-10-13 03:57:18,103 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,104 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,104 - __main__ - INFO - Portfolio limits: {'mode': 'DEMO', 'total_positions': 4, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 6000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.04, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}
+2025-10-13 03:57:18,104 - __main__ - INFO - Testing risk summary...
+2025-10-13 03:57:18,104 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,105 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,106 - __main__ - INFO - Risk summary: {'mode': 'DEMO', 'timestamp': datetime.datetime(2025, 10, 13, 3, 57, 18, 106597), 'portfolio_limits': {'mode': 'DEMO', 'total_positions': 4, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 6000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.04, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}, 'daily_drawdown': {'mode': 'DEMO', 'date': datetime.date(2025, 10, 13), 'daily_pnl': 0, 'daily_drawdown_percent': 0.0, 'max_daily_drawdown': 0.05, 'within_drawdown_limit': True, 'trade_count': 0, 'can_trade': True}, 'mode_limits': {'mode': 'DEMO', 'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10, 'risk_per_trade': 0.02}, 'recent_risk_events': [], 'risk_status': {'can_trade': True, 'portfolio_healthy': True, 'daily_limits_ok': True, 'overall_status': 'HEALTHY'}}
+2025-10-13 03:57:18,106 - __main__ - INFO - Risk management test completed
+2025-10-13 03:57:18,106 - __main__ - INFO - 
+5. TESTING EXIT STRATEGY
+2025-10-13 03:57:18,106 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,106 - __main__ - INFO - Testing exit strategy summary...
+2025-10-13 03:57:18,107 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,107 - __main__ - INFO - Exit strategy summary: {'mode': 'DEMO', 'total_open_positions': 4, 'positions_with_stop_loss': 4, 'positions_with_take_profit': 4, 'positions_at_time_risk': 0, 'max_holding_days': 30, 'stop_loss_multiplier': 2.0, 'take_profit_multiplier': 3.0, 'min_confidence_threshold': 0.7, 'exit_strategies': {'stop_loss': {'enabled': True, 'positions': 4, 'description': 'Price-based stop loss protection'}, 'take_profit': {'enabled': True, 'positions': 4, 'description': 'Price-based profit taking'}, 'time_based': {'enabled': True, 'positions_at_risk': 0, 'description': 'Maximum holding period: 30 days'}, 'ai_reversal': {'enabled': True, 'min_confidence': 0.7, 'description': 'AI-driven reversal signals'}}}
+2025-10-13 03:57:18,107 - __main__ - INFO - Testing sell signal generation...
+2025-10-13 03:57:18,107 - trading.positions - INFO - Retrieved 4 open positions for DEMO mode
+2025-10-13 03:57:18,107 - trading.exit_strategy - INFO - Generated 0 sell signals for DEMO mode
+2025-10-13 03:57:18,108 - __main__ - INFO - Generated 0 sell signals
+2025-10-13 03:57:18,108 - __main__ - INFO - Exit strategy test completed
+2025-10-13 03:57:18,108 - __main__ - INFO - 
+6. TESTING ORDER EXECUTION
+2025-10-13 03:57:18,108 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:18,108 - __main__ - INFO - Testing execution summary...
+2025-10-13 03:57:18,109 - __main__ - ERROR - Phase 1 demo failed: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-10-13 03:57:18,109 - __main__ - ERROR - Phase 1 demo failed: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-10-13 03:57:37,579 - config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-13 03:57:37,580 - config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-13 03:57:37,580 - config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-13 03:57:37,580 - trading.positions - INFO - Position Manager initialized
+2025-10-13 03:57:37,580 - trading.exit_strategy - INFO - Exit Strategy Engine initialized
+2025-10-13 03:57:37,580 - trading.risk - INFO - Risk Manager initialized
+2025-10-13 03:57:37,580 - trading.execution - INFO - Execution Engine initialized
+2025-10-13 03:57:37,582 - config.database - INFO - Database schema created for LIVE mode
+2025-10-13 03:57:37,582 - config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-13 03:57:37,583 - config.database - INFO - Database schema created for DEMO mode
+2025-10-13 03:57:37,583 - config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db
+2025-10-13 03:57:37,583 - __main__ - INFO - Phase 1 Demo initialized
+2025-10-13 03:57:37,583 - __main__ - INFO - ============================================================
+2025-10-13 03:57:37,583 - __main__ - INFO - PHASE 1 DEMO - CORE TRADING INFRASTRUCTURE
+2025-10-13 03:57:37,583 - __main__ - INFO - ============================================================
+2025-10-13 03:57:37,583 - __main__ - INFO - 
+1. TESTING MODE MANAGEMENT
+2025-10-13 03:57:37,583 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,583 - __main__ - INFO - Current mode: DEMO
+2025-10-13 03:57:37,583 - __main__ - INFO - Mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:57:37,583 - __main__ - INFO - Testing mode switching...
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode changed from DEMO to LIVE
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode validation successful for LIVE
+2025-10-13 03:57:37,584 - __main__ - INFO - Successfully switched to LIVE mode
+2025-10-13 03:57:37,584 - __main__ - INFO - LIVE mode info: {'current_mode': 'LIVE', 'database_path': 'data/trading_live.db', 'order_execution': 'REAL', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.75, 'max_positions': 10}, 'description': 'Live trading with real money and real orders', 'is_live': True, 'is_demo': False, 'is_real_trading': True, 'is_paper_trading': False}
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode changed from LIVE to DEMO
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:37,584 - __main__ - INFO - Successfully switched back to DEMO mode
+2025-10-13 03:57:37,584 - __main__ - INFO - DEMO mode info: {'current_mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'order_execution': 'PAPER', 'balance_tracking': True, 'risk_limits': {'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10}, 'description': 'Demo trading with paper money and simulated orders', 'is_live': False, 'is_demo': True, 'is_real_trading': False, 'is_paper_trading': True}
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:57:37,584 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:37,584 - __main__ - INFO - Mode management test completed
+2025-10-13 03:57:37,584 - __main__ - INFO - 
+2. TESTING DATABASE SETUP
+2025-10-13 03:57:37,584 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,585 - config.database - INFO - Database integrity check passed for LIVE mode
+2025-10-13 03:57:37,585 - __main__ - INFO - Database integrity for LIVE mode: PASS
+2025-10-13 03:57:37,585 - config.database - INFO - Database integrity check passed for DEMO mode
+2025-10-13 03:57:37,585 - __main__ - INFO - Database integrity for DEMO mode: PASS
+2025-10-13 03:57:37,588 - __main__ - INFO - Database stats for LIVE mode: {'mode': 'LIVE', 'database_path': 'data/trading_live.db', 'tables': {'positions': 0, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:57:37,591 - __main__ - INFO - Database stats for DEMO mode: {'mode': 'DEMO', 'database_path': 'data/trading_demo.db', 'tables': {'positions': 4, 'orders': 0, 'trade_results': 0, 'account_balance': 0, 'risk_events': 0, 'system_logs': 0}}
+2025-10-13 03:57:37,591 - __main__ - INFO - Database setup test completed
+2025-10-13 03:57:37,591 - __main__ - INFO - 
+3. TESTING POSITION MANAGEMENT
+2025-10-13 03:57:37,591 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,591 - __main__ - INFO - Creating test positions...
+2025-10-13 03:57:37,591 - config.mode_manager - INFO - Mode changed from DEMO to DEMO
+2025-10-13 03:57:37,591 - config.mode_manager - INFO - Mode validation successful for DEMO
+2025-10-13 03:57:37,595 - trading.positions - INFO - Position tracked: AAPL 10 shares @ $150.00 in DEMO mode
+2025-10-13 03:57:37,596 - __main__ - INFO - Created position: AAPL 10 shares @ $150.0
+2025-10-13 03:57:37,602 - trading.positions - INFO - Position tracked: MSFT 5 shares @ $300.00 in DEMO mode
+2025-10-13 03:57:37,602 - __main__ - INFO - Created position: MSFT 5 shares @ $300.0
+2025-10-13 03:57:37,604 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,604 - __main__ - INFO - Open positions: 6
+2025-10-13 03:57:37,604 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:57:37,605 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:57:37,605 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:57:37,605 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:57:37,605 - __main__ - INFO -   - MSFT: 5 shares @ $300.0
+2025-10-13 03:57:37,605 - __main__ - INFO -   - AAPL: 10 shares @ $150.0
+2025-10-13 03:57:37,606 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,607 - __main__ - INFO - Portfolio summary: {'mode': 'DEMO', 'total_open_positions': 6, 'total_positions': 6, 'total_invested': 9000.0, 'total_unrealized_pnl': 0.0, 'total_unrealized_pnl_percent': 0.0, 'total_realized_pnl': 0, 'total_pnl': 0.0, 'positions': [{'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'MSFT', 'quantity': 5, 'entry_price': 300.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}, {'symbol': 'AAPL', 'quantity': 10, 'entry_price': 150.0, 'pnl': 0.0, 'pnl_percent': 0.0, 'status': 'OPEN'}]}
+2025-10-13 03:57:37,607 - __main__ - INFO - Position management test completed
+2025-10-13 03:57:37,607 - __main__ - INFO - 
+4. TESTING RISK MANAGEMENT
+2025-10-13 03:57:37,607 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,608 - __main__ - INFO - Testing position sizing...
+2025-10-13 03:57:37,609 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,609 - trading.risk - INFO - Position size calculated: 6 shares, risk: $60.00 (0.60%)
+2025-10-13 03:57:37,609 - __main__ - INFO - Position sizing result: RiskMetrics(position_size=6, risk_amount=60.0, risk_percent=0.6, stop_loss=140.0, take_profit=165.0, risk_reward_ratio=1.5, max_position_value=1000.0, portfolio_risk=0.06)
+2025-10-13 03:57:37,609 - __main__ - INFO - Testing portfolio limits...
+2025-10-13 03:57:37,610 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,611 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,611 - __main__ - INFO - Portfolio limits: {'mode': 'DEMO', 'total_positions': 6, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 9000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.06, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}
+2025-10-13 03:57:37,611 - __main__ - INFO - Testing risk summary...
+2025-10-13 03:57:37,612 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,613 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,614 - __main__ - INFO - Risk summary: {'mode': 'DEMO', 'timestamp': datetime.datetime(2025, 10, 13, 3, 57, 37, 614367), 'portfolio_limits': {'mode': 'DEMO', 'total_positions': 6, 'max_positions': 10, 'positions_within_limit': True, 'total_invested': 9000.0, 'total_unrealized_pnl': 0.0, 'portfolio_risk': 0.06, 'max_portfolio_risk': 0.2, 'portfolio_risk_within_limit': True, 'can_open_new_position': True, 'warnings': []}, 'daily_drawdown': {'mode': 'DEMO', 'date': datetime.date(2025, 10, 13), 'daily_pnl': 0, 'daily_drawdown_percent': 0.0, 'max_daily_drawdown': 0.05, 'within_drawdown_limit': True, 'trade_count': 0, 'can_trade': True}, 'mode_limits': {'mode': 'DEMO', 'max_position_size': 0.1, 'max_daily_drawdown': 0.05, 'max_portfolio_risk': 0.2, 'min_confidence': 0.7, 'max_positions': 10, 'risk_per_trade': 0.02}, 'recent_risk_events': [], 'risk_status': {'can_trade': True, 'portfolio_healthy': True, 'daily_limits_ok': True, 'overall_status': 'HEALTHY'}}
+2025-10-13 03:57:37,614 - __main__ - INFO - Risk management test completed
+2025-10-13 03:57:37,615 - __main__ - INFO - 
+5. TESTING EXIT STRATEGY
+2025-10-13 03:57:37,615 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,615 - __main__ - INFO - Testing exit strategy summary...
+2025-10-13 03:57:37,616 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,616 - __main__ - INFO - Exit strategy summary: {'mode': 'DEMO', 'total_open_positions': 6, 'positions_with_stop_loss': 6, 'positions_with_take_profit': 6, 'positions_at_time_risk': 0, 'max_holding_days': 30, 'stop_loss_multiplier': 2.0, 'take_profit_multiplier': 3.0, 'min_confidence_threshold': 0.7, 'exit_strategies': {'stop_loss': {'enabled': True, 'positions': 6, 'description': 'Price-based stop loss protection'}, 'take_profit': {'enabled': True, 'positions': 6, 'description': 'Price-based profit taking'}, 'time_based': {'enabled': True, 'positions_at_risk': 0, 'description': 'Maximum holding period: 30 days'}, 'ai_reversal': {'enabled': True, 'min_confidence': 0.7, 'description': 'AI-driven reversal signals'}}}
+2025-10-13 03:57:37,616 - __main__ - INFO - Testing sell signal generation...
+2025-10-13 03:57:37,617 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,617 - trading.exit_strategy - INFO - Generated 0 sell signals for DEMO mode
+2025-10-13 03:57:37,617 - __main__ - INFO - Generated 0 sell signals
+2025-10-13 03:57:37,617 - __main__ - INFO - Exit strategy test completed
+2025-10-13 03:57:37,617 - __main__ - INFO - 
+6. TESTING ORDER EXECUTION
+2025-10-13 03:57:37,617 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,617 - __main__ - INFO - Testing execution summary...
+2025-10-13 03:57:37,619 - __main__ - INFO - Execution summary: {'mode': 'DEMO', 'execution_type': 'PAPER', 'order_statistics': {'total_orders': 0, 'filled_orders': None, 'pending_orders': None, 'rejected_orders': None, 'buy_orders': None, 'sell_orders': None, 'success_rate': 0}, 'recent_orders': [], 'execution_capabilities': {'real_trading': False, 'paper_trading': True, 'order_types': ['MARKET', 'LIMIT', 'STOP', 'STOP_LIMIT'], 'order_sides': ['BUY', 'SELL']}}
+2025-10-13 03:57:37,619 - __main__ - INFO - Testing buy order execution...
+2025-10-13 03:57:37,620 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,620 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,621 - trading.execution - WARNING - Position already exists for AAPL
+2025-10-13 03:57:37,621 - __main__ - INFO - Buy order failed: Order validation failed
+2025-10-13 03:57:37,621 - __main__ - INFO - Order execution test completed
+2025-10-13 03:57:37,621 - __main__ - INFO - 
+7. TESTING INTEGRATION
+2025-10-13 03:57:37,621 - __main__ - INFO - ------------------------------
+2025-10-13 03:57:37,622 - __main__ - INFO - Testing component initialization...
+2025-10-13 03:57:37,629 - __main__ - INFO - Testing mode consistency...
+2025-10-13 03:57:37,630 - __main__ - INFO - Current mode: DEMO
+2025-10-13 03:57:37,630 - __main__ - INFO - Testing database connectivity...
+2025-10-13 03:57:37,639 - __main__ - INFO - Integration test completed
+2025-10-13 03:57:37,639 - __main__ - INFO - ============================================================
+2025-10-13 03:57:37,640 - __main__ - INFO - PHASE 1 DEMO COMPLETED SUCCESSFULLY
+2025-10-13 03:57:37,640 - __main__ - INFO - ============================================================
+2025-10-13 03:57:37,640 - __main__ - INFO - 
+============================================================
+2025-10-13 03:57:37,640 - __main__ - INFO - PHASE 1 VALIDATION
+2025-10-13 03:57:37,640 - __main__ - INFO - ============================================================
+2025-10-13 03:57:37,640 - config.database - INFO - Database integrity check passed for LIVE mode
+2025-10-13 03:57:37,641 - config.database - INFO - Database integrity check passed for DEMO mode
+2025-10-13 03:57:37,642 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,643 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,643 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,646 - trading.positions - INFO - Retrieved 6 open positions for DEMO mode
+2025-10-13 03:57:37,647 - __main__ - INFO - 
+Validation Results:
+2025-10-13 03:57:37,647 - __main__ - INFO - ----------------------------------------
+2025-10-13 03:57:37,652 - __main__ - INFO - ----------------------------------------
+2025-10-13 03:57:37,655 - __main__ - INFO - Ready to proceed to Phase 2!

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import random
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional, Tuple, Iterable
@@ -18,6 +19,12 @@ except ImportError:
 from .state_manager import trading_state, STATE_STORE, save_trading_state
 from src.data_pipeline.questrade_client import QuestradeClient
 from src.infrastructure.state_store import SQLiteStateStore
+
+# Price cache and rate limiting
+_price_cache = {}
+_last_request_time = {}
+RATE_LIMIT_SECONDS = 2  # Minimum seconds between requests for same symbol
+CACHE_DURATION_SECONDS = 30  # Cache prices for 30 seconds
 
 
 def _ensure_live_broker():
@@ -504,7 +511,24 @@ def _update_learning_from_trade(realized_pnl: float) -> None:
         print(f"Learning update failed: {e}")
 
 def get_live_price(symbol: str) -> float | None:
-    """Get live price from broker or data source"""
+    """Get live price from broker or data source with rate limiting and caching"""
+    current_time = time.time()
+    
+    # Check cache first
+    if symbol in _price_cache:
+        cached_price, cache_time = _price_cache[symbol]
+        if current_time - cache_time < CACHE_DURATION_SECONDS:
+            return cached_price
+    
+    # Check rate limiting
+    if symbol in _last_request_time:
+        time_since_last = current_time - _last_request_time[symbol]
+        if time_since_last < RATE_LIMIT_SECONDS:
+            # Return cached price if available, otherwise return None
+            if symbol in _price_cache:
+                return _price_cache[symbol][0]
+            return None
+    
     try:
         # Try broker quote if a client is available via trading_state['broker']
         br = trading_state.get('broker')
@@ -515,7 +539,10 @@ def get_live_price(symbol: str) -> float | None:
                 for k in ('lastTradePriceTrHrs','lastTradePrice','bidPrice','askPrice'):
                     v = q.get(k)
                     if v and v > 0:
-                        return float(v)
+                        price = float(v)
+                        _price_cache[symbol] = (price, current_time)
+                        _last_request_time[symbol] = current_time
+                        return price
         
         # Fallback to Yahoo Finance
         import yfinance as yf
@@ -523,7 +550,10 @@ def get_live_price(symbol: str) -> float | None:
         info = ticker.info
         price = info.get('regularMarketPrice') or info.get('currentPrice')
         if price and price > 0:
-            return float(price)
+            price = float(price)
+            _price_cache[symbol] = (price, current_time)
+            _last_request_time[symbol] = current_time
+            return price
         
         return None
     except Exception as e:
@@ -830,6 +860,60 @@ def get_random_tsx_stock() -> str:
         'MFC.TO', 'SLF.TO', 'IFC.TO',                   # Insurance
     ]
     return random.choice(tsx_stocks)
+
+def simulate_historical_trading():
+    """Simulate trading using historical data replay for training when market is closed"""
+    if not trading_state.get('initialized'):
+        return
+    
+    # Only run in DEMO mode when market is closed
+    if trading_state.get('mode') != 'demo' or is_market_open():
+        return
+    
+    try:
+        # Get a random TSX stock
+        symbol = get_random_tsx_stock()
+        
+        # Use historical data for training
+        import yfinance as yf
+        ticker = yf.Ticker(symbol)
+        hist = ticker.history(period='5d', interval='1d')
+        
+        if hist is None or hist.empty:
+            return
+        
+        # Use the most recent historical price
+        price = float(hist['Close'].iloc[-1])
+        
+        # Simulate AI decision with historical context
+        decision = {
+            'symbol': symbol,
+            'action': random.choice(['BUY', 'SELL', 'HOLD']),
+            'confidence': random.uniform(0.6, 0.9),
+            'reasoning': [f"Historical data analysis - {symbol} training mode"],
+            'position_size': 0.02,
+            'timestamp': datetime.now(),
+            'training_mode': True
+        }
+        
+        # Log the training decision
+        decisions = trading_state.get('ai_decisions', [])
+        decisions.append(f"TRAINING: {decision['action']} {symbol} @ ${price:.2f} (Historical Data)")
+        trading_state['ai_decisions'] = decisions[-10:]  # Keep last 10
+        
+        # Update learning metrics
+        trading_state['ai_decisions_today'] = trading_state.get('ai_decisions_today', 0) + 1
+        
+        # Store training decision
+        training_log = trading_state.get('training_log', [])
+        training_log.append(decision)
+        trading_state['training_log'] = training_log[-50:]  # Keep last 50 training decisions
+        
+        save_trading_state()
+        logger.info(f"🎓 Training Mode: {decision['action']} {symbol} @ ${price:.2f} (Historical Data)")
+        
+    except Exception as e:
+        logger.error(f"Historical trading simulation failed: {e}")
 
 def simulate_ai_trade():
     """AI making a trade based on REAL LIVE market data - ONLY when market is open"""

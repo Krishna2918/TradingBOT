@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-10-14T09:56:24.474870",
+  "duration": 2.789060592651367,
+  "total_tests": 39,
+  "passed": 32,
+  "failed": 0,
+  "skipped": 7,
+  "score": 10.0,
+  "categories": {
+    "A_Preflight": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "B_Contracts": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "C_Risk_Torture": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 1
+    },
+    "D_Execution": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "E_Mode_Mgmt": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "F_Chaos": {
+      "total": 4,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 3
+    },
+    "G_Performance": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 1
+    },
+    "H_Security": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 1
+    },
+    "I_Observability": {
+      "total": 4,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 1
+    },
+    "J_Integration": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "failed_tests": [],
+  "skipped_tests": [
+    "C_Risk_Torture: C1_VaR_Consistency - Advanced VaR not implemented",
+    "F_Chaos: F1_API_Timeout_Handling - Requires network simulation",
+    "F_Chaos: F2_Database_Lock_Handling - Requires DB simulation",
+    "F_Chaos: F3_Memory_Pressure - Requires resource simulation",
+    "G_Performance: G4_Throughput - Requires load simulation",
+    "H_Security: H3_Kill_Switch - Requires integration test",
+    "I_Observability: I3_Metrics_Collection - Requires Prometheus"
+  ]
+}

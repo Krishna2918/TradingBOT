@@ -1,0 +1,137 @@
+{
+  "summary": {
+    "duration_seconds": 21.69,
+    "total_tests": 11,
+    "successful_tests": 4,
+    "failed_tests": 7,
+    "success_rate": 36.4,
+    "errors": [
+      "Questrade API: Failed",
+      "Yahoo Finance API: Failed",
+      "Database Connectivity: Failed",
+      "Database Schema: Failed",
+      "Trading Cycle Components: Failed",
+      "Smoke Test: Failed",
+      "Legacy Test Suite: Failed"
+    ],
+    "warnings": [
+      "Placeholder API skipped: Reddit API (social sentiment)",
+      "Placeholder API skipped: Weather API (commodity correlation)",
+      "Placeholder API skipped: SEC EDGAR (insider trades)"
+    ],
+    "timestamp": "2025-10-13T14:50:22.825468"
+  },
+  "detailed_results": {
+    "Questrade API": {
+      "success": false,
+      "details": {
+        "message": "Questrade API failed: HTTP 400",
+        "response": "Bad Request"
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.228992"
+    },
+    "Yahoo Finance API": {
+      "success": false,
+      "details": {
+        "message": "Yahoo Finance API failed: HTTP 429"
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.284462"
+    },
+    "Alpha Vantage API": {
+      "success": true,
+      "details": {
+        "message": "Alpha Vantage API connected successfully",
+        "test_symbol": "AAPL",
+        "quote_available": true
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.370708"
+    },
+    "Finnhub API": {
+      "success": true,
+      "details": {
+        "message": "Finnhub API connected successfully",
+        "test_symbol": "AAPL",
+        "current_price": 248.58
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.517083"
+    },
+    "NewsAPI": {
+      "success": true,
+      "details": {
+        "message": "NewsAPI connected successfully",
+        "article_count": 97,
+        "total_results": 44113
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.811938"
+    },
+    "Database Connectivity": {
+      "success": false,
+      "details": {
+        "message": "Database connectivity error: No module named 'src'"
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.822178"
+    },
+    "Database Schema": {
+      "success": false,
+      "details": {
+        "message": "Database manager not initialized"
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:01.822178"
+    },
+    "Ollama Health Check": {
+      "success": true,
+      "details": {
+        "message": "Ollama health check passed",
+        "available_models": 5,
+        "models": [
+          "gpt-oss:120b",
+          "deepseek-v3.1:671b-cloud",
+          "qwen3-coder:480b-cloud",
+          "gpt-oss:120b-cloud",
+          "qwen2.5:14b-instruct"
+        ]
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:03.868684"
+    },
+    "Trading Cycle Components": {
+      "success": false,
+      "details": {
+        "message": "Trading cycle components validated",
+        "components": {
+          "src.workflows.trading_cycle": "import failed: No module named 'src'",
+          "src.monitoring.system_monitor": "import failed: No module named 'src'",
+          "src.data_pipeline.questrade_client": "import failed: No module named 'src'",
+          "src.ai.multi_model": "import failed: No module named 'src'",
+          "src.trading.risk": "import failed: No module named 'src'"
+        }
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:03.871193"
+    },
+    "Smoke Test": {
+      "success": false,
+      "details": {
+        "message": "Smoke test failed with return code 1",
+        "duration_seconds": 3.1,
+        "stdout": "",
+        "stderr": ", in <module>\n    from .ai_selector import AISelectorAgent, SelectionResult  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coding\\Desktop\\TradingBOT\\src\\agents\\ai_selector.py\", line 27, in <module>\n    from src.ai.factors import FactorBuilder\n  File \"C:\\Users\\Coding\\Desktop\\TradingBOT\\src\\ai\\factors.py\", line 23, in <module>\n    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer\nModuleNotFoundError: No module named 'vaderSentiment'\n"
+      },
+      "error": null,
+      "timestamp": "2025-10-13T14:50:06.999708"
+    },
+    "Legacy Test Suite": {
+      "success": false,
+      "details": null,
+      "error": null,
+      "timestamp": "2025-10-13T14:50:22.825468"
+    }
+  }
+}

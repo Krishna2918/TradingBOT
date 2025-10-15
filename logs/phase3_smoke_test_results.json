@@ -1,0 +1,9 @@
+{
+  "Data Quality Validator": true,
+  "Data Quality Validation Dirty Data": true,
+  "Should Skip Sizing Logic": true,
+  "Database Provenance Tracking": true,
+  "Database Quality Violations Tracking": true,
+  "Quality Gate Integration": true,
+  "Bollinger Bands Validation": true
+}

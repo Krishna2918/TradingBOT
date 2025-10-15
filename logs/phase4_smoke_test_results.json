@@ -1,0 +1,9 @@
+{
+  "Confidence Calibrator Initialization": true,
+  "Bayesian Calibration": false,
+  "Calibration Summary": true,
+  "Risk Integration": true,
+  "Database Integration": true,
+  "Calibration Quality": true,
+  "Export/Import": false
+}

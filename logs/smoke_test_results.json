@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-10-13T14:52:11.441591",
+  "duration_seconds": 2.4,
+  "tests_passed": 1,
+  "tests_total": 4,
+  "success_rate": 25.0,
+  "results": {
+    "Database Connectivity": false,
+    "API Validation": false,
+    "AI Model Health": true,
+    "Component Imports": false
+  }
+}

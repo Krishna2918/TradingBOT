@@ -22,8 +22,10 @@ SQLITE_TABLE_STATEMENTS: Iterable[str] = (
     """
     CREATE TABLE IF NOT EXISTS ai_selections (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        trade_date TEXT NOT NULL DEFAULT CURRENT_DATE,
         symbol TEXT NOT NULL,
         score REAL NOT NULL,
+        explanation TEXT,
         rationale TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
@@ -102,6 +104,24 @@ DUCKDB_TABLE_STATEMENTS: Iterable[str] = (
 )
 
 
+def _ensure_ai_selections_columns(connection: sqlite3.Connection) -> None:
+    """Upgrade legacy ai_selections schema with required columns."""
+
+    columns = {
+        row[1]
+        for row in connection.execute("PRAGMA table_info(ai_selections);").fetchall()
+    }
+    if "trade_date" not in columns:
+        connection.execute(
+            "ALTER TABLE ai_selections ADD COLUMN trade_date TEXT NOT NULL"
+            " DEFAULT CURRENT_DATE"
+        )
+    if "explanation" not in columns:
+        connection.execute(
+            "ALTER TABLE ai_selections ADD COLUMN explanation TEXT"
+        )
+
+
 def bootstrap_sqlite() -> None:
     """Ensure the SQLite trading state database exists with core tables."""
 
@@ -109,6 +129,7 @@ def bootstrap_sqlite() -> None:
     with closing(sqlite3.connect(SQLITE_PATH)) as connection:
         for statement in SQLITE_TABLE_STATEMENTS:
             connection.execute(statement)
+        _ensure_ai_selections_columns(connection)
         connection.commit()
 
 

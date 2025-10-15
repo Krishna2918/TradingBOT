@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2025-10-14T16:33:22.809375",
+    "component": "AI Engine",
+    "activity_type": "Error",
+    "details": {
+      "error": "Failed to start AI trading: 'MaximumPowerAIEngine' object has no attribute 'stop_maximum_power_trading'"
+    },
+    "performance_metrics": {},
+    "duration_ms": 0
+  }
+]

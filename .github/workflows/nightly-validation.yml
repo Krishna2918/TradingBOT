@@ -1,0 +1,173 @@
+name: Nightly Validation
+
+on:
+  schedule:
+    # Run every night at 2 AM UTC (adjust timezone as needed)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+env:
+  AI_LIMIT: 20
+  PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+  PYTHONPATH: ${{ github.workspace }}/src
+
+jobs:
+  nightly-validation:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~\AppData\Local\pip\Cache
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio requests aiohttp
+        
+    - name: Create data directories
+      run: |
+        mkdir -p data
+        mkdir -p logs
+        
+    - name: Run system validation
+      run: |
+        python scripts/final_validation.py
+      env:
+        AI_LIMIT: ${{ env.AI_LIMIT }}
+        PYTEST_DISABLE_PLUGIN_AUTOLOAD: ${{ env.PYTEST_DISABLE_PLUGIN_AUTOLOAD }}
+        
+    - name: Run smoke test
+      run: |
+        python scripts/smoke_test.py
+      env:
+        AI_LIMIT: ${{ env.AI_LIMIT }}
+        PYTEST_DISABLE_PLUGIN_AUTOLOAD: ${{ env.PYTEST_DISABLE_PLUGIN_AUTOLOAD }}
+        
+    - name: Run integration tests
+      run: |
+        python -m pytest tests/ -v --tb=short --maxfail=5
+      env:
+        AI_LIMIT: ${{ env.AI_LIMIT }}
+        PYTEST_DISABLE_PLUGIN_AUTOLOAD: ${{ env.PYTEST_DISABLE_PLUGIN_AUTOLOAD }}
+        
+    - name: Run CI validation suite
+      run: |
+        python scripts/ci_validation.py
+      env:
+        AI_LIMIT: ${{ env.AI_LIMIT }}
+        PYTEST_DISABLE_PLUGIN_AUTOLOAD: ${{ env.PYTEST_DISABLE_PLUGIN_AUTOLOAD }}
+        
+    - name: Archive logs
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: logs-${{ github.run_number }}
+        path: |
+          logs/
+          data/
+        retention-days: 7
+        
+    - name: Archive database snapshots
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: db-snapshots-${{ github.run_number }}
+        path: |
+          data/*.db
+        retention-days: 7
+        
+    - name: Generate validation report
+      run: |
+        python scripts/generate_validation_report.py
+      if: always()
+      
+    - name: Upload validation report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: validation-report-${{ github.run_number }}
+        path: validation-report.html
+        retention-days: 7
+        
+    - name: Notify on success
+      if: success()
+      run: |
+        echo "✅✅✅ NIGHTLY VALIDATION PASSED — SYSTEM HEALTHY 🚀" >> $GITHUB_STEP_SUMMARY
+        echo "All tests completed successfully at $(Get-Date)" >> $GITHUB_STEP_SUMMARY
+        echo "AI_LIMIT: ${{ env.AI_LIMIT }}" >> $GITHUB_STEP_SUMMARY
+        echo "Artifacts archived for 7 days" >> $GITHUB_STEP_SUMMARY
+        
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "❌❌❌ NIGHTLY VALIDATION FAILED — SYSTEM ISSUES DETECTED 🚨" >> $GITHUB_STEP_SUMMARY
+        echo "Validation failed at $(Get-Date)" >> $GITHUB_STEP_SUMMARY
+        echo "Check logs and artifacts for details" >> $GITHUB_STEP_SUMMARY
+        echo "AI_LIMIT: ${{ env.AI_LIMIT }}" >> $GITHUB_STEP_SUMMARY
+        
+  performance-benchmark:
+    runs-on: windows-latest
+    needs: nightly-validation
+    if: success()
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio requests aiohttp
+        
+    - name: Create data directories
+      run: |
+        mkdir -p data
+        mkdir -p logs
+        
+    - name: Run performance benchmark
+      run: |
+        python scripts/performance_benchmark.py
+      env:
+        AI_LIMIT: 100
+        PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+        
+    - name: Archive performance results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: performance-results-${{ github.run_number }}
+        path: |
+          performance-results.json
+          performance-report.html
+        retention-days: 7
+        
+    - name: Performance summary
+      if: always()
+      run: |
+        if (Test-Path performance-results.json) {
+          $results = Get-Content performance-results.json | ConvertFrom-Json
+          echo "## Performance Benchmark Results" >> $GITHUB_STEP_SUMMARY
+          echo "Total execution time: $($results.total_time)s" >> $GITHUB_STEP_SUMMARY
+          echo "Average latency: $($results.avg_latency)ms" >> $GITHUB_STEP_SUMMARY
+          echo "Success rate: $($results.success_rate)%" >> $GITHUB_STEP_SUMMARY
+        }

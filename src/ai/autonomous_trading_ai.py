@@ -38,6 +38,7 @@ from src.ai.chatgpt_integration import ChatGPTIntegration
 from src.ai.hybrid_control_plane import HybridControlPlane
 from src.ai.meta_ensemble_blender import MetaEnsembleBlender
 from src.ai.local_reasoner import LocalReasoner
+from src.ai.ollama_client import ollama_trading_ai, ollama_client
 from src.ai.autonomous_trading_ai_helpers import (
     convert_analysis_to_predictions,
     calculate_daily_pnl,
@@ -239,6 +240,28 @@ class AutonomousTradingAI:
             self.social_tracker = None
             self.weather_tracker = None
             self.whale_tracker = None
+        
+        # Initialize Ollama Local AI
+        logger.info("Initializing Ollama Local AI...")
+        try:
+            self.ollama_ai = ollama_trading_ai
+            self.ollama_client = ollama_client
+            
+            # Test Ollama connection
+            if self.ollama_client.is_available():
+                available_models = self.ollama_client.list_models()
+                model_names = [model["name"] for model in available_models]
+                logger.info(f"✅ Ollama ready: {len(available_models)} models available")
+                logger.info(f"   Available models: {', '.join(model_names[:3])}{'...' if len(model_names) > 3 else ''}")
+                self.ollama_enabled = True
+            else:
+                logger.warning("❌ Ollama server not available - using fallback AI")
+                self.ollama_enabled = False
+        except Exception as e:
+            logger.warning(f"❌ Ollama init failed: {e}")
+            self.ollama_ai = None
+            self.ollama_client = None
+            self.ollama_enabled = False
         
         # Initialize Signal Aggregator
         logger.info("Initializing Signal Aggregator...")
@@ -664,6 +687,51 @@ class AutonomousTradingAI:
                         }
                 except Exception as e:
                     logger.warning(f"Signal aggregation failed for {symbol}: {e}")
+            
+            # Try Ollama AI analysis if available and no strong signal yet
+            if self.ollama_enabled and (best_confidence < 0.7 or best_signal is None):
+                try:
+                    # Prepare market data for Ollama
+                    market_data_dict = {
+                        'current_price': price,
+                        'volume': 100000,  # Placeholder
+                        'price_change': 0.0,  # Placeholder
+                        'price_change_pct': 0.0,  # Placeholder
+                        '52_week_high': price * 1.2,  # Placeholder
+                        '52_week_low': price * 0.8,  # Placeholder
+                        'market_cap': price * 1000000,  # Placeholder
+                    }
+                    
+                    # Prepare sentiment data
+                    sentiment_data = {
+                        'news_sentiment': sources.get('news_sentiment', {}).get('score', 0.0),
+                        'social_sentiment': sources.get('social_sentiment', {}).get('score', 0.0),
+                        'overall_sentiment': (sources.get('news_sentiment', {}).get('score', 0.0) + 
+                                            sources.get('social_sentiment', {}).get('score', 0.0)) / 2
+                    }
+                    
+                    # Get Ollama analysis
+                    ollama_analysis = self.ollama_ai.analyze_market_data(symbol, market_data_dict, sentiment_data)
+                    
+                    # Check if Ollama provides a better signal
+                    if (ollama_analysis.get('confidence', 0) > best_confidence and 
+                        ollama_analysis.get('action') != 'HOLD'):
+                        best_confidence = ollama_analysis.get('confidence', 0)
+                        best_signal = {
+                            'action': ollama_analysis.get('action', 'HOLD'),
+                            'symbol': symbol,
+                            'confidence': ollama_analysis.get('confidence', 0),
+                            'position_size': ollama_analysis.get('position_size_pct', 0.02),
+                            'reasoning': ollama_analysis.get('reasoning', ['Ollama AI analysis']),
+                            'target_price': ollama_analysis.get('target_price', 0),
+                            'stop_loss': ollama_analysis.get('stop_loss', 0),
+                            'source_scores': {'ollama': ollama_analysis.get('confidence', 0)},
+                            'model_used': 'ollama'
+                        }
+                        logger.info(f"🤖 Ollama AI signal: {ollama_analysis.get('action')} {symbol} (confidence: {ollama_analysis.get('confidence', 0):.1%})")
+                        
+                except Exception as e:
+                    logger.debug(f"Ollama analysis failed for {symbol}: {e}")
         
         # Evaluate promotions/demotions for smart scanner
         if self.smart_scanner:

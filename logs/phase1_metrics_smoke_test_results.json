@@ -1,0 +1,6 @@
+{
+  "Prometheus Metrics": true,
+  "Phase Duration Tracking": true,
+  "Structured Logging": true,
+  "Database Metrics": true
+}

@@ -1,12 +1,14 @@
 """Runtime configuration loading for the AI Trading System scaffold."""
 from __future__ import annotations
 
+import os
 from functools import lru_cache
-from typing import Optional
+from typing import Any, Optional
 
 from dotenv import load_dotenv
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
+# Ingest values from .env (if present) before inspecting the environment.
 load_dotenv()
 
 
@@ -24,18 +26,31 @@ class Settings(BaseModel):
     target_daily_return: float = Field(0.05, alias="TARGET_DAILY_RETURN")
     max_position_risk: float = Field(0.02, alias="MAX_POSITION_RISK")
 
-    class Config:
-        allow_population_by_field_name = True
-        arbitrary_types_allowed = True
+    model_config = ConfigDict(populate_by_name=True, extra="ignore")
+
+
+def _env_values() -> dict[str, Any]:
+    """Collect environment variables using field aliases."""
+
+    values: dict[str, Any] = {}
+    for field in Settings.model_fields.values():
+        alias = field.alias or field.serialization_alias
+        if not alias:
+            continue
+        value = os.getenv(alias)
+        if value is not None:
+            values[alias] = value
+    return values
 
 
 @lru_cache(maxsize=1)
-def get_settings(override: Optional[dict[str, object]] = None) -> Settings:
+def get_settings(override: Optional[dict[str, Any]] = None) -> Settings:
     """Return cached settings, optionally overriding fields for tests."""
 
+    data = _env_values()
     if override:
-        return Settings(**override)
-    return Settings()
+        data.update(override)
+    return Settings.model_validate(data)
 
 
 __all__ = ["Settings", "get_settings"]

@@ -1,0 +1,30 @@
+{
+  "LIVE": {
+    "mode": "LIVE",
+    "database_path": "data/trading_live.db",
+    "order_execution": "REAL",
+    "balance_tracking": true,
+    "risk_limits": {
+      "max_position_size": 0.1,
+      "max_daily_drawdown": 0.05,
+      "max_portfolio_risk": 0.2,
+      "min_confidence": 0.75,
+      "max_positions": 10
+    },
+    "description": "Live trading with real money and real orders"
+  },
+  "DEMO": {
+    "mode": "DEMO",
+    "database_path": "data/trading_demo.db",
+    "order_execution": "PAPER",
+    "balance_tracking": true,
+    "risk_limits": {
+      "max_position_size": 0.1,
+      "max_daily_drawdown": 0.05,
+      "max_portfolio_risk": 0.2,
+      "min_confidence": 0.7,
+      "max_positions": 10
+    },
+    "description": "Demo trading with paper money and simulated orders"
+  }
+}

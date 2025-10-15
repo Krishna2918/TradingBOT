@@ -8,6 +8,7 @@ A production-grade, low-latency trading bot designed for Canadian markets with a
 - **Advanced Risk Management**: Dynamic capital allocation, anti-Martingale recovery, kill switches, cool-down mechanisms
 - **Automatic ETF Allocation**: 20% of profits automatically invested in diversified ETFs
 - **Real-time Monitoring**: Live dashboards, alerts, and automated recovery systems
+- **Modern Dashboard**: Beautiful, responsive interface with real-time updates and comprehensive analytics
 - **Low-latency Architecture**: Toronto VPS optimized for TSX/TSXV execution
 - **Open-source Stack**: Built with Python, Redis, InfluxDB, and Grafana
 
@@ -72,6 +73,37 @@ pip install -r requirements.txt
 sudo systemctl start redis
 sudo systemctl start influxdb
 ```
+
+## 📊 Modern Dashboard
+
+The trading bot includes a beautiful, modern dashboard with real-time updates and comprehensive analytics.
+
+### 🚀 Quick Start Dashboard
+
+```bash
+# Launch the modern dashboard (default)
+python modern_trading_dashboard.py
+
+# Or use the startup script
+python start_modern_dashboard.py
+
+# Windows users can use the batch file
+start_modern_dashboard.bat
+```
+
+### 🌐 Access
+- **URL**: http://localhost:8052
+- **Features**: Real-time portfolio updates, AI agent monitoring, interactive charts
+- **Design**: Modern, responsive interface with dark mode support
+
+### 📋 Dashboard Features
+- **Account Overview**: Total balance, invested amount, P&L tracking
+- **Holdings Table**: Current positions with real-time price updates
+- **Trading Activity**: Recent trades with filtering and search
+- **AI Agents Status**: Live monitoring of all AI components
+- **Performance Charts**: Portfolio value and daily P&L visualization
+
+For detailed dashboard documentation, see [MODERN_DASHBOARD_README.md](MODERN_DASHBOARD_README.md).
 
 ## ⚙️ Configuration
 

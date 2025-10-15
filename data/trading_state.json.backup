@@ -1,0 +1,33 @@
+{
+  "initialized": false,
+  "starting_capital": 0.0,
+  "current_capital": 0.0,
+  "trades": [],
+  "holdings": [],
+  "start_time": null,
+  "mode": "demo",
+  "demo_capital": 0.0,
+  "live_capital": 0.0,
+  "live_prices": {},
+  "ai_instance": null,
+  "ai_decisions": [],
+  "learning_log": [],
+  "learning_state": {
+    "win_streak": 0,
+    "loss_streak": 0,
+    "risk_multiplier": 1.0
+  },
+  "broker": null,
+  "paused": false,
+  "kill_switch_threshold": 5.0,
+  "kill_switch_active": false,
+  "max_position_pct": 0.05,
+  "regime": "SIDEWAYS",
+  "force_market_open": false,
+  "questrade_client": null,
+  "ai_trading_active": false,
+  "ai_decisions_today": 0,
+  "total_pnl": 0.0,
+  "session_id": null,
+  "portfolio_history": []
+}

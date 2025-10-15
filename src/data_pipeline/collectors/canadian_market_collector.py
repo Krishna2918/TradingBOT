@@ -11,6 +11,9 @@ from typing import Dict, List, Optional
 import pandas as pd
 import yfinance as yf
 
+# Phase 2: Import API Budget Manager
+from ..api_budget_manager import get_api_budget_manager
+
 logger = logging.getLogger(__name__)
 
 class CanadianMarketCollector:
@@ -25,18 +28,38 @@ class CanadianMarketCollector:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
+        
+        # Phase 2: Initialize API Budget Manager
+        self.budget_manager = get_api_budget_manager()
     
     def get_tsx_data(self, symbols: List[str]) -> Dict:
-        """Get TSX market data"""
+        """Get TSX market data with caching and budget management"""
         try:
             data = {}
+            cache_hits = 0
+            
             for symbol in symbols:
+                # Phase 2: Check cache first
+                cache_key = f"yfinance:{symbol}:1d"
+                cached_data = self.budget_manager.get_cached_response(cache_key)
+                
+                if cached_data is not None:
+                    data[symbol] = cached_data
+                    cache_hits += 1
+                    continue
+                
+                # Phase 2: Check API budget
+                if not self.budget_manager.can_make_request("yfinance"):
+                    logger.warning("Yahoo Finance API budget exhausted, using cached data where available")
+                    continue
+                
+                # Make API request
                 ticker = yf.Ticker(symbol)
                 hist = ticker.history(period="1d", interval="1m")
                 
                 if not hist.empty:
                     latest = hist.iloc[-1]
-                    data[symbol] = {
+                    symbol_data = {
                         'open': float(latest['Open']),
                         'high': float(latest['High']),
                         'low': float(latest['Low']),
@@ -44,8 +67,19 @@ class CanadianMarketCollector:
                         'volume': int(latest['Volume']),
                         'timestamp': datetime.now().isoformat()
                     }
+                    
+                    data[symbol] = symbol_data
+                    
+                    # Phase 2: Cache the response (5 minutes for intraday data)
+                    self.budget_manager.cache_response(cache_key, symbol_data, 300)
+                    
+                    # Record successful API call
+                    self.budget_manager.record_request("yfinance", True)
+                else:
+                    # Record failed API call
+                    self.budget_manager.record_request("yfinance", False)
             
-            logger.info(f"Collected TSX data for {len(data)} symbols")
+            logger.info(f"Collected TSX data for {len(data)} symbols ({cache_hits} cache hits)")
             return data
             
         except Exception as e:

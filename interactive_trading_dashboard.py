@@ -564,15 +564,6 @@ def debug_test_callback(n_clicks):
     print(f"\n🔥 DEBUG BUTTON CLICKED! n_clicks={n_clicks}\n")
     return f"✅ Callback WORKS! Clicked {n_clicks} times"
 
-@app.callback(
-    [Output('trading-initialized', 'data', allow_duplicate=True),
-     Output('main-content', 'children', allow_duplicate=True)],
-    [Input('start-trading-btn', 'n_clicks')],
-    [State('starting-capital-input', 'value'),
-     State('trading-initialized', 'data')],
-    prevent_initial_call=True
-)
-def initialize_trading(n_clicks, starting_capital, initialized):
     """Handle trading start button click - Launch FULL AI System 24/7"""
     print(f"\n🔍 BUTTON CLICKED! n_clicks={n_clicks}, capital={starting_capital}, initialized={initialized}\n")
     
@@ -641,23 +632,11 @@ def initialize_trading(n_clicks, starting_capital, initialized):
 
 # Trading initialization complete - callback registered above
 
-@app.callback(
-    Output('ai-status-text', 'children'),
-    Input('trading-interval', 'n_intervals'),
-    prevent_initial_call=True
-)
-def update_ai_status(n_intervals):
     """Update AI system status"""
     if trading_state.get('initialized'):
         return "AI System: Active ✅"
     return "AI System: Waiting..."
 
-@app.callback(
-    Output('trading-interval', 'n_intervals'),
-    Input('trading-interval', 'n_intervals'),
-    prevent_initial_call=True
-)
-def execute_ai_trade(n):
     """AI executes a trade every interval AND updates holdings with real prices - 24/7 AUTONOMOUS"""
     if trading_state['initialized']:
         _detect_and_update_regime()
@@ -665,25 +644,8 @@ def execute_ai_trade(n):
         real_ai_trade()
     return n
 
-@app.callback(
-    [Output('performance-chart', 'figure'),
-     Output('sector-chart', 'figure')],
-    Input('chart-interval', 'n_intervals'),
-    prevent_initial_call=True
-)
-def update_charts(n):
     return (generate_performance_chart(), generate_sector_allocation())
 
-@app.callback(
-    [Output('summary-cards-container', 'children'),
-     Output('holdings-table-container', 'children'),
-     Output('recent-trades-container', 'children'),
-     Output('ai-signals-container', 'children')],
-    [Input('chart-interval', 'n_intervals'),
-     Input('trading-interval', 'n_intervals')],
-    prevent_initial_call=False
-)
-def refresh_dashboard_sections(_chart_tick, _trade_tick):
     """Refresh key dashboard sections so cash, P&L, and holdings stay in sync with trades."""
     try:
         load_trading_state()
@@ -701,28 +663,9 @@ def refresh_dashboard_sections(_chart_tick, _trade_tick):
         signals_df = None
     return (create_summary_cards(), create_holdings_table(), create_recent_trades_table(), create_ai_signals_table(signals_df))
 
-@app.callback(
-    [Output('ai-log-time', 'children'),
-     Output('ai-trade-time', 'children'),
-     Output('ai-signal-time', 'children'),
-     Output('ai-decision-time', 'children')],
-    [Input('chart-interval', 'n_intervals'),
-     Input('trading-interval', 'n_intervals')],
-    prevent_initial_call=False
-)
-def refresh_ai_activity_monitor(_chart_tick, _trade_tick):
     """Keep AI Activity Monitor timestamps in sync with latest log activity."""
     return (get_last_log_time('logs/ai_activity.log'), get_last_log_time('logs/ai_trades.log'), get_last_log_time('logs/ai_signals.log'), get_last_log_time('logs/ai_decisions.log'))
 
-@app.callback(
-    [Output('status-pill', 'children', allow_duplicate=True),
-     Output('ui-dirty', 'data', allow_duplicate=True),
-     Output('broker-panel', 'children', allow_duplicate=True)],
-    [Input('mode-switch', 'value'),
-     Input('startup-mode-switch', 'value')],
-    prevent_initial_call=True
-)
-def toggle_mode(switch_value, startup_switch_value):
     """Toggle between Demo and Live mode with immediate UI updates"""
     if switch_value is not None:
         new_mode = 'live' if switch_value else 'demo'
@@ -747,22 +690,12 @@ def toggle_mode(switch_value, startup_switch_value):
             trading_state['live_capital'] = trading_state['live_capital'] or trading_state['starting_capital']
             trading_state['current_capital'] = trading_state['live_capital']
             try:
-        print(f"✅ MODE SWITCHED: {old_mode.upper()} → {new_mode.upper()} | Capital: ${trading_state['current_capital']:,.2f}")
+                save_trading_state()
+            except Exception as e:
+                print(f"Error saving state: {e}")
+        print(f"[PASS] MODE SWITCHED: {old_mode.upper()} -> {new_mode.upper()} | Capital: ${trading_state['current_capital']:,.2f}")
     return (create_status_pill(), True, render_broker_panel_content())
 
-@app.callback(
-    Output('performance-tab-content', 'children'),
-    Input('performance-tabs', 'active_tab'),
-    prevent_initial_call=True
-)
-{{ ... }}
-
-# ============================================================================
-# AI ACTIVITY MONITOR CALLBACKS
-# ============================================================================
-
-# Router: render content based on URL, and restore intervals after refresh
-def update_performance_tab_content(active_tab):
     """Update performance tab content based on selected tab"""
     if active_tab == 'performance':
         return html.Div([html.H5('Performance Metrics', className='mb-3'), dbc.Row([dbc.Col([dbc.Card([dbc.CardBody([html.H6('Total Return', className='text-muted'), html.H3(f'{random.uniform(-5, 15):.2f}%', className='text-success')])])], width=3), dbc.Col([dbc.Card([dbc.CardBody([html.H6('Sharpe Ratio', className='text-muted'), html.H3(f'{random.uniform(0.8, 2.5):.2f}', className='text-info')])])], width=3), dbc.Col([dbc.Card([dbc.CardBody([html.H6('Max Drawdown', className='text-muted'), html.H3(f'{random.uniform(2, 8):.2f}%', className='text-warning')])])], width=3), dbc.Col([dbc.Card([dbc.CardBody([html.H6('Win Rate', className='text-muted'), html.H3(f'{random.uniform(60, 85):.1f}%', className='text-primary')])])], width=3)])])
@@ -835,15 +768,6 @@ def update_performance_tab_content(active_tab):
         return html.Div([html.H5('Risk Analysis', className='mb-3'), dbc.Row([dbc.Col([html.Div([html.H6('Current Risk Metrics'), html.P(f'Portfolio Value: ${total_value + cash:,.2f}'), html.P(f'Equity Exposure: {equity_pct:.1f}%'), html.P(f'Cash Position: {cash_pct:.1f}%'), html.P(f'Number of Positions: {len(holdings)}'), html.Hr(), html.Small('VaR and risk metrics will be calculated after more trading data is collected.', className='text-muted')])], width=6), dbc.Col([dcc.Graph(figure={'data': [go.Pie(labels=['Equity', 'Cash'], values=[equity_pct, cash_pct], hole=0.3, marker_colors=['#1f77b4', '#2ca02c'])], 'layout': go.Layout(title='Portfolio Allocation', template='plotly_dark')}, config={'displayModeBar': False})], width=6)])])
     return html.Div('Select a tab to view content')
 
-@app.callback(
-    [Output('main-content', 'children', allow_duplicate=True),
-     Output('trading-interval', 'disabled', allow_duplicate=True),
-     Output('chart-interval', 'disabled', allow_duplicate=True),
-     Output('trading-initialized', 'data', allow_duplicate=True)],
-    Input('url', 'pathname'),
-    prevent_initial_call='initial_duplicate'
-)
-def render_router(pathname):
     try:
         if pathname == '/logs':
             return (create_ai_logs_page(), True, True, trading_state.get('initialized', False))
@@ -869,12 +793,6 @@ def render_router(pathname):
     except Exception:
         return (create_startup_screen(), True, True, False)
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('open-ai-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def open_ai_logs(n_clicks):
     """Open AI logs page when View Logs button is clicked"""
     if n_clicks:
         return create_ai_logs_page()
@@ -885,12 +803,6 @@ def open_ai_logs(n_clicks):
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('back-to-dashboard-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def back_to_dashboard(n_clicks):
     """Return to main dashboard when back button is clicked"""
     if n_clicks:
         return create_trading_page()
@@ -901,12 +813,6 @@ def back_to_dashboard(n_clicks):
         return create_trading_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('view-ai-logs-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def view_ai_logs_from_startup(n_clicks):
     """Open AI logs page from startup screen"""
     if n_clicks:
         return create_ai_logs_page()
@@ -917,12 +823,6 @@ def view_ai_logs_from_startup(n_clicks):
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('startup-open-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def startup_open_logs(n_clicks):
     """Open AI logs page from startup AI Activity Monitor"""
     if n_clicks:
         return create_ai_logs_page()
@@ -933,12 +833,6 @@ def startup_open_logs(n_clicks):
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('reset-to-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def reset_to_startup(n_clicks):
     """Reset to startup screen"""
     if n_clicks:
         reset_in_memory_state()
@@ -973,12 +867,6 @@ def reset_to_startup(n_clicks):
         return create_startup_screen()
     return dash.no_update
 
-@app.callback(
-    Output('ui-dirty', 'data'),
-    [Input('pause-switch', 'value'), Input('kill-threshold-input', 'value'), Input('reset-kill-btn', 'n_clicks'), Input('max-pos-input', 'value'), Input('force-open-switch', 'value')],
-    prevent_initial_call=True
-)
-def update_controls(paused, kill_threshold, reset_kill_clicks, max_pos_pct, force_open):
     try:
         if paused is not None:
             trading_state['paused'] = bool(paused)
@@ -1015,18 +903,6 @@ def update_controls(paused, kill_threshold, reset_kill_clicks, max_pos_pct, forc
     except Exception:
         return False
 
-@app.callback(
-    Output('log-content', 'children'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks'),
-     Input('refresh-logs-btn', 'n_clicks'),
-     Input('logs-interval', 'n_intervals')],
-    [State('current-log-tab', 'data')],
-    prevent_initial_call=True
-)
-def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions_clicks, refresh_clicks, n_intervals, current_tab):
     """Update log content based on selected tab"""
     ctx = dash.callback_context
     log_file = 'logs/ai_activity.log'
@@ -1095,29 +971,6 @@ def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions
         content = f'Error reading log file: {str(e)}'
     return html.Pre(content, style={'margin': 0, 'whiteSpace': 'pre-wrap'})
 
-@app.callback(
-    Output('current-log-tab', 'data'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks')],
-    prevent_initial_call=True
-)
-def set_current_log_tab(a, t, s, d):
-    ctx = dash.callback_context
-    if not ctx.triggered:
-        return dash.no_update
-    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
-    if button_id == 'log-tab-activity':
-        return 'activity'
-    if button_id == 'log-tab-trades':
-        return 'trades'
-    if button_id == 'log-tab-signals':
-        return 'signals'
-    if button_id == 'log-tab-decisions':
-        return 'decisions'
-    return dash.no_update
-def set_current_log_tab(a, t, s, d):
     ctx = dash.callback_context
     if not ctx.triggered:
         return dash.no_update
@@ -1132,12 +985,6 @@ def set_current_log_tab(a, t, s, d):
         return 'decisions'
     return dash.no_update
 
-@app.callback(
-    Output('logs-interval', 'disabled'),
-    Input('logs-refresh-switch', 'value'),
-    prevent_initial_call=False
-)
-def toggle_logs_interval(auto):
     return not bool(auto)
 
 
@@ -1155,15 +1002,6 @@ def toggle_back_button(content):
 def toggle_logs_interval(auto):
     return not bool(auto)
 
-@app.callback(
-    [Output('main-content', 'children', allow_duplicate=True),
-     Output('trading-interval', 'disabled', allow_duplicate=True),
-     Output('chart-interval', 'disabled', allow_duplicate=True),
-     Output('trading-initialized', 'data', allow_duplicate=True)],
-    Input('url', 'pathname'),
-    prevent_initial_call='initial_duplicate'
-)
-def toggle_back_button(content):
     """Show/hide back button based on current page"""
     if hasattr(content, 'props') and 'children' in content.props:
         return ({'display': 'inline-block'}, [html.I(className='fas fa-arrow-left me-2'), 'Back to Dashboard'])
@@ -1217,15 +1055,6 @@ def update_performance_tab_content(active_tab):
         return html.Div([html.H5('Risk Analysis', className='mb-3'), dbc.Row([dbc.Col([html.Div([html.H6('Current Risk Metrics'), html.P(f'Portfolio Value: ${total_value + cash:,.2f}'), html.P(f'Equity Exposure: {equity_pct:.1f}%'), html.P(f'Cash Position: {cash_pct:.1f}%'), html.P(f'Number of Positions: {len(holdings)}'), html.Hr(), html.Small('VaR and risk metrics will be calculated after more trading data is collected.', className='text-muted')])], width=6), dbc.Col([dcc.Graph(figure={'data': [go.Pie(labels=['Equity', 'Cash'], values=[equity_pct, cash_pct], hole=0.3, marker_colors=['#1f77b4', '#2ca02c'])], 'layout': go.Layout(title='Portfolio Allocation', template='plotly_dark')}, config={'displayModeBar': False})], width=6)])])
     return html.Div('Select a tab to view content')
 
-@app.callback(
-    [Output('main-content', 'children', allow_duplicate=True),
-     Output('trading-interval', 'disabled', allow_duplicate=True),
-     Output('chart-interval', 'disabled', allow_duplicate=True),
-     Output('trading-initialized', 'data', allow_duplicate=True)],
-    Input('url', 'pathname'),
-    prevent_initial_call='initial_duplicate'
-)
-def render_router(pathname):
     try:
         if pathname == '/logs':
             return (create_ai_logs_page(), True, True, trading_state.get('initialized', False))
@@ -1238,56 +1067,26 @@ def render_router(pathname):
     except Exception:
         return (create_startup_screen(), True, True, False)
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('open-ai-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def open_ai_logs(n_clicks):
     """Open AI logs page when View Logs button is clicked"""
     if n_clicks:
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('back-to-dashboard-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def back_to_dashboard(n_clicks):
     """Return to main dashboard when back button is clicked"""
     if n_clicks:
         return create_trading_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('view-ai-logs-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def view_ai_logs_from_startup(n_clicks):
     """Open AI logs page from startup screen"""
     if n_clicks:
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('startup-open-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def startup_open_logs(n_clicks):
     """Open AI logs page from startup AI Activity Monitor"""
     if n_clicks:
         return create_ai_logs_page()
     return dash.no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('reset-to-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def reset_to_startup(n_clicks):
     """Reset to startup screen"""
     if n_clicks:
         reset_in_memory_state()
@@ -1305,12 +1104,6 @@ def reset_to_startup(n_clicks):
         return create_startup_screen()
     return dash.no_update
 
-@app.callback(
-    Output('ui-dirty', 'data'),
-    [Input('pause-switch', 'value'), Input('kill-threshold-input', 'value'), Input('reset-kill-btn', 'n_clicks'), Input('max-pos-input', 'value'), Input('force-open-switch', 'value')],
-    prevent_initial_call=True
-)
-def update_controls(paused, kill_threshold, reset_kill_clicks, max_pos_pct, force_open):
     try:
         if paused is not None:
             trading_state['paused'] = bool(paused)
@@ -1329,18 +1122,6 @@ def update_controls(paused, kill_threshold, reset_kill_clicks, max_pos_pct, forc
     except Exception:
         return False
 
-@app.callback(
-    Output('log-content', 'children'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks'),
-     Input('refresh-logs-btn', 'n_clicks'),
-     Input('logs-interval', 'n_intervals')],
-    [State('current-log-tab', 'data')],
-    prevent_initial_call=True
-)
-def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions_clicks, refresh_clicks, n_intervals, current_tab):
     """Update log content based on selected tab"""
     ctx = dash.callback_context
     log_file = 'logs/ai_activity.log'
@@ -1375,14 +1156,6 @@ def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions
         content = f'Error reading log file: {str(e)}'
     return html.Pre(content, style={'margin': 0, 'whiteSpace': 'pre-wrap'})
 
-@app.callback(
-    Output('current-log-tab', 'data'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks')],
-    prevent_initial_call=True
-)
 def set_current_log_tab(a, t, s, d):
     ctx = dash.callback_context
     if not ctx.triggered:
@@ -1398,12 +1171,6 @@ def set_current_log_tab(a, t, s, d):
         return 'decisions'
     return dash.no_update
 
-@app.callback(
-    Output('logs-interval', 'disabled'),
-    Input('logs-refresh-switch', 'value'),
-    prevent_initial_call=False
-)
-def toggle_logs_interval(auto):
     return not bool(auto)
 
 
@@ -1418,96 +1185,39 @@ def toggle_back_button(content):
 # ============================================================================
 
 # Router: render content based on URL, and restore intervals after refresh
-@app.callback(
-    [Output('main-content', 'children', allow_duplicate=True),
-     Output('trading-interval', 'disabled', allow_duplicate=True),
-     Output('chart-interval', 'disabled', allow_duplicate=True),
-     Output('trading-initialized', 'data', allow_duplicate=True)],
-    Input('url', 'pathname'),
-    prevent_initial_call='initial_duplicate'
-)
-
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('open-ai-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def open_ai_logs(n_clicks):
     """Open AI logs page"""
     if n_clicks:
         from src.dashboard.sections import render_logs_page
         return render_logs_page()
     return no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('back-to-dashboard-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def go_back_to_dashboard(n_clicks):
     """Navigate back to main dashboard"""
     if n_clicks:
         from src.dashboard.sections import render_main_dashboard
         return render_main_dashboard()
     return no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('view-ai-logs-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def view_logs_from_startup(n_clicks):
     """View AI logs from startup screen"""
     if n_clicks:
         from src.dashboard.sections import render_logs_page
         return render_logs_page()
     return no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('startup-open-logs-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def open_logs_from_startup(n_clicks):
     """Open logs page from startup screen"""
     if n_clicks:
         from src.dashboard.sections import render_logs_page
         return render_logs_page()
     return no_update
 
-@app.callback(
-    Output('main-content', 'children', allow_duplicate=True),
-    Input('reset-to-startup-btn', 'n_clicks'),
-    prevent_initial_call=True
-)
-def reset_to_startup(n_clicks):
     """Reset to startup screen"""
     if n_clicks:
         from src.dashboard.sections import render_startup_screen
         return render_startup_screen()
     return no_update
 
-@app.callback(
-    Output('ui-dirty', 'data'),
-    [Input('pause-switch', 'value'), Input('kill-threshold-input', 'value'), Input('reset-kill-btn', 'n_clicks'), Input('max-pos-input', 'value'), Input('force-open-switch', 'value')],
-    prevent_initial_call=True
-)
-def mark_ui_dirty(*args):
     """Mark UI as dirty when settings change"""
     return True
 
-@app.callback(
-    Output('log-content', 'children'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks'),
-     Input('refresh-logs-btn', 'n_clicks'),
-     Input('logs-interval', 'n_intervals')],
-    [State('current-log-tab', 'data')],
-    prevent_initial_call=True
-)
-def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions_clicks, refresh_clicks, n_intervals, current_tab):
     """Update log content based on selected tab"""
     if not current_tab:
         current_tab = 'activity'
@@ -1517,14 +1227,6 @@ def update_log_content(activity_clicks, trades_clicks, signals_clicks, decisions
         html.P(f"Loading {current_tab} logs...", className="text-center text-muted")
     ])
 
-@app.callback(
-    Output('current-log-tab', 'data'),
-    [Input('log-tab-activity', 'n_clicks'),
-     Input('log-tab-trades', 'n_clicks'),
-     Input('log-tab-signals', 'n_clicks'),
-     Input('log-tab-decisions', 'n_clicks')],
-    prevent_initial_call=True
-)
 def switch_log_tab(activity_clicks, trades_clicks, signals_clicks, decisions_clicks):
     """Switch between log tabs"""
     ctx = callback_context
@@ -1539,22 +1241,9 @@ def switch_log_tab(activity_clicks, trades_clicks, signals_clicks, decisions_cli
     }
     return tab_map.get(button_id, 'activity')
 
-@app.callback(
-    Output('logs-interval', 'disabled'),
-    Input('logs-refresh-switch', 'value'),
-    prevent_initial_call=False
-)
-def toggle_logs_refresh(auto_refresh):
     """Toggle automatic log refresh"""
     return not auto_refresh
 
-@app.callback(
-    [Output('back-to-dashboard-btn', 'style'),
-     Output('back-to-dashboard-btn', 'children')],
-    Input('main-content', 'children'),
-    prevent_initial_call=True
-)
-def update_back_button(content):
     """Update back button visibility"""
     return {'display': 'block'}, 'Back to Dashboard'
 

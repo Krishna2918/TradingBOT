@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-10-13T14:52:51.925578",
+  "duration_seconds": 2.4,
+  "tests_passed": 4,
+  "tests_total": 5,
+  "success_rate": 80.0,
+  "results": {
+    "Basic Imports": true,
+    "Yahoo Finance API": true,
+    "Ollama Health": true,
+    "File Structure": false,
+    "Database Functionality": true
+  }
+}

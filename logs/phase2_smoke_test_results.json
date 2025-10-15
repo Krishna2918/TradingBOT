@@ -1,0 +1,9 @@
+{
+  "API Budget Manager": true,
+  "Caching Functionality": true,
+  "Rate Limit Handling": true,
+  "API Request with Backoff": true,
+  "Cached API Request": true,
+  "Questrade Integration": true,
+  "System Monitor Integration": true
+}

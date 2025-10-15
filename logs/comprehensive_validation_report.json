@@ -1,0 +1,66 @@
+{
+  "timestamp": "2025-10-13T23:58:40.958232",
+  "total_time": 3.9984447956085205,
+  "total_tests": 21,
+  "passed_tests": 21,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "overall_success": true,
+  "test_results": {
+    "Integration Tests": {
+      "success": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "output": "Integration validation: 3 passed, 0 failed",
+      "error": null
+    },
+    "Performance Tests": {
+      "success": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "output": "Performance validation: 3 passed, 0 failed",
+      "error": null
+    },
+    "Security Tests": {
+      "success": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "output": "Security validation: 3 passed, 0 failed",
+      "error": null
+    },
+    "End-to-End Tests": {
+      "success": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "output": "E2E validation: 3 passed, 0 failed",
+      "error": null
+    },
+    "Monitoring Tests": {
+      "success": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "output": "All monitoring components are available and functional"
+    },
+    "Phase Validation Tests": {
+      "success": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "output": "Phase validation: 3 passed, 0 failed",
+      "error": null
+    }
+  },
+  "summary": {
+    "integration_tests": true,
+    "performance_tests": true,
+    "security_tests": true,
+    "e2e_tests": true,
+    "monitoring_tests": true,
+    "phase_validation_tests": true
+  }
+}

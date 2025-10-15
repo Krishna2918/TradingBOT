@@ -1,609 +1,527 @@
 """
-Regime Detection Module
-Detects market regimes (bull/bear/sideways) using volatility, correlation, and dispersion metrics
+Regime Detection - Market Condition Analysis
+
+This module detects market regimes using rolling ATR/VIX proxies and categorizes
+market conditions as trend vs chop, low vs high volatility.
 """
 
-import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple
 import logging
+import numpy as np
+import pandas as pd
+from typing import Dict, Any, Optional, List, Tuple
 from dataclasses import dataclass
+from datetime import datetime, timedelta
 from enum import Enum
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-import warnings
-warnings.filterwarnings('ignore')
+
+from src.config.mode_manager import get_current_mode
+from src.config.database import execute_query, execute_update
 
 logger = logging.getLogger(__name__)
 
 class MarketRegime(Enum):
-    """Market regime types"""
-    LOW_VOL = "low_volatility"
-    MID_VOL = "mid_volatility"
-    HIGH_VOL = "high_volatility"
-    BULL = "bull_market"
-    BEAR = "bear_market"
-    SIDEWAYS = "sideways"
-    TRENDING = "trending"
-    MEAN_REVERTING = "mean_reverting"
+    """Market regime enumeration."""
+    TRENDING_LOW_VOL = "TRENDING_LOW_VOL"
+    TRENDING_HIGH_VOL = "TRENDING_HIGH_VOL"
+    CHOPPY_LOW_VOL = "CHOPPY_LOW_VOL"
+    CHOPPY_HIGH_VOL = "CHOPPY_HIGH_VOL"
+    TRANSITION = "TRANSITION"
+
+class TrendDirection(Enum):
+    """Trend direction enumeration."""
+    UPTREND = "UPTREND"
+    DOWNTREND = "DOWNTREND"
+    SIDEWAYS = "SIDEWAYS"
+
+@dataclass
+class RegimeState:
+    """Represents current market regime state."""
+    timestamp: datetime
+    regime: MarketRegime
+    trend_direction: TrendDirection
+    volatility_level: str  # "LOW", "HIGH"
+    trend_strength: float  # 0-1, higher = stronger trend
+    volatility_ratio: float  # Current vs historical volatility
+    atr_percentile: float  # ATR percentile (0-1)
+    regime_confidence: float  # Confidence in regime classification
+    transition_probability: float  # Probability of regime change
+    mode: str
 
 @dataclass
 class RegimeMetrics:
-    """Regime detection metrics"""
-    volatility_10d: float
-    volatility_30d: float
-    correlation_breakdown: float  # FIXED: was correlation_30_90d
-    dispersion: float
-    momentum: float
-    volume_profile: float
-    regime: MarketRegime
-    confidence: float
-    timestamp: datetime
+    """Regime detection metrics."""
+    current_atr: float
+    historical_atr_mean: float
+    historical_atr_std: float
+    atr_percentile: float
+    price_trend_slope: float
+    trend_consistency: float
+    volume_trend: float
+    regime_duration: int  # Days in current regime
 
 class RegimeDetector:
-    """Detects market regimes using multiple indicators"""
+    """Detects and tracks market regimes."""
     
-    def __init__(self, config: Dict):
-        self.config = config
-        self.lookback_days = config.get('lookback_days', 90)
-        self.volatility_window = config.get('volatility_window', 10)
-        self.correlation_window_short = config.get('correlation_window_short', 30)
-        self.correlation_window_long = config.get('correlation_window_long', 90)
+    def __init__(self):
+        """Initialize Regime Detector."""
+        self.lookback_days = 30  # Days to look back for regime calculation
+        self.atr_window = 14  # ATR calculation window
+        self.trend_window = 20  # Trend detection window
+        self.volatility_threshold = 0.7  # Percentile threshold for high volatility
+        self.trend_threshold = 0.3  # Minimum trend strength threshold
+        self.transition_threshold = 0.4  # Threshold for regime transition
         
-        # Regime thresholds
-        self.vol_thresholds = {
-            'low': 0.15,    # 15% annualized
-            'high': 0.35    # 35% annualized
-        }
-        
-        self.correlation_threshold = 0.7
-        self.dispersion_threshold = 0.3
-        
-        # Clustering model
-        self.kmeans_model = None
-        self.scaler = StandardScaler()
-        self.regime_history = []
+        # Regime classification parameters
+        self.volatility_multiplier = 1.5  # High vol = 1.5x historical mean
+        self.trend_consistency_threshold = 0.6  # Minimum trend consistency
         
         logger.info("Regime Detector initialized")
     
-    def calculate_volatility_metrics(self, prices: pd.Series) -> Dict[str, float]:
-        """Calculate volatility metrics"""
+    def detect_current_regime(self, symbol: str = "SPY", mode: Optional[str] = None) -> RegimeState:
+        """
+        Detect current market regime for a symbol.
+        
+        Args:
+            symbol: Trading symbol (default: SPY for market-wide regime)
+            mode: Trading mode (LIVE/DEMO)
+            
+        Returns:
+            Current regime state
+        """
+        if mode is None:
+            mode = get_current_mode()
+        
         try:
-            if len(prices) < self.volatility_window:
-                return {'vol_10d': 0.0, 'vol_30d': 0.0}
+            # Get market data for regime analysis
+            market_data = self._get_market_data(symbol, mode)
             
-            # Calculate returns
-            returns = prices.pct_change().dropna()
+            if market_data is None or len(market_data) < self.lookback_days:
+                logger.warning(f"Insufficient data for regime detection: {symbol}")
+                return self._create_default_regime(mode)
             
-            # Short-term volatility (10 days)
-            vol_10d = returns.tail(self.volatility_window).std() * np.sqrt(252)
+            # Calculate regime metrics
+            metrics = self._calculate_regime_metrics(market_data)
             
-            # Long-term volatility (30 days)
-            vol_30d = returns.tail(30).std() * np.sqrt(252) if len(returns) >= 30 else vol_10d
+            # Classify regime
+            regime = self._classify_regime(metrics)
             
-            return {
-                'vol_10d': vol_10d,
-                'vol_30d': vol_30d
-            }
+            # Calculate regime confidence
+            confidence = self._calculate_regime_confidence(metrics, regime)
+            
+            # Calculate transition probability
+            transition_prob = self._calculate_transition_probability(metrics, regime)
+            
+            # Create regime state
+            regime_state = RegimeState(
+                timestamp=datetime.now(),
+                regime=regime,
+                trend_direction=self._determine_trend_direction(metrics),
+                volatility_level="HIGH" if metrics.atr_percentile > self.volatility_threshold else "LOW",
+                trend_strength=abs(metrics.trend_consistency),
+                volatility_ratio=metrics.current_atr / metrics.historical_atr_mean if metrics.historical_atr_mean > 0 else 1.0,
+                atr_percentile=metrics.atr_percentile,
+                regime_confidence=confidence,
+                transition_probability=transition_prob,
+                mode=mode
+            )
+            
+            # Log regime detection
+            logger.info(f"Regime detected for {symbol}: {regime.value} "
+                       f"(confidence: {confidence:.2f}, transition: {transition_prob:.2f})")
+            
+            return regime_state
             
         except Exception as e:
-            logger.error(f"Error calculating volatility metrics: {e}")
-            return {'vol_10d': 0.0, 'vol_30d': 0.0}
+            logger.error(f"Error detecting regime for {symbol}: {e}")
+            return self._create_default_regime(mode)
     
-    def calculate_correlation_breakdown(self, prices_df: pd.DataFrame) -> float:
-        """Calculate correlation breakdown between short and long periods"""
+    def _get_market_data(self, symbol: str, mode: str) -> Optional[pd.DataFrame]:
+        """Get market data for regime analysis."""
         try:
-            if len(prices_df) < self.correlation_window_long:
-                return 0.0
+            # Query for recent market data
+            query = """
+                SELECT date, open, high, low, close, volume, atr
+                FROM market_data 
+                WHERE symbol = ? AND mode = ?
+                ORDER BY date DESC
+                LIMIT ?
+            """
             
-            # Calculate returns
-            returns = prices_df.pct_change().dropna()
+            result = execute_query(query, (symbol, mode, self.lookback_days), mode)
             
-            # Short-term correlation (30 days)
-            if len(returns) >= self.correlation_window_short:
-                corr_short = returns.tail(self.correlation_window_short).corr().values
-                corr_short = corr_short[np.triu_indices_from(corr_short, k=1)].mean()
+            if not result:
+                logger.warning(f"No market data found for {symbol}")
+                return None
+            
+            # Convert to DataFrame with proper column names
+            df = pd.DataFrame(result)
+            
+            # Set column names explicitly (sqlite3.Row objects don't always preserve column names in DataFrame)
+            expected_columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'atr']
+            if len(df.columns) == len(expected_columns):
+                df.columns = expected_columns
             else:
-                corr_short = 0.0
+                logger.warning(f"Column count mismatch for {symbol}: expected {len(expected_columns)}, got {len(df.columns)}")
+                return None
             
-            # Long-term correlation (90 days)
-            if len(returns) >= self.correlation_window_long:
-                corr_long = returns.tail(self.correlation_window_long).corr().values
-                corr_long = corr_long[np.triu_indices_from(corr_long, k=1)].mean()
+            # Convert date column to datetime
+            df['date'] = pd.to_datetime(df['date'])
+            df = df.sort_values('date')
+            
+            return df
+            
+        except Exception as e:
+            logger.error(f"Error getting market data for {symbol}: {e}")
+            return None
+    
+    def _calculate_regime_metrics(self, data: pd.DataFrame) -> RegimeMetrics:
+        """Calculate metrics for regime classification."""
+        try:
+            # Calculate ATR metrics
+            current_atr = data['atr'].iloc[-1] if 'atr' in data.columns else self._calculate_atr(data)
+            historical_atr = data['atr'].iloc[:-1] if 'atr' in data.columns else self._calculate_rolling_atr(data)
+            
+            atr_mean = historical_atr.mean()
+            atr_std = historical_atr.std()
+            atr_percentile = (historical_atr < current_atr).mean()
+            
+            # Calculate trend metrics
+            price_trend_slope = self._calculate_trend_slope(data['close'])
+            trend_consistency = self._calculate_trend_consistency(data['close'])
+            
+            # Calculate volume trend
+            volume_trend = self._calculate_volume_trend(data['volume'])
+            
+            # Calculate regime duration (simplified)
+            regime_duration = self._estimate_regime_duration(data)
+            
+            return RegimeMetrics(
+                current_atr=current_atr,
+                historical_atr_mean=atr_mean,
+                historical_atr_std=atr_std,
+                atr_percentile=atr_percentile,
+                price_trend_slope=price_trend_slope,
+                trend_consistency=trend_consistency,
+                volume_trend=volume_trend,
+                regime_duration=regime_duration
+            )
+            
+        except Exception as e:
+            logger.error(f"Error calculating regime metrics: {e}")
+            return self._create_default_metrics()
+    
+    def _calculate_atr(self, data: pd.DataFrame) -> float:
+        """Calculate Average True Range."""
+        try:
+            high = data['high']
+            low = data['low']
+            close = data['close']
+            
+            # Calculate True Range
+            tr1 = high - low
+            tr2 = abs(high - close.shift(1))
+            tr3 = abs(low - close.shift(1))
+            
+            true_range = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+            
+            # Calculate ATR as rolling mean
+            atr = true_range.rolling(window=self.atr_window).mean().iloc[-1]
+            
+            return atr if not pd.isna(atr) else 0.02  # Default 2% ATR
+            
+        except Exception as e:
+            logger.error(f"Error calculating ATR: {e}")
+            return 0.02
+    
+    def _calculate_rolling_atr(self, data: pd.DataFrame) -> pd.Series:
+        """Calculate rolling ATR for historical comparison."""
+        try:
+            high = data['high']
+            low = data['low']
+            close = data['close']
+            
+            # Calculate True Range
+            tr1 = high - low
+            tr2 = abs(high - close.shift(1))
+            tr3 = abs(low - close.shift(1))
+            
+            true_range = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+            
+            # Calculate rolling ATR
+            rolling_atr = true_range.rolling(window=self.atr_window).mean()
+            
+            return rolling_atr.dropna()
+            
+        except Exception as e:
+            logger.error(f"Error calculating rolling ATR: {e}")
+            return pd.Series([0.02] * len(data))
+    
+    def _calculate_trend_slope(self, prices: pd.Series) -> float:
+        """Calculate price trend slope."""
+        try:
+            if len(prices) < self.trend_window:
+                return 0.0
+            
+            # Use recent prices for trend calculation
+            recent_prices = prices.tail(self.trend_window)
+            
+            # Calculate linear regression slope
+            x = np.arange(len(recent_prices))
+            y = recent_prices.values
+            
+            # Simple linear regression
+            slope = np.polyfit(x, y, 1)[0]
+            
+            # Normalize by price level
+            normalized_slope = slope / recent_prices.iloc[-1]
+            
+            return normalized_slope
+            
+        except Exception as e:
+            logger.error(f"Error calculating trend slope: {e}")
+            return 0.0
+    
+    def _calculate_trend_consistency(self, prices: pd.Series) -> float:
+        """Calculate trend consistency (how consistent the trend is)."""
+        try:
+            if len(prices) < self.trend_window:
+                return 0.0
+            
+            # Calculate short-term and long-term trends
+            short_window = self.trend_window // 2
+            long_window = self.trend_window
+            
+            short_trend = self._calculate_trend_slope(prices.tail(short_window))
+            long_trend = self._calculate_trend_slope(prices.tail(long_window))
+            
+            # Consistency is how aligned short and long trends are
+            if abs(long_trend) < 0.001:  # No clear trend
+                return 0.0
+            
+            consistency = 1.0 - abs(short_trend - long_trend) / abs(long_trend)
+            consistency = max(0.0, min(1.0, consistency))  # Clamp to [0, 1]
+            
+            return consistency
+            
+        except Exception as e:
+            logger.error(f"Error calculating trend consistency: {e}")
+            return 0.0
+    
+    def _calculate_volume_trend(self, volume: pd.Series) -> float:
+        """Calculate volume trend."""
+        try:
+            if len(volume) < 10:
+                return 0.0
+            
+            # Calculate volume trend as slope
+            recent_volume = volume.tail(10)
+            x = np.arange(len(recent_volume))
+            y = recent_volume.values
+            
+            slope = np.polyfit(x, y, 1)[0]
+            
+            # Normalize by average volume
+            avg_volume = recent_volume.mean()
+            normalized_slope = slope / avg_volume if avg_volume > 0 else 0.0
+            
+            return normalized_slope
+            
+        except Exception as e:
+            logger.error(f"Error calculating volume trend: {e}")
+            return 0.0
+    
+    def _estimate_regime_duration(self, data: pd.DataFrame) -> int:
+        """Estimate how long current regime has been active."""
+        try:
+            # Simplified implementation - in practice, would track regime changes
+            # For now, return a default duration
+            return 5  # Default 5 days
+            
+        except Exception as e:
+            logger.error(f"Error estimating regime duration: {e}")
+            return 1
+    
+    def _classify_regime(self, metrics: RegimeMetrics) -> MarketRegime:
+        """Classify market regime based on metrics."""
+        try:
+            # Determine volatility level
+            is_high_vol = metrics.atr_percentile > self.volatility_threshold
+            
+            # Determine trend vs chop
+            is_trending = abs(metrics.trend_consistency) > self.trend_threshold
+            
+            # Classify regime
+            if is_trending and not is_high_vol:
+                return MarketRegime.TRENDING_LOW_VOL
+            elif is_trending and is_high_vol:
+                return MarketRegime.TRENDING_HIGH_VOL
+            elif not is_trending and not is_high_vol:
+                return MarketRegime.CHOPPY_LOW_VOL
+            elif not is_trending and is_high_vol:
+                return MarketRegime.CHOPPY_HIGH_VOL
             else:
-                corr_long = corr_short
-            
-            # Correlation breakdown
-            correlation_breakdown = abs(corr_short - corr_long)
-            
-            return correlation_breakdown
-            
-        except Exception as e:
-            logger.error(f"Error calculating correlation breakdown: {e}")
-            return 0.0
-    
-    def calculate_dispersion(self, prices_df: pd.DataFrame) -> float:
-        """Calculate cross-sectional dispersion"""
-        try:
-            if len(prices_df) < 30:
-                return 0.0
-            
-            # Calculate returns
-            returns = prices_df.pct_change().dropna()
-            
-            # Recent returns (last 30 days)
-            recent_returns = returns.tail(30)
-            
-            # Calculate cross-sectional standard deviation
-            dispersion = recent_returns.std(axis=1).mean()
-            
-            return dispersion
-            
-        except Exception as e:
-            logger.error(f"Error calculating dispersion: {e}")
-            return 0.0
-    
-    def calculate_momentum(self, prices: pd.Series) -> float:
-        """Calculate price momentum"""
-        try:
-            if len(prices) < 20:
-                return 0.0
-            
-            # 20-day momentum
-            momentum = (prices.iloc[-1] / prices.iloc[-20] - 1) * 100
-            
-            return momentum
-            
-        except Exception as e:
-            logger.error(f"Error calculating momentum: {e}")
-            return 0.0
-    
-    def calculate_volume_profile(self, volume: pd.Series) -> float:
-        """Calculate volume profile indicator"""
-        try:
-            if len(volume) < 20:
-                return 0.0
-            
-            # Recent volume vs historical average
-            recent_volume = volume.tail(5).mean()
-            historical_volume = volume.tail(20).mean()
-            
-            if historical_volume == 0:
-                return 0.0
-            
-            volume_profile = (recent_volume / historical_volume - 1) * 100
-            
-            return volume_profile
-            
-        except Exception as e:
-            logger.error(f"Error calculating volume profile: {e}")
-            return 0.0
-    
-    def detect_regime_clustering(self, metrics: Dict[str, float]) -> Tuple[MarketRegime, float]:
-        """Detect regime using K-means clustering"""
-        try:
-            # Prepare features for clustering
-            features = np.array([
-                metrics['vol_10d'],
-                metrics['correlation_breakdown'],
-                metrics['dispersion'],
-                metrics['momentum'],
-                metrics['volume_profile']
-            ]).reshape(1, -1)
-            
-            # If we don't have enough history, use rule-based detection
-            if len(self.regime_history) < 50:
-                return self._detect_regime_rules(metrics)
-            
-            # Train K-means if not already trained
-            if self.kmeans_model is None:
-                self._train_clustering_model()
-            
-            # Predict regime
-            if self.kmeans_model is not None:
-                cluster = self.kmeans_model.predict(features)[0]
-                confidence = self._calculate_cluster_confidence(features, cluster)
-                
-                # Map cluster to regime
-                regime = self._map_cluster_to_regime(cluster, metrics)
-                
-                return regime, confidence
-            else:
-                return self._detect_regime_rules(metrics)
+                return MarketRegime.TRANSITION
                 
         except Exception as e:
-            logger.error(f"Error in regime clustering: {e}")
-            return self._detect_regime_rules(metrics)
+            logger.error(f"Error classifying regime: {e}")
+            return MarketRegime.TRANSITION
     
-    def _train_clustering_model(self):
-        """Train K-means clustering model on historical data"""
+    def _determine_trend_direction(self, metrics: RegimeMetrics) -> TrendDirection:
+        """Determine trend direction."""
         try:
-            if len(self.regime_history) < 50:
-                return
+            if metrics.price_trend_slope > 0.001:  # Uptrend
+                return TrendDirection.UPTREND
+            elif metrics.price_trend_slope < -0.001:  # Downtrend
+                return TrendDirection.DOWNTREND
+            else:  # Sideways
+                return TrendDirection.SIDEWAYS
+                
+        except Exception as e:
+            logger.error(f"Error determining trend direction: {e}")
+            return TrendDirection.SIDEWAYS
+    
+    def _calculate_regime_confidence(self, metrics: RegimeMetrics, regime: MarketRegime) -> float:
+        """Calculate confidence in regime classification."""
+        try:
+            # Base confidence on how clear the regime signals are
+            volatility_confidence = abs(metrics.atr_percentile - 0.5) * 2  # Distance from 50th percentile
+            trend_confidence = abs(metrics.trend_consistency)
             
-            # Prepare training data
-            features = []
-            for metrics in self.regime_history[-200:]:  # Use last 200 data points
-                features.append([
-                    metrics.volatility_10d,
-                    metrics.correlation_breakdown,
-                    metrics.dispersion,
-                    metrics.momentum,
-                    metrics.volume_profile
-                ])
+            # Combine confidences
+            overall_confidence = (volatility_confidence + trend_confidence) / 2
             
-            features = np.array(features)
+            # Adjust for regime type
+            if regime == MarketRegime.TRANSITION:
+                overall_confidence *= 0.5  # Lower confidence for transitions
             
-            # Scale features
-            features_scaled = self.scaler.fit_transform(features)
-            
-            # Train K-means
-            self.kmeans_model = KMeans(n_clusters=6, random_state=42, n_init=10)
-            self.kmeans_model.fit(features_scaled)
-            
-            logger.info("K-means clustering model trained")
+            return max(0.1, min(0.95, overall_confidence))  # Clamp to [0.1, 0.95]
             
         except Exception as e:
-            logger.error(f"Error training clustering model: {e}")
-            self.kmeans_model = None
-    
-    def _calculate_cluster_confidence(self, features: np.ndarray, cluster: int) -> float:
-        """Calculate confidence in cluster assignment"""
-        try:
-            if self.kmeans_model is None:
-                return 0.5
-            
-            # Calculate distance to cluster center
-            center = self.kmeans_model.cluster_centers_[cluster]
-            distance = np.linalg.norm(features - center)
-            
-            # Convert distance to confidence (closer = higher confidence)
-            max_distance = np.max([np.linalg.norm(center - other_center) 
-                                 for other_center in self.kmeans_model.cluster_centers_])
-            
-            confidence = max(0.1, 1.0 - (distance / max_distance))
-            return confidence
-            
-        except Exception as e:
-            logger.error(f"Error calculating cluster confidence: {e}")
+            logger.error(f"Error calculating regime confidence: {e}")
             return 0.5
     
-    def _map_cluster_to_regime(self, cluster: int, metrics: Dict[str, float]) -> MarketRegime:
-        """Map cluster to market regime"""
+    def _calculate_transition_probability(self, metrics: RegimeMetrics, regime: MarketRegime) -> float:
+        """Calculate probability of regime transition."""
         try:
-            # Simple mapping based on cluster characteristics
-            # This would be more sophisticated in practice
+            # Higher transition probability if metrics are near thresholds
+            volatility_near_threshold = abs(metrics.atr_percentile - self.volatility_threshold) < 0.1
+            trend_near_threshold = abs(abs(metrics.trend_consistency) - self.trend_threshold) < 0.1
             
-            vol_10d = metrics['vol_10d']
-            momentum = metrics['momentum']
-            dispersion = metrics['dispersion']
+            transition_prob = 0.0
+            if volatility_near_threshold:
+                transition_prob += 0.3
+            if trend_near_threshold:
+                transition_prob += 0.3
             
-            if vol_10d < self.vol_thresholds['low']:
-                return MarketRegime.LOW_VOL
-            elif vol_10d > self.vol_thresholds['high']:
-                return MarketRegime.HIGH_VOL
-            elif momentum > 5:
-                return MarketRegime.BULL
-            elif momentum < -5:
-                return MarketRegime.BEAR
-            elif dispersion > self.dispersion_threshold:
-                return MarketRegime.TRENDING
-            else:
-                return MarketRegime.SIDEWAYS
-                
+            # Higher probability for transition regime
+            if regime == MarketRegime.TRANSITION:
+                transition_prob += 0.4
+            
+            return min(0.8, transition_prob)  # Cap at 80%
+            
         except Exception as e:
-            logger.error(f"Error mapping cluster to regime: {e}")
-            return MarketRegime.SIDEWAYS
+            logger.error(f"Error calculating transition probability: {e}")
+            return 0.2
     
-    def _detect_regime_rules(self, metrics: Dict[str, float]) -> Tuple[MarketRegime, float]:
-        """Detect regime using rule-based approach"""
-        try:
-            vol_10d = metrics['vol_10d']
-            momentum = metrics['momentum']
-            dispersion = metrics['dispersion']
-            correlation_breakdown = metrics['correlation_breakdown']
-            
-            # Rule-based regime detection
-            if vol_10d < self.vol_thresholds['low']:
-                regime = MarketRegime.LOW_VOL
-                confidence = 0.8
-            elif vol_10d > self.vol_thresholds['high']:
-                regime = MarketRegime.HIGH_VOL
-                confidence = 0.8
-            elif momentum > 5 and dispersion < self.dispersion_threshold:
-                regime = MarketRegime.BULL
-                confidence = 0.7
-            elif momentum < -5 and dispersion < self.dispersion_threshold:
-                regime = MarketRegime.BEAR
-                confidence = 0.7
-            elif correlation_breakdown > 0.3:
-                regime = MarketRegime.TRENDING
-                confidence = 0.6
-            else:
-                regime = MarketRegime.SIDEWAYS
-                confidence = 0.5
-            
-            return regime, confidence
-            
-        except Exception as e:
-            logger.error(f"Error in rule-based regime detection: {e}")
-            return MarketRegime.SIDEWAYS, 0.5
+    def _create_default_regime(self, mode: str) -> RegimeState:
+        """Create default regime state when detection fails."""
+        return RegimeState(
+            timestamp=datetime.now(),
+            regime=MarketRegime.TRANSITION,
+            trend_direction=TrendDirection.SIDEWAYS,
+            volatility_level="LOW",
+            trend_strength=0.0,
+            volatility_ratio=1.0,
+            atr_percentile=0.5,
+            regime_confidence=0.3,
+            transition_probability=0.5,
+            mode=mode
+        )
     
-    def detect_regime(self, prices_df: pd.DataFrame, volume_df: pd.DataFrame = None) -> RegimeMetrics:
-        """Detect current market regime"""
-        try:
-            # Calculate all metrics
-            vol_metrics = self.calculate_volatility_metrics(prices_df.iloc[:, 0])
-            correlation_breakdown = self.calculate_correlation_breakdown(prices_df)
-            dispersion = self.calculate_dispersion(prices_df)
-            momentum = self.calculate_momentum(prices_df.iloc[:, 0])
-            
-            volume_profile = 0.0
-            if volume_df is not None and not volume_df.empty:
-                volume_profile = self.calculate_volume_profile(volume_df.iloc[:, 0])
-            
-            # Combine metrics
-            metrics = {
-                'vol_10d': vol_metrics['vol_10d'],
-                'vol_30d': vol_metrics['vol_30d'],
-                'correlation_breakdown': correlation_breakdown,
-                'dispersion': dispersion,
-                'momentum': momentum,
-                'volume_profile': volume_profile
-            }
-            
-            # Detect regime
-            regime, confidence = self.detect_regime_clustering(metrics)
-            
-            # Create regime metrics
-            regime_metrics = RegimeMetrics(
-                volatility_10d=vol_metrics['vol_10d'],
-                volatility_30d=vol_metrics['vol_30d'],
-                correlation_breakdown=correlation_breakdown,
-                dispersion=dispersion,
-                momentum=momentum,
-                volume_profile=volume_profile,
-                regime=regime,
-                confidence=confidence,
-                timestamp=datetime.now()
-            )
-            
-            # Store in history
-            self.regime_history.append(regime_metrics)
-            
-            # Keep only recent history
-            if len(self.regime_history) > 500:
-                self.regime_history = self.regime_history[-500:]
-            
-            return regime_metrics
-            
-        except Exception as e:
-            logger.error(f"Error detecting regime: {e}")
-            return RegimeMetrics(
-                volatility_10d=0.0,
-                volatility_30d=0.0,
-                correlation_breakdown=0.0,
-                dispersion=0.0,
-                momentum=0.0,
-                volume_profile=0.0,
-                regime=MarketRegime.SIDEWAYS,
-                confidence=0.0,
-                timestamp=datetime.now()
-            )
+    def _create_default_metrics(self) -> RegimeMetrics:
+        """Create default metrics when calculation fails."""
+        return RegimeMetrics(
+            current_atr=0.02,
+            historical_atr_mean=0.02,
+            historical_atr_std=0.005,
+            atr_percentile=0.5,
+            price_trend_slope=0.0,
+            trend_consistency=0.0,
+            volume_trend=0.0,
+            regime_duration=1
+        )
     
-    def get_regime_transition_probability(self) -> Dict[str, float]:
-        """Calculate transition probabilities between regimes"""
+    def log_regime_state(self, regime_state: RegimeState) -> None:
+        """Log regime state to database."""
         try:
-            if len(self.regime_history) < 10:
-                return {}
+            query = """
+                INSERT INTO regime_state (
+                    timestamp, symbol, regime, trend_direction, volatility_level,
+                    trend_strength, volatility_ratio, atr_percentile, 
+                    regime_confidence, transition_probability, mode,
+                    created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
             
-            # Count transitions
-            transitions = {}
-            current_regime = None
+            execute_update(query, (
+                regime_state.timestamp.isoformat(),
+                "SPY",  # Default to SPY for market-wide regime
+                regime_state.regime.value,
+                regime_state.trend_direction.value,
+                regime_state.volatility_level,
+                regime_state.trend_strength,
+                regime_state.volatility_ratio,
+                regime_state.atr_percentile,
+                regime_state.regime_confidence,
+                regime_state.transition_probability,
+                regime_state.mode,
+                datetime.now().isoformat()
+            ), regime_state.mode)
             
-            for metrics in self.regime_history:
-                if current_regime is not None:
-                    transition_key = f"{current_regime.value} -> {metrics.regime.value}"
-                    transitions[transition_key] = transitions.get(transition_key, 0) + 1
-                
-                current_regime = metrics.regime
-            
-            # Calculate probabilities
-            total_transitions = sum(transitions.values())
-            probabilities = {}
-            
-            for transition, count in transitions.items():
-                probabilities[transition] = count / total_transitions
-            
-            return probabilities
+            logger.debug(f"Regime state logged: {regime_state.regime.value}")
             
         except Exception as e:
-            logger.error(f"Error calculating transition probabilities: {e}")
-            return {}
+            logger.error(f"Error logging regime state: {e}")
     
-    def get_regime_stability(self) -> float:
-        """Calculate regime stability (how often regime changes)"""
+    def get_regime_history(self, symbol: str = "SPY", mode: Optional[str] = None, 
+                          limit: int = 30) -> List[Dict[str, Any]]:
+        """Get regime history for a symbol."""
+        if mode is None:
+            mode = get_current_mode()
+        
         try:
-            if len(self.regime_history) < 10:
-                return 0.0
+            query = """
+                SELECT * FROM regime_state 
+                WHERE symbol = ? AND mode = ?
+                ORDER BY timestamp DESC
+                LIMIT ?
+            """
             
-            # Count regime changes
-            changes = 0
-            current_regime = None
-            
-            for metrics in self.regime_history:
-                if current_regime is not None and current_regime != metrics.regime:
-                    changes += 1
-                current_regime = metrics.regime
-            
-            # Calculate stability (lower changes = higher stability)
-            stability = 1.0 - (changes / len(self.regime_history))
-            return max(0.0, min(1.0, stability))
+            result = execute_query(query, (symbol, mode, limit), mode)
+            return result if result else []
             
         except Exception as e:
-            logger.error(f"Error calculating regime stability: {e}")
-            return 0.0
-    
-    def get_regime_summary(self) -> Dict:
-        """Get comprehensive regime summary"""
-        try:
-            if not self.regime_history:
-                return {}
-            
-            current_regime = self.regime_history[-1]
-            
-            return {
-                'current_regime': current_regime.regime.value,
-                'confidence': current_regime.confidence,
-                'volatility_10d': current_regime.volatility_10d,
-                'volatility_30d': current_regime.volatility_30d,
-                'correlation_breakdown': current_regime.correlation_breakdown,
-                'dispersion': current_regime.dispersion,
-                'momentum': current_regime.momentum,
-                'volume_profile': current_regime.volume_profile,
-                'stability': self.get_regime_stability(),
-                'transition_probabilities': self.get_regime_transition_probability(),
-                'timestamp': current_regime.timestamp
-            }
-            
-        except Exception as e:
-            logger.error(f"Error getting regime summary: {e}")
-            return {}
+            logger.error(f"Error getting regime history for {symbol}: {e}")
+            return []
 
-class RegimeManager:
-    """Manages regime detection and provides regime-aware features"""
-    
-    def __init__(self, config: Dict):
-        self.config = config
-        self.detector = RegimeDetector(config)
-        self.current_regime = MarketRegime.SIDEWAYS
-        self.regime_history = []
-        
-        logger.info("Regime Manager initialized")
-    
-    def update_regime(self, prices_df: pd.DataFrame, volume_df: pd.DataFrame = None) -> RegimeMetrics:
-        """Update current regime"""
-        regime_metrics = self.detector.detect_regime(prices_df, volume_df)
-        self.current_regime = regime_metrics.regime
-        self.regime_history.append(regime_metrics)
-        
-        # Keep only recent history
-        if len(self.regime_history) > 100:
-            self.regime_history = self.regime_history[-100:]
-        
-        return regime_metrics
-    
-    def get_regime_features(self) -> Dict[str, float]:
-        """Get regime features for ML models"""
-        try:
-            if not self.regime_history:
-                return {}
-            
-            current = self.regime_history[-1]
-            
-            # One-hot encode regime
-            regime_features = {}
-            for regime in MarketRegime:
-                regime_features[f'regime_{regime.value}'] = 1.0 if current.regime == regime else 0.0
-            
-            # Add continuous features
-            regime_features.update({
-                'regime_confidence': current.confidence,
-                'volatility_10d': current.volatility_10d,
-                'volatility_30d': current.volatility_30d,
-                'correlation_breakdown': current.correlation_breakdown,
-                'dispersion': current.dispersion,
-                'momentum': current.momentum,
-                'volume_profile': current.volume_profile
-            })
-            
-            return regime_features
-            
-        except Exception as e:
-            logger.error(f"Error getting regime features: {e}")
-            return {}
-    
-    def should_trigger_escalation(self) -> bool:
-        """Check if regime change should trigger GPT-5 escalation"""
-        try:
-            if len(self.regime_history) < 2:
-                return False
-            
-            current = self.regime_history[-1]
-            previous = self.regime_history[-2]
-            
-            # Trigger escalation if:
-            # 1. Regime changed
-            # 2. High confidence in new regime
-            # 3. Significant volatility change
-            
-            regime_changed = current.regime != previous.regime
-            high_confidence = current.confidence > 0.7
-            vol_spike = abs(current.volatility_10d - previous.volatility_10d) > 0.1
-            
-            return regime_changed and (high_confidence or vol_spike)
-            
-        except Exception as e:
-            logger.error(f"Error checking escalation trigger: {e}")
-            return False
-    
-    def get_regime_recommendations(self) -> Dict[str, str]:
-        """Get trading recommendations based on current regime"""
-        try:
-            if not self.regime_history:
-                return {}
-            
-            current = self.regime_history[-1]
-            regime = current.regime
-            
-            recommendations = {}
-            
-            if regime == MarketRegime.LOW_VOL:
-                recommendations.update({
-                    'strategy': 'mean_reversion',
-                    'position_sizing': 'increase',
-                    'risk_management': 'standard',
-                    'timeframe': 'short_term'
-                })
-            elif regime == MarketRegime.HIGH_VOL:
-                recommendations.update({
-                    'strategy': 'momentum',
-                    'position_sizing': 'reduce',
-                    'risk_management': 'aggressive',
-                    'timeframe': 'medium_term'
-                })
-            elif regime == MarketRegime.BULL:
-                recommendations.update({
-                    'strategy': 'trend_following',
-                    'position_sizing': 'increase',
-                    'risk_management': 'standard',
-                    'timeframe': 'long_term'
-                })
-            elif regime == MarketRegime.BEAR:
-                recommendations.update({
-                    'strategy': 'defensive',
-                    'position_sizing': 'reduce',
-                    'risk_management': 'aggressive',
-                    'timeframe': 'short_term'
-                })
-            elif regime == MarketRegime.TRENDING:
-                recommendations.update({
-                    'strategy': 'momentum',
-                    'position_sizing': 'normal',
-                    'risk_management': 'standard',
-                    'timeframe': 'medium_term'
-                })
-            else:  # SIDEWAYS
-                recommendations.update({
-                    'strategy': 'mean_reversion',
-                    'position_sizing': 'normal',
-                    'risk_management': 'standard',
-                    'timeframe': 'short_term'
-                })
-            
-            return recommendations
-            
-        except Exception as e:
-            logger.error(f"Error getting regime recommendations: {e}")
-            return {}
+# Global regime detector instance
+_regime_detector: Optional[RegimeDetector] = None
+
+def get_regime_detector() -> RegimeDetector:
+    """Get the global regime detector instance."""
+    global _regime_detector
+    if _regime_detector is None:
+        _regime_detector = RegimeDetector()
+    return _regime_detector
+
+def detect_current_regime(symbol: str = "SPY", mode: Optional[str] = None) -> RegimeState:
+    """Detect current market regime."""
+    return get_regime_detector().detect_current_regime(symbol, mode)
+
+def log_regime_state(regime_state: RegimeState) -> None:
+    """Log regime state to database."""
+    return get_regime_detector().log_regime_state(regime_state)
+
+def get_regime_history(symbol: str = "SPY", mode: Optional[str] = None, 
+                      limit: int = 30) -> List[Dict[str, Any]]:
+    """Get regime history for a symbol."""
+    return get_regime_detector().get_regime_history(symbol, mode, limit)

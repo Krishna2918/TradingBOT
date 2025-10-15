@@ -1,0 +1,218 @@
+# Regime-Specific Trading Policies
+# This file defines trading parameters that adapt based on market regime
+
+# Regime-specific ensemble weight adjustments
+ensemble_weights:
+  TRENDING_LOW_VOL:
+    technical_analyst: 0.35    # Higher weight on technical analysis in trending markets
+    sentiment_analyst: 0.20
+    fundamental_analyst: 0.25
+    risk_analyst: 0.10
+    market_regime_analyst: 0.10
+  
+  TRENDING_HIGH_VOL:
+    technical_analyst: 0.30
+    sentiment_analyst: 0.15    # Lower sentiment weight in high volatility
+    fundamental_analyst: 0.20
+    risk_analyst: 0.25         # Higher risk weight in volatile markets
+    market_regime_analyst: 0.10
+  
+  CHOPPY_LOW_VOL:
+    technical_analyst: 0.25    # Lower technical weight in choppy markets
+    sentiment_analyst: 0.30    # Higher sentiment weight for mean reversion
+    fundamental_analyst: 0.30
+    risk_analyst: 0.10
+    market_regime_analyst: 0.05
+  
+  CHOPPY_HIGH_VOL:
+    technical_analyst: 0.20
+    sentiment_analyst: 0.25
+    fundamental_analyst: 0.20
+    risk_analyst: 0.30         # Highest risk weight in choppy volatile markets
+    market_regime_analyst: 0.05
+  
+  TRANSITION:
+    technical_analyst: 0.20    # Conservative weights during transitions
+    sentiment_analyst: 0.20
+    fundamental_analyst: 0.20
+    risk_analyst: 0.30         # High risk focus during transitions
+    market_regime_analyst: 0.10
+
+# Kelly sizing adjustments by regime
+kelly_adjustments:
+  TRENDING_LOW_VOL:
+    kelly_multiplier: 1.2      # Increase position sizes in stable trending markets
+    max_position_risk: 0.025   # 2.5% max risk per trade
+    confidence_threshold: 0.65 # Lower confidence threshold for entries
+  
+  TRENDING_HIGH_VOL:
+    kelly_multiplier: 0.8      # Reduce position sizes in volatile trending markets
+    max_position_risk: 0.015   # 1.5% max risk per trade
+    confidence_threshold: 0.75 # Higher confidence threshold
+  
+  CHOPPY_LOW_VOL:
+    kelly_multiplier: 1.0      # Standard position sizes
+    max_position_risk: 0.020   # 2.0% max risk per trade
+    confidence_threshold: 0.70 # Standard confidence threshold
+  
+  CHOPPY_HIGH_VOL:
+    kelly_multiplier: 0.6      # Significantly reduce position sizes
+    max_position_risk: 0.010   # 1.0% max risk per trade
+    confidence_threshold: 0.80 # High confidence threshold
+  
+  TRANSITION:
+    kelly_multiplier: 0.5      # Very conservative sizing during transitions
+    max_position_risk: 0.008   # 0.8% max risk per trade
+    confidence_threshold: 0.85 # Very high confidence threshold
+
+# ATR bracket adjustments by regime
+atr_brackets:
+  TRENDING_LOW_VOL:
+    atr_multiplier: 1.5        # Tighter stops in stable trending markets
+    r_multiple: 2.0            # Higher reward targets
+    min_stop_loss_percent: 0.015 # 1.5% minimum stop loss
+    max_stop_loss_percent: 0.08  # 8% maximum stop loss
+  
+  TRENDING_HIGH_VOL:
+    atr_multiplier: 2.5        # Wider stops in volatile trending markets
+    r_multiple: 1.5            # Lower reward targets
+    min_stop_loss_percent: 0.020 # 2.0% minimum stop loss
+    max_stop_loss_percent: 0.12  # 12% maximum stop loss
+  
+  CHOPPY_LOW_VOL:
+    atr_multiplier: 2.0        # Standard stops
+    r_multiple: 1.5            # Standard reward targets
+    min_stop_loss_percent: 0.018 # 1.8% minimum stop loss
+    max_stop_loss_percent: 0.10  # 10% maximum stop loss
+  
+  CHOPPY_HIGH_VOL:
+    atr_multiplier: 3.0        # Very wide stops in choppy volatile markets
+    r_multiple: 1.2            # Lower reward targets
+    min_stop_loss_percent: 0.025 # 2.5% minimum stop loss
+    max_stop_loss_percent: 0.15  # 15% maximum stop loss
+  
+  TRANSITION:
+    atr_multiplier: 2.5        # Conservative stops during transitions
+    r_multiple: 1.3            # Conservative reward targets
+    min_stop_loss_percent: 0.020 # 2.0% minimum stop loss
+    max_stop_loss_percent: 0.12  # 12% maximum stop loss
+
+# Lookback window adjustments by regime
+lookback_windows:
+  TRENDING_LOW_VOL:
+    price_lookback: 20         # Standard price lookback
+    volume_lookback: 15        # Standard volume lookback
+    volatility_lookback: 14    # Standard volatility lookback
+    sentiment_lookback: 7      # Shorter sentiment lookback in stable markets
+  
+  TRENDING_HIGH_VOL:
+    price_lookback: 15         # Shorter price lookback in volatile markets
+    volume_lookback: 10        # Shorter volume lookback
+    volatility_lookback: 10    # Shorter volatility lookback
+    sentiment_lookback: 5      # Very short sentiment lookback
+  
+  CHOPPY_LOW_VOL:
+    price_lookback: 25         # Longer price lookback for mean reversion
+    volume_lookback: 20        # Longer volume lookback
+    volatility_lookback: 20    # Longer volatility lookback
+    sentiment_lookback: 10     # Longer sentiment lookback
+  
+  CHOPPY_HIGH_VOL:
+    price_lookback: 15         # Shorter lookbacks in volatile choppy markets
+    volume_lookback: 10        # Shorter volume lookback
+    volatility_lookback: 10    # Shorter volatility lookback
+    sentiment_lookback: 5      # Very short sentiment lookback
+  
+  TRANSITION:
+    price_lookback: 10         # Very short lookbacks during transitions
+    volume_lookback: 7         # Very short volume lookback
+    volatility_lookback: 7     # Very short volatility lookback
+    sentiment_lookback: 3      # Very short sentiment lookback
+
+# Position management adjustments by regime
+position_management:
+  TRENDING_LOW_VOL:
+    max_positions: 12          # More positions in stable trending markets
+    max_holding_days: 30       # Longer holding periods
+    rebalance_frequency: 5     # Rebalance every 5 days
+    stop_loss_trailing: true   # Enable trailing stops
+  
+  TRENDING_HIGH_VOL:
+    max_positions: 8           # Fewer positions in volatile markets
+    max_holding_days: 20       # Shorter holding periods
+    rebalance_frequency: 3     # Rebalance every 3 days
+    stop_loss_trailing: true   # Enable trailing stops
+  
+  CHOPPY_LOW_VOL:
+    max_positions: 10          # Standard position count
+    max_holding_days: 25       # Standard holding periods
+    rebalance_frequency: 4     # Rebalance every 4 days
+    stop_loss_trailing: false  # Disable trailing stops in choppy markets
+  
+  CHOPPY_HIGH_VOL:
+    max_positions: 6           # Fewer positions in choppy volatile markets
+    max_holding_days: 15       # Shorter holding periods
+    rebalance_frequency: 2     # Rebalance every 2 days
+    stop_loss_trailing: false  # Disable trailing stops
+  
+  TRANSITION:
+    max_positions: 4           # Very few positions during transitions
+    max_holding_days: 10       # Very short holding periods
+    rebalance_frequency: 1     # Rebalance daily
+    stop_loss_trailing: false  # Disable trailing stops
+
+# Risk management adjustments by regime
+risk_management:
+  TRENDING_LOW_VOL:
+    max_portfolio_risk: 0.20   # 20% max portfolio risk
+    daily_loss_limit: 0.03     # 3% daily loss limit
+    drawdown_threshold: 0.05   # 5% drawdown threshold
+    correlation_limit: 0.7     # 70% correlation limit
+  
+  TRENDING_HIGH_VOL:
+    max_portfolio_risk: 0.15   # 15% max portfolio risk
+    daily_loss_limit: 0.025    # 2.5% daily loss limit
+    drawdown_threshold: 0.04   # 4% drawdown threshold
+    correlation_limit: 0.6     # 60% correlation limit
+  
+  CHOPPY_LOW_VOL:
+    max_portfolio_risk: 0.18   # 18% max portfolio risk
+    daily_loss_limit: 0.025    # 2.5% daily loss limit
+    drawdown_threshold: 0.045  # 4.5% drawdown threshold
+    correlation_limit: 0.65    # 65% correlation limit
+  
+  CHOPPY_HIGH_VOL:
+    max_portfolio_risk: 0.12   # 12% max portfolio risk
+    daily_loss_limit: 0.02     # 2% daily loss limit
+    drawdown_threshold: 0.035  # 3.5% drawdown threshold
+    correlation_limit: 0.5     # 50% correlation limit
+  
+  TRANSITION:
+    max_portfolio_risk: 0.10   # 10% max portfolio risk
+    daily_loss_limit: 0.015    # 1.5% daily loss limit
+    drawdown_threshold: 0.03   # 3% drawdown threshold
+    correlation_limit: 0.4     # 40% correlation limit
+
+# Regime transition rules
+regime_transitions:
+  # Minimum time in regime before considering transition
+  min_regime_duration: 3       # 3 days minimum
+  
+  # Confidence threshold for regime change
+  regime_change_threshold: 0.7 # 70% confidence required
+  
+  # Transition smoothing (prevent rapid regime changes)
+  transition_smoothing: 0.3    # 30% weight for new regime, 70% for previous
+  
+  # Regime persistence (how long to maintain regime classification)
+  regime_persistence: 5        # 5 days persistence
+
+# Feature flags for regime-aware systems
+feature_flags:
+  enable_regime_weights: true      # Enable regime-based ensemble weights
+  enable_regime_kelly: true        # Enable regime-based Kelly adjustments
+  enable_regime_brackets: true     # Enable regime-based ATR brackets
+  enable_regime_lookbacks: true    # Enable regime-based lookback windows
+  enable_regime_risk: true         # Enable regime-based risk management
+  enable_regime_positions: true    # Enable regime-based position management
+  enable_regime_transitions: true  # Enable regime transition smoothing

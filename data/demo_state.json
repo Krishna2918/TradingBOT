@@ -1,368 +1,49 @@
 {
   "initialized": true,
-  "starting_capital": 100.0,
-  "current_capital": 100.0,
+  "starting_capital": 500.0,
+  "current_capital": 444.48,
   "mode": "demo",
   "trades": [
     {
-      "time": "16:48:52",
+      "time": "10:22:41",
       "symbol": "DOO.TO",
       "side": "BUY",
-      "qty": 1.0,
-      "price": 89.39,
+      "qty": 1,
+      "price": 55.52,
       "status": "FILLED",
       "pnl": null,
-      "features_entry": {
-        "price": 89.36000061035156,
-        "rsi14": 30.666802298967497,
-        "sma20_ratio": -0.001976836888429423,
-        "sma50_ratio": -0.003032405074193223,
-        "volatility_20": 0.0009473561668791029,
-        "momentum_10": -0.0030123468854185154
-      },
+      "features_entry": {},
       "regime": "SIDEWAYS"
     },
     {
-      "time": "16:48:45",
-      "symbol": "CVE.TO",
+      "time": "10:22:41",
+      "symbol": "DOO.TO",
       "side": "BUY",
-      "qty": 1.0,
-      "price": 24.25,
+      "qty": 1,
+      "price": 55.52,
       "status": "FILLED",
       "pnl": null,
-      "features_entry": {
-        "price": 24.25,
-        "rsi14": 61.111346585851734,
-        "sma20_ratio": 0.0006189458503129686,
-        "sma50_ratio": -0.00028033074347577625,
-        "volatility_20": 0.00044109149585710414,
-        "momentum_10": 0.0008254419373310284
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:44:23",
-      "symbol": "BB.TO",
-      "side": "SELL",
-      "qty": 1.0,
-      "price": 6.28,
-      "status": "FILLED",
-      "pnl": -0.04,
-      "features_exit": {
-        "price": 6.289999961853027,
-        "rsi14": 40.0,
-        "sma20_ratio": -0.001190960896945481,
-        "sma50_ratio": -0.004337240533286102,
-        "volatility_20": 0.0014773933486379046,
-        "momentum_10": -0.0031695691137683113
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:43:48",
-      "symbol": "BB.TO",
-      "side": "SELL",
-      "qty": 1.0,
-      "price": 6.28,
-      "status": "FILLED",
-      "pnl": -0.04,
-      "features_exit": {
-        "price": 6.289999961853027,
-        "rsi14": 40.0,
-        "sma20_ratio": -0.001190960896945481,
-        "sma50_ratio": -0.004337240533286102,
-        "volatility_20": 0.0014773933486379046,
-        "momentum_10": -0.0031695691137683113
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:42:25",
-      "symbol": "AQN.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 8.11,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 8.109999656677246,
-        "rsi14": 38.46153846153846,
-        "sma20_ratio": -0.0007700777089632016,
-        "sma50_ratio": -0.001034710339112066,
-        "volatility_20": 0.0007055746645420691,
-        "momentum_10": -0.0006161570649346748
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:42:16",
-      "symbol": "RCI-B.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 51.5,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 51.529998779296875,
-        "rsi14": 50.0,
-        "sma20_ratio": 0.0004513824867617977,
-        "sma50_ratio": 0.0026988771803169165,
-        "volatility_20": 0.0006999850798315462,
-        "momentum_10": 0.0003882830210715227
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:42:15",
-      "symbol": "ATD.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 73.13,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 73.13999938964844,
-        "rsi14": 58.33418107833163,
-        "sma20_ratio": 0.0005300825223368832,
-        "sma50_ratio": 0.002403894071833168,
-        "volatility_20": 0.00036739945265953553,
-        "momentum_10": 0.0004103238824570976
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:42:07",
-      "symbol": "FTS.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 71.46,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 71.45999908447266,
-        "rsi14": 55.263105061334294,
-        "sma20_ratio": 0.0006336164139035816,
-        "sma50_ratio": 0.0007590353200908062,
-        "volatility_20": 0.0004548421287489249,
-        "momentum_10": 0.0004199745088717677
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:42:07",
-      "symbol": "BCE.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 33.46,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 33.470001220703125,
-        "rsi14": 63.33282473807344,
-        "sma20_ratio": 0.00088220400057204,
-        "sma50_ratio": 0.0027803749852020054,
-        "volatility_20": 0.0003883482058280593,
-        "momentum_10": 0.0005979209957396314
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:41:59",
-      "symbol": "CNQ.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 43.97,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 43.97999954223633,
-        "rsi14": 1.42886726030234,
-        "sma20_ratio": -0.004617058058201007,
-        "sma50_ratio": -0.00771178593096733,
-        "volatility_20": 0.0005102106012710684,
-        "momentum_10": -0.004301531233536826
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "16:41:56",
-      "symbol": "BCE.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 33.46,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 33.470001220703125,
-        "rsi14": 63.33282473807344,
-        "sma20_ratio": 0.00088220400057204,
-        "sma50_ratio": 0.0027803749852020054,
-        "volatility_20": 0.0003883482058280593,
-        "momentum_10": 0.0005979209957396314
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "14:57:45",
-      "symbol": "RCI-B.TO",
-      "side": "SELL",
-      "qty": 1.0,
-      "price": 51.55,
-      "status": "FILLED",
-      "pnl": 0.01,
-      "features_exit": {
-        "price": 51.54999923706055,
-        "rsi14": 41.30398726199164,
-        "sma20_ratio": -0.00045083743729845693,
-        "sma50_ratio": -0.002982365470308501,
-        "volatility_20": 0.0005738894024463281,
-        "momentum_10": -0.0013560576573545813
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "14:57:40",
-      "symbol": "BB.TO",
-      "side": "BUY",
-      "qty": 10.0,
-      "price": 6.32,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 6.320000171661377,
-        "rsi14": 28.571525885558586,
-        "sma20_ratio": -0.0031545485560381392,
-        "sma50_ratio": -0.0048967634602276044,
-        "volatility_20": 0.0012101449550395787,
-        "momentum_10": -0.0031545710481332145
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "14:57:17",
-      "symbol": "RCI-B.TO",
-      "side": "BUY",
-      "qty": 1.0,
-      "price": 51.54,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 51.540000915527344,
-        "rsi14": 38.6364030448579,
-        "sma20_ratio": -0.0006350166937915125,
-        "sma50_ratio": -0.0031718856516903537,
-        "volatility_20": 0.0005710367680647162,
-        "momentum_10": -0.0015497485085766982
-      },
-      "regime": "SIDEWAYS"
-    },
-    {
-      "time": "14:57:09",
-      "symbol": "T.TO",
-      "side": "BUY",
-      "qty": 3.0,
-      "price": 21.34,
-      "status": "FILLED",
-      "pnl": null,
-      "features_entry": {
-        "price": 21.34000015258789,
-        "rsi14": 66.66666666666666,
-        "sma20_ratio": 0.00039848533725783675,
-        "sma50_ratio": -0.0002014465709997415,
-        "volatility_20": 0.0003304513214338129,
-        "momentum_10": 0.00023440676493269308
-      },
+      "features_entry": {},
       "regime": "SIDEWAYS"
     }
   ],
   "holdings": [
     {
-      "symbol": "BB.TO",
-      "qty": 11,
-      "avg_price": 6.321818181818182,
-      "current_price": 6.28,
-      "pnl": -0.46000000000000174,
-      "pnl_pct": -0.6614897900488952
-    },
-    {
-      "symbol": "T.TO",
-      "qty": 3,
-      "avg_price": 21.34,
-      "current_price": 21.34,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "BCE.TO",
-      "qty": 2,
-      "avg_price": 33.46,
-      "current_price": 33.46,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "CNQ.TO",
-      "qty": 1,
-      "avg_price": 43.97,
-      "current_price": 43.97,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "FTS.TO",
-      "qty": 1,
-      "avg_price": 71.46,
-      "current_price": 71.46,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "ATD.TO",
-      "qty": 1,
-      "avg_price": 73.13,
-      "current_price": 73.13,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "RCI-B.TO",
-      "qty": 1,
-      "avg_price": 51.5,
-      "current_price": 51.5,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "AQN.TO",
-      "qty": 1,
-      "avg_price": 8.11,
-      "current_price": 8.11,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
-      "symbol": "CVE.TO",
-      "qty": 1,
-      "avg_price": 24.25,
-      "current_price": 24.25,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
-    },
-    {
       "symbol": "DOO.TO",
+      "name": "DOO",
       "qty": 1,
-      "avg_price": 89.39,
-      "current_price": 89.39,
-      "pnl": 0.0,
-      "pnl_pct": 0.0
+      "avg_price": 55.52,
+      "current_price": 55.52,
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ],
-  "start_time": "2025-10-10T17:08:16.858012",
+  "start_time": "2025-10-14T10:22:41.512988",
   "learning_log": [],
   "learning_state": {
-    "risk_multiplier": 1.0,
     "win_streak": 0,
-    "loss_streak": 0
+    "loss_streak": 0,
+    "risk_multiplier": 1.0
   },
-  "demo_capital": 100.0
+  "demo_capital": 444.48
 }
