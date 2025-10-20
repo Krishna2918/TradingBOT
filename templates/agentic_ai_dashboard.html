@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --dark-color: #34495e;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--light-color), #ffffff);
+            border-bottom: 2px solid var(--secondary-color);
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: 600;
+        }
+        
+        .agent-card {
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .agent-card.critical {
+            border-left-color: var(--danger-color);
+        }
+        
+        .agent-card.important {
+            border-left-color: var(--warning-color);
+        }
+        
+        .agent-card.optional {
+            border-left-color: var(--success-color);
+        }
+        
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .status-active {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .status-idle {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .status-error {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .priority-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .priority-critical {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .priority-important {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .priority-optional {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+        
+        .chart-container {
+            height: 400px;
+            margin: 1rem 0;
+        }
+        
+        .alert-item {
+            border-left: 4px solid var(--danger-color);
+            background-color: #fff5f5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn-agent-control {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .loading-spinner {
+            display: none;
+        }
+        
+        .loading-spinner.show {
+            display: inline-block;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .system-health-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        
+        .health-excellent { background-color: var(--success-color); }
+        .health-good { background-color: #2ecc71; }
+        .health-warning { background-color: var(--warning-color); }
+        .health-critical { background-color: var(--danger-color); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>
+                Agentic AI Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text">
+                    <i class="fas fa-circle system-health-indicator health-excellent" id="systemHealthIndicator"></i>
+                    <span id="systemHealthText">System Healthy</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <!-- System Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-tachometer-alt me-2"></i>
+                            System Overview
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <div class="metric-value" id="totalAgents">0</div>
+                                    <div class="metric-label">Total Agents</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <div class="metric-value" id="activeAgents">0</div>
+                                    <div class="metric-label">Active Agents</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <div class="metric-value" id="systemCPU">0%</div>
+                                    <div class="metric-label">System CPU</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <div class="metric-value" id="systemMemory">0%</div>
+                                    <div class="metric-label">System Memory</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agents Status -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-users me-2"></i>
+                            Agents Status
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="agentsContainer">
+                            <!-- Agents will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            Agents Performance
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="agentsPerformanceChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-pie me-2"></i>
+                            Resource Usage
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="resourceUsageChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Analysis and Learning Progress -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-line me-2"></i>
+                            Market Analysis
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="marketAnalysisChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-brain me-2"></i>
+                            Learning Progress
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" id="learningProgressChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts and Portfolio -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Active Alerts
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="alertsContainer">
+                            <!-- Alerts will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-wallet me-2"></i>
+                            Portfolio Summary
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="portfolioContainer">
+                            <!-- Portfolio data will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Dashboard JavaScript
+        class AgenticAIDashboard {
+            constructor() {
+                this.ws = null;
+                this.updateInterval = 5000; // 5 seconds
+                this.charts = {};
+                this.init();
+            }
+            
+            init() {
+                this.connectWebSocket();
+                this.loadInitialData();
+                this.startUpdateLoop();
+            }
+            
+            connectWebSocket() {
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const wsUrl = `${protocol}//${window.location.host}/ws`;
+                
+                this.ws = new WebSocket(wsUrl);
+                
+                this.ws.onopen = () => {
+                    console.log('WebSocket connected');
+                };
+                
+                this.ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    if (data.type === 'dashboard_update') {
+                        this.updateDashboard(data.data);
+                    }
+                };
+                
+                this.ws.onclose = () => {
+                    console.log('WebSocket disconnected, reconnecting...');
+                    setTimeout(() => this.connectWebSocket(), 5000);
+                };
+            }
+            
+            async loadInitialData() {
+                try {
+                    await Promise.all([
+                        this.loadAgentsData(),
+                        this.loadResourcesData(),
+                        this.loadMarketData(),
+                        this.loadLearningData(),
+                        this.loadPortfolioData(),
+                        this.loadAlertsData()
+                    ]);
+                } catch (error) {
+                    console.error('Error loading initial data:', error);
+                }
+            }
+            
+            async loadAgentsData() {
+                try {
+                    const response = await fetch('/api/dashboard/agents');
+                    const data = await response.json();
+                    this.updateAgentsDisplay(data.agents);
+                } catch (error) {
+                    console.error('Error loading agents data:', error);
+                }
+            }
+            
+            async loadResourcesData() {
+                try {
+                    const response = await fetch('/api/dashboard/resources');
+                    const data = await response.json();
+                    this.updateResourcesDisplay(data);
+                } catch (error) {
+                    console.error('Error loading resources data:', error);
+                }
+            }
+            
+            async loadMarketData() {
+                try {
+                    const response = await fetch('/api/dashboard/market');
+                    const data = await response.json();
+                    this.updateMarketDisplay(data);
+                } catch (error) {
+                    console.error('Error loading market data:', error);
+                }
+            }
+            
+            async loadLearningData() {
+                try {
+                    const response = await fetch('/api/dashboard/learning');
+                    const data = await response.json();
+                    this.updateLearningDisplay(data);
+                } catch (error) {
+                    console.error('Error loading learning data:', error);
+                }
+            }
+            
+            async loadPortfolioData() {
+                try {
+                    const response = await fetch('/api/dashboard/portfolio');
+                    const data = await response.json();
+                    this.updatePortfolioDisplay(data);
+                } catch (error) {
+                    console.error('Error loading portfolio data:', error);
+                }
+            }
+            
+            async loadAlertsData() {
+                try {
+                    const response = await fetch('/api/dashboard/alerts');
+                    const data = await response.json();
+                    this.updateAlertsDisplay(data.alerts);
+                } catch (error) {
+                    console.error('Error loading alerts data:', error);
+                }
+            }
+            
+            updateAgentsDisplay(agents) {
+                const container = document.getElementById('agentsContainer');
+                container.innerHTML = '';
+                
+                agents.forEach(agent => {
+                    const agentCard = this.createAgentCard(agent);
+                    container.appendChild(agentCard);
+                });
+            }
+            
+            createAgentCard(agent) {
+                const div = document.createElement('div');
+                div.className = 'col-md-4 mb-3';
+                
+                const priorityClass = agent.priority.toLowerCase();
+                const statusClass = agent.status.toLowerCase();
+                
+                div.innerHTML = `
+                    <div class="card agent-card ${priorityClass}">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="card-title mb-0">${agent.name}</h6>
+                                <span class="priority-badge priority-${priorityClass}">${agent.priority}</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="status-badge status-${statusClass}">${agent.status}</span>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <small class="text-muted">CPU</small>
+                                    <div class="fw-bold">${agent.cpu_usage}%</div>
+                                </div>
+                                <div class="col-4">
+                                    <small class="text-muted">Memory</small>
+                                    <div class="fw-bold">${agent.memory_usage}%</div>
+                                </div>
+                                <div class="col-4">
+                                    <small class="text-muted">Tasks</small>
+                                    <div class="fw-bold">${agent.tasks_completed}</div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-outline-primary btn-agent-control me-2" 
+                                        onclick="dashboard.activateAgent('${agent.id}')">
+                                    <i class="fas fa-play"></i> Activate
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-agent-control" 
+                                        onclick="dashboard.deactivateAgent('${agent.id}')">
+                                    <i class="fas fa-stop"></i> Deactivate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                return div;
+            }
+            
+            updateResourcesDisplay(data) {
+                document.getElementById('totalAgents').textContent = data.total_agents;
+                document.getElementById('activeAgents').textContent = data.active_agents;
+                document.getElementById('systemCPU').textContent = data.system_cpu.toFixed(1) + '%';
+                document.getElementById('systemMemory').textContent = data.system_memory.toFixed(1) + '%';
+                
+                // Update system health indicator
+                const indicator = document.getElementById('systemHealthIndicator');
+                const text = document.getElementById('systemHealthText');
+                
+                if (data.system_cpu > 80 || data.system_memory > 80) {
+                    indicator.className = 'system-health-indicator health-critical';
+                    text.textContent = 'System Critical';
+                } else if (data.system_cpu > 60 || data.system_memory > 60) {
+                    indicator.className = 'system-health-indicator health-warning';
+                    text.textContent = 'System Warning';
+                } else {
+                    indicator.className = 'system-health-indicator health-excellent';
+                    text.textContent = 'System Healthy';
+                }
+            }
+            
+            updateMarketDisplay(data) {
+                // Update market analysis chart
+                this.loadMarketChart(data);
+            }
+            
+            updateLearningDisplay(data) {
+                // Update learning progress chart
+                this.loadLearningChart(data);
+            }
+            
+            updatePortfolioDisplay(data) {
+                const container = document.getElementById('portfolioContainer');
+                container.innerHTML = `
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <div class="metric-value text-success">$${data.total_value.toFixed(2)}</div>
+                            <div class="metric-label">Total Value</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="metric-value ${data.total_pnl >= 0 ? 'text-success' : 'text-danger'}">
+                                $${data.total_pnl.toFixed(2)}
+                            </div>
+                            <div class="metric-label">Total P&L</div>
+                        </div>
+                    </div>
+                    <div class="row text-center mt-3">
+                        <div class="col-4">
+                            <div class="metric-value">${data.sharpe_ratio.toFixed(2)}</div>
+                            <div class="metric-label">Sharpe Ratio</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="metric-value">${data.max_drawdown.toFixed(2)}%</div>
+                            <div class="metric-label">Max Drawdown</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="metric-value">${data.positions_count}</div>
+                            <div class="metric-label">Positions</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            updateAlertsDisplay(alerts) {
+                const container = document.getElementById('alertsContainer');
+                
+                if (alerts.length === 0) {
+                    container.innerHTML = '<div class="text-center text-muted">No active alerts</div>';
+                    return;
+                }
+                
+                container.innerHTML = alerts.map(alert => `
+                    <div class="alert alert-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>${alert.type}</strong>
+                                <div class="small">${alert.message}</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger" onclick="dashboard.clearAlert('${alert.id}')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            async loadMarketChart(data) {
+                try {
+                    const response = await fetch('/api/dashboard/charts/market-analysis');
+                    const chartData = await response.json();
+                    
+                    Plotly.newPlot('marketAnalysisChart', chartData.data, chartData.layout, {responsive: true});
+                } catch (error) {
+                    console.error('Error loading market chart:', error);
+                }
+            }
+            
+            async loadLearningChart(data) {
+                try {
+                    const response = await fetch('/api/dashboard/charts/learning-progress');
+                    const chartData = await response.json();
+                    
+                    Plotly.newPlot('learningProgressChart', chartData.data, chartData.layout, {responsive: true});
+                } catch (error) {
+                    console.error('Error loading learning chart:', error);
+                }
+            }
+            
+            async loadAgentsPerformanceChart() {
+                try {
+                    const response = await fetch('/api/dashboard/charts/agents-performance');
+                    const chartData = await response.json();
+                    
+                    Plotly.newPlot('agentsPerformanceChart', chartData.data, chartData.layout, {responsive: true});
+                } catch (error) {
+                    console.error('Error loading agents performance chart:', error);
+                }
+            }
+            
+            async loadResourceUsageChart() {
+                try {
+                    const response = await fetch('/api/dashboard/charts/resource-usage');
+                    const chartData = await response.json();
+                    
+                    Plotly.newPlot('resourceUsageChart', chartData.data, chartData.layout, {responsive: true});
+                } catch (error) {
+                    console.error('Error loading resource usage chart:', error);
+                }
+            }
+            
+            async activateAgent(agentId) {
+                try {
+                    const response = await fetch(`/api/dashboard/agents/${agentId}/activate`, {
+                        method: 'POST'
+                    });
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.showNotification(`Agent ${agentId} activated successfully`, 'success');
+                        this.loadAgentsData(); // Refresh data
+                    } else {
+                        this.showNotification(`Failed to activate agent ${agentId}`, 'error');
+                    }
+                } catch (error) {
+                    console.error('Error activating agent:', error);
+                    this.showNotification('Error activating agent', 'error');
+                }
+            }
+            
+            async deactivateAgent(agentId) {
+                try {
+                    const response = await fetch(`/api/dashboard/agents/${agentId}/deactivate`, {
+                        method: 'POST'
+                    });
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.showNotification(`Agent ${agentId} deactivated successfully`, 'success');
+                        this.loadAgentsData(); // Refresh data
+                    } else {
+                        this.showNotification(`Failed to deactivate agent ${agentId}`, 'error');
+                    }
+                } catch (error) {
+                    console.error('Error deactivating agent:', error);
+                    this.showNotification('Error deactivating agent', 'error');
+                }
+            }
+            
+            async clearAlert(alertId) {
+                try {
+                    const response = await fetch(`/api/dashboard/alerts/${alertId}/clear`, {
+                        method: 'POST'
+                    });
+                    
+                    if (response.ok) {
+                        this.showNotification('Alert cleared successfully', 'success');
+                        this.loadAlertsData(); // Refresh data
+                    } else {
+                        this.showNotification('Failed to clear alert', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error clearing alert:', error);
+                    this.showNotification('Error clearing alert', 'error');
+                }
+            }
+            
+            showNotification(message, type) {
+                // Simple notification system
+                const notification = document.createElement('div');
+                notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+                notification.style.top = '20px';
+                notification.style.right = '20px';
+                notification.style.zIndex = '9999';
+                notification.innerHTML = `
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 5000);
+            }
+            
+            startUpdateLoop() {
+                setInterval(() => {
+                    this.loadInitialData();
+                }, this.updateInterval);
+            }
+            
+            updateDashboard(data) {
+                // Update dashboard with real-time data
+                if (data.agents_status) {
+                    this.updateAgentsDisplay(data.agents_status.agents || []);
+                }
+                
+                if (data.resource_manager_status) {
+                    this.updateResourcesDisplay(data.resource_manager_status);
+                }
+                
+                if (data.market_analysis) {
+                    this.updateMarketDisplay(data.market_analysis);
+                }
+                
+                if (data.learning_progress) {
+                    this.updateLearningDisplay(data.learning_progress);
+                }
+                
+                if (data.portfolio_analysis) {
+                    this.updatePortfolioDisplay(data.portfolio_analysis);
+                }
+                
+                if (data.active_alerts) {
+                    this.updateAlertsDisplay(data.active_alerts);
+                }
+            }
+        }
+        
+        // Initialize dashboard when page loads
+        let dashboard;
+        document.addEventListener('DOMContentLoaded', () => {
+            dashboard = new AgenticAIDashboard();
+        });
+    </script>
+</body>
+</html>

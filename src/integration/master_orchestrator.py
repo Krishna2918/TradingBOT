@@ -61,6 +61,11 @@ class MasterOrchestrator:
         self.microstructure_predictor = get_microstructure_predictor()
         self.feature_pipeline = get_feature_pipeline()
         
+        # AGENTIC AI SYSTEM - Resource Manager
+        self.resource_manager = None
+        self.agents = {}
+        self._initialize_agentic_system()
+        
         # Decision pipeline configuration
         self.decision_pipeline = [
             'data_quality_check',
@@ -83,6 +88,91 @@ class MasterOrchestrator:
             'average_confidence': 0.0,
             'average_execution_time': 0.0
         }
+    
+    def _initialize_agentic_system(self):
+        """Initialize the Agentic AI system (Resource Manager and agents)"""
+        try:
+            from src.agents.resource_manager import ResourceManager
+            from src.agents.risk_agent import RiskManagementAgent
+            from src.agents.monitoring_agent import MonitoringAgent
+            from src.agents.execution_agent import ExecutionAgent
+            from src.agents.portfolio_agent import PortfolioAgent
+            from src.agents.market_analysis_agent import MarketAnalysisAgent
+            from src.agents.learning_agent import LearningAgent
+            
+            # Initialize Resource Manager
+            self.resource_manager = ResourceManager(
+                cpu_threshold_critical=85.0,
+                cpu_threshold_warning=70.0,
+                memory_threshold_critical=80.0,
+                memory_threshold_warning=60.0,
+                learning_enabled=True
+            )
+            
+            # Initialize CRITICAL priority agents (always run)
+            risk_agent = RiskManagementAgent(mode='DEMO')
+            self.resource_manager.register_agent(risk_agent)
+            self.agents['risk_agent'] = risk_agent
+            
+            monitoring_agent = MonitoringAgent()
+            self.resource_manager.register_agent(monitoring_agent)
+            self.agents['monitoring_agent'] = monitoring_agent
+            
+            execution_agent = ExecutionAgent(mode='DEMO')
+            self.resource_manager.register_agent(execution_agent)
+            self.agents['execution_agent'] = execution_agent
+            
+            # Initialize IMPORTANT priority agents (run when resources available)
+            portfolio_agent = PortfolioAgent(mode='DEMO')
+            self.resource_manager.register_agent(portfolio_agent)
+            self.agents['portfolio_agent'] = portfolio_agent
+            
+            market_analysis_agent = MarketAnalysisAgent()
+            self.resource_manager.register_agent(market_analysis_agent)
+            self.agents['market_analysis_agent'] = market_analysis_agent
+            
+            # Initialize OPTIONAL priority agents (run only with abundant resources)
+            learning_agent = LearningAgent()
+            self.resource_manager.register_agent(learning_agent)
+            self.agents['learning_agent'] = learning_agent
+            
+            logger.info("Agentic AI system initialized with Resource Manager")
+            logger.info(f"  - Registered agents: {list(self.agents.keys())}")
+            logger.info(f"  - CRITICAL agents: risk_agent, monitoring_agent, execution_agent")
+            logger.info(f"  - IMPORTANT agents: portfolio_agent, market_analysis_agent")
+            logger.info(f"  - OPTIONAL agents: learning_agent")
+            
+        except Exception as e:
+            logger.warning(f"Agentic AI system initialization failed: {e}")
+            logger.warning("Falling back to non-agent mode")
+            self.resource_manager = None
+            self.agents = {}
+    
+    async def start_agentic_system(self) -> bool:
+        """
+        Start the Agentic AI system and activate all agents.
+        
+        Returns:
+            True if startup successful
+        """
+        try:
+            if not self.resource_manager:
+                logger.error("Resource Manager not initialized")
+                return False
+            
+            logger.info("Starting Agentic AI system...")
+            success = await self.resource_manager.start()
+            
+            if success:
+                logger.info("✓ Agentic AI system started successfully")
+                return True
+            else:
+                logger.error("✗ Agentic AI system startup failed")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Error starting Agentic AI system: {e}")
+            return False
         
     async def run_decision_pipeline(self, market_data: pd.DataFrame, 
                                   additional_data: Dict[str, Any] = None) -> TradingDecision:

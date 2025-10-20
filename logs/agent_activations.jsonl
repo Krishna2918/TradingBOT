@@ -1,0 +1,6 @@
+{"timestamp": "2025-10-17T14:37:56.163041", "agent_id": "risk_agent", "action": "activate", "reason": "System startup - CRITICAL priority", "system_cpu": 24.8, "system_memory": 47.1}
+{"timestamp": "2025-10-17T14:37:56.268543", "agent_id": "monitoring_agent", "action": "activate", "reason": "System startup - CRITICAL priority", "system_cpu": 22.0, "system_memory": 47.1}
+{"timestamp": "2025-10-17T14:37:56.372088", "agent_id": "execution_agent", "action": "activate", "reason": "System startup - CRITICAL priority", "system_cpu": 34.4, "system_memory": 47.1}
+{"timestamp": "2025-10-17T14:37:56.475788", "agent_id": "portfolio_agent", "action": "activate", "reason": "System startup - IMPORTANT priority", "system_cpu": 29.2, "system_memory": 47.1}
+{"timestamp": "2025-10-17T14:37:56.580389", "agent_id": "market_analysis_agent", "action": "activate", "reason": "System startup - IMPORTANT priority", "system_cpu": 18.7, "system_memory": 47.2}
+{"timestamp": "2025-10-17T14:37:56.685046", "agent_id": "learning_agent", "action": "activate", "reason": "System startup - OPTIONAL priority", "system_cpu": 27.4, "system_memory": 47.2}
