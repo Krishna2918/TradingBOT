@@ -6468,3 +6468,225 @@
 2025-10-17 17:03:40,551 - final_trading_api - ERROR - Error getting risk metrics: 'RiskManager' object has no attribute 'calculate_portfolio_risk'
 2025-10-17 17:03:45,767 - final_trading_api - ERROR - Error getting risk metrics: 'RiskManager' object has no attribute 'calculate_portfolio_risk'
 2025-10-17 17:03:50,375 - final_trading_api - ERROR - Error getting risk metrics: 'RiskManager' object has no attribute 'calculate_portfolio_risk'
+2025-10-20 10:07:53,982 - __main__ - INFO - Initializing Final Trading API...
+2025-10-20 10:07:53,982 - src.ai.model_communication_hub - INFO - Model Communication Hub initialized: model_communication_hub
+2025-10-20 10:07:53,983 - src.ai.intelligent_model_selector - INFO - Intelligent Model Selector initialized: intelligent_model_selector
+2025-10-20 10:07:53,983 - src.ai.model_performance_learner - INFO - Model Performance Learner initialized: model_performance_learner
+2025-10-20 10:07:53,983 - src.ai.performance_prediction_system - INFO - Performance Prediction System initialized: performance_prediction_system
+2025-10-20 10:07:53,983 - src.ai.market_condition_analyzer - INFO - Market Condition Analyzer initialized: market_condition_analyzer
+2025-10-20 10:07:53,983 - src.ai.cross_model_validator - INFO - Cross-Model Validator initialized: cross_model_validator
+2025-10-20 10:07:54,007 - src.agents.resource_manager - INFO - Resource Manager initialized
+2025-10-20 10:07:54,007 - src.agents.resource_manager - INFO -   CPU Warning: 70.0%, Critical: 85.0%
+2025-10-20 10:07:54,008 - src.agents.resource_manager - INFO -   Memory Warning: 60.0%, Critical: 80.0%
+2025-10-20 10:07:54,008 - src.agents.base_agent - INFO - Agent Risk Management Agent (risk_agent) initialized with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.resource_manager - INFO - Registered agent: Risk Management Agent (risk_agent) with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.base_agent - INFO - Agent System Monitoring Agent (monitoring_agent) initialized with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.resource_manager - INFO - Registered agent: System Monitoring Agent (monitoring_agent) with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.base_agent - INFO - Agent Order Execution Agent (execution_agent) initialized with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.resource_manager - INFO - Registered agent: Order Execution Agent (execution_agent) with priority CRITICAL
+2025-10-20 10:07:54,008 - src.agents.base_agent - INFO - Agent Portfolio Management Agent (portfolio_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:54,009 - src.agents.resource_manager - INFO - Registered agent: Portfolio Management Agent (portfolio_agent) with priority IMPORTANT
+2025-10-20 10:07:54,009 - src.agents.base_agent - INFO - Agent Market Analysis Agent (market_analysis_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:54,009 - src.agents.resource_manager - INFO - Registered agent: Market Analysis Agent (market_analysis_agent) with priority IMPORTANT
+2025-10-20 10:07:54,009 - src.agents.base_agent - INFO - Agent Learning Agent (learning_agent) initialized with priority OPTIONAL
+2025-10-20 10:07:54,009 - src.agents.resource_manager - INFO - Registered agent: Learning Agent (learning_agent) with priority OPTIONAL
+2025-10-20 10:07:54,009 - src.integration.master_orchestrator - INFO - Agentic AI system initialized with Resource Manager
+2025-10-20 10:07:54,009 - src.integration.master_orchestrator - INFO -   - Registered agents: ['risk_agent', 'monitoring_agent', 'execution_agent', 'portfolio_agent', 'market_analysis_agent', 'learning_agent']
+2025-10-20 10:07:54,009 - src.integration.master_orchestrator - INFO -   - CRITICAL agents: risk_agent, monitoring_agent, execution_agent
+2025-10-20 10:07:54,009 - src.integration.master_orchestrator - INFO -   - IMPORTANT agents: portfolio_agent, market_analysis_agent
+2025-10-20 10:07:54,009 - src.integration.master_orchestrator - INFO -   - OPTIONAL agents: learning_agent
+2025-10-20 10:07:54,010 - src.config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-20 10:07:54,010 - src.config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-20 10:07:54,010 - src.config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-20 10:07:54,010 - src.trading.positions - INFO - Position Manager initialized
+2025-10-20 10:07:54,010 - src.trading.risk - INFO - Risk Manager initialized
+2025-10-20 10:07:54,010 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Added budget for alpha_vantage: 4 QPS, 25 daily
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Added budget for finnhub: 1 QPS, 1440 daily
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Added budget for newsapi: 1 QPS, 100 daily
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Added budget for questrade: 10 QPS, 10000 daily
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Added budget for yfinance: 2 QPS, 2000 daily
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - Initialized 5 API budgets
+2025-10-20 10:07:54,012 - src.data_pipeline.api_budget_manager - INFO - API Budget Manager initialized
+2025-10-20 10:07:54,013 - __main__ - INFO - Final Trading API initialized successfully!
+2025-10-20 10:07:58,450 - __mp_main__ - INFO - Initializing Final Trading API...
+2025-10-20 10:07:58,450 - src.ai.model_communication_hub - INFO - Model Communication Hub initialized: model_communication_hub
+2025-10-20 10:07:58,450 - src.ai.intelligent_model_selector - INFO - Intelligent Model Selector initialized: intelligent_model_selector
+2025-10-20 10:07:58,450 - src.ai.model_performance_learner - INFO - Model Performance Learner initialized: model_performance_learner
+2025-10-20 10:07:58,451 - src.ai.performance_prediction_system - INFO - Performance Prediction System initialized: performance_prediction_system
+2025-10-20 10:07:58,451 - src.ai.market_condition_analyzer - INFO - Market Condition Analyzer initialized: market_condition_analyzer
+2025-10-20 10:07:58,451 - src.ai.cross_model_validator - INFO - Cross-Model Validator initialized: cross_model_validator
+2025-10-20 10:07:58,466 - src.agents.resource_manager - INFO - Resource Manager initialized
+2025-10-20 10:07:58,466 - src.agents.resource_manager - INFO -   CPU Warning: 70.0%, Critical: 85.0%
+2025-10-20 10:07:58,466 - src.agents.resource_manager - INFO -   Memory Warning: 60.0%, Critical: 80.0%
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent Risk Management Agent (risk_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: Risk Management Agent (risk_agent) with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent System Monitoring Agent (monitoring_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: System Monitoring Agent (monitoring_agent) with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent Order Execution Agent (execution_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: Order Execution Agent (execution_agent) with priority CRITICAL
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent Portfolio Management Agent (portfolio_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: Portfolio Management Agent (portfolio_agent) with priority IMPORTANT
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent Market Analysis Agent (market_analysis_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: Market Analysis Agent (market_analysis_agent) with priority IMPORTANT
+2025-10-20 10:07:58,467 - src.agents.base_agent - INFO - Agent Learning Agent (learning_agent) initialized with priority OPTIONAL
+2025-10-20 10:07:58,467 - src.agents.resource_manager - INFO - Registered agent: Learning Agent (learning_agent) with priority OPTIONAL
+2025-10-20 10:07:58,467 - src.integration.master_orchestrator - INFO - Agentic AI system initialized with Resource Manager
+2025-10-20 10:07:58,467 - src.integration.master_orchestrator - INFO -   - Registered agents: ['risk_agent', 'monitoring_agent', 'execution_agent', 'portfolio_agent', 'market_analysis_agent', 'learning_agent']
+2025-10-20 10:07:58,467 - src.integration.master_orchestrator - INFO -   - CRITICAL agents: risk_agent, monitoring_agent, execution_agent
+2025-10-20 10:07:58,467 - src.integration.master_orchestrator - INFO -   - IMPORTANT agents: portfolio_agent, market_analysis_agent
+2025-10-20 10:07:58,467 - src.integration.master_orchestrator - INFO -   - OPTIONAL agents: learning_agent
+2025-10-20 10:07:58,468 - src.config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-20 10:07:58,468 - src.config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-20 10:07:58,468 - src.config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-20 10:07:58,468 - src.trading.positions - INFO - Position Manager initialized
+2025-10-20 10:07:58,468 - src.trading.risk - INFO - Risk Manager initialized
+2025-10-20 10:07:58,468 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Added budget for alpha_vantage: 4 QPS, 25 daily
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Added budget for finnhub: 1 QPS, 1440 daily
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Added budget for newsapi: 1 QPS, 100 daily
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Added budget for questrade: 10 QPS, 10000 daily
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Added budget for yfinance: 2 QPS, 2000 daily
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - Initialized 5 API budgets
+2025-10-20 10:07:58,470 - src.data_pipeline.api_budget_manager - INFO - API Budget Manager initialized
+2025-10-20 10:07:58,471 - __mp_main__ - INFO - Final Trading API initialized successfully!
+2025-10-20 10:07:58,528 - final_trading_api - INFO - Initializing Final Trading API...
+2025-10-20 10:07:58,528 - src.agents.resource_manager - INFO - Resource Manager initialized
+2025-10-20 10:07:58,528 - src.agents.resource_manager - INFO -   CPU Warning: 70.0%, Critical: 85.0%
+2025-10-20 10:07:58,528 - src.agents.resource_manager - INFO -   Memory Warning: 60.0%, Critical: 80.0%
+2025-10-20 10:07:58,528 - src.agents.base_agent - INFO - Agent Risk Management Agent (risk_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,528 - src.agents.resource_manager - INFO - Registered agent: Risk Management Agent (risk_agent) with priority CRITICAL
+2025-10-20 10:07:58,528 - src.agents.base_agent - INFO - Agent System Monitoring Agent (monitoring_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,528 - src.agents.resource_manager - INFO - Registered agent: System Monitoring Agent (monitoring_agent) with priority CRITICAL
+2025-10-20 10:07:58,529 - src.agents.base_agent - INFO - Agent Order Execution Agent (execution_agent) initialized with priority CRITICAL
+2025-10-20 10:07:58,529 - src.agents.resource_manager - INFO - Registered agent: Order Execution Agent (execution_agent) with priority CRITICAL
+2025-10-20 10:07:58,529 - src.agents.base_agent - INFO - Agent Portfolio Management Agent (portfolio_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:58,529 - src.agents.resource_manager - INFO - Registered agent: Portfolio Management Agent (portfolio_agent) with priority IMPORTANT
+2025-10-20 10:07:58,529 - src.agents.base_agent - INFO - Agent Market Analysis Agent (market_analysis_agent) initialized with priority IMPORTANT
+2025-10-20 10:07:58,529 - src.agents.resource_manager - INFO - Registered agent: Market Analysis Agent (market_analysis_agent) with priority IMPORTANT
+2025-10-20 10:07:58,529 - src.agents.base_agent - INFO - Agent Learning Agent (learning_agent) initialized with priority OPTIONAL
+2025-10-20 10:07:58,529 - src.agents.resource_manager - INFO - Registered agent: Learning Agent (learning_agent) with priority OPTIONAL
+2025-10-20 10:07:58,529 - src.integration.master_orchestrator - INFO - Agentic AI system initialized with Resource Manager
+2025-10-20 10:07:58,529 - src.integration.master_orchestrator - INFO -   - Registered agents: ['risk_agent', 'monitoring_agent', 'execution_agent', 'portfolio_agent', 'market_analysis_agent', 'learning_agent']
+2025-10-20 10:07:58,529 - src.integration.master_orchestrator - INFO -   - CRITICAL agents: risk_agent, monitoring_agent, execution_agent
+2025-10-20 10:07:58,529 - src.integration.master_orchestrator - INFO -   - IMPORTANT agents: portfolio_agent, market_analysis_agent
+2025-10-20 10:07:58,529 - src.integration.master_orchestrator - INFO -   - OPTIONAL agents: learning_agent
+2025-10-20 10:07:58,529 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:07:58,530 - src.data_pipeline.api_budget_manager - INFO - Added budget for alpha_vantage: 4 QPS, 25 daily
+2025-10-20 10:07:58,530 - src.data_pipeline.api_budget_manager - INFO - Added budget for finnhub: 1 QPS, 1440 daily
+2025-10-20 10:07:58,531 - src.data_pipeline.api_budget_manager - INFO - Added budget for newsapi: 1 QPS, 100 daily
+2025-10-20 10:07:58,531 - src.data_pipeline.api_budget_manager - INFO - Added budget for questrade: 10 QPS, 10000 daily
+2025-10-20 10:07:58,531 - src.data_pipeline.api_budget_manager - INFO - Added budget for yfinance: 2 QPS, 2000 daily
+2025-10-20 10:07:58,531 - src.data_pipeline.api_budget_manager - INFO - Initialized 5 API budgets
+2025-10-20 10:07:58,531 - src.data_pipeline.api_budget_manager - INFO - API Budget Manager initialized
+2025-10-20 10:07:58,531 - final_trading_api - INFO - Final Trading API initialized successfully!
+2025-10-20 10:07:58,824 - final_trading_api - INFO - Starting Final Trading API subsystems...
+2025-10-20 10:07:58,824 - src.integration.master_orchestrator - INFO - Starting Agentic AI system...
+2025-10-20 10:07:58,824 - src.agents.resource_manager - INFO - Starting Resource Manager...
+2025-10-20 10:07:58,926 - src.trading.risk - INFO - Risk Manager initialized
+2025-10-20 10:07:58,927 - src.agents.risk_agent - INFO - Risk Management Agent initialized in DEMO mode
+2025-10-20 10:07:59,033 - src.agents.monitoring_agent - INFO - Monitoring Agent initialized and background monitoring started
+2025-10-20 10:07:59,138 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:07:59,138 - src.agents.execution_agent - INFO - Execution Agent initialized in DEMO mode
+2025-10-20 10:07:59,243 - src.trading.positions - INFO - Position Manager initialized
+2025-10-20 10:07:59,243 - src.agents.portfolio_agent - INFO - Portfolio Agent initialized in DEMO mode
+2025-10-20 10:07:59,349 - src.agents.market_analysis_agent - INFO - Market Analysis Agent initialized and background analysis started
+2025-10-20 10:07:59,454 - src.agents.learning_agent - INFO - Knowledge base loaded (placeholder)
+2025-10-20 10:07:59,454 - src.agents.learning_agent - INFO - Learning Agent initialized and background learning started
+2025-10-20 10:07:59,460 - src.agents.resource_manager - INFO - Resource Manager startup complete: 6/6 agents activated
+2025-10-20 10:08:01,187 - src.agents.market_analysis_agent - ERROR - Market analysis failed: cannot access local variable 'regime_change' where it is not associated with a value
+2025-10-20 10:08:16,754 - src.config.database - INFO - Database schema created for LIVE mode
+2025-10-20 10:08:16,754 - src.config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-20 10:08:16,756 - src.config.database - INFO - Database schema created for DEMO mode
+2025-10-20 10:08:16,757 - src.config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db
+2025-10-20 10:08:16,767 - final_trading_api - WARNING - RiskManager missing calculate_portfolio_risk method, using fallback
+2025-10-20 10:09:27,012 - __mp_main__ - INFO - Initializing Final Trading API...
+2025-10-20 10:09:27,012 - src.ai.model_communication_hub - INFO - Model Communication Hub initialized: model_communication_hub
+2025-10-20 10:09:27,012 - src.ai.intelligent_model_selector - INFO - Intelligent Model Selector initialized: intelligent_model_selector
+2025-10-20 10:09:27,012 - src.ai.model_performance_learner - INFO - Model Performance Learner initialized: model_performance_learner
+2025-10-20 10:09:27,012 - src.ai.performance_prediction_system - INFO - Performance Prediction System initialized: performance_prediction_system
+2025-10-20 10:09:27,012 - src.ai.market_condition_analyzer - INFO - Market Condition Analyzer initialized: market_condition_analyzer
+2025-10-20 10:09:27,012 - src.ai.cross_model_validator - INFO - Cross-Model Validator initialized: cross_model_validator
+2025-10-20 10:09:27,026 - src.agents.resource_manager - INFO - Resource Manager initialized
+2025-10-20 10:09:27,026 - src.agents.resource_manager - INFO -   CPU Warning: 70.0%, Critical: 85.0%
+2025-10-20 10:09:27,026 - src.agents.resource_manager - INFO -   Memory Warning: 60.0%, Critical: 80.0%
+2025-10-20 10:09:27,026 - src.agents.base_agent - INFO - Agent Risk Management Agent (risk_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,026 - src.agents.resource_manager - INFO - Registered agent: Risk Management Agent (risk_agent) with priority CRITICAL
+2025-10-20 10:09:27,027 - src.agents.base_agent - INFO - Agent System Monitoring Agent (monitoring_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,027 - src.agents.resource_manager - INFO - Registered agent: System Monitoring Agent (monitoring_agent) with priority CRITICAL
+2025-10-20 10:09:27,027 - src.agents.base_agent - INFO - Agent Order Execution Agent (execution_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,027 - src.agents.resource_manager - INFO - Registered agent: Order Execution Agent (execution_agent) with priority CRITICAL
+2025-10-20 10:09:27,027 - src.agents.base_agent - INFO - Agent Portfolio Management Agent (portfolio_agent) initialized with priority IMPORTANT
+2025-10-20 10:09:27,027 - src.agents.resource_manager - INFO - Registered agent: Portfolio Management Agent (portfolio_agent) with priority IMPORTANT
+2025-10-20 10:09:27,027 - src.agents.base_agent - INFO - Agent Market Analysis Agent (market_analysis_agent) initialized with priority IMPORTANT
+2025-10-20 10:09:27,027 - src.agents.resource_manager - INFO - Registered agent: Market Analysis Agent (market_analysis_agent) with priority IMPORTANT
+2025-10-20 10:09:27,027 - src.agents.base_agent - INFO - Agent Learning Agent (learning_agent) initialized with priority OPTIONAL
+2025-10-20 10:09:27,027 - src.agents.resource_manager - INFO - Registered agent: Learning Agent (learning_agent) with priority OPTIONAL
+2025-10-20 10:09:27,027 - src.integration.master_orchestrator - INFO - Agentic AI system initialized with Resource Manager
+2025-10-20 10:09:27,027 - src.integration.master_orchestrator - INFO -   - Registered agents: ['risk_agent', 'monitoring_agent', 'execution_agent', 'portfolio_agent', 'market_analysis_agent', 'learning_agent']
+2025-10-20 10:09:27,027 - src.integration.master_orchestrator - INFO -   - CRITICAL agents: risk_agent, monitoring_agent, execution_agent
+2025-10-20 10:09:27,027 - src.integration.master_orchestrator - INFO -   - IMPORTANT agents: portfolio_agent, market_analysis_agent
+2025-10-20 10:09:27,027 - src.integration.master_orchestrator - INFO -   - OPTIONAL agents: learning_agent
+2025-10-20 10:09:27,027 - src.config.mode_manager - INFO - Database directory ensured for LIVE: data
+2025-10-20 10:09:27,029 - src.config.mode_manager - INFO - Database directory ensured for DEMO: data
+2025-10-20 10:09:27,029 - src.config.mode_manager - INFO - Mode Manager initialized. Current mode: DEMO
+2025-10-20 10:09:27,029 - src.trading.positions - INFO - Position Manager initialized
+2025-10-20 10:09:27,029 - src.trading.risk - INFO - Risk Manager initialized
+2025-10-20 10:09:27,029 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Added budget for alpha_vantage: 4 QPS, 25 daily
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Added budget for finnhub: 1 QPS, 1440 daily
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Added budget for newsapi: 1 QPS, 100 daily
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Added budget for questrade: 10 QPS, 10000 daily
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Added budget for yfinance: 2 QPS, 2000 daily
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - Initialized 5 API budgets
+2025-10-20 10:09:27,030 - src.data_pipeline.api_budget_manager - INFO - API Budget Manager initialized
+2025-10-20 10:09:27,031 - __mp_main__ - INFO - Final Trading API initialized successfully!
+2025-10-20 10:09:27,081 - final_trading_api - INFO - Initializing Final Trading API...
+2025-10-20 10:09:27,082 - src.agents.resource_manager - INFO - Resource Manager initialized
+2025-10-20 10:09:27,082 - src.agents.resource_manager - INFO -   CPU Warning: 70.0%, Critical: 85.0%
+2025-10-20 10:09:27,082 - src.agents.resource_manager - INFO -   Memory Warning: 60.0%, Critical: 80.0%
+2025-10-20 10:09:27,082 - src.agents.base_agent - INFO - Agent Risk Management Agent (risk_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,082 - src.agents.resource_manager - INFO - Registered agent: Risk Management Agent (risk_agent) with priority CRITICAL
+2025-10-20 10:09:27,082 - src.agents.base_agent - INFO - Agent System Monitoring Agent (monitoring_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,082 - src.agents.resource_manager - INFO - Registered agent: System Monitoring Agent (monitoring_agent) with priority CRITICAL
+2025-10-20 10:09:27,083 - src.agents.base_agent - INFO - Agent Order Execution Agent (execution_agent) initialized with priority CRITICAL
+2025-10-20 10:09:27,083 - src.agents.resource_manager - INFO - Registered agent: Order Execution Agent (execution_agent) with priority CRITICAL
+2025-10-20 10:09:27,083 - src.agents.base_agent - INFO - Agent Portfolio Management Agent (portfolio_agent) initialized with priority IMPORTANT
+2025-10-20 10:09:27,083 - src.agents.resource_manager - INFO - Registered agent: Portfolio Management Agent (portfolio_agent) with priority IMPORTANT
+2025-10-20 10:09:27,083 - src.agents.base_agent - INFO - Agent Market Analysis Agent (market_analysis_agent) initialized with priority IMPORTANT
+2025-10-20 10:09:27,083 - src.agents.resource_manager - INFO - Registered agent: Market Analysis Agent (market_analysis_agent) with priority IMPORTANT
+2025-10-20 10:09:27,083 - src.agents.base_agent - INFO - Agent Learning Agent (learning_agent) initialized with priority OPTIONAL
+2025-10-20 10:09:27,083 - src.agents.resource_manager - INFO - Registered agent: Learning Agent (learning_agent) with priority OPTIONAL
+2025-10-20 10:09:27,083 - src.integration.master_orchestrator - INFO - Agentic AI system initialized with Resource Manager
+2025-10-20 10:09:27,083 - src.integration.master_orchestrator - INFO -   - Registered agents: ['risk_agent', 'monitoring_agent', 'execution_agent', 'portfolio_agent', 'market_analysis_agent', 'learning_agent']
+2025-10-20 10:09:27,083 - src.integration.master_orchestrator - INFO -   - CRITICAL agents: risk_agent, monitoring_agent, execution_agent
+2025-10-20 10:09:27,083 - src.integration.master_orchestrator - INFO -   - IMPORTANT agents: portfolio_agent, market_analysis_agent
+2025-10-20 10:09:27,083 - src.integration.master_orchestrator - INFO -   - OPTIONAL agents: learning_agent
+2025-10-20 10:09:27,083 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:09:27,084 - src.data_pipeline.api_budget_manager - INFO - Added budget for alpha_vantage: 4 QPS, 25 daily
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - Added budget for finnhub: 1 QPS, 1440 daily
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - Added budget for newsapi: 1 QPS, 100 daily
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - Added budget for questrade: 10 QPS, 10000 daily
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - Added budget for yfinance: 2 QPS, 2000 daily
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - Initialized 5 API budgets
+2025-10-20 10:09:27,085 - src.data_pipeline.api_budget_manager - INFO - API Budget Manager initialized
+2025-10-20 10:09:27,085 - final_trading_api - INFO - Final Trading API initialized successfully!
+2025-10-20 10:09:27,102 - final_trading_api - INFO - Starting Final Trading API subsystems...
+2025-10-20 10:09:27,102 - src.integration.master_orchestrator - INFO - Starting Agentic AI system...
+2025-10-20 10:09:27,102 - src.agents.resource_manager - INFO - Starting Resource Manager...
+2025-10-20 10:09:27,203 - src.trading.risk - INFO - Risk Manager initialized
+2025-10-20 10:09:27,203 - src.agents.risk_agent - INFO - Risk Management Agent initialized in DEMO mode
+2025-10-20 10:09:27,308 - src.agents.monitoring_agent - INFO - Monitoring Agent initialized and background monitoring started
+2025-10-20 10:09:27,412 - src.trading.execution - INFO - Execution Engine initialized
+2025-10-20 10:09:27,412 - src.agents.execution_agent - INFO - Execution Agent initialized in DEMO mode
+2025-10-20 10:09:27,516 - src.trading.positions - INFO - Position Manager initialized
+2025-10-20 10:09:27,516 - src.agents.portfolio_agent - INFO - Portfolio Agent initialized in DEMO mode
+2025-10-20 10:09:27,620 - src.agents.market_analysis_agent - INFO - Market Analysis Agent initialized and background analysis started
+2025-10-20 10:09:27,726 - src.agents.learning_agent - INFO - Knowledge base loaded (placeholder)
+2025-10-20 10:09:27,727 - src.agents.learning_agent - INFO - Learning Agent initialized and background learning started
+2025-10-20 10:09:27,730 - src.agents.resource_manager - INFO - Resource Manager startup complete: 6/6 agents activated
+2025-10-20 10:09:29,021 - src.agents.market_analysis_agent - ERROR - Market analysis failed: cannot access local variable 'regime_change' where it is not associated with a value
+2025-10-20 10:09:29,630 - src.config.database - INFO - Database schema created for LIVE mode
+2025-10-20 10:09:29,630 - src.config.database - INFO - Database initialized for LIVE mode: data/trading_live.db
+2025-10-20 10:09:29,632 - src.config.database - INFO - Database schema created for DEMO mode
+2025-10-20 10:09:29,633 - src.config.database - INFO - Database initialized for DEMO mode: data/trading_demo.db

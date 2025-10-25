@@ -21,6 +21,7 @@ Features:
 import asyncio
 import json
 import logging
+import os
 import time
 from datetime import datetime, timedelta
 from typing import Dict, Any, List, Optional
@@ -46,6 +47,10 @@ import httpx
 HTTP_LIMITS = httpx.Limits(max_keepalive_connections=3, max_connections=5)
 HTTP_TIMEOUT = httpx.Timeout(15.0, connect=5.0, read=10.0)
 
+# Debug/Placeholder Configuration
+DASHBOARD_PLACEHOLDER = os.getenv("DASHBOARD_PLACEHOLDER", "0") == "1"
+API_BASE_URL = "http://localhost:8000"
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -58,13 +63,29 @@ class DashboardDataValidator:
     """Data validation and sanitization for dashboard responses."""
     
     @staticmethod
+    def log_data_schema(data: Dict, data_type: str, source: str = "unknown"):
+        """Log data schema for debugging purposes."""
+        try:
+            logger.info(f"📊 {data_type} schema from {source}:")
+            logger.info(f"   Keys: {list(data.keys()) if isinstance(data, dict) else 'Not a dict'}")
+            logger.info(f"   Type: {type(data)}")
+            if isinstance(data, dict):
+                for key, value in data.items():
+                    logger.info(f"   {key}: {type(value)} = {str(value)[:100]}{'...' if len(str(value)) > 100 else ''}")
+        except Exception as e:
+            logger.error(f"Schema logging failed: {e}")
+    
+    @staticmethod
     def validate_portfolio_data(data: Dict) -> Dict:
         """Ensure portfolio data has required fields with sensible defaults."""
         try:
+            # DEBUG: Log incoming data schema
+            DashboardDataValidator.log_data_schema(data, "PORTFOLIO", "API")
+            
             # Handle the actual API response format - API returns nested summary object
             summary = data.get("summary", {})
             
-            return {
+            validated_data = {
                 "total_value": max(0, float(summary.get("total_value", 0))),
                 "daily_pnl": float(summary.get("daily_pnl", 0)),
                 "daily_pnl_percent": max(-100, min(100, float(summary.get("daily_pnl_percent", 0)))),
@@ -75,9 +96,14 @@ class DashboardDataValidator:
                 "mode": data.get("mode", "demo"),
                 "lastUpdated": datetime.now().isoformat()
             }
+            
+            # DEBUG: Log validated data schema
+            DashboardDataValidator.log_data_schema(validated_data, "PORTFOLIO_VALIDATED", "VALIDATOR")
+            
+            return validated_data
         except Exception as e:
             logger.error(f"Portfolio data validation failed: {str(e)}", exc_info=True)
-            return {
+            fallback_data = {
                 "total_value": 0.0,
                 "daily_pnl": 0.0,
                 "daily_pnl_percent": 0.0,
@@ -88,11 +114,16 @@ class DashboardDataValidator:
                 "mode": "demo",
                 "lastUpdated": datetime.now().isoformat()
             }
+            DashboardDataValidator.log_data_schema(fallback_data, "PORTFOLIO_FALLBACK", "VALIDATOR")
+            return fallback_data
     
     @staticmethod
     def validate_agent_data(data: Dict) -> Dict:
         """Validate and sanitize agent data."""
         try:
+            # DEBUG: Log incoming data schema
+            DashboardDataValidator.log_data_schema(data, "AGENTS", "API")
+            
             validated_agents = {}
             # The API returns agents directly at root level, not nested under "agents"
             for agent_id, agent_data in data.items():
@@ -109,10 +140,16 @@ class DashboardDataValidator:
                         },
                         "last_updated": datetime.now().isoformat()
                     }
+            
+            # DEBUG: Log validated data schema
+            DashboardDataValidator.log_data_schema(validated_agents, "AGENTS_VALIDATED", "VALIDATOR")
+            
             return validated_agents
         except Exception as e:
             logger.error(f"Agent data validation failed: {str(e)}", exc_info=True)
-            return {}
+            fallback_data = {}
+            DashboardDataValidator.log_data_schema(fallback_data, "AGENTS_FALLBACK", "VALIDATOR")
+            return fallback_data
     
     @staticmethod
     def validate_system_health(data: Dict) -> Dict:
@@ -502,6 +539,61 @@ async def get_alerts_data():
 @app.get("/api/dashboard/status")
 async def get_dashboard_status():
     """Complete system status - agents, health, alerts in one call."""
+    
+    # DEBUG: Return placeholder data if enabled
+    if DASHBOARD_PLACEHOLDER:
+        logger.info("DASHBOARD_PLACEHOLDER enabled - returning mock agent data")
+        return {
+            "agents": {
+                "market_analysis_agent": {
+                    "status": "ACTIVE",
+                    "priority": "CRITICAL",
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 95.5
+                },
+                "portfolio_management_agent": {
+                    "status": "ACTIVE", 
+                    "priority": "CRITICAL",
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 92.3
+                },
+                "risk_management_agent": {
+                    "status": "ACTIVE",
+                    "priority": "IMPORTANT", 
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 88.7
+                },
+                "execution_agent": {
+                    "status": "IDLE",
+                    "priority": "IMPORTANT",
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 91.2
+                },
+                "learning_agent": {
+                    "status": "ACTIVE",
+                    "priority": "NORMAL",
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 87.9
+                },
+                "monitoring_agent": {
+                    "status": "ACTIVE",
+                    "priority": "CRITICAL",
+                    "last_activity": datetime.now().isoformat(),
+                    "performance": 96.1
+                }
+            },
+            "system_health": {
+                "overall_health": "healthy",
+                "status": "operational",
+                "uptime": "2h 15m",
+                "cpu_usage": 45.2,
+                "memory_usage": 67.8
+            },
+            "active_alerts": [],
+            "timestamp": datetime.now().isoformat(),
+            "debug": "PLACEHOLDER_DATA"
+        }
+    
     try:
         async with httpx.AsyncClient(limits=HTTP_LIMITS, timeout=HTTP_TIMEOUT) as client:
             # Fetch all data in parallel
@@ -526,6 +618,59 @@ async def get_dashboard_status():
 @app.get("/api/dashboard/trading/{mode}")
 async def get_trading_data(mode: str):
     """All trading data - portfolio, positions, P&L for specified mode."""
+    
+    # DEBUG: Return placeholder data if enabled
+    if DASHBOARD_PLACEHOLDER:
+        logger.info("DASHBOARD_PLACEHOLDER enabled - returning mock data")
+        return {
+            "portfolio": {
+                "total_value": 125000.50,
+                "cash": 25000.00,
+                "invested": 100000.50,
+                "daily_pnl": 1250.75,
+                "daily_pnl_pct": 1.01,
+                "total_pnl": 25000.50,
+                "total_pnl_pct": 25.0,
+                "win_rate": 68.5,
+                "total_trades": 45,
+                "winning_trades": 31,
+                "realized_pnl": 15000.25,
+                "unrealized_pnl": 10000.25
+            },
+            "positions": [
+                {
+                    "symbol": "AAPL",
+                    "quantity": 100,
+                    "avg_price": 150.25,
+                    "current_price": 155.50,
+                    "market_value": 15550.00,
+                    "unrealized_pnl": 525.00,
+                    "unrealized_pnl_pct": 3.49
+                },
+                {
+                    "symbol": "TSLA",
+                    "quantity": 50,
+                    "avg_price": 200.00,
+                    "current_price": 195.75,
+                    "market_value": 9787.50,
+                    "unrealized_pnl": -212.50,
+                    "unrealized_pnl_pct": -2.13
+                }
+            ],
+            "risk_metrics": {
+                "portfolio_var": 2500.00,
+                "portfolio_var_pct": 2.0,
+                "max_drawdown": -5.2,
+                "sharpe_ratio": 1.85,
+                "beta": 0.95,
+                "volatility": 18.5
+            },
+            "ai_confidence": 87.5,
+            "mode": mode,
+            "timestamp": datetime.now().isoformat(),
+            "debug": "PLACEHOLDER_DATA"
+        }
+    
     try:
         async with httpx.AsyncClient(limits=HTTP_LIMITS, timeout=HTTP_TIMEOUT) as client:
             # Fetch trading data in parallel
@@ -822,10 +967,26 @@ async def websocket_endpoint(websocket: WebSocket):
     websocket_connections.append(websocket)
     logger.info(f"WebSocket client connected. Total connections: {len(websocket_connections)}")
     
+    # DEBUG: Echo counter for testing WebSocket connectivity
+    echo_counter = 0
+    
     try:
         while True:
             # Send real-time updates every 2 seconds
             await asyncio.sleep(2)
+            
+            # DEBUG: Send echo counter for testing
+            echo_counter += 1
+            try:
+                await websocket.send_json({
+                    "type": "echo_test",
+                    "counter": echo_counter,
+                    "timestamp": datetime.now().isoformat(),
+                    "debug": "WEBSOCKET_ECHO"
+                })
+                logger.debug(f"Sent WebSocket echo #{echo_counter}")
+            except Exception as e:
+                logger.error(f"Error sending echo: {e}")
             
             # Get latest data
             try:

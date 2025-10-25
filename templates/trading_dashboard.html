@@ -1050,7 +1050,18 @@
                 this.intervals = {};
                 this.resilience = new DashboardResilience(this);
                 
+                // DEBUG: Check for debug mode from URL parameter
+                this.debugMode = this.getUrlParameter('debug') === '1';
+                if (this.debugMode) {
+                    console.log('🐛 DEBUG MODE ENABLED - Using mock data');
+                }
+                
                 this.init();
+            }
+            
+            getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
             }
 
             init() {
@@ -1251,6 +1262,47 @@
 
             async loadPortfolioData() {
                 try {
+                    // DEBUG: Use mock data if debug mode is enabled
+                    if (this.debugMode) {
+                        console.log('🐛 DEBUG MODE: Using mock portfolio data');
+                        const mockResponse = {
+                            portfolio: {
+                                total_value: 125000.50,
+                                daily_pnl: 1250.75,
+                                daily_pnl_percent: 1.01,
+                                total_pnl: 25000.50,
+                                total_pnl_percent: 25.0,
+                                win_rate: 68.5,
+                                total_trades: 45,
+                                winning_trades: 31
+                            },
+                            positions: [
+                                { symbol: "AAPL", quantity: 100, market_value: 15550.00, unrealized_pnl: 525.00 },
+                                { symbol: "TSLA", quantity: 50, market_value: 9787.50, unrealized_pnl: -212.50 }
+                            ],
+                            risk_metrics: {
+                                portfolio_var: 2500.00,
+                                sharpe_ratio: 1.85,
+                                volatility: 18.5
+                            },
+                            ai_confidence: 87.5,
+                            mode: this.currentMode,
+                            debug: "FRONTEND_MOCK_DATA"
+                        };
+                        
+                        const portfolioData = {
+                            total_value: mockResponse.portfolio.total_value,
+                            daily_pnl: mockResponse.portfolio.daily_pnl,
+                            daily_pnl_percent: mockResponse.portfolio.daily_pnl_percent,
+                            positions: mockResponse.positions.length,
+                            ai_confidence: mockResponse.ai_confidence
+                        };
+                        
+                        console.log('🐛 Mock portfolio data:', portfolioData);
+                        this.updatePortfolioDisplay(portfolioData);
+                        return;
+                    }
+                    
                     console.log(`Loading portfolio data for mode: ${this.currentMode}`);
                     const response = await this.resilience.safeApiCall(
                         `${this.config.apiBaseUrl}/api/dashboard/trading/${this.currentMode}`
@@ -1287,6 +1339,53 @@
 
             async loadAgentData() {
                 try {
+                    // DEBUG: Use mock data if debug mode is enabled
+                    if (this.debugMode) {
+                        console.log('🐛 DEBUG MODE: Using mock agent data');
+                        const mockAgents = {
+                            "market_analysis_agent": {
+                                "status": "ACTIVE",
+                                "priority": "CRITICAL",
+                                "last_activity": new Date().toISOString(),
+                                "performance": 95.5
+                            },
+                            "portfolio_management_agent": {
+                                "status": "ACTIVE", 
+                                "priority": "CRITICAL",
+                                "last_activity": new Date().toISOString(),
+                                "performance": 92.3
+                            },
+                            "risk_management_agent": {
+                                "status": "ACTIVE",
+                                "priority": "IMPORTANT", 
+                                "last_activity": new Date().toISOString(),
+                                "performance": 88.7
+                            },
+                            "execution_agent": {
+                                "status": "IDLE",
+                                "priority": "IMPORTANT",
+                                "last_activity": new Date().toISOString(),
+                                "performance": 91.2
+                            },
+                            "learning_agent": {
+                                "status": "ACTIVE",
+                                "priority": "NORMAL",
+                                "last_activity": new Date().toISOString(),
+                                "performance": 87.9
+                            },
+                            "monitoring_agent": {
+                                "status": "ACTIVE",
+                                "priority": "CRITICAL",
+                                "last_activity": new Date().toISOString(),
+                                "performance": 96.1
+                            }
+                        };
+                        
+                        console.log('🐛 Mock agent data:', mockAgents);
+                        this.updateAgentDisplay(mockAgents);
+                        return;
+                    }
+                    
                     console.log('Loading agent data from:', `${this.config.apiBaseUrl}/api/dashboard/status`);
                     const response = await this.resilience.safeApiCall(
                         `${this.config.apiBaseUrl}/api/dashboard/status`
@@ -1454,6 +1553,12 @@
                         const data = JSON.parse(event.data);
                         console.log('WebSocket data received:', data);
                         
+                        // DEBUG: Log echo counter for WebSocket testing
+                        if (data.type === 'echo_test') {
+                            console.log(`🔊 WebSocket Echo #${data.counter} received at ${data.timestamp}`);
+                            return;
+                        }
+                        
                         if (data.type === 'update') {
                             if (data.agents) {
                                 this.updateAgentDisplay(data.agents);
@@ -1461,6 +1566,17 @@
                             if (data.portfolio) {
                                 this.updatePortfolioDisplay(data.portfolio.summary || data.portfolio);
                             }
+                        }
+                        
+                        // Handle other message types
+                        if (data.type === 'agents') {
+                            this.updateAgentDisplay(data.data);
+                        }
+                        if (data.type === 'portfolio') {
+                            this.updatePortfolioDisplay(data.data);
+                        }
+                        if (data.type === 'error') {
+                            console.error('WebSocket error message:', data.message);
                         }
                     } catch (error) {
                         console.error('WebSocket message parse error:', error);
