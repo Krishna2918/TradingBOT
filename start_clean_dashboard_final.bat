@@ -1,9 +1,0 @@
-@echo off
-echo Starting Clean AI Trading Dashboard - Final Version...
-
-echo.
-echo Opening dashboard in browser...
-start "" "http://localhost:8061"
-echo.
-echo Starting dashboard server...
-python interactive_clean_dashboard_final.py
