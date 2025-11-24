@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "created": "2025-10-25T18:19:08.605760",
+    "version": "1.0.0",
+    "description": "AI-readable data collection progress tracking"
+  },
+  "overall_progress": {
+    "total_symbols": 100,
+    "completed_symbols": 2,
+    "completion_percentage": 48.90873015873015,
+    "total_data_gb": 0.003032620623707771,
+    "last_updated": "2025-10-25T18:19:08.605760"
+  },
+  "symbol_progress": {
+    "BNS.TO": {
+      "1d": {
+        "fetched_rows": 20,
+        "data_size_mb": 0.0054035186767578125,
+        "completion_pct": 0.3968253968253968,
+        "error_count": 0,
+        "quality_score": 1.0,
+        "future_steps": [
+          "Priority: Complete BNS.TO 1d data collection (0.4% done)"
+        ]
+      }
+    },
+    "TD.TO": {
+      "1d": {
+        "fetched_rows": 4800,
+        "data_size_mb": 2.3,
+        "completion_pct": 95.23809523809523,
+        "error_count": 1,
+        "quality_score": 0.9,
+        "future_steps": [
+          "Validate TD.TO 1d data quality",
+          "Investigate 1 errors in TD.TO 1d",
+          "Ready: Use TD.TO 1d for model training"
+        ]
+      }
+    },
+    "SHOP.TO": {
+      "5m": {
+        "fetched_rows": 1200,
+        "data_size_mb": 0.8,
+        "completion_pct": 100.0,
+        "error_count": 0,
+        "quality_score": 0.85,
+        "future_steps": [
+          "Validate SHOP.TO 5m data quality",
+          "Ready: Use SHOP.TO 5m for model training"
+        ]
+      }
+    },
+    "RY.TO": {
+      "1d": {
+        "fetched_rows": 0,
+        "data_size_mb": 0.0,
+        "completion_pct": 0.0,
+        "error_count": 1,
+        "quality_score": 0.0,
+        "future_steps": [
+          "Priority: Complete RY.TO 1d data collection (0.0% done)",
+          "Investigate 1 errors in RY.TO 1d",
+          "Improve data quality for RY.TO 1d (score: 0.00)"
+        ]
+      }
+    }
+  },
+  "future_steps": [
+    "Continue historical data collection (mid stage)",
+    "Investigate and resolve 2 collection errors",
+    "Improve data quality (current score: 0.69)"
+  ],
+  "recommendations": {
+    "next_priority": "Continue historical data collection",
+    "estimated_time": "2 hours remaining",
+    "completion_status": "48.9% complete",
+    "resource_requirements": "Stable internet connection"
+  }
+}

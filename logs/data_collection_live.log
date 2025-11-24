@@ -1,0 +1,79 @@
+2025-10-25 17:45:25,185 - INFO -    Max retries: 10
+2025-10-25 17:45:25,185 - INFO -    Retry delay: 300 seconds
+2025-10-25 17:45:25,185 - INFO - 
+============================================================
+2025-10-25 17:45:25,187 - INFO - ============================================================
+2025-10-25 17:45:26,105 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:45:26,476 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:45:28,818 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:45:29,200 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:45:31,637 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:45:32,044 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:45:34,596 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:45:35,041 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:50:37,053 - INFO - 
+============================================================
+2025-10-25 17:50:37,056 - INFO - ============================================================
+2025-10-25 17:50:37,929 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:50:38,306 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:50:40,757 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:50:41,336 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:50:43,799 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:50:44,213 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:50:46,523 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:50:46,837 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:55:48,850 - INFO - 
+============================================================
+2025-10-25 17:55:48,852 - INFO - ============================================================
+2025-10-25 17:55:49,598 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:55:49,889 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:55:52,319 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:55:52,642 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:55:54,913 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:55:55,198 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 17:55:57,585 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 17:55:57,901 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:00:59,910 - INFO - 
+============================================================
+2025-10-25 18:00:59,913 - INFO - ============================================================
+2025-10-25 18:01:00,554 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:01:00,843 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:01:03,185 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:01:03,594 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:01:05,923 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:01:06,215 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:01:08,565 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:01:08,851 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:06:10,860 - INFO - 
+============================================================
+2025-10-25 18:06:10,861 - INFO - ============================================================
+2025-10-25 18:06:11,504 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:06:11,775 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:06:14,124 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:06:14,377 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:06:16,657 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:06:16,953 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:06:19,339 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:06:19,654 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:11:21,665 - INFO - 
+============================================================
+2025-10-25 18:11:21,669 - INFO - ============================================================
+2025-10-25 18:11:22,591 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:11:22,902 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:11:25,199 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:11:25,489 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:11:27,791 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:11:28,332 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:11:30,623 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:11:30,971 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:16:32,985 - INFO - 
+============================================================
+2025-10-25 18:16:32,988 - INFO - ============================================================
+2025-10-25 18:16:33,791 - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:16:34,100 - ERROR - AAPL: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:16:36,579 - ERROR - Failed to get ticker '^GSPC' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:16:36,923 - ERROR - ^GSPC: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:16:39,438 - ERROR - Failed to get ticker 'EURUSD=X' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:16:39,848 - ERROR - EURUSD=X: No price data found, symbol may be delisted (period=1d)
+2025-10-25 18:16:42,144 - ERROR - Failed to get ticker 'RY.TO' reason: Expecting value: line 1 column 1 (char 0)
+2025-10-25 18:16:42,447 - ERROR - RY.TO: No price data found, symbol may be delisted (period=1d)
