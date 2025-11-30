@@ -71,7 +71,7 @@ class MultiAPIOrchestrator:
         self._log_available_apis()
     
     def _load_config(self, config_path: Optional[str]) -> Dict[str, Any]:
-        """Load configuration with sensible defaults"""
+        """Load configuration from YAML file with sensible defaults"""
         default_config = {
             'max_concurrent_requests': 5,
             'request_timeout': 30,
@@ -81,70 +81,146 @@ class MultiAPIOrchestrator:
             'quality_threshold': 0.8,
             'cache_duration_hours': 24
         }
-        
-        # TODO: Load from YAML file if provided
+
+        # Determine config path
+        if config_path is None:
+            # Try default locations
+            possible_paths = [
+                'config/api_config.yaml',
+                '../config/api_config.yaml',
+                Path(__file__).parent.parent.parent / 'config' / 'api_config.yaml'
+            ]
+            for path in possible_paths:
+                if Path(path).exists():
+                    config_path = str(path)
+                    break
+
+        # Load from YAML file if provided/found
+        if config_path and Path(config_path).exists():
+            try:
+                import yaml
+                with open(config_path, 'r') as file:
+                    yaml_config = yaml.safe_load(file)
+
+                if yaml_config:
+                    # Merge orchestrator settings
+                    orchestrator_config = yaml_config.get('orchestrator', {})
+                    for key, value in orchestrator_config.items():
+                        default_config[key] = value
+
+                    # Store API sources config for later use
+                    self._yaml_api_sources = yaml_config.get('api_sources', {})
+                    self._symbol_priorities = yaml_config.get('symbol_priorities', {})
+                    self._data_quality_config = yaml_config.get('data_quality', {})
+                    self._rate_limiting_config = yaml_config.get('rate_limiting', {})
+                    self._caching_config = yaml_config.get('caching', {})
+
+                    logger.info(f"✅ Configuration loaded from {config_path}")
+            except Exception as e:
+                logger.warning(f"Failed to load config from {config_path}: {e}")
+                self._yaml_api_sources = {}
+                self._symbol_priorities = {}
+        else:
+            self._yaml_api_sources = {}
+            self._symbol_priorities = {}
+            if config_path:
+                logger.warning(f"Config file not found: {config_path}, using defaults")
+
         return default_config
     
     def _initialize_api_sources(self) -> Dict[str, APISource]:
-        """Initialize all available API sources with their configurations"""
-        sources = {
-            'yahoo_finance': APISource(
-                name='Yahoo Finance',
-                priority=1,  # Highest priority - free and reliable
-                rate_limit=600,  # 10 per second = 600 per minute
-                cost_per_request=0.0,
-                reliability_score=0.85,  # Sometimes has rate limits
-                data_quality_score=0.90,
-                enabled=True
-            ),
-            
-            'alpha_vantage': APISource(
-                name='Alpha Vantage',
-                priority=2,  # Second choice - professional grade
-                rate_limit=5,  # Free tier: 5 per minute
-                cost_per_request=0.0,  # Free tier
-                reliability_score=0.95,
-                data_quality_score=0.95,
-                enabled=self._check_api_key('ALPHA_VANTAGE_API_KEY'),
-                api_key_env='ALPHA_VANTAGE_API_KEY',
-                base_url='https://www.alphavantage.co/query'
-            ),
-            
-            'finnhub': APISource(
-                name='Finnhub',
-                priority=3,  # Good for news and basic data
-                rate_limit=60,  # Free tier: 60 per minute
-                cost_per_request=0.0,  # Free tier
-                reliability_score=0.90,
-                data_quality_score=0.85,
-                enabled=self._check_api_key('FINNHUB_API_KEY'),
-                api_key_env='FINNHUB_API_KEY',
-                base_url='https://finnhub.io/api/v1'
-            ),
-            
-            'news_api': APISource(
-                name='News API',
-                priority=4,  # For sentiment data only
-                rate_limit=1000,  # Per day, not per minute
-                cost_per_request=0.0,  # Free tier
-                reliability_score=0.80,
-                data_quality_score=0.75,
-                enabled=self._check_api_key('NEWS_API_KEY'),
-                api_key_env='NEWS_API_KEY',
-                base_url='https://newsapi.org/v2'
-            ),
-            
-            'reddit_api': APISource(
-                name='Reddit API',
-                priority=5,  # For social sentiment
-                rate_limit=100,  # 100 per minute
-                cost_per_request=0.0,
-                reliability_score=0.75,
-                data_quality_score=0.70,
-                enabled=self._check_reddit_credentials(),
-                api_key_env='REDDIT_CLIENT_ID'
-            )
-        }
+        """Initialize all available API sources from YAML config or defaults"""
+        sources = {}
+
+        # Check if YAML config was loaded
+        yaml_sources = getattr(self, '_yaml_api_sources', {})
+
+        if yaml_sources:
+            # Initialize from YAML configuration
+            for source_id, config in yaml_sources.items():
+                api_key_env = config.get('api_key_env')
+
+                # Determine if enabled based on config and API key availability
+                enabled = config.get('enabled', True)
+                if api_key_env and enabled:
+                    if source_id == 'reddit_api':
+                        enabled = self._check_reddit_credentials()
+                    else:
+                        enabled = self._check_api_key(api_key_env)
+
+                sources[source_id] = APISource(
+                    name=config.get('name', source_id),
+                    priority=config.get('priority', 5),
+                    rate_limit=config.get('rate_limit', 60),
+                    cost_per_request=config.get('cost_per_request', 0.0),
+                    reliability_score=config.get('reliability_score', 0.8),
+                    data_quality_score=config.get('data_quality_score', 0.8),
+                    enabled=enabled,
+                    api_key_env=api_key_env,
+                    base_url=config.get('base_url')
+                )
+
+            logger.info(f"Initialized {len(sources)} API sources from YAML config")
+        else:
+            # Use default configuration
+            sources = {
+                'yahoo_finance': APISource(
+                    name='Yahoo Finance',
+                    priority=1,  # Highest priority - free and reliable
+                    rate_limit=600,  # 10 per second = 600 per minute
+                    cost_per_request=0.0,
+                    reliability_score=0.85,  # Sometimes has rate limits
+                    data_quality_score=0.90,
+                    enabled=True
+                ),
+
+                'alpha_vantage': APISource(
+                    name='Alpha Vantage',
+                    priority=2,  # Second choice - professional grade
+                    rate_limit=5,  # Free tier: 5 per minute
+                    cost_per_request=0.0,  # Free tier
+                    reliability_score=0.95,
+                    data_quality_score=0.95,
+                    enabled=self._check_api_key('ALPHA_VANTAGE_API_KEY'),
+                    api_key_env='ALPHA_VANTAGE_API_KEY',
+                    base_url='https://www.alphavantage.co/query'
+                ),
+
+                'finnhub': APISource(
+                    name='Finnhub',
+                    priority=3,  # Good for news and basic data
+                    rate_limit=60,  # Free tier: 60 per minute
+                    cost_per_request=0.0,  # Free tier
+                    reliability_score=0.90,
+                    data_quality_score=0.85,
+                    enabled=self._check_api_key('FINNHUB_API_KEY'),
+                    api_key_env='FINNHUB_API_KEY',
+                    base_url='https://finnhub.io/api/v1'
+                ),
+
+                'news_api': APISource(
+                    name='News API',
+                    priority=4,  # For sentiment data only
+                    rate_limit=1000,  # Per day, not per minute
+                    cost_per_request=0.0,  # Free tier
+                    reliability_score=0.80,
+                    data_quality_score=0.75,
+                    enabled=self._check_api_key('NEWS_API_KEY'),
+                    api_key_env='NEWS_API_KEY',
+                    base_url='https://newsapi.org/v2'
+                ),
+
+                'reddit_api': APISource(
+                    name='Reddit API',
+                    priority=5,  # For social sentiment
+                    rate_limit=100,  # 100 per minute
+                    cost_per_request=0.0,
+                    reliability_score=0.75,
+                    data_quality_score=0.70,
+                    enabled=self._check_reddit_credentials(),
+                    api_key_env='REDDIT_CLIENT_ID'
+                )
+            }
         
         # Initialize rate limiters
         for source_id, source in sources.items():
