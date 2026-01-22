@@ -1,0 +1,117 @@
+# Risk Management Configuration
+# =============================
+# Comprehensive risk management parameters for the trading system
+
+risk:
+  # Total capital for trading
+  total_capital: 250000  # USD deployable capital
+
+  # Maximum risk per position as percentage of capital
+  max_position_risk_pct: 0.02  # Cap each position at 2% risk of capital
+
+  # Default stop loss percentage below entry
+  stop_loss_pct: 0.02  # Stop 2% below entry
+
+  # Take profit as multiple of risk
+  take_profit_multiple: 2.0  # Take-profit at 2R
+
+  # Kelly criterion sensitivity damping
+  kelly_sensitivity: 0.6  # Damp Kelly sizing to avoid over-allocation
+
+  # Minimum confidence required to allocate capital
+  min_confidence: 0.55  # Minimum probability required
+
+  # Confidence score clamping range
+  clamp_confidence: [0.5, 0.75]  # Scores converted to probability within this band
+
+  # Daily drawdown circuit breaker
+  daily_drawdown_limit: 0.03  # 3% daily drawdown triggers halt
+
+risk_limits:
+  # Maximum number of concurrent positions
+  max_positions: 10
+
+  # Maximum position concentration in single asset
+  position_concentration_limit: 0.80  # 80% max in any single asset
+
+  # Default account balance for calculations
+  default_account_balance: 10000.0
+
+  # Maximum portfolio risk exposure
+  max_portfolio_risk: 0.20  # 20% max portfolio risk
+
+  # Maximum single position size
+  max_position_size: 0.10  # 10% max position size
+
+  # Maximum daily drawdown before halting
+  max_daily_drawdown: 0.05  # 5% max daily drawdown
+
+volatility:
+  # Default volatility assumption
+  default_volatility: 0.2  # 20% annualized volatility
+
+  # Volatility risk factor for position sizing
+  volatility_risk_factor: 0.02
+
+  # High volatility threshold
+  high_volatility_threshold: 0.3  # 30% annualized
+
+  # Extreme volatility threshold (triggers halt)
+  extreme_volatility_threshold: 0.5  # 50% annualized
+
+confidence:
+  # Multiplier for confidence-based position scaling
+  multiplier: 0.8
+
+  # Signal strength factor for position sizing
+  signal_strength_factor: 0.2
+
+  # Minimum confidence for trade entry
+  min_entry_confidence: 0.70  # 70% minimum
+
+risk_reward:
+  # Default risk/reward ratio
+  default_ratio: 1.5  # 1.5:1 risk/reward
+
+  # Minimum acceptable risk/reward ratio
+  min_ratio: 1.0  # 1:1 minimum
+
+  # Maximum risk/reward ratio (for take profit calculation)
+  max_ratio: 5.0  # 5:1 maximum
+
+drawdown_management:
+  # Minimum Kelly scale factor during drawdown
+  min_drawdown_scale: 0.3
+
+  # Window for drawdown calculation (hours)
+  drawdown_window_hours: 24
+
+  # Kelly fraction cap
+  kelly_fraction_cap: 0.25  # 25% cap on Kelly sizing
+
+  # Progressive reduction thresholds
+  reduction_thresholds:
+    - threshold: 0.02  # 2% drawdown
+      reduction: 0.9  # 90% of normal size
+    - threshold: 0.03  # 3% drawdown
+      reduction: 0.7  # 70% of normal size
+    - threshold: 0.05  # 5% drawdown
+      reduction: 0.5  # 50% of normal size
+
+market_conditions:
+  # Gap risk thresholds
+  gap_risk_threshold: 0.02  # 2% overnight gap triggers alert
+
+  # Flash crash detection threshold
+  flash_crash_threshold: 0.05  # 5% in 5 minutes
+
+  # Regime detection parameters
+  regime_detection:
+    low_volatility_threshold: 0.1  # Below 10% = low vol regime
+    high_volatility_threshold: 0.25  # Above 25% = high vol regime
+    extreme_volatility_threshold: 0.4  # Above 40% = extreme regime
+
+paths:
+  sqlite_path: data/trading_state.db
+  duckdb_path: data/market_data.duckdb
+  log_path: logs/system.log

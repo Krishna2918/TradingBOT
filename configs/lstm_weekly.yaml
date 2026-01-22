@@ -1,0 +1,35 @@
+model_name: lstm_v1
+seq_len: 252
+window_days: 1008        # ~4y
+val_days: 60
+epochs: 10               # within weekly hour; early stop on val loss
+batch_max: 512
+effective_batch_max: 1024
+amp: true
+grad_clip_norm: 1.0
+loss: weighted_ce        # or focal if flat class weak
+ema_decay: 0.995
+
+lr:
+  schedule: onecycle      # per-batch
+  max_lr: 8.0e-4
+  pct_start: 0.1
+  div_factor: 25
+  final_div_factor: 1.0e3
+
+promote_rules:
+  require_val_improve_pct: 1.0
+  recent_window_days: 60
+
+canary:
+  enable: true
+  days: 2
+
+paths:
+  snapshot: data/snapshots/%Y-%m-%d/
+  artifacts: artifacts/lstm/
+  logs: logs/
+
+runtime:
+  timebox_minutes: 60
+  gpu_lockfile: scripts/exclusive_gpu.lock

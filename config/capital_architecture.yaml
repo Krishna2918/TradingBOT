@@ -1,0 +1,167 @@
+# Capital Architecture - 4-Bucket System
+# Canadian Market AI Trading Research Plan
+
+capital_architecture:
+  # Total capital allocation
+  total_capital: 100000  # $100K CAD for research/simulation
+  
+  # 4-Bucket Allocation System
+  buckets:
+    penny_stocks:
+      percentage: 0.02  # 2% of total capital
+      max_capital: 2000  # $2K CAD
+      instruments:
+        - "AI.TO"    # Artificial Intelligence stocks
+        - "HUT.TO"   # Hut 8 Mining
+        - "BITF.TO"  # Bitfarms
+        - "GLXY.TO"  # Galaxy Digital
+        - "QBTC.TO"  # Bitcoin ETF
+      risk_rules:
+        min_liquidity: 10000  # 10K volume minimum
+        max_spread: 0.02      # 2% spread maximum
+        max_position_size: 0.002  # 0.2% of total capital per position
+        stop_loss: 0.05       # 5% stop loss
+        max_positions: 5      # Maximum 5 penny stock positions
+    
+    futures_options:
+      percentage: 0.05  # 5% of total capital
+      max_capital: 5000  # $5K CAD
+      instruments:
+        - "XIU.TO"     # iShares S&P/TSX 60 Index ETF
+        - "XSP.TO"     # iShares Core S&P 500 Index ETF
+        - "XEG.TO"     # iShares S&P/TSX Capped Energy Index ETF
+        - "XFN.TO"     # iShares S&P/TSX Capped Financials Index ETF
+        - "XIT.TO"     # iShares S&P/TSX Capped Information Technology Index ETF
+      risk_rules:
+        max_leverage: 2.0     # 2x leverage maximum
+        max_position_size: 0.01  # 1% of total capital per position
+        stop_loss: 0.02       # 2% stop loss
+        max_positions: 1      # Maximum 1 F&O position open
+        margin_requirement: 0.5  # 50% margin requirement
+    
+    core_swing:
+      percentage: 0.90  # 90% of total capital
+      max_capital: 90000  # $90K CAD
+      instruments:
+        # Large Cap Canadian Stocks
+        - "RY.TO"      # Royal Bank of Canada
+        - "TD.TO"      # TD Bank
+        - "BMO.TO"     # Bank of Montreal
+        - "SHOP.TO"    # Shopify
+        - "CNR.TO"     # Canadian National Railway
+        - "ENB.TO"     # Enbridge
+        - "SU.TO"      # Suncor Energy
+        - "CP.TO"      # Canadian Pacific Railway
+        - "TRP.TO"     # TC Energy
+        - "ABX.TO"     # Barrick Gold
+        - "WCN.TO"     # Waste Connections
+        - "AEM.TO"     # Agnico Eagle Mines
+        - "QSR.TO"     # Restaurant Brands
+        - "ATD.TO"     # Alimentation Couche-Tard
+        - "NTR.TO"     # Nutrien
+      risk_rules:
+        max_position_size: 0.10  # 10% of total capital per position
+        stop_loss: 0.03          # 3% stop loss
+        take_profit: 0.05        # 5% take profit
+        max_positions: 10        # Maximum 10 core positions
+        trend_following: true    # Trend-following strategy
+    
+    sip_buffer:
+      percentage: 0.01  # 1% of daily profit (not capital)
+      target_etf: "VFV.TO"  # Vanguard S&P 500 Index ETF
+      daily_compounding: true
+      min_profit_threshold: 100  # Minimum $100 profit to trigger SIP
+      max_daily_sip: 1000        # Maximum $1K daily SIP allocation
+
+  # Risk Management Rules
+  risk_management:
+    daily_loss_limit: 0.05      # 5% daily loss limit
+    max_drawdown: 0.08          # 8% maximum drawdown
+    consecutive_loss_limit: 3   # 3 consecutive losses trigger cooldown
+    cooldown_minutes: 30        # 30-minute cooldown after 3 losses
+    volatility_adjustment: true # Adjust position sizes based on volatility
+    
+    # Kill switches
+    kill_switches:
+      data_feed_stale: 120      # 120 seconds stale data
+      margin_utilization: 0.85  # 85% margin utilization
+      broker_failure: 5         # 5 seconds broker timeout
+      emergency_stop: false     # Manual emergency stop
+    
+    # Position sizing rules
+    position_sizing:
+      base_size: 0.02           # 2% base position size
+      volatility_multiplier: true  # Adjust based on ATR/volatility
+      anti_martingale: true     # Increase size after wins
+      max_multiplier: 2.0       # Maximum 2x position size
+      min_multiplier: 0.5       # Minimum 0.5x position size
+
+  # Performance Targets (Research Mode)
+  performance_targets:
+    daily_gain_target: 0.05     # 5% average daily gain target
+    monthly_compounding: 0.20   # 20% monthly compounding target
+    profit_factor_min: 1.3      # Minimum 1.3 profit factor
+    sharpe_ratio_min: 1.5       # Minimum 1.5 Sharpe ratio
+    max_drawdown_limit: 0.10    # Maximum 10% drawdown
+    
+    # Validation criteria
+    backtest_period: 180        # 180 days backtest minimum
+    paper_trade_period: 10      # 10 days paper trade validation
+    stress_test_required: true  # Stress test with anomalies
+
+  # Canadian Market Specifics
+  canadian_market:
+    timezone: "America/Toronto"
+    market_hours:
+      pre_market: "08:00-09:30"
+      regular: "09:30-16:00"
+      after_hours: "16:00-17:00"
+    currency: "CAD"
+    settlement: "T+2"  # Trade date + 2 days
+    
+    # Key Canadian market factors
+    macro_factors:
+      - "Bank of Canada interest rates"
+      - "WTI crude oil prices"
+      - "USD/CAD exchange rate"
+      - "Canadian CPI inflation"
+      - "TSX sector rotation"
+      - "Resource sector performance"
+    
+    # Market holidays
+    holidays:
+      - "2024-01-01"  # New Year's Day
+      - "2024-03-29"  # Good Friday
+      - "2024-05-20"  # Victoria Day
+      - "2024-07-01"  # Canada Day
+      - "2024-09-02"  # Labour Day
+      - "2024-10-14"  # Thanksgiving
+      - "2024-12-25"  # Christmas Day
+      - "2024-12-26"  # Boxing Day
+
+  # SIP (Systematic Investment Plan) Configuration
+  sip_config:
+    enabled: true
+    target_etf: "VFV.TO"  # Vanguard S&P 500 Index ETF
+    profit_percentage: 0.01  # 1% of daily profit
+    min_profit_threshold: 100  # Minimum $100 profit
+    max_daily_allocation: 1000  # Maximum $1K daily
+    rebalance_frequency: "daily"
+    
+    # SIP tracking
+    tracking:
+      log_all_allocations: true
+      compound_calculation: true
+      performance_attribution: true
+      tax_optimization: false  # For research mode
+    
+    # Alternative SIP targets
+    alternative_etfs:
+      - symbol: "VCN.TO"   # Vanguard FTSE Canada All Cap Index
+        allocation: 0.40
+      - symbol: "XAW.TO"   # iShares Core MSCI All Country World ex Canada
+        allocation: 0.30
+      - symbol: "ZAG.TO"   # BMO Aggregate Bond Index
+        allocation: 0.20
+      - symbol: "VDY.TO"   # Vanguard FTSE Canadian High Dividend Yield
+        allocation: 0.10

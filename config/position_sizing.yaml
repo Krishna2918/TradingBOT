@@ -1,0 +1,78 @@
+# Position Sizing Configuration
+# ============================
+# Extracted from src/trading/risk.py
+# Manages position sizing, Kelly criterion, and stop/take-profit parameters
+
+position_sizing:
+  # Risk per trade as percentage of account balance
+  default_risk_per_trade: 0.02  # 2% risk per trade
+
+  # Maximum portfolio exposure
+  max_portfolio_risk: 0.20  # 20% max portfolio risk
+
+  # Maximum single position size
+  max_position_size: 0.10  # 10% max position size
+
+  # Daily drawdown circuit breaker
+  max_daily_drawdown: 0.05  # 5% max daily drawdown
+
+  # Minimum confidence required to trade
+  min_confidence: 0.70  # 70% minimum confidence
+
+kelly_criterion:
+  # Minimum scale factor during drawdown
+  min_drawdown_scale: 0.3
+
+  # Window for drawdown calculation
+  drawdown_window_hours: 24
+
+  # Maximum Kelly fraction cap
+  kelly_fraction_cap: 0.25  # 25% cap on Kelly sizing
+
+  # Default win/loss ratios for Kelly calculation
+  avg_win_default: 0.02  # 2% average win
+  avg_loss_default: 0.015  # 1.5% average loss
+
+stop_loss:
+  # Default stop loss percentage below entry
+  default_stop_percent: 0.05  # 5% stop loss
+
+  # Minimum stop loss distance
+  min_stop_percent: 0.01  # 1% minimum stop
+
+  # Fallback stop loss when ATR unavailable
+  fallback_stop_percent: 0.02  # 2% fallback stop
+
+take_profit:
+  # Default take profit percentage above entry
+  default_take_profit_percent: 0.02  # 2% default take profit
+
+  # Extended take profit for longer holds
+  extended_take_profit_percent: 0.03  # 3% extended take profit
+
+  # Default risk/reward ratio
+  default_risk_reward_ratio: 1.5  # 1.5:1 risk/reward
+
+confidence:
+  # Multiplier for confidence-based position scaling
+  confidence_multiplier: 0.8
+
+  # Signal strength factor for position sizing
+  signal_strength_factor: 0.2
+
+portfolio_limits:
+  # Maximum number of concurrent positions
+  max_positions: 10
+
+  # Maximum concentration in single sector
+  position_concentration_limit: 0.80  # 80% max in any sector
+
+  # Default account balance for calculations
+  default_account_balance: 10000.0
+
+volatility:
+  # Default volatility assumption
+  default_volatility: 0.2  # 20% annualized volatility
+
+  # Volatility risk factor for position sizing
+  volatility_risk_factor: 0.02

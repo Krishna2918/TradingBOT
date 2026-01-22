@@ -1,0 +1,210 @@
+# Trading Bot Configuration
+# All tunable parameters centralized here - NO MORE HARDCODED VALUES!
+
+# ============================================================================
+# MARKET & UNIVERSE
+# ============================================================================
+market:
+  name: "Canadian Market (TSX/TSXV)"
+  primary_symbols:
+    - RY.TO
+    - TD.TO
+    - BNS.TO
+    - BMO.TO
+    - CM.TO
+    - ENB.TO
+    - TRP.TO
+    - SHOP.TO
+    - CNQ.TO
+    - SU.TO
+  
+  # Import full universe from tsx_stock_universe.py
+  use_full_universe: true
+  max_universe_size: 200
+
+# ============================================================================
+# CAPITAL & POSITION SIZING
+# ============================================================================
+capital:
+  initial_capital_demo: 100.0
+  initial_capital_live: 10000.0
+  min_capital: 10.0
+  
+  # Position sizing
+  max_position_pct_demo: 0.05  # 5% max per position in demo
+  max_position_pct_live: 0.03  # 3% max per position in live
+  default_position_size_demo: 0.02  # 2% of capital
+  default_position_size_live: 0.015  # 1.5% of capital
+  
+  # Cash management
+  min_cash_reserve_pct: 0.10  # Keep 10% cash minimum
+  cash_rebalance_threshold: 0.30  # Alert if cash > 30%
+
+# ============================================================================
+# RISK MANAGEMENT & KILL SWITCHES
+# ============================================================================
+risk:
+  # Kill switch thresholds
+  max_drawdown_pct: 0.10  # 10% max drawdown triggers kill switch
+  max_daily_loss_pct: 0.05  # 5% daily loss triggers kill switch
+  min_sharpe_ratio: -0.5  # Below this, pause trading
+  
+  # Position exits
+  profit_target_pct: 0.02  # 2% profit target
+  stop_loss_pct: 0.02  # 2% stop loss
+  trailing_stop_pct: 0.015  # 1.5% trailing stop
+  
+  # Volatility adjustments
+  high_volatility_threshold: 0.03
+  reduce_size_on_high_vol: 0.5  # 50% position size reduction
+
+# ============================================================================
+# AI SIGNAL THRESHOLDS
+# ============================================================================
+signals:
+  # Model confidence
+  min_ai_model_confidence: 0.70
+  min_signal_confidence_demo: 0.45
+  min_signal_confidence_live: 0.55
+  max_confidence_cap: 0.95
+  
+  # Sentiment thresholds
+  sentiment_strong_positive: 0.5
+  sentiment_moderate_positive: 0.1
+  sentiment_neutral_lower: -0.1
+  sentiment_neutral_upper: 0.1
+  sentiment_moderate_negative: -0.5
+  sentiment_strong_negative: -0.5
+  
+  # Technical indicators
+  rsi_oversold: 45
+  rsi_neutral_lower: 45
+  rsi_neutral_upper: 55
+  rsi_overbought: 60
+  
+  # Options flow
+  options_call_put_ratio: 2.0
+  options_min_confidence: 0.5
+  
+  # ChatGPT integration
+  chatgpt_weight: 0.3
+  original_signals_weight: 0.7
+  chatgpt_min_threshold: 0.5
+  combined_decision_threshold: 1.0
+  
+  # Demo mode boosts
+  demo_confidence_multiplier: 1.15
+  demo_enabled: true
+
+# ============================================================================
+# DATA FETCHING & INTERVALS
+# ============================================================================
+data:
+  # Market data intervals
+  trading_interval_seconds: 5
+  chart_update_interval_seconds: 2
+  log_monitor_interval_seconds: 5
+  holdings_update_interval_seconds: 3
+  
+  # Batch sizes (for rate limit management)
+  questrade_batch_size: 10
+  yahoo_batch_size: 5
+  yahoo_delay_seconds: 1.0
+  
+  # Caching
+  cache_ttl_seconds: 60
+  redis_enabled: false
+
+# ============================================================================
+# BROKER CONFIGURATION
+# ============================================================================
+broker:
+  primary: "questrade"
+  fallback: "yahoo"
+  
+  questrade:
+    enabled: true
+    token_cache_path: "config/questrade_token_cache.json"
+    rate_limit_per_second: 100
+  
+  yahoo:
+    enabled: true
+    rate_limit_per_second: 10
+    retry_attempts: 3
+
+# ============================================================================
+# UI & DISPLAY
+# ============================================================================
+ui:
+  theme: "darkly"
+  
+  # Branding
+  app_title: "AI Trading Dashboard"
+  app_subtitle: "Canadian Market (TSX/TSXV)"
+  demo_mode_badge: "🔬 DEMO MODE"
+  live_mode_badge: "⚡ LIVE TRADING"
+  
+  # Chart settings
+  chart_height: 400
+  chart_noise_amplitude: 0.005  # ±0.5% smoothing
+  enable_chart_noise: true
+  
+  # Alerts
+  alerts_max_display: 10
+  enable_audio_alerts: false
+  
+  # Table pagination
+  trades_table_page_size: 10
+  holdings_table_page_size: 10
+
+# ============================================================================
+# LEARNING & ADAPTATION
+# ============================================================================
+learning:
+  enable_learning: true
+  mistake_log_max_size: 100
+  success_pattern_max_size: 100
+  
+  # Pattern recognition
+  min_pattern_confidence: 0.6
+  similar_pattern_threshold: 0.8
+
+# ============================================================================
+# LOGGING & MONITORING
+# ============================================================================
+logging:
+  level: "INFO"
+  ai_activity_log_path: "logs/ai_activity.log"
+  trade_log_path: "logs/trades.log"
+  error_log_path: "logs/errors.log"
+  
+  # Log rotation
+  max_log_size_mb: 100
+  backup_count: 5
+
+# ============================================================================
+# MODE-SPECIFIC OVERRIDES
+# ============================================================================
+modes:
+  demo:
+    aggressive_trading: true
+    enable_all_signals: true
+    ignore_risk_limits: false
+    
+  live:
+    aggressive_trading: false
+    enable_all_signals: false
+    strict_risk_management: true
+    require_multi_signal_confirmation: true
+
+# ============================================================================
+# FEATURE FLAGS
+# ============================================================================
+features:
+  enable_regime_detection: true
+  enable_sentiment_analysis: true
+  enable_options_flow: true
+  enable_chatgpt_integration: false  # Disabled by default (API key required)
+  enable_penny_stocks: true
+  enable_crypto_related: true
+  enable_background_worker: false  # TODO: Implement

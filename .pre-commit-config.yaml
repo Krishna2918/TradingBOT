@@ -1,0 +1,258 @@
+# Pre-commit hooks configuration for Trading System
+# Install with: pip install pre-commit && pre-commit install
+
+repos:
+  # Secret scanning
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: |
+          (?x)^(
+            \.secrets\.baseline|
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*
+          )$
+
+  # Code formatting
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        language_version: python3
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # Import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ['--profile', 'black']
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # Linting
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=88', '--extend-ignore=E203,W503']
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # Type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests, types-PyYAML]
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*|
+            tests/.*
+          )$
+
+  # Security checks
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-r', 'src/', '-f', 'json', '-o', 'bandit-report.json']
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*|
+            tests/.*
+          )$
+
+  # YAML formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        types: [yaml]
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # JSON formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        types: [json]
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # Markdown formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        types: [markdown]
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # File size checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: check-yaml
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+      - id: check-json
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+      - id: check-toml
+      - id: end-of-file-fixer
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+      - id: trailing-whitespace
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+      - id: check-docstring-first
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+  # Custom hooks for trading system
+  - repo: local
+    hooks:
+      - id: trading-system-validation
+        name: Trading System Validation
+        entry: python scripts/pre_commit_validation.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$
+
+      - id: api-key-check
+        name: API Key Check
+        entry: python scripts/check_api_keys.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        exclude: |
+          (?x)^(
+            \.git/.*|
+            .*\.lock|
+            .*\.log|
+            data/.*|
+            logs/.*|
+            \.venv/.*|
+            venv/.*
+          )$

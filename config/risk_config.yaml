@@ -1,0 +1,39 @@
+# Risk Management Configuration - Canadian Markets
+risk:
+  capital:
+    total_capital: 100000  # $100,000 CAD - Paper trading capital
+    active_capital: 80000   # 80% = $80,000
+    safety_reserve: 20000   # 20% = $20,000
+    etf_allocation: 0.20    # 20% of profits go to ETFs
+  
+  limits:
+    daily_loss_limit: 0.08   # 8%
+    max_drawdown: 0.15      # 15%
+    consecutive_loss_limit: 3
+    cool_down_minutes: 60
+  
+  leverage:
+    base_leverage: 2.0
+    max_leverage: 4.0
+    vix_adjustments:
+      15-20: 0.9
+      20-25: 0.8
+      25+: 0.5
+  
+  kill_switches:
+    margin_utilization: 0.85
+    broker_failure_timeout: 5
+    data_feed_stall: 30
+    emergency_stop: false
+  
+  profit_allocation:
+    etf_percentage: 0.20      # 20% of profits to ETFs
+    etf_targets:
+      - "VTI"                 # Vanguard Total Stock Market ETF
+      - "VEA"                 # Vanguard Developed Markets ETF
+      - "VWO"                 # Vanguard Emerging Markets ETF
+      - "BND"                 # Vanguard Total Bond Market ETF
+      - "VXUS"                # Vanguard Total International Stock ETF
+    rebalance_frequency: "weekly"  # Rebalance ETF allocation weekly
+    min_profit_threshold: 1000     # Minimum $1K profit before ETF allocation
+

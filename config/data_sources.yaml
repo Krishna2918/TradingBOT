@@ -1,0 +1,95 @@
+# Data Sources Configuration - Canadian Markets
+data_sources:
+  market_data:
+    tsx:
+      provider: "yahoo_finance"
+      symbols: ["^GSPTSE", "^TX60", "RY.TO", "TD.TO", "SHOP.TO"]
+      refresh_rate: 1  # seconds
+      fields: ["open", "high", "low", "close", "volume"]
+    
+    tsxv:
+      provider: "yahoo_finance"
+      symbols: ["^TSXV"]
+      refresh_rate: 5  # seconds
+      fields: ["open", "high", "low", "close", "volume"]
+    
+    us_markets:
+      provider: "yahoo_finance"
+      symbols: ["^GSPC", "^VIX", "SPY", "QQQ"]
+      refresh_rate: 1  # seconds
+      fields: ["open", "high", "low", "close", "volume"]
+  
+  news_sources:
+    canadian_news:
+      - name: "globeandmail"
+        url: "https://www.theglobeandmail.com/business/"
+        rss: "https://www.theglobeandmail.com/business/rss.xml"
+        refresh_rate: 300  # 5 minutes
+      
+      - name: "financialpost"
+        url: "https://financialpost.com/"
+        rss: "https://financialpost.com/feed"
+        refresh_rate: 300  # 5 minutes
+      
+      - name: "cbc_business"
+        url: "https://www.cbc.ca/news/business"
+        rss: "https://www.cbc.ca/cmlink/rss-business"
+        refresh_rate: 300  # 5 minutes
+      
+      - name: "reuters_canada"
+        url: "https://www.reuters.com/business/"
+        rss: "https://feeds.reuters.com/reuters/businessNews"
+        refresh_rate: 300  # 5 minutes
+  
+  economic_data:
+    bank_of_canada:
+      - name: "interest_rates"
+        url: "https://www.bankofcanada.ca/valet/observations/group/interest_rates"
+        refresh_rate: 3600  # 1 hour
+      
+      - name: "inflation"
+        url: "https://www.bankofcanada.ca/valet/observations/group/inflation"
+        refresh_rate: 3600  # 1 hour
+      
+      - name: "exchange_rates"
+        url: "https://www.bankofcanada.ca/valet/observations/group/FX_RATES_DAILY"
+        refresh_rate: 3600  # 1 hour
+    
+    statistics_canada:
+      - name: "gdp"
+        url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610010101"
+        refresh_rate: 86400  # 24 hours
+      
+      - name: "employment"
+        url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701"
+        refresh_rate: 86400  # 24 hours
+    
+    tmx_group:
+      - name: "market_statistics"
+        url: "https://www.tsx.com/json/company-directory/search"
+        refresh_rate: 3600  # 1 hour
+  
+  weather_data:
+    environment_canada:
+      - name: "weather_alerts"
+        url: "https://weather.gc.ca/rss/warning/"
+        refresh_rate: 1800  # 30 minutes
+      
+      - name: "agricultural_weather"
+        url: "https://weather.gc.ca/rss/warning/agriculture/"
+        refresh_rate: 1800  # 30 minutes
+  
+  social_sentiment:
+    reddit:
+      - name: "canadian_investing"
+        subreddit: "CanadianInvestor"
+        refresh_rate: 600  # 10 minutes
+      
+      - name: "personal_finance_canada"
+        subreddit: "PersonalFinanceCanada"
+        refresh_rate: 600  # 10 minutes
+    
+    twitter:
+      - name: "canadian_finance"
+        hashtags: ["#TSX", "#CanadianStocks", "#BankOfCanada"]
+        refresh_rate: 300  # 5 minutes

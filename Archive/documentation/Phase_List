@@ -1,0 +1,1298 @@
+# AI TRADING SYSTEM - MASTER IMPLEMENTATION PLAN V2.0
+
+## SYSTEM OBJECTIVE
+Build a fully autonomous, 24/7 active AI-powered trading system with complete BUY/SELL cycle, real-time data integration, collaborative AI decision-making, dynamic risk management, self-correction capabilities, market hours intelligence, and dual-mode operation (LIVE/DEMO).
+
+## CRITICAL REQUIREMENTS
+- ✅ NO placeholders or hardcoded values (LIVE & DEMO modes)
+- ✅ NO data leaks or security vulnerabilities
+- ✅ NO hallucinations - all data must be validated
+- ✅ Complete BUY → HOLD → SELL trading loop
+- ✅ Real-time market data integration
+- ✅ 24/7 AI activity (trading hours + off-hours analysis)
+- ✅ Pre-market preparation (8:00 AM - 9:30 AM ET)
+- ✅ DEMO mode - exact replica of LIVE mode
+- ✅ Comprehensive testing at every step
+- ✅ Self-correcting error handling
+- ✅ Full audit trail and logging
+- ✅ Change tracking for all modifications
+
+---
+
+## DUAL MODE ARCHITECTURE
+
+### Mode Implementation
+**File: `src/config/mode_manager.py`**
+```python
+class ModeManager:
+    - get_current_mode() → str  # 'LIVE' or 'DEMO'
+    - set_mode(mode: str) → None
+    - validate_mode() → bool
+    - get_mode_config() → dict
+```
+
+**Features:**
+- Dashboard header toggle: LIVE ↔️ DEMO
+- Identical functionality in both modes
+- Separate databases: `trading_live.db` and `trading_demo.db`
+- Separate order execution: real vs paper trading
+- Separate balance tracking
+- Same AI logic, same features, same UI
+- No placeholders in either mode
+
+**Database Configuration:**
+```python
+# config/database.py
+DATABASES = {
+    'LIVE': 'data/trading_live.db',
+    'DEMO': 'data/trading_demo.db'
+}
+
+def get_db_connection():
+    mode = ModeManager.get_current_mode()
+    return sqlite3.connect(DATABASES[mode])
+```
+
+---
+
+## MARKET HOURS INTELLIGENCE SYSTEM
+
+### Market Hours Manager
+**File: `src/market/hours_manager.py`**
+```python
+class MarketHoursManager:
+    # Market Status
+    - is_market_open() → bool
+    - get_market_status() → str  # 'PRE_MARKET', 'OPEN', 'CLOSED', 'PREPARING'
+    - time_until_market_open() → timedelta
+    - time_until_market_close() → timedelta
+    
+    # Activity Scheduling
+    - schedule_off_hours_analysis() → None
+    - schedule_pre_market_prep() → None
+    - schedule_order_placement() → None
+    - validate_schedule() → bool
+```
+
+**Market Hours (Eastern Time):**
+- **Pre-Market Prep**: 8:00 AM - 9:30 AM
+- **Market Open**: 9:30 AM - 4:00 PM
+- **Post-Market**: 4:00 PM - 8:00 PM (analysis)
+- **Off-Hours Analysis**: 8:00 PM - 8:00 AM (deep learning)
+
+### Off-Hours AI Activity System
+**File: `src/ai/offhours_activity.py`**
+```python
+class OffHoursAI:
+    # Trade Discussion & Analysis
+    - discuss_completed_trades() → List[Insight]
+    - analyze_trade_angles(trade) → dict
+    - identify_success_patterns() → List[Pattern]
+    - identify_failure_patterns() → List[Pattern]
+    - generate_improvement_suggestions() → List[Suggestion]
+    
+    # Historical Market Study
+    - study_historical_data(period) → HistoricalInsights
+    - build_markov_chains() → MarkovModel
+    - analyze_event_sequences() → List[EventPattern]
+    - predict_future_events() → List[Prediction]
+    - update_market_history() → None
+    
+    # Stock Universe Preparation
+    - pull_full_stock_universe() → List[Symbol]
+    - analyze_all_stocks() → List[Analysis]
+    - rank_opportunities() → List[RankedStock]
+    - prepare_watchlist() → List[Symbol]
+    
+    # Validation
+    - validate_offhours_work() → bool
+```
+
+**Off-Hours Schedule:**
+```
+8:00 PM - 12:00 AM: Trade Discussion & Analysis
+12:00 AM - 4:00 AM: Historical Market Study & Markov Chains
+4:00 AM - 8:00 AM: Full Stock Universe Analysis
+```
+
+### Pre-Market Preparation System
+**File: `src/trading/premarket.py`**
+```python
+class PreMarketPrep:
+    # Morning Analysis (8:00 AM - 9:30 AM)
+    - analyze_overnight_news() → List[NewsImpact]
+    - analyze_pre_market_indicators() → dict
+    - predict_todays_opportunities() → List[Opportunity]
+    - prepare_buy_orders() → List[Order]
+    - prepare_sell_orders() → List[Order]
+    
+    # Order Placement (9:00 AM - 9:30 AM)
+    - place_pre_market_orders() → List[PlacedOrder]
+    - validate_orders() → bool
+    - set_market_open_triggers() → None
+    
+    # Validation
+    - validate_premarket_prep() → bool
+```
+
+**Pre-Market Timeline:**
+```
+8:00 AM - 8:30 AM: Overnight news analysis
+8:30 AM - 9:00 AM: Today's trade predictions
+9:00 AM - 9:30 AM: Order preparation & placement
+9:30 AM: Market opens - orders execute
+```
+
+### Markov Chain Analysis Engine
+**File: `src/analysis/markov_chains.py`**
+```python
+class MarkovChainAnalyzer:
+    # Event Sequence Analysis
+    - build_state_transition_matrix() → numpy.ndarray
+    - identify_event_sequences() → List[Sequence]
+    - calculate_transition_probabilities() → dict
+    - predict_next_events(current_state) → List[PredictedEvent]
+    
+    # Market Pattern Learning
+    - learn_bull_bear_transitions() → dict
+    - learn_volatility_patterns() → dict
+    - learn_sector_rotation_patterns() → dict
+    - learn_reversal_patterns() → dict
+    
+    # Continuous Learning
+    - update_from_daily_trades() → None
+    - update_from_market_events() → None
+    - retrain_model() → None
+    - validate_predictions() → float
+```
+
+**Markov Chain Features:**
+- State transitions: Market regimes, price movements, volume patterns
+- Event sequences: News → Price change → Volume spike
+- Pattern recognition: Recurring market behaviors
+- Predictive modeling: What's likely to happen next
+- Daily updates: Learn from each trading day
+
+---
+
+## PHASE 1: CORE TRADING INFRASTRUCTURE (CRITICAL)
+**Priority: HIGHEST | Duration: Week 1-2**
+
+### 1.1 Position Management System
+**File: `src/trading/positions.py`**
+```python
+class PositionManager:
+    - track_position(symbol, entry_price, quantity, timestamp, mode)
+    - get_open_positions(mode) → List[Position]
+    - calculate_pnl(symbol, mode) → float
+    - get_position_metrics(symbol, mode) → dict
+    - close_position(symbol, exit_price, timestamp, mode)
+    - validate_position_data() → bool  # Self-correction
+    - get_mode_specific_positions(mode) → List[Position]
+```
+
+**Requirements:**
+- Separate tracking for LIVE and DEMO modes
+- Store all positions in mode-specific databases
+- Track: entry_price, current_price, quantity, pnl, entry_time, status, mode
+- Real-time P&L calculation
+- Position validation and error handling
+- No placeholder data in either mode
+
+**Tests Required:**
+- test_position_creation_live()
+- test_position_creation_demo()
+- test_pnl_calculation_both_modes()
+- test_data_validation()
+
+### 1.2 Exit Strategy Engine
+**File: `src/trading/exit_strategy.py`**
+```python
+class ExitStrategyEngine:
+    - generate_sell_signals(positions, mode) → List[SellSignal]
+    - check_stop_loss(position) → bool
+    - check_take_profit(position) → bool
+    - check_time_based_exit(position) → bool
+    - check_ai_reversal_signal(position) → bool
+    - calculate_exit_price(position) → float
+    - validate_exit_conditions() → bool  # Self-correction
+```
+
+**Requirements:**
+- Works identically in LIVE and DEMO modes
+- Monitor all open positions continuously
+- Check stop-loss triggers (based on ATR)
+- Check take-profit targets (based on risk/reward)
+- Check time-based exits (max holding period)
+- AI re-analysis for SELL signals
+- Validate all exit conditions
+
+**Tests Required:**
+- test_stop_loss_trigger_both_modes()
+- test_take_profit_trigger_both_modes()
+- test_sell_signal_generation()
+- test_exit_validation()
+
+### 1.3 Risk Management System
+**File: `src/trading/risk.py`**
+```python
+class RiskManager:
+    - calculate_position_size(signal, account_balance, volatility, mode) → float
+    - check_portfolio_limits(mode) → bool
+    - calculate_stop_loss(entry_price, atr) → float
+    - calculate_take_profit(entry_price, risk_reward_ratio) → float
+    - validate_risk_parameters() → bool  # Self-correction
+    - get_max_position_size(symbol, volatility, mode) → float
+    - check_daily_drawdown(mode) → bool
+    - get_mode_specific_limits(mode) → dict
+```
+
+**Requirements:**
+- Mode-aware risk management
+- Dynamic position sizing based on volatility
+- Portfolio concentration limits (max 10% per position)
+- Daily drawdown limits (max 2% per day)
+- Sector allocation limits
+- Stop-loss: 2 * ATR below entry
+- Take-profit: 3 * ATR above entry (1.5:1 R/R)
+- Real-time risk validation
+- Separate risk tracking for LIVE/DEMO
+
+**Tests Required:**
+- test_position_sizing_both_modes()
+- test_stop_loss_calculation()
+- test_portfolio_limits()
+- test_risk_validation()
+
+### 1.4 Order Execution Engine
+**File: `src/trading/execution.py`**
+```python
+class ExecutionEngine:
+    - execute_buy_order(signal, position_size, mode) → Order
+    - execute_sell_order(position, exit_price, mode) → Order
+    - validate_order(order) → bool  # Self-correction
+    - track_order_status(order_id, mode) → OrderStatus
+    - handle_execution_errors(error) → None
+    - log_trade(order, mode) → None
+    - route_order_by_mode(order, mode) → ExecutionResult
+```
+
+**Requirements:**
+- DEMO mode: Paper trading execution (NO real money)
+- LIVE mode: Real Questrade API execution
+- Order validation before execution
+- Order tracking and confirmation
+- Error handling and retry logic
+- Full audit trail in mode-specific database
+- No data leaks in logs
+
+**Tests Required:**
+- test_order_creation_demo()
+- test_order_creation_live()
+- test_order_validation()
+- test_execution_errors()
+- test_audit_trail()
+- test_mode_routing()
+
+---
+
+## PHASE 1.5: MARKET INTELLIGENCE (HIGH PRIORITY)
+**Priority: HIGH | Duration: Week 2-3**
+
+### 1.5.1 Market Regime Detection
+**File: `src/analysis/market_regime.py`**
+```python
+class MarketRegimeDetector:
+    - detect_bull_market() → bool
+    - detect_bear_market() → bool
+    - detect_sideways_market() → bool
+    - detect_high_volatility() → bool
+    - detect_regime_change() → Optional[RegimeChange]
+    - adjust_strategy_for_regime() → StrategyConfig
+    - validate_regime_detection() → bool
+```
+
+**Indicators:**
+- Market breadth (advance/decline ratio)
+- Moving average trends (50-day, 200-day)
+- Volatility levels (VIX equivalent)
+- Volume patterns
+- Sector rotation patterns
+
+### 1.5.2 Sector Rotation Analysis
+**File: `src/analysis/sector_analyzer.py`**
+```python
+class SectorAnalyzer:
+    - analyze_sector_performance() → dict
+    - detect_sector_rotation() → List[str]
+    - identify_leading_sectors() → List[str]
+    - identify_lagging_sectors() → List[str]
+    - adjust_sector_allocation(mode) → None
+    - validate_sector_limits() → bool
+```
+
+**Sectors Tracked:**
+- Technology, Financials, Healthcare, Energy
+- Consumer Discretionary, Consumer Staples
+- Industrials, Materials, Utilities
+- Real Estate, Communication Services
+
+### 1.5.3 News Impact Analysis
+**File: `src/analysis/news_impact.py`**
+```python
+class NewsImpactAnalyzer:
+    - analyze_news_impact(symbol, news) → float
+    - detect_earnings_announcements() → List[str]
+    - detect_market_moving_events() → List[Event]
+    - analyze_sentiment(news_text) → float
+    - handle_market_events() → None
+    - validate_news_sentiment() → bool
+```
+
+**News Sources:**
+- Financial news APIs
+- Earnings calendars
+- Economic indicators
+- Market announcements
+- Social media sentiment
+
+---
+
+## PHASE 2: COMPLETE TRADING LOOP (CRITICAL)
+**Priority: HIGHEST | Duration: Week 3-4**
+
+### 2.1 Enhanced AI Analysis with Exit Strategy
+**File: `src/ai/enhanced_ensemble.py`**
+```python
+class EnhancedEnsemble:
+    - analyze_for_entry(symbol, features, mode) → BuySignal
+    - analyze_for_exit(position, current_data, mode) → SellSignal
+    - generate_position_aware_analysis(symbol, is_owned, mode) → Decision
+    - validate_ai_response() → bool  # Self-correction
+    - get_mode_context(mode) → dict
+```
+
+**Enhanced AI Prompt:**
+```
+You are analyzing {symbol} for trading decisions in {MODE} mode.
+
+Current Position Status: {OWNED or NOT_OWNED}
+Current Price: {price}
+Entry Price: {entry_price if owned else N/A}
+Current P&L: {pnl if owned else N/A}
+Days Held: {days if owned else N/A}
+Market Regime: {regime_type}
+Sector Performance: {sector_score}
+News Sentiment: {sentiment_score}
+
+Market Data:
+- Technical Indicators: {features}
+- Volume: {volume}
+- Volatility (ATR): {atr}
+- Market Regime: {regime}
+- Sector Rotation: {sector_trend}
+
+If NOT OWNED: Should we BUY?
+- Analyze entry conditions
+- Calculate risk/reward
+- Determine position size
+- Set stop-loss and take-profit
+
+If OWNED: Should we SELL or HOLD?
+- Check exit conditions
+- Evaluate current P&L
+- Check stop-loss/take-profit levels
+- Consider market conditions
+
+Provide:
+1. Decision: BUY, SELL, or HOLD
+2. Confidence: 0.0 to 1.0
+3. Reasoning: Brief explanation
+4. Risk Assessment: Low, Medium, High
+5. Exit Strategy: Stop-loss and take-profit levels
+```
+
+### 2.2 Complete Trading Workflow
+**File: `src/workflows/trading_cycle.py`**
+```python
+class TradingCycle:
+    - run_buy_phase(mode) → List[Position]
+    - run_hold_phase(mode) → List[Update]
+    - run_sell_phase(mode) → List[ClosedPosition]
+    - execute_complete_cycle(mode) → CycleResults
+    - validate_cycle() → bool  # Self-correction
+    - run_mode_specific_cycle(mode) → CycleResults
+```
+
+**Workflow:**
+```
+1. ENTRY (BUY):
+   - Scan universe for opportunities
+   - Generate BUY signals with AI ensemble
+   - Validate signals (confidence, risk)
+   - Calculate position size (mode-aware)
+   - Execute order (paper or real based on mode)
+   - Store position in mode-specific database
+
+2. MONITORING (HOLD):
+   - Monitor all open positions (mode-specific)
+   - Update real-time P&L
+   - Check stop-loss triggers
+   - Check take-profit targets
+   - Re-analyze with AI for SELL signals
+   - Log all monitoring activities
+
+3. EXIT (SELL):
+   - Generate SELL signals
+   - Validate exit conditions
+   - Execute sell order (mode-aware)
+   - Calculate final P&L
+   - Close position in database
+   - Log trade results
+
+4. REPEAT: Loop back to step 1
+```
+
+### 2.3 24/7 Activity Scheduler
+**File: `src/workflows/scheduler.py`**
+```python
+class ActivityScheduler:
+    # Main Schedule Manager
+    - run_continuous_loop() → None
+    - determine_current_activity() → Activity
+    - execute_scheduled_activity() → None
+    
+    # Market Hours Activities
+    - run_trading_hours_activity() → None  # 9:30 AM - 4:00 PM
+    - run_pre_market_activity() → None     # 8:00 AM - 9:30 AM
+    
+    # Off-Hours Activities
+    - run_trade_discussion() → None        # 8:00 PM - 12:00 AM
+    - run_historical_study() → None        # 12:00 AM - 4:00 AM
+    - run_stock_universe_prep() → None     # 4:00 AM - 8:00 AM
+    
+    # Validation
+    - validate_schedule() → bool
+```
+
+**Daily Activity Timeline:**
+```
+8:00 PM - 12:00 AM: Trade Discussion
+  - Discuss all completed trades
+  - Analyze what worked/didn't work
+  - Identify patterns and improvements
+  - Update AI learning parameters
+
+12:00 AM - 4:00 AM: Historical Study
+  - Study past market data
+  - Build/update Markov chains
+  - Analyze event sequences
+  - Predict future patterns
+
+4:00 AM - 8:00 AM: Stock Universe Analysis
+  - Pull all available stocks (2000+ TSX/TSXV)
+  - Analyze each stock thoroughly
+  - Rank opportunities
+  - Prepare watchlist for tomorrow
+
+8:00 AM - 9:00 AM: Pre-Market Preparation
+  - Analyze overnight news
+  - Check pre-market indicators
+  - Predict today's opportunities
+  - Prepare trading strategy
+
+9:00 AM - 9:30 AM: Order Preparation
+  - Generate buy/sell signals
+  - Calculate position sizes
+  - Prepare orders
+  - Set limit/stop orders
+
+9:30 AM - 4:00 PM: Active Trading
+  - Execute orders
+  - Monitor positions
+  - Manage risk
+  - Generate new signals
+
+4:00 PM - 8:00 PM: Post-Market Analysis
+  - Review day's trades
+  - Update performance metrics
+  - Prepare for discussion phase
+  - Update market history
+```
+
+---
+
+## PHASE 3: REAL DATA INTEGRATION (HIGH PRIORITY)
+**Priority: HIGH | Duration: Week 4-5**
+
+### 3.1 Remove All Placeholders (BOTH MODES)
+**Files to Update:**
+- `src/data/features.py` - Remove pseudo-features
+- `src/data/factors.py` - Remove hardcoded scores
+- `src/data/market_data.py` - Remove placeholder data
+
+**Actions:**
+- Replace all pseudo-features with real technical indicators
+- Remove all hardcoded values and weights
+- Validate all data sources
+- Add data quality checks
+- Ensure both LIVE and DEMO modes use real data
+
+### 3.2 Questrade API Integration
+**File: `src/integrations/questrade_api.py`**
+```python
+class QuestradeAPI:
+    - get_real_time_quote(symbol) → Quote
+    - get_historical_data(symbol, period) → DataFrame
+    - get_market_hours() → dict
+    - validate_api_response() → bool  # Self-correction
+    - handle_rate_limits() → None
+    - refresh_access_token() → bool
+    - execute_live_order(order) → ExecutionResult  # LIVE mode only
+    - get_account_balance() → float
+```
+
+**Requirements:**
+- Real-time market data fetching
+- Market hours detection (9:30 AM - 4:00 PM ET)
+- Rate limiting (max 1 req/sec)
+- Token refresh handling
+- Error handling and retries
+- No API key leaks in logs
+- Order execution for LIVE mode only
+
+### 3.3 Live Data Pipeline
+**File: `src/data/live_pipeline.py`**
+```python
+class LiveDataPipeline:
+    - fetch_live_quotes(symbols) → List[Quote]
+    - calculate_live_indicators(symbol) → dict
+    - stream_real_time_data() → Generator
+    - validate_data_quality() → bool  # Self-correction
+    - handle_missing_data() → None
+    - cache_data_efficiently() → None
+```
+
+---
+
+## PHASE 4: COLLABORATIVE AI ENSEMBLE (MEDIUM PRIORITY)
+**Priority: MEDIUM | Duration: Week 5-6**
+
+### 4.1 Multi-Model Integration
+**File: `src/ai/multi_model.py`**
+
+**Models to Pull:**
+```bash
+ollama pull qwen2.5:latest
+ollama pull llama3.1:8b
+ollama pull mistral:7b
+ollama pull phi3:3.8b
+ollama pull codellama:7b
+```
+
+**Model Roles:**
+- qwen2.5: Chief Technical Analyst
+- llama3.1: Risk Management Specialist
+- mistral: Market Sentiment Analyst
+- phi3: Fundamental Analysis Expert
+- codellama: Quantitative Strategy Developer
+
+### 4.2 Collaborative Discussion Framework
+**File: `src/ai/collaborative_discussion.py`**
+```python
+class CollaborativeDiscussion:
+    # 5-Round Discussion System
+    - round_1_initial_analysis() → List[ModelOpinion]
+    - round_2_peer_review() → List[Critique]
+    - round_3_defense_refinement() → List[Defense]
+    - round_4_consensus_building() → Consensus
+    - round_5_final_decision() → FinalDecision
+    
+    # Off-Hours Discussions
+    - discuss_trade_outcomes() → List[Insight]
+    - analyze_success_factors() → dict
+    - analyze_failure_factors() → dict
+    - generate_improvements() → List[Improvement]
+    
+    # Validation
+    - validate_discussion() → bool  # Self-correction
+```
+
+**5-Round Discussion:**
+1. **Initial Analysis** - Each model gives opinion
+2. **Peer Review** - Models critique each other's analysis
+3. **Defense & Refinement** - Models defend and refine positions
+4. **Consensus Building** - Find common ground and agreement
+5. **Final Decision** - Collaborative recommendation with confidence
+
+**Off-Hours Discussion Topics:**
+- Why did trade X succeed/fail?
+- What patterns led to best trades?
+- What mistakes were made?
+- How can we improve?
+- What should we focus on tomorrow?
+
+---
+
+## PHASE 4.5: ADVANCED ANALYTICS (MEDIUM PRIORITY)
+**Priority: MEDIUM | Duration: Week 6-7**
+
+### 4.5.1 Backtesting Engine
+**File: `src/backtesting/engine.py`**
+```python
+class BacktestingEngine:
+    - run_historical_simulation(strategy, period) → dict
+    - validate_strategy_performance() → bool
+    - optimize_parameters(strategy) → dict
+    - generate_performance_report() → str
+    - compare_strategies() → ComparisonReport
+    - simulate_market_scenarios() → dict
+```
+
+**Features:**
+- Historical strategy testing
+- Walk-forward analysis
+- Monte Carlo simulation
+- Parameter optimization
+- Performance attribution
+- Strategy comparison
+
+### 4.5.2 Performance Analytics
+**File: `src/analytics/performance.py`**
+```python
+class PerformanceAnalyzer:
+    - calculate_sharpe_ratio(mode) → float
+    - calculate_sortino_ratio(mode) → float
+    - calculate_max_drawdown(mode) → float
+    - calculate_win_rate(mode) → float
+    - calculate_profit_factor(mode) → float
+    - generate_performance_report(mode) → str
+    - compare_live_vs_demo() → ComparisonReport
+```
+
+### 4.5.3 Risk Analytics
+**File: `src/analytics/risk_analytics.py`**
+```python
+class RiskAnalytics:
+    - calculate_var(confidence_level) → float
+    - calculate_cvar(confidence_level) → float
+    - stress_test_portfolio(scenarios) → dict
+    - analyze_correlation_risk() → dict
+    - decompose_risk_sources() → dict
+    - validate_risk_metrics() → bool
+```
+
+---
+
+## PHASE 5: DYNAMIC PARAMETER CONTROL (MEDIUM PRIORITY)
+**Priority: MEDIUM | Duration: Week 7-8**
+
+### 5.1 Adaptive Configuration System
+**File: `src/config/adaptive_config.py`**
+```python
+class AdaptiveConfig:
+    - adjust_position_sizing(performance, volatility, mode) → float
+    - adjust_stop_loss(atr, market_regime) → float
+    - adjust_confidence_threshold(accuracy) → float
+    - learn_from_performance(trades, mode) → None
+    - validate_parameters() → bool  # Self-correction
+    - get_mode_specific_config(mode) → dict
+```
+
+**Dynamic Parameters:**
+- Position sizing (1-5% per trade)
+- Stop-loss multiplier (1.5-3.0 * ATR)
+- Take-profit multiplier (2.0-5.0 * ATR)
+- Confidence threshold (0.6-0.9)
+- Max positions (5-20)
+- Holding period (1-30 days)
+- Market regime adjustments
+- Sector rotation preferences
+
+### 5.2 Performance-Based Learning
+**File: `src/learning/performance_tracker.py`**
+```python
+class PerformanceTracker:
+    - track_trade_outcome(trade, mode) → None
+    - calculate_metrics(mode) → dict
+    - identify_patterns(mode) → List[Pattern]
+    - adjust_parameters_from_results(mode) → None
+    - validate_learning() → bool  # Self-correction
+    - compare_mode_performance() → dict
+```
+
+**Metrics Tracked:**
+- Win rate (by mode, by symbol, by strategy)
+- Average profit/loss
+- Sharpe ratio
+- Max drawdown
+- Risk-adjusted returns
+- Trade frequency
+- Holding period effectiveness
+
+---
+
+## PHASE 5.5: COMPLIANCE & AUDIT (HIGH PRIORITY)
+**Priority: HIGH | Duration: Week 8**
+
+### 5.5.1 Compliance Manager
+**File: `src/compliance/compliance_manager.py`**
+```python
+class ComplianceManager:
+    - validate_trade_compliance(order) → bool
+    - check_regulatory_limits(mode) → bool
+    - generate_audit_trail(mode) → str
+    - log_compliance_events(event, mode) → None
+    - check_position_limits() → bool
+    - validate_order_rules() → bool
+```
+
+**Compliance Rules:**
+- Position size limits
+- Daily trade limits
+- Concentration limits
+- Pattern day trading rules
+- Account balance requirements
+- Risk exposure limits
+
+### 5.5.2 Audit Trail System
+**File: `src/audit/audit_trail.py`**
+```python
+class AuditTrail:
+    - log_order_creation(order, mode) → None
+    - log_order_execution(order, mode) → None
+    - log_position_change(position, mode) → None
+    - log_risk_event(event, mode) → None
+    - generate_audit_report(period, mode) → str
+    - validate_audit_completeness() → bool
+```
+
+---
+
+## PHASE 6: PRODUCTION READINESS (HIGH PRIORITY)
+**Priority: HIGH | Duration: Week 9-10**
+
+### 6.1 Dashboard Integration
+**File: `src/dashboard/connector.py`**
+```python
+class DashboardConnector:
+    # Mode Management
+    - get_current_mode() → str
+    - toggle_mode() → str
+    - validate_mode_switch() → bool
+    
+    # Data Retrieval
+    - get_open_positions(mode) → List[Position]
+    - get_recent_trades(mode) → List[Trade]
+    - get_performance_metrics(mode) → dict
+    - get_ai_signals(mode) → List[Signal]
+    - get_market_status() → str
+    - get_current_activity() → str
+    
+    # Real-Time Updates
+    - stream_live_updates(mode) → Generator
+    - get_position_updates(mode) → List[Update]
+    - get_pnl_updates(mode) → dict
+    
+    # Validation
+    - validate_data() → bool  # Self-correction
+```
+
+**Dashboard Features:**
+- Mode toggle switch in header (LIVE ↔️ DEMO)
+- Real-time position monitoring (mode-specific)
+- Performance charts (mode-specific)
+- AI signal feed
+- Market status indicator
+- Current AI activity display
+- Trade history (mode-specific)
+- Risk metrics dashboard
+
+### 6.2 Comprehensive Testing Suite
+**File: `tests/test_suite.py`**
+
+**Test Categories:**
+- **Unit Tests**: All modules (LIVE & DEMO)
+- **Integration Tests**: Complete workflows
+- **Performance Tests**: Speed and efficiency
+- **Stress Tests**: High load scenarios
+- **Security Tests**: Data leak detection
+- **Validation Tests**: Hallucination detection
+- **Mode Tests**: LIVE vs DEMO functionality
+- **Schedule Tests**: 24/7 activity validation
+
+**Test Files:**
+```
+tests/
+├── unit/
+│   ├── test_positions.py
+│   ├── test_risk.py
+│   ├── test_execution.py
+│   ├── test_ai_ensemble.py
+│   ├── test_market_hours.py
+│   └── test_mode_manager.py
+├── integration/
+│   ├── test_trading_cycle.py
+│   ├── test_offhours_activity.py
+│   ├── test_premarket_prep.py
+│   └── test_mode_switching.py
+├── performance/
+│   ├── test_speed.py
+│   └── test_scalability.py
+└── security/
+    ├── test_data_leaks.py
+    └── test_validation.py
+```
+
+### 6.3 Monitoring & Logging
+**File: `src/monitoring/system_monitor.py`**
+```python
+class SystemMonitor:
+    - log_trade_activity(mode) → None
+    - monitor_system_health() → dict
+    - alert_on_errors() → None
+    - track_api_usage() → dict
+    - track_ai_activity() → dict
+    - validate_logs() → bool  # Self-correction
+    - monitor_mode_specific_metrics(mode) → dict
+```
+
+**Monitoring Features:**
+- Full audit trail (mode-specific)
+- Error tracking and alerting
+- Performance monitoring
+- Resource usage tracking
+- AI activity logging
+- No sensitive data in logs
+- 24/7 activity logging
+
+---
+
+## CHANGE TRACKING SYSTEM
+
+### Change Logger
+**File: `src/monitoring/change_tracker.py`**
+```python
+class ChangeTracker:
+    - log_code_change(file, change_type, description) → None
+    - log_parameter_change(param, old_value, new_value) → None
+    - log_feature_addition(feature_name, description) → None
+    - log_feature_removal(feature_name, reason) → None
+    - log_bug_fix(bug_description, fix_description) → None
+    - generate_change_report() → str
+    - validate_change_log() → bool
+```
+
+**Change Log Format:**
+```
+CHANGE LOG
+==========
+Date: {timestamp}
+Type: {ADDITION, REMOVAL, MODIFICATION, FIX}
+Component: {file_path}
+Description: {what_changed}
+Reason: {why_changed}
+Impact: {what_affected}
+Validation: {tests_passed}
+```
+
+**Change Categories:**
+- FEATURE_ADDITION: New feature added
+- FEATURE_REMOVAL: Feature removed (with reason)
+- MODIFICATION: Existing feature modified
+- BUG_FIX: Bug fixed
+- OPTIMIZATION: Performance improvement
+- REFACTORING: Code restructure
+
+---
+
+## DATABASE SCHEMA (DUAL MODE)
+
+### Core Tables (Both Modes)
+```sql
+-- Positions (Separate per mode)
+CREATE TABLE positions (
+    id INTEGER PRIMARY KEY,
+    symbol TEXT NOT NULL,
+    entry_price REAL NOT NULL,
+    quantity INTEGER NOT NULL,
+    entry_time TIMESTAMP NOT NULL,
+    exit_price REAL,
+    exit_time TIMESTAMP,
+    status TEXT DEFAULT 'OPEN',
+    stop_loss REAL,
+    take_profit REAL,
+    pnl REAL,
+    mode TEXT NOT NULL,  -- 'LIVE' or 'DEMO'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Orders (Separate per mode)
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY,
+    position_id INTEGER,
+    order_type TEXT NOT NULL,
+    symbol TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    price REAL NOT NULL,
+    status TEXT DEFAULT 'PENDING',
+    executed_at TIMESTAMP,
+    mode TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (position_id) REFERENCES positions(id)
+);
+
+-- Trade Results (Separate per mode)
+CREATE TABLE trade_results (
+    id INTEGER PRIMARY KEY,
+    position_id INTEGER,
+    symbol TEXT NOT NULL,
+    entry_price REAL NOT NULL,
+    exit_price REAL NOT NULL,
+    quantity INTEGER NOT NULL,
+    pnl REAL NOT NULL,
+    pnl_percent REAL NOT NULL,
+    hold_days INTEGER NOT NULL,
+    exit_reason TEXT,
+    mode TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (position_id) REFERENCES positions(id)
+);
+
+-- Market Regimes
+CREATE TABLE market_regimes (
+    id INTEGER PRIMARY KEY,
+    regime_type TEXT NOT NULL,
+    start_date TIMESTAMP NOT NULL,
+    end_date TIMESTAMP,
+    confidence REAL NOT NULL,
+    indicators TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Sector Performance
+CREATE TABLE sector_performance (
+    id INTEGER PRIMARY KEY,
+    sector TEXT NOT NULL,
+    performance_score REAL NOT NULL,
+    trend_direction TEXT NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- News Events
+CREATE TABLE news_events (
+    id INTEGER PRIMARY KEY,
+    symbol TEXT NOT NULL,
+    event_type TEXT NOT NULL,
+    impact_score REAL NOT NULL,
+    news_text TEXT,
+    timestamp TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Markov Chain States
+CREATE TABLE markov_states (
+    id INTEGER PRIMARY KEY,
+    state_name TEXT NOT NULL,
+    state_data TEXT NOT NULL,  -- JSON
+    transition_matrix TEXT NOT NULL,  -- JSON
+    last_updated TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- AI Discussions (Off-Hours)
+CREATE TABLE ai_discussions (
+    id INTEGER PRIMARY KEY,
+    discussion_type TEXT NOT NULL,
+    topic TEXT NOT NULL,
+    models_involved TEXT NOT NULL,  -- JSON
+    insights TEXT NOT NULL,  -- JSON
+    conclusions TEXT NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- System Activity Log
+CREATE TABLE system_activity (
+    id INTEGER PRIMARY KEY,
+    activity_type TEXT NOT NULL,
+    phase TEXT NOT NULL,  -- 'TRADING', 'OFF_HOURS', 'PRE_MARKET'
+    description TEXT NOT NULL,
+    data TEXT,  -- JSON
+    timestamp TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Change Log
+CREATE TABLE change_log (
+    id INTEGER PRIMARY KEY,
+    change_type TEXT NOT NULL,
+    component TEXT NOT NULL,
+    description TEXT NOT NULL,
+    reason TEXT,
+    impact TEXT,
+    timestamp TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- System Logs
+CREATE TABLE system_logs (
+    id INTEGER PRIMARY KEY,
+    log_level TEXT NOT NULL,
+    component TEXT NOT NULL,
+    message TEXT NOT NULL,
+    mode TEXT,  -- 'LIVE', 'DEMO', or NULL for system-wide
+    data TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+## SELF-CORRECTION MECHANISMS
+
+### Validation Layer
+**File: `src/validation/validator.py`**
+```python
+class Validator:
+    # AI Validation
+    - validate_ai_response(response) → bool
+    - detect_hallucinations(text) → bool
+    - validate_confidence_score(score) → bool
+    
+    # Data Validation
+    - validate_market_data(data) → bool
+    - validate_price_range(price, symbol) → bool
+    - validate_volume_data(volume) → bool
+    
+    # Trade Validation
+    - validate_trade_execution(order, mode) → bool
+    - validate_position_size(size, mode) → bool
+    - validate_risk_parameters(params) → bool
+    
+    # Security Validation
+    - detect_data_leaks(log) → bool
+    - sanitize_output(data) → dict
+    - validate_api_keys() → bool
+    
+    # Mode Validation
+    - validate_mode(mode) → bool
+    - validate_mode_switch(from_mode, to_mode) → bool
+    - validate_mode_data_isolation() → bool
+```
+
+### Error Handling
+**File: `src/errors/error_handler.py`**
+```python
+class ErrorHandler:
+    - handle_api_error(error) → None
+    - handle_database_error(error) → None
+    - handle_ai_error(error) → None
+    - handle_mode_error(error) → None
+    - retry_with_backoff(func, max_attempts=3) → Any
+    - log_error(error, mode=None) → None
+    - alert_critical_error(error) → None
+```
+
+### Debugging System
+**File: `src/debugging/debugger.py`**
+```python
+class SystemDebugger:
+    - run_regular_checks() → List[Issue]
+    - check_data_integrity(mode) → bool
+    - check_api_connectivity() → bool
+    - check_database_health(mode) → bool
+    - check_ai_responsiveness() → bool
+    - fix_detected_issues() → List[Fix]
+    - generate_debug_report() → str
+```
+
+**Debug Schedule:**
+- Every hour: Quick health check
+- Every 6 hours: Full system validation
+- Daily: Comprehensive diagnostic
+- Weekly: Deep analysis and optimization
+
+---
+
+## IMPLEMENTATION CHECKLIST
+
+### Phase 1 (Critical - Week 1-2):
+- [ ] Position Management System (LIVE & DEMO)
+- [ ] Exit Strategy Engine (LIVE & DEMO)
+- [ ] Risk Management System (LIVE & DEMO)
+- [ ] Order Execution Engine (LIVE & DEMO)
+- [ ] Mode Manager
+- [ ] Database setup (dual mode)
+
+### Phase 1.5 (High Priority - Week 2-3):
+- [ ] Market Regime Detection
+- [ ] Sector Rotation Analysis
+- [ ] News Impact Analysis
+- [ ] Market Hours Manager
+- [ ] Off-Hours AI Activity System
+- [ ] Pre-Market Preparation System
+- [ ] Markov Chain Analyzer
+
+### Phase 2 (Critical - Week 3-4):
+- [ ] Enhanced AI Analysis (position-aware)
+- [ ] Complete Trading Loop (LIVE & DEMO)
+- [ ] 24/7 Activity Scheduler
+- [ ] Trade Discussion System
+- [ ] Historical Study System
+- [ ] Stock Universe Preparation
+
+### Phase 3 (High Priority - Week 4-5):
+- [ ] Remove All Placeholders (LIVE & DEMO)
+- [ ] Questrade API Integration
+- [ ] Live Data Pipeline
+- [ ] Real-time Indicator Calculation
+- [ ] Market Hours Detection
+
+### Phase 4 (Medium Priority - Week 5-6):
+- [ ] Multi-Model Integration (5 models)
+- [ ] Collaborative Discussion Framework
+- [ ] Off-Hours Discussion System
+- [ ] Model Performance Tracking
+
+### Phase 4.5 (Medium Priority - Week 6-7):
+- [ ] Backtesting Engine
+- [ ] Performance Analytics
+- [ ] Risk Analytics
+- [ ] Strategy Comparison
+
+### Phase 5 (Medium Priority - Week 7-8):
+- [ ] Adaptive Configuration System
+- [ ] Performance-Based Learning
+- [ ] Dynamic Parameter Control
+- [ ] Self-Optimization
+
+### Phase 5.5 (High Priority - Week 8):
+- [ ] Compliance Manager
+- [ ] Audit Trail System
+- [ ] Regulatory Validation
+- [ ] Trade Reporting
+
+### Phase 6 (Production - Week 9-10):
+- [ ] Dashboard Integration (with mode toggle)
+- [ ] Comprehensive Testing Suite
+- [ ] Monitoring & Logging
+- [ ] Change Tracking System
+- [ ] Documentation
+
+### Validation (Ongoing):
+- [ ] Self-Correction Mechanisms
+- [ ] Error Handling
+- [ ] Security Validation
+- [ ] Data Leak Prevention
+- [ ] Regular Debugging
+- [ ] Change Tracking
+
+---
+
+## SUCCESS CRITERIA
+
+### Phase 1 Success:
+- ✅ Can open and track positions (LIVE & DEMO)
+- ✅ Can generate SELL signals
+- ✅ Risk management working
+- ✅ Complete BUY→SELL cycle
+- ✅ Mode switching functional
+
+### Phase 1.5 Success:
+- ✅ Market regime detection working
+- ✅ Sector analysis active
+- ✅ News impact integration
+- ✅ Market hours intelligence operational
+- ✅ Off-hours AI activity running
+- ✅ Pre-market prep working
+- ✅ Markov chains learning
+
+### Phase 2 Success:
+- ✅ Real market data flowing
+- ✅ No placeholders remaining
+- ✅ All indicators calculated live
+- ✅ API integration working
+- ✅ 24/7 activity schedule running
+- ✅ Trade discussions happening
+- ✅ Stock universe analyzed daily
+
+### Phase 3-4 Success:
+- ✅ Multi-model collaboration working
+- ✅ Dynamic parameters adapting
+- ✅ System learning from trades
+- ✅ Performance improving
+- ✅ Backtesting validated
+
+### Phase 5-6 Success:
+- ✅ Dashboard displaying real-time data
+- ✅ Mode toggle working perfectly
+- ✅ All tests passing (LIVE & DEMO)
+- ✅ Monitoring active
+- ✅ Compliance validated
+- ✅ Production ready
+- ✅ Change tracking complete
+
+### Final Success:
+- ✅ Fully autonomous 24/7 trading system
+- ✅ Complete BUY/SELL cycle
+- ✅ Real-time data integration
+- ✅ Self-correcting and learning
+- ✅ LIVE and DEMO modes identical
+- ✅ No placeholders anywhere
+- ✅ Off-hours AI activity functional
+- ✅ Pre-market prep automated
+- ✅ Markov chains predicting events
+- ✅ Production-ready and secure
+- ✅ All changes tracked
+
+---
+
+## COMMAND EXECUTION PROTOCOL
+
+**For Step-by-Step Implementation:**
+
+1. Execute ONE command at a time
+2. Validate output before proceeding
+3. Run tests after each implementation
+4. Fix errors before moving forward
+5. Log all changes in change_log table
+6. Test in DEMO mode first
+7. Confirm before implementing in LIVE mode
+8. Track all modifications
+
+**Validation After Each Step:**
+- Run relevant tests (LIVE & DEMO)
+- Check for errors
+- Verify data integrity
+- Validate outputs
+- Confirm no placeholders
+- Verify no data leaks
+- Check change log
+- Confirm before next step
+
+**Change Tracking After Each Step:**
+- Log what was added/removed/modified
+- Log reason for change
+- Log impact of change
+- Log validation results
+- Generate change report at end
+
+---
+
+## FINAL NOTES
+
+- Start with Phase 1 (Critical Infrastructure)
+- Implement DEMO mode first, then LIVE
+- Test thoroughly at each step (both modes)
+- No placeholders or hardcoded values
+- Full validation at every stage
+- Self-correction mechanisms throughout
+- Complete audit trail
+- Security first approach
+- 24/7 AI activity
+- Change tracking mandatory
+- Regular debugging intervals
+
+**This is a production-ready, enterprise-grade, 24/7 autonomous AI trading system with dual-mode operation!** 🚀

@@ -1,0 +1,60 @@
+# Stock Data Collection System Requirements
+# Production-ready dependencies
+
+# Core Dependencies
+aiohttp==3.9.1
+yfinance==0.2.32
+pandas==2.1.3
+pyarrow==14.0.1
+pyyaml==6.0.1
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Caching (optional)
+redis==5.0.1
+aioredis==2.0.1
+
+# System Monitoring
+psutil==5.9.6
+
+# HTTP Client
+requests==2.31.0
+urllib3==2.1.0
+
+# Data Processing
+numpy==1.26.2
+
+# Async Support
+asyncio-extras==1.3.2
+
+# Logging
+structlog==23.2.0
+python-json-logger==2.0.7
+
+# File Operations
+pathlib2==2.3.7
+
+# Date/Time
+python-dateutil==2.8.2
+
+# Performance
+ujson==5.8.0
+
+# Metrics & Monitoring
+prometheus-client==0.19.0
+
+# Development Dependencies
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+isort==5.12.0
+
+# Type Stubs
+types-requests==2.31.0
+types-pyyaml==6.0.12
+types-psutil==5.9.5

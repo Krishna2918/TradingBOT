@@ -1,0 +1,46 @@
+================================================================================
+                    AI TRADING BOT - QUICK START
+================================================================================
+
+HOW TO START THE TRADING SYSTEM:
+---------------------------------
+
+1. Double-click: launch.bat
+
+2. Wait 5 seconds
+
+3. Browser opens automatically at: http://127.0.0.1:8051
+
+4. Start trading!
+
+
+WHAT YOU GET:
+-------------
+✓ Full AI Trading System
+✓ Real-time Canadian Stock Prices (TSX/TSXV)
+✓ Demo/Live Mode Switcher
+✓ 5 Trading Strategies
+✓ Portfolio Tracking
+✓ Risk Management
+✓ Performance Analytics
+✓ AI Learning System
+
+
+TO STOP:
+--------
+Close the command window or press any key
+
+
+DASHBOARD FILE:
+---------------
+interactive_trading_dashboard.py (Full-featured, 75 KB)
+
+
+NEED HELP?
+----------
+Check: README.md or QUICK_START_GUIDE.md
+
+
+================================================================================
+                        READY TO TRADE!
+================================================================================

@@ -1,0 +1,81 @@
+# Questrade API Configuration for Canadian Market Trading
+questrade:
+  # API Configuration
+  api:
+    base_url: "https://api01.iq.questrade.com"  # Will be updated dynamically
+    api_version: "v1"
+    timeout: 30
+    token_cache_path: "config/questrade_token_cache.json"
+    
+  # OAuth 2.0 Settings
+  oauth:
+    grant_type: "refresh_token"
+    token_endpoint: "https://login.questrade.com/oauth2/token"
+    
+  # Rate Limiting Configuration
+  rate_limits:
+    requests_per_second: 1  # Conservative rate to avoid limits
+    max_retries: 3
+    retry_delay: 2  # seconds
+    
+  # Account Configuration
+  account:
+    # Will be populated after authentication
+    account_id: null
+    account_type: "Individual"  # Individual, TFSA, RRSP, etc.
+    
+  # Market Data Settings
+  market_data:
+    symbols:
+      - "RY"      # Royal Bank of Canada
+      - "TD"      # TD Bank
+      - "SHOP"    # Shopify
+      - "CNR"     # Canadian National Railway
+      - "CP"      # Canadian Pacific Railway
+      - "ENB"     # Enbridge
+      - "TRP"     # TC Energy
+      - "SU"      # Suncor Energy
+      - "ABX"     # Barrick Gold
+      - "WCN"     # Waste Connections
+      
+    # Data refresh rates (in seconds)
+    quote_refresh: 5
+    position_refresh: 30
+    account_refresh: 60
+    
+  # API Scopes (Read-only for retail users)
+  scopes:
+    - "read_account_data"      # Account balances, positions
+    - "read_market_data"       # Real-time quotes
+    - "read_historical_data"   # Historical market data
+    # NOTE: "trade" scope NOT available for retail users
+    
+  # Compliance Settings
+  compliance:
+    retail_account: true        # Retail accounts CANNOT place trades via API
+    trading_disabled: true      # Enforce no programmatic trading
+    data_only_mode: true        # Read-only data access
+    log_all_requests: true      # Log all API calls for compliance
+    
+  # Error Handling
+  error_handling:
+    max_token_refresh_attempts: 3
+    connection_timeout: 30
+    read_timeout: 30
+    
+  # Security Settings
+  security:
+    use_https_only: true        # Only HTTPS/TLS connections
+    validate_ssl: true          # Validate SSL certificates
+    store_credentials_encrypted: false  # Set to true in production
+    
+# Notes for Compliance:
+# 1. Retail users CANNOT place trades programmatically via Questrade API
+# 2. All API access is read-only for market data and account information
+# 3. Trading must be done manually through Questrade platform
+# 4. This bot will use Questrade for:
+#    - Real-time market data (quotes, charts)
+#    - Account monitoring (positions, balances)
+#    - Signal generation (strategies run locally)
+# 5. Actual trade execution requires manual approval through Questrade platform
+

@@ -1,0 +1,41 @@
+{
+  "_description": "Feature Consistency System Configuration",
+  "_version": "1.0",
+  "_created": "2025-10-27T10:01:58.685836",
+  "warmup_trim_days": {
+    "value": 200,
+    "description": "Number of days to trim from start to remove indicator warm-up period"
+  },
+  "nan_drop_threshold_per_symbol": {
+    "value": 0.05,
+    "description": "Maximum NaN ratio allowed per symbol (0.05 = 5%)"
+  },
+  "global_feature_keep_ratio": {
+    "value": 0.95,
+    "description": "Minimum symbol coverage required to keep feature globally (0.95 = 95%)"
+  },
+  "min_symbol_feature_coverage": {
+    "value": 0.9,
+    "description": "Minimum feature coverage required to include symbol (0.90 = 90%)"
+  },
+  "use_missingness_mask": {
+    "value": true,
+    "description": "Whether to create _isnan columns for missing value indicators"
+  },
+  "imputation_value": {
+    "value": 0.0,
+    "description": "Value to use for final imputation of missing data"
+  },
+  "manifest_path": {
+    "value": "models/feature_manifest.json",
+    "description": "Path to save/load feature manifest JSON file"
+  },
+  "log_level": {
+    "value": "INFO",
+    "description": "Logging level (DEBUG, INFO, WARNING, ERROR)"
+  },
+  "detailed_logging": {
+    "value": true,
+    "description": "Enable detailed logging of processing decisions"
+  }
+}

@@ -1,0 +1,16 @@
+FULLY FIXED Training Started: Fri, Nov  8, 2025 12:20 AM
+PPO: ppo_wrapper_fixed.log | DQN: dqn_stable_final.log
+
+ALL FIXES APPLIED:
+✅ Iteration-based checkpoints (every 100 iterations)
+✅ TimeLimit wrapper (1000 steps per episode)
+✅ Wrapper attribute delegation (__getattr__)
+✅ Episodes will complete properly
+
+Configuration: CPU buffer (35% faster), Networks on GPU
+Resource limits: 40% GPU, 20% RAM
+
+PPO: First checkpoint at iteration 100, episodes complete after 1000 steps
+DQN: Currently at episode 140/2000, reward improving (-60,253 from -63,362)
+
+Both trainings will save checkpoints and continue overnight.

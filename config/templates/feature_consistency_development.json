@@ -1,0 +1,94 @@
+{
+  "_description": "Feature Consistency System Configuration - Development Environment",
+  "_version": "1.0",
+  "_environment": "development",
+  "_created": "2025-10-27T12:00:00.000000",
+  
+  "warmup_trim_days": {
+    "value": 100,
+    "description": "Number of days to trim from start to remove indicator warm-up period",
+    "min": 0,
+    "max": 500,
+    "environment_note": "Reduced for faster development iteration"
+  },
+  
+  "nan_drop_threshold_per_symbol": {
+    "value": 0.10,
+    "description": "Maximum NaN ratio allowed per symbol (0.10 = 10%)",
+    "min": 0.01,
+    "max": 0.50,
+    "environment_note": "More lenient threshold for development with limited data"
+  },
+  
+  "global_feature_keep_ratio": {
+    "value": 0.90,
+    "description": "Minimum symbol coverage required to keep feature globally (0.90 = 90%)",
+    "min": 0.50,
+    "max": 1.00,
+    "environment_note": "Lower threshold to retain more features for testing"
+  },
+  
+  "min_symbol_feature_coverage": {
+    "value": 0.80,
+    "description": "Minimum feature coverage required to include symbol (0.80 = 80%)",
+    "min": 0.50,
+    "max": 1.00,
+    "environment_note": "Lower threshold to include more symbols for development"
+  },
+  
+  "use_missingness_mask": {
+    "value": true,
+    "description": "Whether to create _isnan columns for missing value indicators",
+    "environment_note": "Enabled for full feature testing"
+  },
+  
+  "imputation_strategy": {
+    "value": "zero",
+    "description": "Strategy for final imputation: 'zero', 'mean', 'median'",
+    "options": ["zero", "mean", "median"],
+    "environment_note": "Zero imputation for consistent development behavior"
+  },
+  
+  "imputation_value": {
+    "value": 0.0,
+    "description": "Value to use for final imputation when strategy is 'zero'",
+    "environment_note": "Standard zero fill for development"
+  },
+  
+  "manifest_path": {
+    "value": "models/feature_manifest_dev.json",
+    "description": "Path to save/load feature manifest JSON file",
+    "environment_note": "Separate manifest for development environment"
+  },
+  
+  "config_backup_path": {
+    "value": "models/feature_consistency_config_dev.json",
+    "description": "Path to save configuration backups",
+    "environment_note": "Development-specific backup location"
+  },
+  
+  "log_level": {
+    "value": "DEBUG",
+    "description": "Logging level (DEBUG, INFO, WARNING, ERROR)",
+    "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+    "environment_note": "Verbose logging for development debugging"
+  },
+  
+  "detailed_logging": {
+    "value": true,
+    "description": "Enable detailed logging of processing decisions",
+    "environment_note": "Full logging enabled for development analysis"
+  },
+  
+  "validation_rules": {
+    "description": "Configuration validation rules",
+    "rules": {
+      "warmup_trim_days": "Must be non-negative integer",
+      "nan_drop_threshold_per_symbol": "Must be between 0.01 and 0.50",
+      "global_feature_keep_ratio": "Must be between 0.50 and 1.00",
+      "min_symbol_feature_coverage": "Must be between 0.50 and 1.00",
+      "imputation_strategy": "Must be one of: zero, mean, median",
+      "log_level": "Must be one of: DEBUG, INFO, WARNING, ERROR"
+    }
+  }
+}

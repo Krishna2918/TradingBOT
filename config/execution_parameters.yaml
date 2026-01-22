@@ -1,0 +1,104 @@
+# Execution Parameters Configuration
+# ==================================
+# Extracted from src/execution/execution_engine.py
+# Manages order execution, commissions, slippage, and retry logic
+
+execution:
+  commission:
+    # Commission rate as percentage of trade value
+    rate: 0.001  # 0.1% commission
+
+    # Minimum commission per trade
+    minimum: 1.0  # $1 minimum
+
+  slippage:
+    # Default slippage in basis points
+    default_bps: 5.0  # 5 basis points
+
+    # Maximum slippage percentage (proportional model)
+    max_percent_proportional: 0.01  # 1% max
+
+    # Maximum slippage percentage (adaptive model)
+    max_percent_adaptive: 0.02  # 2% max
+
+    # Available models: fixed, proportional, adaptive
+    default_model: "proportional"
+
+  order_limits:
+    # Maximum order size as percentage of daily volume
+    max_size_percent: 0.10  # 10% max
+
+    # Order timeout in seconds
+    timeout_seconds: 30.0
+
+    # Maximum age before cancellation (seconds)
+    max_age_seconds: 300.0  # 5 minutes
+
+  fractional_shares:
+    # Allow fractional share orders
+    enabled: true
+
+    # Minimum fractional share precision
+    min_precision: 0.001
+
+retry:
+  # Maximum retry attempts
+  max_attempts: 3
+
+  # Base delay between retries (seconds)
+  base_delay_seconds: 1.0
+
+  # Maximum delay between retries (seconds)
+  max_delay_seconds: 30.0
+
+  # Exponential backoff multiplier
+  exponential_base: 2.0
+
+  # Add jitter to delays
+  jitter_enabled: true
+
+circuit_breaker:
+  # Number of failures before opening circuit
+  failure_threshold: 5
+
+  # Time before attempting recovery (seconds)
+  recovery_timeout_seconds: 60.0
+
+  # Maximum calls allowed in half-open state
+  half_open_max_calls: 1
+
+vwap:
+  # Maximum chunks for VWAP execution
+  max_chunks: 10
+
+  # Price variance for VWAP fills
+  price_variance: 0.001  # 0.1%
+
+  # Price adjustment for buy orders
+  buy_adjustment: 1.0005  # +0.05%
+
+  # Price adjustment for sell orders
+  sell_adjustment: 0.9995  # -0.05%
+
+  # Time window for VWAP calculation (minutes)
+  default_time_window_minutes: 30
+
+stop_orders:
+  # Verification interval for broker stops (seconds)
+  verification_interval_seconds: 60
+
+  # Default trailing stop percentage
+  default_trailing_percent: 2.0
+
+  # Time in force for stop orders
+  default_time_in_force: "GTC"
+
+broker_connection:
+  # Connection timeout (seconds)
+  connect_timeout: 10.0
+
+  # Read timeout (seconds)
+  read_timeout: 30.0
+
+  # Keep-alive interval (seconds)
+  keep_alive_interval: 30.0

@@ -1,0 +1,246 @@
+# AI Ensemble Configuration
+# Multi-AI trading system with Grok, Kimi K2, and Claude
+
+ai_ensemble:
+  enabled: true
+  update_frequency_seconds: 30  # How often to get new AI analysis
+  
+  # Ensemble weights (adjust based on performance)
+  weights:
+    grok: 0.35      # Real-time, creative analysis
+    kimi: 0.30      # Technical analysis specialist  
+    claude: 0.35    # Risk management & reasoning
+  
+  # Performance tracking
+  performance_tracking:
+    enabled: true
+    track_individual_ai: true
+    adjust_weights_weekly: true
+    min_confidence_threshold: 0.6
+
+# Grok AI Configuration
+grok:
+  enabled: true
+  api_key: "YOUR_GROK_API_KEY"  # Get from x.ai
+  base_url: "https://api.x.ai"
+  model: "grok-beta"
+  
+  # Grok-specific settings
+  temperature: 0.7
+  max_tokens: 1000
+  timeout: 30
+  
+  # Grok strengths
+  strengths:
+    - "real_time_analysis"
+    - "creative_insights"
+    - "market_sentiment"
+    - "unconventional_patterns"
+    - "humor_and_context"
+
+# Kimi K2 AI Configuration  
+kimi:
+  enabled: true
+  api_key: "YOUR_KIMI_API_KEY"  # Get from moonshot.cn
+  base_url: "https://api.moonshot.cn"
+  model: "moonshot-v1-8k"
+  
+  # Kimi-specific settings
+  temperature: 0.3  # Lower for technical analysis
+  max_tokens: 1500
+  timeout: 30
+  
+  # Kimi strengths
+  strengths:
+    - "technical_analysis"
+    - "pattern_recognition"
+    - "indicator_analysis"
+    - "chinese_market_insights"
+    - "mathematical_precision"
+
+# Claude AI Configuration
+claude:
+  enabled: true
+  api_key: "YOUR_CLAUDE_API_KEY"  # Get from anthropic.com
+  base_url: "https://api.anthropic.com"
+  model: "claude-3-sonnet-20240229"
+  
+  # Claude-specific settings
+  temperature: 0.2  # Low for risk analysis
+  max_tokens: 2000
+  timeout: 30
+  
+  # Claude strengths
+  strengths:
+    - "risk_management"
+    - "logical_reasoning"
+    - "portfolio_analysis"
+    - "ethical_considerations"
+    - "comprehensive_analysis"
+
+# AI Analysis Types
+analysis_types:
+  market_analysis:
+    frequency: "every_5_minutes"
+    triggers:
+      - "price_movement_>_2%"
+      - "volume_spike"
+      - "news_event"
+      - "market_open_close"
+  
+  position_analysis:
+    frequency: "every_trade"
+    triggers:
+      - "new_position"
+      - "position_size_change"
+      - "stop_loss_trigger"
+      - "take_profit_trigger"
+  
+  risk_analysis:
+    frequency: "every_15_minutes"
+    triggers:
+      - "portfolio_drawdown_>_3%"
+      - "position_concentration_>_20%"
+      - "volatility_spike"
+      - "correlation_breakdown"
+
+# AI Decision Making
+decision_making:
+  consensus_threshold: 0.6  # Minimum agreement for action
+  confidence_threshold: 0.7  # Minimum confidence for execution
+  
+  # Signal combination
+  signal_weights:
+    strong_consensus: 1.0    # All 3 AIs agree
+    weak_consensus: 0.7      # 2 out of 3 AIs agree
+    no_consensus: 0.3        # No clear agreement
+  
+  # Fallback behavior
+  fallback:
+    on_api_failure: "use_remaining_ais"
+    on_no_consensus: "hold_position"
+    on_low_confidence: "reduce_position_size"
+
+# Canadian Market Specific AI Prompts
+canadian_market_context:
+  market_hours: "9:30 AM - 4:00 PM EST"
+  timezone: "America/Toronto"
+  currency: "CAD"
+  
+  # Key Canadian market factors
+  factors:
+    - "Bank of Canada interest rates"
+    - "Oil and commodity prices"
+    - "US market correlation"
+    - "Canadian dollar strength"
+    - "TSX sector rotation"
+    - "Resource sector performance"
+  
+  # Canadian-specific prompts
+  prompts:
+    grok: "Focus on Canadian market sentiment, resource sector dynamics, and US-Canada economic relationships"
+    kimi: "Analyze TSX technical patterns, Canadian banking sector trends, and commodity correlations"
+    claude: "Assess Canadian market risks, regulatory environment, and portfolio diversification for Canadian assets"
+
+# AI Learning and Adaptation
+learning:
+  enabled: true
+  
+  # Performance tracking
+  track_ai_performance: true
+  performance_metrics:
+    - "prediction_accuracy"
+    - "profit_contribution"
+    - "risk_adjustment"
+    - "signal_timing"
+  
+  # Weight adjustment
+  weight_adjustment:
+    frequency: "weekly"
+    method: "performance_based"
+    min_weight: 0.1
+    max_weight: 0.6
+  
+  # Feedback loop
+  feedback:
+    track_trade_outcomes: true
+    update_ai_weights: true
+    store_analysis_history: true
+
+# API Rate Limiting
+rate_limiting:
+  grok:
+    requests_per_minute: 20
+    requests_per_hour: 1000
+  
+  kimi:
+    requests_per_minute: 30
+    requests_per_hour: 2000
+  
+  claude:
+    requests_per_minute: 25
+    requests_per_hour: 1500
+
+# Error Handling
+error_handling:
+  max_retries: 3
+  retry_delay: 5  # seconds
+  fallback_timeout: 10  # seconds
+  
+  # API failure handling
+  on_grok_failure: "continue_with_kimi_claude"
+  on_kimi_failure: "continue_with_grok_claude"
+  on_claude_failure: "continue_with_grok_kimi"
+  on_all_failure: "use_technical_indicators_only"
+
+# Logging and Monitoring
+logging:
+  log_all_ai_requests: true
+  log_ai_responses: true
+  log_ensemble_decisions: true
+  log_performance_metrics: true
+  
+  # AI-specific logging
+  log_grok_insights: true
+  log_kimi_technical: true
+  log_claude_risk: true
+
+# Security
+security:
+  encrypt_api_keys: false  # Set to true in production
+  rotate_api_keys: false   # Set to true in production
+  log_api_usage: true
+  monitor_unusual_activity: true
+
+# Integration with Trading Strategies
+strategy_integration:
+  momentum_scalping:
+    ai_weight: 0.4  # 40% AI, 60% technical
+    primary_ai: "kimi"  # Technical analysis focus
+  
+  news_volatility:
+    ai_weight: 0.6  # 60% AI, 40% technical
+    primary_ai: "grok"  # Sentiment analysis focus
+  
+  gamma_oi_squeeze:
+    ai_weight: 0.3  # 30% AI, 70% options data
+    primary_ai: "claude"  # Risk management focus
+  
+  arbitrage:
+    ai_weight: 0.2  # 20% AI, 80% price data
+    primary_ai: "kimi"  # Pattern recognition focus
+  
+  ai_ml_patterns:
+    ai_weight: 0.8  # 80% AI, 20% technical
+    primary_ai: "ensemble"  # Use all AIs
+
+# Example API Keys (Replace with your actual keys)
+# Get these from:
+# Grok: https://x.ai (X/Twitter account required)
+# Kimi: https://platform.moonshot.cn (Moonshot AI)
+# Claude: https://console.anthropic.com (Anthropic)
+
+api_keys_example:
+  grok: "xai-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  kimi: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  claude: "sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

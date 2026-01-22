@@ -1,0 +1,148 @@
+data_path: TrainingData/processed
+enabled_models:
+- lstm
+- xgboost
+ensemble_config:
+  base_models:
+  - lstm
+  - transformer
+  - xgboost
+  - lightgbm
+  blend_method: weighted_average
+  cv_folds: 5
+  diversity_threshold: 0.1
+  early_stopping_patience: 10
+  ensemble_method: voting
+  feature_columns: []
+  meta_learner: logistic_regression
+  random_seed: 42
+  target_column: direction_1d
+  test_split: 0.2
+  use_probabilities: true
+  validation_split: 0.2
+  voting_type: soft
+  weights: null
+feature_consistency_enabled: true
+hyperopt_config:
+  direction: maximize
+  framework: optuna
+  n_jobs: 1
+  n_trials: 100
+  objective_metric: val_accuracy
+  pruner: median
+  sampler: tpe
+  search_spaces: {}
+  timeout_seconds: null
+lightgbm_config:
+  bagging_fraction: 0.8
+  bagging_freq: 5
+  boosting_type: gbdt
+  categorical_features: []
+  colsample_bytree: 0.8
+  device_type: cpu
+  early_stopping_patience: 10
+  early_stopping_rounds: 50
+  feature_columns: []
+  feature_fraction: 0.9
+  learning_rate: 0.1
+  metric:
+  - multi_logloss
+  - multi_error
+  min_child_samples: 20
+  min_child_weight: 0.001
+  n_estimators: 1000
+  n_jobs: -1
+  num_leaves: 31
+  objective: multiclass
+  random_seed: 42
+  reg_alpha: 0.0
+  reg_lambda: 0.0
+  subsample: 0.8
+  target_column: direction_1d
+  test_split: 0.2
+  validation_split: 0.2
+lstm_config:
+  batch_size: 64
+  bidirectional: false
+  dropout: 0.2
+  early_stopping_patience: 10
+  epochs: 100
+  feature_columns: []
+  gradient_accumulation_steps: 1
+  hidden_size: 128
+  learning_rate: 0.001
+  mixed_precision: true
+  num_layers: 2
+  optimizer: adam
+  random_seed: 42
+  scheduler: plateau
+  sequence_length: 252
+  target_column: direction_1d
+  test_split: 0.2
+  validation_split: 0.2
+  weight_decay: 1.0e-05
+max_concurrent_models: 4
+memory_manager_enabled: true
+model_save_path: models/multi_model
+parallel_training: false
+resource_allocation:
+  lightgbm: 0.1
+  lstm: 0.4
+  transformer: 0.4
+  xgboost: 0.1
+results_save_path: results/multi_model
+target_column: direction_1d
+transformer_config:
+  attention_dropout: 0.1
+  batch_size: 32
+  d_model: 256
+  dim_feedforward: 1024
+  dropout: 0.1
+  early_stopping_patience: 10
+  epochs: 100
+  feature_columns: []
+  gradient_accumulation_steps: 2
+  gradient_clipping: 1.0
+  learning_rate: 0.0001
+  max_seq_length: 512
+  mixed_precision: true
+  nhead: 8
+  num_layers: 6
+  optimizer: adamw
+  random_seed: 42
+  scheduler: warmup_cosine
+  sequence_length: 252
+  target_column: direction_1d
+  test_split: 0.2
+  use_causal_mask: true
+  validation_split: 0.2
+  warmup_steps: 1000
+  weight_decay: 0.0001
+use_walk_forward_validation: true
+validation_windows: 5
+xgboost_config:
+  colsample_bytree: 0.8
+  cv_folds: 5
+  early_stopping_patience: 10
+  early_stopping_rounds: 50
+  eval_metric:
+  - mlogloss
+  - merror
+  feature_columns: []
+  gamma: 0.0
+  learning_rate: 0.1
+  max_depth: 6
+  min_child_weight: 1
+  n_estimators: 1000
+  n_jobs: -1
+  objective: multi:softprob
+  random_seed: 42
+  reg_alpha: 0.0
+  reg_lambda: 1.0
+  scale_pos_weight: null
+  stratified: true
+  subsample: 0.8
+  target_column: direction_1d
+  test_split: 0.2
+  tree_method: hist
+  validation_split: 0.2

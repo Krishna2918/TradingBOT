@@ -1,0 +1,114 @@
+{
+  "_description": "Feature Consistency System Configuration - Testing Environment",
+  "_version": "1.0",
+  "_environment": "testing",
+  "_created": "2025-10-27T12:00:00.000000",
+  
+  "warmup_trim_days": {
+    "value": 50,
+    "description": "Number of days to trim from start to remove indicator warm-up period",
+    "min": 0,
+    "max": 500,
+    "environment_note": "Minimal warmup for fast test execution"
+  },
+  
+  "nan_drop_threshold_per_symbol": {
+    "value": 0.15,
+    "description": "Maximum NaN ratio allowed per symbol (0.15 = 15%)",
+    "min": 0.01,
+    "max": 0.50,
+    "environment_note": "Lenient threshold for testing with synthetic/limited data"
+  },
+  
+  "global_feature_keep_ratio": {
+    "value": 0.80,
+    "description": "Minimum symbol coverage required to keep feature globally (0.80 = 80%)",
+    "min": 0.50,
+    "max": 1.00,
+    "environment_note": "Lower threshold to test edge cases"
+  },
+  
+  "min_symbol_feature_coverage": {
+    "value": 0.70,
+    "description": "Minimum feature coverage required to include symbol (0.70 = 70%)",
+    "min": 0.50,
+    "max": 1.00,
+    "environment_note": "Lower threshold for comprehensive testing scenarios"
+  },
+  
+  "use_missingness_mask": {
+    "value": true,
+    "description": "Whether to create _isnan columns for missing value indicators",
+    "environment_note": "Enabled to test missingness handling functionality"
+  },
+  
+  "imputation_strategy": {
+    "value": "zero",
+    "description": "Strategy for final imputation: 'zero', 'mean', 'median'",
+    "options": ["zero", "mean", "median"],
+    "environment_note": "Zero imputation for predictable test results"
+  },
+  
+  "imputation_value": {
+    "value": 0.0,
+    "description": "Value to use for final imputation when strategy is 'zero'",
+    "environment_note": "Standard zero fill for testing"
+  },
+  
+  "manifest_path": {
+    "value": "test_data/feature_manifest_test.json",
+    "description": "Path to save/load feature manifest JSON file",
+    "environment_note": "Test-specific manifest location"
+  },
+  
+  "config_backup_path": {
+    "value": "test_data/feature_consistency_config_test.json",
+    "description": "Path to save configuration backups",
+    "environment_note": "Test-specific backup location"
+  },
+  
+  "log_level": {
+    "value": "DEBUG",
+    "description": "Logging level (DEBUG, INFO, WARNING, ERROR)",
+    "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+    "environment_note": "Verbose logging for test debugging"
+  },
+  
+  "detailed_logging": {
+    "value": true,
+    "description": "Enable detailed logging of processing decisions",
+    "environment_note": "Full logging for test validation"
+  },
+  
+  "testing_settings": {
+    "description": "Testing-specific configuration",
+    "enable_test_mode": true,
+    "generate_test_data": true,
+    "validate_intermediate_steps": true,
+    "fail_fast_on_errors": true,
+    "environment_note": "Enhanced validation and debugging for testing"
+  },
+  
+  "test_data_generation": {
+    "description": "Test data generation settings",
+    "min_symbols": 5,
+    "max_symbols": 20,
+    "min_rows_per_symbol": 100,
+    "max_rows_per_symbol": 1000,
+    "nan_injection_rate": 0.05,
+    "feature_count_variation": true,
+    "environment_note": "Settings for generating test datasets"
+  },
+  
+  "validation_rules": {
+    "description": "Configuration validation rules",
+    "rules": {
+      "warmup_trim_days": "Must be non-negative integer",
+      "nan_drop_threshold_per_symbol": "Must be between 0.01 and 0.50",
+      "global_feature_keep_ratio": "Must be between 0.50 and 1.00",
+      "min_symbol_feature_coverage": "Must be between 0.50 and 1.00",
+      "imputation_strategy": "Must be one of: zero, mean, median",
+      "log_level": "Must be one of: DEBUG, INFO, WARNING, ERROR"
+    }
+  }
+}

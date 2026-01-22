@@ -1,0 +1,15 @@
+inherit: configs/lstm_weekly.yaml
+
+model_name: lstm_rebaseline_v1
+window_days: null        # use all data in snapshot
+epochs: 30               # longer
+
+sweeps:
+  max_runs: 40
+  search:                # tiny grid/ASHA inside the week
+    max_lr: [6e-4, 8e-4, 1e-3]
+    ema_decay: [0.99, 0.995, 0.997]
+    loss: [weighted_ce, focal]
+
+runtime:
+  timebox_hours: 168     # best-effort (1 week)

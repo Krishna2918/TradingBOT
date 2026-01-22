@@ -1,0 +1,46 @@
+# Adaptive Data Collection System Configuration
+
+# Market Configuration
+markets:
+  us_100:
+    source: alpha_vantage
+    symbols_file: lists/us_100.txt
+    max_retries: 999
+
+# Technical Indicators Configuration
+indicators:
+  sma: [20, 50, 200]
+  rsi: [14]
+  atr: [14]
+
+# Storage Configuration
+storage:
+  format: parquet
+  compression: snappy
+  partition_by: [year]
+
+# Rate Limiting Configuration
+rate_limits:
+  alpha_vantage_rpm: 74
+  request_timeout: 30
+  connection_timeout: 10
+
+# Retry Configuration
+retry:
+  max_attempts: 999
+  backoff_base: 2.0
+  max_backoff: 300  # 5 minutes
+  jitter: true
+
+# Logging Configuration
+logging:
+  level: INFO
+  format: json
+  rotation: daily
+  max_files: 30
+
+# Safety Configuration
+safety:
+  min_disk_space_gb: 1.0
+  max_memory_usage_gb: 8.0
+  stop_on_critical_error: true
