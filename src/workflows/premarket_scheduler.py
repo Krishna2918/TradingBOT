@@ -93,11 +93,37 @@ class PreMarketScheduler:
         # Initialize data collectors
         self._init_collectors()
 
+        # Initialize global influence trackers
+        self._init_global_trackers()
+
         # Register default tasks
         self._register_default_tasks()
 
         logger.info(f"PreMarket Scheduler initialized (demo_mode={demo_mode})")
         logger.info(f"Output directory: {self.output_dir}")
+
+    def _init_global_trackers(self):
+        """Initialize global influence and country factor trackers"""
+        try:
+            from src.data_collection.global_influence_tracker import GlobalInfluenceTracker
+            self.global_tracker = GlobalInfluenceTracker(demo_mode=self.demo_mode)
+        except ImportError as e:
+            logger.warning(f"Could not import global_influence_tracker: {e}")
+            self.global_tracker = None
+
+        try:
+            from src.data_collection.country_factor_monitors import AllCountriesMonitor
+            self.country_monitor = AllCountriesMonitor(demo_mode=self.demo_mode)
+        except ImportError as e:
+            logger.warning(f"Could not import country_factor_monitors: {e}")
+            self.country_monitor = None
+
+        try:
+            from src.analytics.tsx_correlation_analyzer import TSXCorrelationAnalyzer
+            self.correlation_analyzer = TSXCorrelationAnalyzer()
+        except ImportError as e:
+            logger.warning(f"Could not import tsx_correlation_analyzer: {e}")
+            self.correlation_analyzer = None
 
     def _init_collectors(self):
         """Initialize data collection modules"""
@@ -200,13 +226,32 @@ class PreMarketScheduler:
             timeout_seconds=120
         ))
 
+        # 8:00 AM - Global influence analysis (8 countries)
+        self.register_task(ScheduledTask(
+            name="global_influence",
+            scheduled_time=dt_time(8, 0),
+            task_func=self._collect_global_influence,
+            priority=2,
+            timeout_seconds=300
+        ))
+
+        # 8:15 AM - Country factor analysis
+        self.register_task(ScheduledTask(
+            name="country_factors",
+            scheduled_time=dt_time(8, 15),
+            task_func=self._collect_country_factors,
+            priority=2,
+            dependencies=["global_influence"],
+            timeout_seconds=300
+        ))
+
         # 8:30 AM - Run AI analysis
         self.register_task(ScheduledTask(
             name="ai_analysis",
             scheduled_time=dt_time(8, 30),
             task_func=self._run_ai_analysis,
             priority=1,
-            dependencies=["us_premarket", "currency_commodities", "sentiment_analysis"],
+            dependencies=["us_premarket", "currency_commodities", "sentiment_analysis", "global_influence", "country_factors"],
             timeout_seconds=600  # AI analysis may take longer
         ))
 
@@ -216,7 +261,7 @@ class PreMarketScheduler:
             scheduled_time=dt_time(9, 0),
             task_func=self._generate_summary,
             priority=1,
-            dependencies=["ai_analysis", "institutional_flows", "events_calendar"],
+            dependencies=["ai_analysis", "institutional_flows", "events_calendar", "global_influence"],
             timeout_seconds=120
         ))
 
@@ -444,6 +489,34 @@ class PreMarketScheduler:
 
         return events
 
+    def _collect_global_influence(self) -> Dict[str, Any]:
+        """Collect global influence data from 8 key countries/regions"""
+        logger.info("Collecting global influence data...")
+
+        if self.global_tracker:
+            snapshot = self.global_tracker.get_global_snapshot()
+            return {
+                'countries': snapshot.get('countries', {}),
+                'commodities': snapshot.get('commodities', {}),
+                'yields': snapshot.get('yields', {}),
+                'tsx_impact_summary': snapshot.get('tsx_impact_summary', {}),
+                'timestamp': snapshot.get('timestamp')
+            }
+        return {'status': 'skipped', 'reason': 'global tracker not available'}
+
+    def _collect_country_factors(self) -> Dict[str, Any]:
+        """Collect detailed country-specific factors"""
+        logger.info("Collecting country-specific factors...")
+
+        if self.country_monitor:
+            impacts = self.country_monitor.get_all_impacts()
+            return {
+                'country_impacts': impacts.get('countries', {}),
+                'overall_tsx_outlook': impacts.get('overall_tsx_outlook', {}),
+                'timestamp': impacts.get('timestamp')
+            }
+        return {'status': 'skipped', 'reason': 'country monitor not available'}
+
     def _run_ai_analysis(self) -> Dict[str, Any]:
         """Run AI analysis on collected data"""
         logger.info("Running AI analysis on pre-market data...")
@@ -529,6 +602,44 @@ class PreMarketScheduler:
             if events.get('central_bank'):
                 analysis['risk_level'] = 'high'
                 analysis['recommended_exposure'] = min(analysis['recommended_exposure'], 0.6)
+
+        # Integrate global influence analysis (8 countries)
+        if 'global_influence' in self.task_results:
+            global_data = self.task_results['global_influence']
+            tsx_impact = global_data.get('tsx_impact_summary', {})
+
+            # Overall global sentiment
+            global_sentiment = tsx_impact.get('overall_sentiment', 'neutral')
+            if global_sentiment == 'bullish':
+                analysis['key_insights'].append("🌍 Global markets bullish - supportive for TSX")
+            elif global_sentiment == 'bearish':
+                analysis['key_insights'].append("🌍 Global markets bearish - caution advised")
+                analysis['risk_level'] = 'elevated'
+
+            # Key drivers from global analysis
+            for driver in tsx_impact.get('key_drivers', [])[:3]:
+                analysis['key_insights'].append(f"📈 {driver}")
+
+            # Risk factors from global analysis
+            for risk in tsx_impact.get('risk_factors', [])[:2]:
+                analysis['key_insights'].append(f"⚠️ {risk}")
+
+        # Integrate country-specific factors
+        if 'country_factors' in self.task_results:
+            country_data = self.task_results['country_factors']
+            outlook = country_data.get('overall_tsx_outlook', {})
+
+            # Adjust recommendations based on country factors
+            outlook_direction = outlook.get('direction', 'neutral')
+            if outlook_direction == 'bullish' and analysis['market_regime'] == 'normal':
+                analysis['market_regime'] = 'risk_on'
+            elif outlook_direction == 'bearish' and analysis['market_regime'] == 'normal':
+                analysis['market_regime'] = 'risk_off'
+                analysis['recommended_exposure'] = min(analysis['recommended_exposure'], 0.7)
+
+            # Add top drivers from country analysis
+            for driver in outlook.get('top_drivers', [])[:3]:
+                analysis['key_insights'].append(f"🌐 {driver}")
 
         return analysis
 
